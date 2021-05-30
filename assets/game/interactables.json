@@ -1,0 +1,127 @@
+{
+  "interactableList": [
+    {
+      "interactableType": "chest",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
+        "ec59fe4c-d9da-4678-90b9-51485a464620"
+      ],
+      "endGame": false,
+      "id": "1d12188f-7cbc-4c4e-a783-e63a28386a5c",
+      "name": "comodino",
+      "description": "chissà cosa conterrà...",
+      "afterUsed": "Aperto!"
+    },
+    {
+      "interactableType": "door",
+      "itemsNeededToUse": [
+        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5"
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "id": "708259d9-031f-4c34-a8d2-c237f2455ba8",
+      "name": "porta",
+      "description": "Una porta blindata. Servirebbe una specie di chiave...\n",
+      "afterUsed": "Porta aperta!"
+    },
+    {
+      "interactableType": "door",
+      "itemsNeededToUse": [
+        "4135868e-edcc-4c24-9930-77ccfa6f7026"
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "id": "209bb37b-ba48-4773-a9a4-4ca416bf6109",
+      "name": "cella#222B",
+      "description": "Una porta blindata. Servirebbe una specie di chiave...\n",
+      "afterUsed": "Porta aperta!"
+    },
+    {
+      "interactableType": "chest",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+        "aab92751-a24f-433a-b7b1-d866914126bc"
+      ],
+      "endGame": false,
+      "id": "4161fc61-c3db-4b30-a7d1-a41ed07fc955",
+      "name": "cadavere",
+      "description": "Un cadavere di una guardia, chissà cosa sarà successo...",
+      "afterUsed": ""
+    },
+    {
+      "interactableType": "door",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "id": "3880ee2b-fb68-4c92-b461-5e8ce87a3126",
+      "name": "cella#223B",
+      "description": "Una porta blindata. Sembra aperta...",
+      "afterUsed": ""
+    },
+
+    {
+      "interactableType": "switchOnLight",
+      "itemsNeededToUse": [
+        "aab92751-a24f-433a-b7b1-d866914126bc"
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "id": "5ddf6d97-712a-4380-9e0b-707fc515c091",
+      "name": "new Interactable2",
+      "description": "",
+      "afterUsed": ""
+    },
+
+    {
+      "interactableType": "chestGuessingGame",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+        "53f11902-9391-4eb9-a2e7-8175db70a193"
+      ],
+      "endGame": false,
+      "guessingGame": {
+        "text": "Inserire pin: ",
+        "afterAnswered": "Bravo!",
+        "correctAnswer": "111"
+      },
+      "id": "8b9b0adc-9146-45e1-a759-c184fae44836",
+      "name": "cassaforte",
+      "description": "Una cassaforte, per aprirla richiede una password!",
+      "afterUsed": "Cassaforte aperta!"
+    }
+
+
+  ]
+}

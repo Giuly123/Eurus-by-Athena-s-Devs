@@ -1,0 +1,279 @@
+{
+  "tiles": [
+    {
+      "allowedDirections": [
+        "East"
+      ],
+      "shortDescription": "123321",
+      "fullDescription": "123321",
+      "descriptionOffLimitsArea": "",
+      "interactableHere": [
+        "5ddf6d97-712a-4380-9e0b-707fc515c091"
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+      "interactableToSwitchOnLight": "5ddf6d97-712a-4380-9e0b-707fc515c091",
+      "descriptionOfDarkRoom": "Scuro",
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": true
+    },
+    {
+      "allowedDirections": [
+        "North",
+        "West"
+      ],
+      "shortDescription": "Cella#221B - Ti trovi in una cella. La luce bianca ti acceca.",
+      "fullDescription": "Sei in una cella, ci sono solo i tuoi amici, e alla tua destra un comodino con un cassetto. Sarà il caso di aprirlo, potrebbe contenere qualcosa!",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "interactableHere": [
+        "1d12188f-7cbc-4c4e-a783-e63a28386a5c",
+        "708259d9-031f-4c34-a8d2-c237f2455ba8",
+        "8b9b0adc-9146-45e1-a759-c184fae44836"
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+        "East"
+      ],
+      "shortDescription": "Cella#222B - Una cella simile a quella dove ti sei svegliato!",
+      "fullDescription": "Una luce fredda illumina la stanza. C’è una cassaforte alla tua sinistra con un’incisione dorata che recita “Avv.” e alla tua destra, un comodino simile a quello della cella 221B.",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+        "209bb37b-ba48-4773-a9a4-4ca416bf6109"
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+        "North",
+        "South",
+        "West"
+      ],
+      "shortDescription": "Corridoio - Area 1: Un lungo corridoio. Ci sono quattro porte. Saranno chiuse? Controllare non fa mai male.",
+      "fullDescription": "Guardandovi indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA SINISTRA”. C\u0027è una porta alla tua sinista. Sembra chiusa, ma il corridoio è lungo...Alla tua destra noti un cadavere. ",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…\n",
+      "interactableHere": [
+        "209bb37b-ba48-4773-a9a4-4ca416bf6109",
+        "4161fc61-c3db-4b30-a7d1-a41ed07fc955"
+      ],
+      "interactableNeededToEnter": [
+        "708259d9-031f-4c34-a8d2-c237f2455ba8"
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+
+    {
+      "allowedDirections": ["East"],
+      "shortDescription": "culo",
+      "fullDescription": "",
+      "descriptionOffLimitsArea": "",
+      "interactableHere": [],
+      "interactableNeededToEnter": [],
+      "itemsToTake": [],
+      "itemToSwitch": [ "aab92751-a24f-433a-b7b1-d866914126bc" ],
+      "guessingGameToEnter": {},
+      "descriptionOfDarkRoom": "",
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": true
+    },
+    {
+      "allowedDirections": [
+        "North",
+        "South",
+        "West"
+      ],
+      "shortDescription": "Corridoio - Area 2: Un lungo corridoio. Ci sono quattro porte. Saranno chiuse? Controllare non fa mai male.",
+      "fullDescription": "C\u0027è una porta alla tua sinistra. Il corridoio sembra non avere fine.",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…\n",
+      "interactableHere": [
+        "3880ee2b-fb68-4c92-b461-5e8ce87a3126"
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+      ],
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    }
+  ]
+}
