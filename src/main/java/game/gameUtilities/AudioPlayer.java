@@ -34,7 +34,7 @@ public class AudioPlayer
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
 
                 gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                gainControl.setValue(-30.0f);
+                gainControl.setValue(-38.0f);
 
                 status = AudioPlayerStatus.loaded;
             }
