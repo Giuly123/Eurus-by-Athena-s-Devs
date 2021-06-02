@@ -1,5 +1,6 @@
-package game;
+package game.managers;
 
+import game.entity.tile.Tile;
 import game.gameUtilities.Coordinates;
 import game.gameUtilities.Utilities;
 import game.jsonParser.JsonParser;
@@ -7,7 +8,7 @@ import game.jsonParser.JsonParser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Map
+public class MapManager
 {
     private boolean loaded = false;
 
@@ -16,7 +17,7 @@ public class Map
 
     public int getDimension() {return dim;}
 
-    Map() throws Exception
+    MapManager() throws Exception
     {
         RootMapJson rootMapJson = loadMap();
 

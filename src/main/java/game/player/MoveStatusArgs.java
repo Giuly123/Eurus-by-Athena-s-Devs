@@ -1,7 +1,7 @@
 package game.player;
 
 
-import game.Tile;
+import game.entity.tile.Tile;
 import game.gameUtilities.Coordinates;
 
 public class MoveStatusArgs

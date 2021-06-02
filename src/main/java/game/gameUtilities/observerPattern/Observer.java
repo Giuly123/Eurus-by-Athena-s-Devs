@@ -1,4 +1,4 @@
-package game.gameUtilities;
+package game.gameUtilities.observerPattern;
 
 public interface Observer<Type>
 {

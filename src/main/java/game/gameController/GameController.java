@@ -4,7 +4,7 @@ package game.gameController;
 import game.managers.GameEventsHandler;
 import game.GameModel;
 import game.entity.item.Item;
-import game.gameUtilities.Observer;
+import game.gameUtilities.observerPattern.Observer;
 import game.gameUtilities.Sentences;
 import game.gameUtilities.Utilities;
 import game.managers.InventoryManager;

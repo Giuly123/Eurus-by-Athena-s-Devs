@@ -1,7 +1,6 @@
 package game.gameController;
 
-import game.gameUtilities.Pair;
-import game.gameUtilities.Utilities;
+import game.gameUtilities.pair.Pair;
 
 public enum Command
 {

@@ -1,7 +1,7 @@
 package game.managers;
 
 import game.entity.interactable.Interactable;
-import game.gameUtilities.Subject;
+import game.gameUtilities.observerPattern.Subject;
 import game.gameUtilities.Utilities;
 import game.jsonParser.JsonParser;
 

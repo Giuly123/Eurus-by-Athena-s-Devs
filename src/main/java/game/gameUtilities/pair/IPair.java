@@ -1,4 +1,4 @@
-package game.gameUtilities;
+package game.gameUtilities.pair;
 
 public interface IPair<K, V>
 {

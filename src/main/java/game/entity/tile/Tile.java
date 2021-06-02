@@ -1,4 +1,4 @@
-package game;
+package game.entity.tile;
 
 import game.entity.guessingGame.GuessingGame;
 import game.gameUtilities.Coordinates;

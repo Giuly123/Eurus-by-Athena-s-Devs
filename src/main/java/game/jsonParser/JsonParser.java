@@ -18,7 +18,6 @@ public class JsonParser
             stream.forEach(s -> stringBuilder.append(s).append("\n"));
             Gson gson = new Gson();
             return gson.fromJson(stringBuilder.toString(), typeClass);
-
         }
         catch (IOException e)
         {

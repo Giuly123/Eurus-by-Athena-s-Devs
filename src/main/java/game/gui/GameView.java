@@ -259,7 +259,8 @@ public class GameView
 
         //======== frame ========
         {
-            frame.setMinimumSize(new Dimension(50, 100));
+            frame.setMinimumSize(new Dimension(600, 550));
+            frame.setPreferredSize(new Dimension(700, 600));
             frame.setBackground(new Color(51, 255, 102));
             Container frameContentPane = frame.getContentPane();
             frameContentPane.setLayout(new BorderLayout());
@@ -318,6 +319,10 @@ public class GameView
                     homeButton.setMargin(new Insets(5, 14, 5, 14));
                     homeButton.setForeground(Color.red);
                     homeButton.setBackground(new Color(255, 51, 51));
+
+                    //---- hSpacer1 ----
+                    hSpacer1.setForeground(new Color(193, 193, 193, 0));
+                    hSpacer1.setBackground(new Color(28, 39, 57, 0));
 
                     GroupLayout rightPanelLayout = new GroupLayout(rightPanel);
                     rightPanel.setLayout(rightPanelLayout);

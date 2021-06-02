@@ -1,11 +1,11 @@
 package game.player;
 
-import game.Map;
+import game.managers.MapManager;
 import game.StartConfig;
-import game.Tile;
+import game.entity.tile.Tile;
 import game.gameUtilities.Coordinates;
 import game.gameUtilities.Sentences;
-import game.gameUtilities.Subject;
+import game.gameUtilities.observerPattern.Subject;
 import game.managers.InteractableHandler;
 import game.managers.InventoryManager;
 import game.managers.ItemsHandler;
@@ -41,10 +41,10 @@ public class Player
 
     private int currentPositionRiga;
     private int currentPositionColonna;
-    private Map map;
+    private MapManager map;
     private boolean isLoaded = false;
 
-    public Player(boolean isContinuing, StartConfig startConfig, Map map) throws Exception
+    public Player(boolean isContinuing, StartConfig startConfig, MapManager map) throws Exception
     {
         onTryMovePlayerSubject = new Subject<>();
         onTrySolveGuessingGameSubject = new Subject<>();

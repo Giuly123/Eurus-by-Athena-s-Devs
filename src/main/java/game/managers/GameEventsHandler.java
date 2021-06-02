@@ -6,10 +6,8 @@ import game.entity.interactable.Interactable;
 import game.entity.interactable.InteractableType;
 import game.entity.item.Item;
 import game.entity.item.ItemType;
-import game.gameUtilities.Observer;
+import game.gameUtilities.observerPattern.Observer;
 import game.gameUtilities.Sentences;
-import game.managers.InteractableHandler;
-import game.managers.InventoryManager;
 import game.player.*;
 import game.gui.GameView;
 

@@ -2,7 +2,7 @@ package game.managers;
 
 
 import game.entity.item.Item;
-import game.gameUtilities.Subject;
+import game.gameUtilities.observerPattern.Subject;
 
 import java.util.*;
 
