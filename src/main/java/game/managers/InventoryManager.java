@@ -127,16 +127,19 @@ public class InventoryManager
 
     public Item getItem(String name)
     {
-        Item item = null;
+        Item result = null;
 
-        item = itemsHandler.getItem(name);
+        List<Item> itemsList = itemsHandler.getItemsWithSameAlias(name);
 
-        if (item != null && !inventoryList.contains(item.getId()))
+        for(int i = 0; i < itemsList.size() && result == null; i++)
         {
-            item = null;
+            if (inventoryList.contains(itemsList.get(i).getId()))
+            {
+                result = itemsList.get(i);
+            }
         }
 
-        return item;
+        return result;
     }
 
 

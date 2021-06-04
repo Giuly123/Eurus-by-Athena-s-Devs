@@ -1,5 +1,6 @@
 package game.gameController;
 
+import game.gameUtilities.Utilities;
 import game.gameUtilities.pair.Pair;
 
 public enum Command
@@ -28,17 +29,19 @@ public enum Command
         this.aliasList = aliasList;
     }
 
+    static private String[] preposizioni = {"con", "la", "il", "la", "lo"};
 
     private static Pair<String, String> getCommandAndArg(String str)
     {
         Pair<String, String> result = new Pair<>();
 
-        String strings[] = str.split("\\s+");
+        String strings[] = str.split("\\s+", 2);
 
         result.setKey(strings[0]);
 
         if (strings.length > 1)
         {
+            strings[1] = Utilities.cleanCommand(strings[1], preposizioni);
             result.setValue(strings[1]);
         }
 

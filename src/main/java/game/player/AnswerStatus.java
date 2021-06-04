@@ -1,6 +1,5 @@
 package game.player;
 
-
 import game.entity.guessingGame.GuessingGame;
 
 public enum AnswerStatus

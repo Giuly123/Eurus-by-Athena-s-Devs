@@ -3,6 +3,7 @@ package game.gameUtilities;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 // Classe per variabili e metodi statici
 public class Utilities
@@ -45,6 +46,26 @@ public class Utilities
     {
         String s = String.valueOf(separator);
         return str.split(s, -1);
+    }
+
+
+    public static String cleanCommand(String startString, String[] listString)
+    {
+        for(String string : listString)
+        {
+            int indexOf = startString.indexOf(string);
+            if (indexOf > -1)
+            {
+                if (indexOf == 0)
+                {
+                    startString = startString.replaceFirst(string + " ", "");
+                }
+
+                startString = startString.replace(" " + string + " ", " ");
+            }
+        }
+
+        return cleanString(startString);
     }
 
 

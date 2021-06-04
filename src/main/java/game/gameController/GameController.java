@@ -1,6 +1,5 @@
 package game.gameController;
 
-
 import game.managers.GameEventsHandler;
 import game.gameModel.GameModel;
 import game.entity.item.Item;
@@ -21,7 +20,6 @@ import java.util.UUID;
 
 public class GameController
 {
-
     private GameEventsHandler gameEventsHandler;
     private CommandsParser commandsParser;
     private GameModel gameModel;
@@ -116,11 +114,9 @@ public class GameController
 
             thread.start();
         }
-
     };
 
-
-
+    
     public Point getLocationOnScreen()
     {
         return gameView.getLocationOnScreen();

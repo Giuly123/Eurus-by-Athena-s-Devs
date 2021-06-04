@@ -31,6 +31,42 @@ public class ItemsHandler
     }
 
 
+    public List<Item> getItemsWithSameAlias(String name)
+    {
+        List<Item> itemsList = new ArrayList<>();
+
+        if(itemsDictionary != null)
+        {
+            Iterator iterator = itemsDictionary.entrySet().iterator();
+            while (iterator.hasNext())
+            {
+                Map.Entry entry = (Map.Entry) iterator.next();
+                Item tempItem = (Item) entry.getValue();
+
+                if (tempItem.getName().equalsIgnoreCase(name))
+                {
+                    itemsList.add(tempItem);
+                }
+                else
+                {
+                    boolean found = false;
+
+                    for(int j = 0; j < tempItem.getAlias().size() && !found; j++)
+                    {
+                        if (tempItem.getAlias().get(j).equalsIgnoreCase(name))
+                        {
+                            itemsList.add(tempItem);
+                            found = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        return itemsList;
+    }
+
+
     public Item getItem(String name)
     {
         Item item = null;

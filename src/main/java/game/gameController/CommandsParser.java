@@ -33,6 +33,7 @@ public class CommandsParser
         if (itemName != null)
         {
             Item item = itemsHandler.getItem(itemName);
+
             if (item != null)
             {
                 if (item.getItemType() == ItemType.document)
@@ -92,9 +93,7 @@ public class CommandsParser
             {
                 gameView.appendText(Sentences.USE_ITEM_NOT_OWNED);
             }
-
         }
-
     }
 
     private void giveAnswer(String answer)
