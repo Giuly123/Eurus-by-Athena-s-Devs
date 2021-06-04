@@ -11,15 +11,18 @@ public class RootPlayerJson
     public List<UUID> inventory;
     public int lastPositionRiga;
     public int lastPositionColonna;
+    public boolean endGame;
 
 
-    public RootPlayerJson(int lastPositionRiga, int lastPositionColonna, List<UUID> usedInteractable, Map<UUID, List<UUID>> usedItems, List<UUID> inventory)
+    public RootPlayerJson(int lastPositionRiga, int lastPositionColonna, List<UUID> usedInteractable, Map<UUID,
+            List<UUID>> usedItems, List<UUID> inventory, boolean endGame)
     {
         this.usedInteractable = usedInteractable;
         this.usedItems = usedItems;
         this.inventory = inventory;
         this.lastPositionRiga = lastPositionRiga;
         this.lastPositionColonna = lastPositionColonna;
+        this.endGame = endGame;
     }
 
 

@@ -5,62 +5,41 @@
       "itemsNeededToUse": [
       ],
       "containedItems": [
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-        "ec59fe4c-d9da-4678-90b9-51485a464620"
+        "15e3bed0-0a26-4006-a42e-7ed4f509885f",
+        "9d5ec29d-31a8-49e5-a190-000faa6e1b85"
       ],
       "endGame": false,
-      "id": "1d12188f-7cbc-4c4e-a783-e63a28386a5c",
-      "name": "comodino",
-      "description": "chissà cosa conterrà...",
-      "afterUsed": "Aperto!"
+      "guessingGame": {
+      },
+      "alias": [
+        "comodino",
+        "cassa",
+        "chest",
+        "Chest",
+        "cassetto"
+      ],
+      "id": "dd162e26-1bad-4e26-bf33-a0750f59ce05",
+      "name": "Comodino",
+      "description": "Un comodino con un cassetto!",
+      "afterUsed": "Cassetto aperto!"
     },
     {
       "interactableType": "door",
       "itemsNeededToUse": [
-        "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5"
+        "9d5ec29d-31a8-49e5-a190-000faa6e1b85"
       ],
       "containedItems": [
       ],
       "endGame": false,
-      "id": "708259d9-031f-4c34-a8d2-c237f2455ba8",
-      "name": "porta",
-      "description": "Una porta blindata. Servirebbe una specie di chiave...\n",
-      "afterUsed": "Porta aperta!"
-    },
-    {
-      "interactableType": "door",
-      "itemsNeededToUse": [
-        "4135868e-edcc-4c24-9930-77ccfa6f7026"
+      "guessingGame": {
+      },
+      "alias": [
+        "porta",
+        "cancello"
       ],
-      "containedItems": [
-      ],
-      "endGame": false,
-      "id": "209bb37b-ba48-4773-a9a4-4ca416bf6109",
-      "name": "cella#222B",
-      "description": "Una porta blindata. Servirebbe una specie di chiave...\n",
+      "id": "bfa63d12-e592-44af-8fe4-cffb4712245f",
+      "name": "Porta",
+      "description": "Una porta blindata. Servirebbe una specie di chiave...",
       "afterUsed": "Porta aperta!"
     },
     {
@@ -68,60 +47,101 @@
       "itemsNeededToUse": [
       ],
       "containedItems": [
-        "aab92751-a24f-433a-b7b1-d866914126bc"
+        "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5"
       ],
       "endGame": false,
-      "id": "4161fc61-c3db-4b30-a7d1-a41ed07fc955",
-      "name": "cadavere",
-      "description": "Un cadavere di una guardia, chissà cosa sarà successo...",
+      "guessingGame": {
+      },
+      "alias": [
+        "corpo",
+        "morto",
+        "cadavere"
+      ],
+      "id": "e0441288-a78c-42c7-b343-0b7358617957",
+      "name": "Cadavere",
+      "description": "Chissà cosa gli sarà successo...",
       "afterUsed": ""
     },
     {
       "interactableType": "door",
       "itemsNeededToUse": [
+        "9b0c65f6-9653-4cf9-b5d8-2b3b5715d624"
       ],
       "containedItems": [
       ],
       "endGame": false,
-      "id": "3880ee2b-fb68-4c92-b461-5e8ce87a3126",
-      "name": "cella#223B",
-      "description": "Una porta blindata. Sembra aperta...",
-      "afterUsed": ""
-    },
-
-    {
-      "interactableType": "switchOnLight",
-      "itemsNeededToUse": [
-        "aab92751-a24f-433a-b7b1-d866914126bc"
+      "guessingGame": {
+      },
+      "alias": [
+        "porta"
       ],
-      "containedItems": [
-      ],
-      "endGame": false,
-      "id": "5ddf6d97-712a-4380-9e0b-707fc515c091",
-      "name": "new Interactable2",
-      "description": "",
-      "afterUsed": ""
+      "id": "20070cbd-e100-4f46-ba3e-279257598a86",
+      "name": "Cella222B",
+      "description": "Una porta blindata. Servirebbe una specie di chiave...\n",
+      "afterUsed": "Porta aperta!"
     },
-
     {
       "interactableType": "chestGuessingGame",
       "itemsNeededToUse": [
       ],
       "containedItems": [
-        "53f11902-9391-4eb9-a2e7-8175db70a193"
+        "95e22959-004e-4dea-9440-29f391fbae73",
+        "01f1733d-47f6-4eec-8d57-645612859e23"
       ],
       "endGame": false,
       "guessingGame": {
-        "text": "Inserire pin: ",
-        "afterAnswered": "Bravo!",
-        "correctAnswer": "111"
+        "text": "Inserire il pin:",
+        "afterAnswered": "Pin corretto!",
+        "correctAnswer": "3826"
       },
-      "id": "8b9b0adc-9146-45e1-a759-c184fae44836",
-      "name": "cassaforte",
+      "alias": [
+        "cassa",
+        "cassaforte",
+        "chest"
+      ],
+      "id": "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5",
+      "name": "Cassaforte",
       "description": "Una cassaforte, per aprirla richiede una password!",
-      "afterUsed": "Cassaforte aperta!"
+      "afterUsed": "La cassaforte sembra sbloccata! Riprova ad aprirla ora..."
+    },
+    {
+      "interactableType": "switchOnLight",
+      "itemsNeededToUse": [
+        "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5"
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "9e71b832-06bd-4730-acd2-29487ad76ea9",
+      "name": "CellaScura1",
+      "description": "",
+      "afterUsed": ""
+    },
+    {
+      "interactableType": "chest",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+        "9b0c65f6-9653-4cf9-b5d8-2b3b5715d624",
+        "d60c9e24-3088-44c4-b21c-feb999227e57"
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+        "comodino",
+        "cassa",
+        "chest",
+        "cassetto"
+      ],
+      "id": "1d2b8a0d-3fc6-43e2-bd56-ad23365f3363",
+      "name": "Comodino2",
+      "description": "Un comodino con un cassetto!",
+      "afterUsed": "Cassetto aperto!"
     }
-
-
   ]
 }

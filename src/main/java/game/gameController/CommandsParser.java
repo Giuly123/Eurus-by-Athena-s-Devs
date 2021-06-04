@@ -8,7 +8,7 @@ import game.entity.interactable.Interactable;
 import game.entity.interactable.InteractableType;
 import game.entity.item.Item;
 import game.gameUtilities.Sentences;
-import game.GameModel;
+import game.gameModel.GameModel;
 import game.gui.GameView;
 
 public class CommandsParser
@@ -33,7 +33,7 @@ public class CommandsParser
         if (itemName != null)
         {
             Item item = itemsHandler.getItem(itemName);
-            if(item != null)
+            if (item != null)
             {
                 if (item.getItemType() == ItemType.document)
                 {
@@ -152,7 +152,7 @@ public class CommandsParser
 
     private void observe(String argument)
     {
-        if(argument == null || argument.length() == 0)
+        if (argument == null || argument.length() == 0)
         {
             gameModel.getPlayer().observe(true);
         }
@@ -162,10 +162,33 @@ public class CommandsParser
         }
     }
 
-    public void parseCommand(String str)
-    {
-        Command command = Command.parseCommand(str);
 
+    private void CommandsAllowedAfterEndGame(Command command)
+    {
+        if (command == Command.salva)
+        {
+            gameModel.getPlayer().saveFile();
+        }
+        else if (command == Command.esci)
+        {
+            // esci
+        }
+        else if (command == Command.help)
+        {
+            gameView.appendText(Sentences.HELP_MESSAGE);
+        }
+        else if (command == null)
+        {
+            gameView.appendText(Sentences.WRONG_COMMAND_ENTERED);
+        }
+        else
+        {
+            gameView.appendText("Hai finito il gioco non puoi usare questo comando.");
+        }
+    }
+
+    private void CommandsAllowedBeforeEndGame(Command command)
+    {
         if (command == Command.osserva)
         {
             observe(command.argComando);
@@ -233,7 +256,20 @@ public class CommandsParser
     }
 
 
+    public void parseCommand(String str)
+    {
+        Command command = Command.parseCommand(str);
 
+        if (gameModel.getPlayer().endGame)
+        {
+            CommandsAllowedAfterEndGame(command);
+        }
+        else
+        {
+            CommandsAllowedBeforeEndGame(command);
+        }
+
+    }
 
 
 }

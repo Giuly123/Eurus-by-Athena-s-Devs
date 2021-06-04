@@ -35,7 +35,9 @@ public class Player
     private Subject<String> onLookItem;
     private Subject<String> onObserve;
 
+    public boolean endGame;
     public InventoryManager inventoryManager;
+
     private InteractableHandler interactableHandler;
     private ItemsHandler itemsHandler;
 
@@ -44,7 +46,7 @@ public class Player
     private MapManager map;
     private boolean isLoaded = false;
 
-    public Player(boolean isContinuing, StartConfig startConfig, MapManager map) throws Exception
+    public Player(boolean isContinuing, StartConfig startConfig) throws Exception
     {
         onTryMovePlayerSubject = new Subject<>();
         onTrySolveGuessingGameSubject = new Subject<>();
@@ -57,7 +59,7 @@ public class Player
         interactableHandler = InteractableHandler.getInstance();
         inventoryManager = InventoryManager.getInstance();
         itemsHandler = ItemsHandler.getInstance();
-        this.map = map;
+        this.map = MapManager.getInstance();
         loadSaveFile(isContinuing, startConfig);
         isLoaded = true;
     }
@@ -96,16 +98,6 @@ public class Player
     public Subject<String> getOnLookItem()
     {
         return onLookItem;
-    }
-
-    public int getCurrentPositionRiga()
-    {
-        return currentPositionRiga;
-    }
-
-    public int getCurrentPositionColonna()
-    {
-        return currentPositionColonna;
     }
 
 
@@ -595,6 +587,7 @@ public class Player
                 interactableHandler.setUsedIteractable(player.usedInteractable);
                 inventoryManager.setInventoryList(player.inventory);
                 inventoryManager.setUsedItemsMap(player.usedItems);
+                endGame = player.endGame;
             } catch (IOException e)
             {
                 e.printStackTrace();
@@ -615,8 +608,13 @@ public class Player
     {
         if (isLoaded)
         {
-            RootPlayerJson player = new RootPlayerJson(currentPositionRiga, currentPositionColonna,
-                    interactableHandler.getUsedIteractable(), inventoryManager.getUsedItems(), inventoryManager.getInvetoryList());
+            RootPlayerJson player = new RootPlayerJson(
+                    currentPositionRiga,
+                    currentPositionColonna,
+                    interactableHandler.getUsedIteractable(),
+                    inventoryManager.getUsedItems(),
+                    inventoryManager.getInvetoryList(),
+                    endGame);
             String content = JsonParser.SerializeClassToJson(player);
             boolean result = Utilities.writeFile(Utilities.SAVE_JSON_PATH, content);
 

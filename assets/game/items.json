@@ -1,49 +1,97 @@
 {
   "itemsList": [
     {
-      "assetName": "pass.png",
-      "itemType": "itemToUseInteractable",
-      "isConsumable": true,
-      "id": "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-      "name": "pass221B",
-      "description": "Un pass magnetico. Potrebbe aprire una porta...",
-      "afterUsed": "Pass utilizzato. Porta aperta!"
-    },
-    {
       "assetName": "nota.jpg",
       "itemType": "document",
       "isConsumable": false,
-      "id": "ec59fe4c-d9da-4678-90b9-51485a464620",
-      "name": "nota#1",
-      "description": "“Apri la cella e diamo inizio alle danze.”",
+      "alias": [
+        "nota#1",
+        "nota#1",
+        "nota#1"
+      ],
+      "id": "15e3bed0-0a26-4006-a42e-7ed4f509885f",
+      "name": "Nota#1",
+      "description": "Apri la cella e diamo inizio alle danze!",
       "afterUsed": ""
+    },
+    {
+      "assetName": "pass.jpg",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "pass",
+        "Chiave",
+        "chiave"
+      ],
+      "id": "9d5ec29d-31a8-49e5-a190-000faa6e1b85",
+      "name": "pass221B",
+      "description": "Apre sicuramente qualcosa...",
+      "afterUsed": "Pass usato"
     },
     {
       "assetName": "torcia.jpg",
       "itemType": "itemToUseInteractable",
       "isConsumable": false,
-      "id": "aab92751-a24f-433a-b7b1-d866914126bc",
-      "name": "torcia",
-      "description": "Una torcia con pile. Può tornarmi utile!",
-      "afterUsed": "La torcia è accesa!"
+      "alias": [
+        "torcia",
+        "luce"
+      ],
+      "id": "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5",
+      "name": "Torcia",
+      "description": "Serve per fare luce nei posti bui!",
+      "afterUsed": ""
     },
     {
-      "assetName": "pass.png",
+      "assetName": "pass.jog",
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
-      "id": "4135868e-edcc-4c24-9930-77ccfa6f7026",
-      "name": "pass cella#222B",
-      "description": "Un pass magnetico. Potrebbe aprire una porta...",
-      "afterUsed": "Pass utilizzato. Porta aperta!"
+      "alias": [
+        "chiave",
+        "Chiave",
+        "pass"
+      ],
+      "id": "9b0c65f6-9653-4cf9-b5d8-2b3b5715d624",
+      "name": "pass222B",
+      "description": "Apre sicuramente qualcosa...",
+      "afterUsed": "Pass usato!"
+    },
+    {
+      "assetName": "nota.jpg",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "nota"
+      ],
+      "id": "01f1733d-47f6-4eec-8d57-645612859e23",
+      "name": "Nota2",
+      "description": "#paziente 6088\n\u003c\u003cDevo scappare di qui prima che mi prenda. La mia cella è vicina a quella del direttore. L’ho sentito infinite volte ripetere ‘vento’ durante questi anni. Sarà qualcosa di importante.\u003e\u003e\n",
+      "afterUsed": ""
     },
     {
       "assetName": "cerbottana.png",
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
-      "id": "53f11902-9391-4eb9-a2e7-8175db70a193",
-      "name": "cerbottana",
-      "description": "Una cerbottana con un dardo già inserito.",
-      "afterUsed": "La cerbottana si è distrutta!"
+      "alias": [
+        "cerbottana",
+        "fionda"
+      ],
+      "id": "95e22959-004e-4dea-9440-29f391fbae73",
+      "name": "Cerbottana con dardo",
+      "description": "Il dardo è pronto per essere sparato!",
+      "afterUsed": "Dopo lo sparo la cerbottana si è rotta!"
+    },
+    {
+      "assetName": "grimaldello.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "grimaldello",
+        "chiave"
+      ],
+      "id": "d60c9e24-3088-44c4-b21c-feb999227e57",
+      "name": "Grimaldello",
+      "description": "Serve per forzare le serrature...",
+      "afterUsed": "Dopo l\u0027utilizzo il grimaldello si è rotto!"
     }
   ]
 }

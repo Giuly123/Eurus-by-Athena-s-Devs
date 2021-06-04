@@ -269,7 +269,7 @@ public class GameView
             {
                 topPanel.setMinimumSize(new Dimension(22, 45));
                 topPanel.setPreferredSize(new Dimension(36, 45));
-                topPanel.setBackground(new Color(255, 102, 51));
+                topPanel.setBackground(new Color(31, 31, 31));
                 topPanel.setAutoscrolls(true);
                 topPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
                 topPanel.setForeground(new Color(255, 51, 204));
@@ -279,7 +279,7 @@ public class GameView
                 //======== leftPanel ========
                 {
                     leftPanel.setForeground(new Color(0, 204, 204));
-                    leftPanel.setBackground(new Color(255, 102, 255));
+                    leftPanel.setBackground(new Color(31, 31, 31));
                     leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.X_AXIS));
 
                     //---- audioSlider ----
@@ -291,7 +291,9 @@ public class GameView
                     audioSlider.setMajorTickSpacing(1);
                     audioSlider.setBorder(new CompoundBorder(
                             new BevelBorder(BevelBorder.LOWERED),
-                            new TitledBorder("Audio volume")));
+                            new TitledBorder(null, "Audio volume", TitledBorder.LEADING, TitledBorder.DEFAULT_POSITION, null, new Color(185, 255, 255))));
+                    audioSlider.setBackground(new Color(31, 31, 31));
+                    audioSlider.setForeground(new Color(193, 252, 253));
 
                     audioSlider.addMouseListener(new MouseAdapter() {
                         @Override
@@ -306,23 +308,25 @@ public class GameView
                 //======== rightPanel ========
                 {
                     rightPanel.setForeground(new Color(153, 255, 51));
-                    rightPanel.setBackground(new Color(251, 153, 255));
+                    rightPanel.setBackground(new Color(31, 31, 31));
 
                     //---- saveButton ----
                     saveButton.setText("save");
                     saveButton.setMargin(new Insets(5, 14, 5, 14));
                     saveButton.setForeground(new Color(255, 51, 51));
                     saveButton.setBackground(new Color(51, 255, 51));
+                    saveButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
                     //---- homeButton ----
                     homeButton.setText("home");
                     homeButton.setMargin(new Insets(5, 14, 5, 14));
-                    homeButton.setForeground(Color.red);
+                    homeButton.setForeground(new Color(153, 255, 51));
                     homeButton.setBackground(new Color(255, 51, 51));
+                    homeButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
                     //---- hSpacer1 ----
-                    hSpacer1.setForeground(new Color(193, 193, 193, 0));
-                    hSpacer1.setBackground(new Color(28, 39, 57, 0));
+                    hSpacer1.setForeground(new Color(193, 19, 241, 0));
+                    hSpacer1.setBackground(new Color(28, 39, 57, 0));;
 
                     GroupLayout rightPanelLayout = new GroupLayout(rightPanel);
                     rightPanel.setLayout(rightPanelLayout);
@@ -351,7 +355,7 @@ public class GameView
 
             //======== midPanel ========
             {
-                midPanel.setBackground(new Color(153, 153, 255));
+                midPanel.setBackground(new Color(110, 109, 173));
                 midPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
                 midPanel.setLayout(new CardLayout());
 
@@ -362,8 +366,9 @@ public class GameView
                     //======== textAreaPanel ========
                     {
                         textAreaPanel.setPreferredSize(new Dimension(350, 533));
-                        textAreaPanel.setBackground(new Color(153, 0, 153));
+                        textAreaPanel.setBackground(new Color(224, 104, 107));
                         textAreaPanel.setMinimumSize(new Dimension(49, 500));
+                        textAreaPanel.setBorder(null);
                         textAreaPanel.setLayout(new BorderLayout(0, 8));
 
                         //======== textAreaScrollPane ========
@@ -371,11 +376,15 @@ public class GameView
                             textAreaScrollPane.setAutoscrolls(true);
                             textAreaScrollPane.setPreferredSize(new Dimension(35, 200));
                             textAreaScrollPane.setMaximumSize(new Dimension(32767, 100));
+                            textAreaScrollPane.setBorder(new LineBorder(new Color(224, 104, 107), 5));
 
                             //---- textArea ----
                             textArea.setEditable(false);
                             textArea.setWrapStyleWord(true);
                             textArea.setMargin(new Insets(4, 4, 4, 4));
+                            textArea.setBackground(new Color(41, 41, 41));
+                            textArea.setForeground(new Color(235, 235, 235));
+                            textArea.setBorder(null);
                             textAreaScrollPane.setViewportView(textArea);
                         }
                         textAreaPanel.add(textAreaScrollPane, BorderLayout.CENTER);
@@ -383,6 +392,9 @@ public class GameView
                         //---- inputField ----
                         inputField.setPreferredSize(new Dimension(5, 30));
                         inputField.setMargin(new Insets(10, 4, 4, 4));
+                        inputField.setBackground(new Color(41, 41, 41));
+                        inputField.setForeground(new Color(235, 235, 235));
+                        inputField.setBorder(null);
                         textAreaPanel.add(inputField, BorderLayout.SOUTH);
                     }
                     mainPanel.add(textAreaPanel);
@@ -392,12 +404,16 @@ public class GameView
                         inventoryPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
                         inventoryPanel.setPreferredSize(new Dimension(180, 500));
                         inventoryPanel.setMinimumSize(new Dimension(22, 500));
-                        inventoryPanel.setBackground(new Color(102, 255, 102));
+                        inventoryPanel.setBackground(new Color(224, 104, 107));
+                        inventoryPanel.setForeground(new Color(235, 235, 235));
+                        inventoryPanel.setBorder(null);
                         inventoryPanel.setLayout(new BorderLayout());
 
                         //======== inventoryScrollPane ========
                         {
-                            inventoryScrollPane.setBackground(new Color(255, 153, 153));
+                            inventoryList.setBackground(new Color(41, 41, 41));
+                            inventoryList.setForeground(new Color(235, 235, 235));
+                            inventoryList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
                             inventoryScrollPane.setViewportView(inventoryList);
                         }
                         inventoryPanel.add(inventoryScrollPane, BorderLayout.CENTER);
@@ -405,9 +421,10 @@ public class GameView
                         //======== panelImage ========
                         {
                             panelImage.setPreferredSize(new Dimension(220, 220));
-                            panelImage.setBackground(new Color(255, 255, 153));
+                            panelImage.setBackground(new Color(240, 215, 211));
                             panelImage.setMinimumSize(new Dimension(220, 220));
                             panelImage.setMaximumSize(new Dimension(220, 220));
+                            panelImage.setBorder(null);
                             panelImage.setLayout(new CardLayout());
 
                             //---- labelImage ----
@@ -422,8 +439,8 @@ public class GameView
                         inventoryLabel.setPreferredSize(new Dimension(65, 25));
                         inventoryLabel.setHorizontalAlignment(SwingConstants.CENTER);
                         inventoryLabel.setFont(new Font(Font.DIALOG, Font.BOLD, 16));
-                        inventoryLabel.setBackground(Color.black);
-                        inventoryLabel.setForeground(Color.black);
+                        inventoryLabel.setBackground(new Color(102, 12, 121));
+                        inventoryLabel.setForeground(new Color(235, 235, 235));
                         inventoryPanel.add(inventoryLabel, BorderLayout.PAGE_START);
                     }
                     mainPanel.add(inventoryPanel);

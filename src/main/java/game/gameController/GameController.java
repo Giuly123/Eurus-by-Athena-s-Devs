@@ -2,7 +2,7 @@ package game.gameController;
 
 
 import game.managers.GameEventsHandler;
-import game.GameModel;
+import game.gameModel.GameModel;
 import game.entity.item.Item;
 import game.gameUtilities.observerPattern.Observer;
 import game.gameUtilities.Sentences;
@@ -73,24 +73,9 @@ public class GameController
     }
 
 
-    final private ActionListener onClickHomeButton = new ActionListener()
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            GUIManager.getInstance().backMainMenu();
-        }
-    };
+    final private ActionListener onClickHomeButton = e -> GUIManager.getInstance().backMainMenu();
 
-
-    final private ActionListener onSaveButton = new ActionListener()
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            saveGame();
-        }
-    };
+    final private ActionListener onSaveButton = e -> saveGame();
 
 
     private void onEnter(String string)
@@ -112,32 +97,24 @@ public class GameController
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>()
-            {
-                @Override
-                protected Void doInBackground()
-                {
-                    try {
-                        String textFiledContent = Utilities.cleanString(gameView.getTextField().getText());
+            Thread thread = new Thread(() -> {
+                try {
+                    String textFiledContent = Utilities.cleanString(gameView.getTextField().getText());
 
-                        if(textFiledContent.length() > 0)
-                        {
-                            onEnter(textFiledContent);
-                        }
-
-                        gameView.getTextField().setText("");
-
-                    }
-                    catch (Exception e)
+                    if(textFiledContent.length() > 0)
                     {
-                        e.printStackTrace();
+                        onEnter(textFiledContent);
                     }
 
-                    return null;
+                    gameView.getTextField().setText("");
                 }
-            };
+                catch (Exception exception)
+                {
+                    exception.printStackTrace();
+                }
+            });
 
-            worker.execute();
+            thread.start();
         }
 
     };

@@ -1,6 +1,6 @@
 package game.managers;
 
-import game.GameModel;
+import game.gameModel.GameModel;
 import game.entity.guessingGame.GuessingGame;
 import game.entity.interactable.Interactable;
 import game.entity.interactable.InteractableType;
@@ -25,7 +25,7 @@ public class GameEventsHandler
     private Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
     private Observer<InteractStatus> observerTryInteract = interactArgs -> onTryInteract(interactArgs);
     private Observer<TakeItemStatus> observerTryTakeItem = tekeItemArgs -> onTryTakeItem(tekeItemArgs);
-    private Observer<String> observerLookItem = Itemdescription -> onLookItem(Itemdescription);
+    private Observer<String> observerLookItem = ItemDescription -> onLookItem(ItemDescription);
     private Observer<String> observerObserve = description -> onObserve(description);
 
     private Observer<Item> observerAddItemToInventory = item -> addItemToInventory(item);
@@ -92,7 +92,8 @@ public class GameEventsHandler
 
             if (status.interactable.isEndGame())
             {
-                //TODO
+                gameView.appendText(Sentences.END_GAME_STRING);
+                gameModel.getPlayer().endGame = true;
             }
         }
         else if (status == InteractStatus.alreadyUsed)
@@ -116,7 +117,6 @@ public class GameEventsHandler
     }
 
 
-
     private boolean tryUnlockInteractable(Interactable interactable)
     {
         boolean unlocked = false;
@@ -135,7 +135,6 @@ public class GameEventsHandler
                 unlocked = true;
             }
         }
-
 
         return unlocked;
     }
@@ -238,6 +237,7 @@ public class GameEventsHandler
     {
         gameView.appendText(description);
     }
+
 
     private void onLookItem(String description)
     {

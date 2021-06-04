@@ -1,6 +1,6 @@
 package game.gui;
 
-import game.GameModel;
+import game.gameModel.GameModel;
 import game.gameController.GameController;
 import game.gameUtilities.Utilities;
 
@@ -46,10 +46,9 @@ public class GUIManager
 
     public void startNewGame(boolean isContinuing)
     {
-        SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>()
+        Thread thread = new Thread(() ->
         {
-            @Override
-            protected Void doInBackground() throws Exception
+            try
             {
                 GameModel gameModel = new GameModel();
                 GameView gameView = new GameView();
@@ -57,12 +56,14 @@ public class GUIManager
                 enableMainMenuFrame(false);
 
                 gameController = new GameController(gameModel, gameView, isContinuing);
-
-                return null;
             }
-        };
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        });
 
-        worker.execute();
+        thread.start();
     }
 
 

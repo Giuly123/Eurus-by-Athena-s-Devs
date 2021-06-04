@@ -1,6 +1,7 @@
-package game;
+package game.gameModel;
 
 
+import game.StartConfig;
 import game.managers.MapManager;
 import game.player.Player;
 import game.managers.InteractableHandler;
@@ -25,8 +26,8 @@ public class GameModel
         startConfig = new StartConfig();
         itemsHandler = ItemsHandler.getInstance();
         interactableHandler = InteractableHandler.getInstance();
-        map = new MapManager();
-        player = new Player(isContinuing, startConfig, map);
+        map = MapManager.getInstance();
+        player = new Player(isContinuing, startConfig);
     }
 
 

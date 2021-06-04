@@ -2,13 +2,8 @@
   "tiles": [
     {
       "allowedDirections": [
-        "East"
       ],
-      "shortDescription": "123321",
-      "fullDescription": "123321",
-      "descriptionOffLimitsArea": "",
       "interactableHere": [
-        "5ddf6d97-712a-4380-9e0b-707fc515c091"
       ],
       "interactableNeededToEnter": [
       ],
@@ -16,23 +11,19 @@
       ],
       "guessingGameToEnter": {
       },
-      "interactableToSwitchOnLight": "5ddf6d97-712a-4380-9e0b-707fc515c091",
-      "descriptionOfDarkRoom": "Scuro",
       "hasGuessingGame": false,
-      "neededToSwitchOnLight": true
+      "neededToSwitchOnLight": false
     },
     {
       "allowedDirections": [
-        "North",
-        "West"
+        "North"
       ],
       "shortDescription": "Cella#221B - Ti trovi in una cella. La luce bianca ti acceca.",
       "fullDescription": "Sei in una cella, ci sono solo i tuoi amici, e alla tua destra un comodino con un cassetto. Sarà il caso di aprirlo, potrebbe contenere qualcosa!",
-      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…\n",
       "interactableHere": [
-        "1d12188f-7cbc-4c4e-a783-e63a28386a5c",
-        "708259d9-031f-4c34-a8d2-c237f2455ba8",
-        "8b9b0adc-9146-45e1-a759-c184fae44836"
+        "bfa63d12-e592-44af-8fe4-cffb4712245f",
+        "dd162e26-1bad-4e26-bf33-a0750f59ce05"
       ],
       "interactableNeededToEnter": [
       ],
@@ -40,7 +31,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -55,7 +45,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -70,7 +59,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -78,19 +66,19 @@
       "allowedDirections": [
         "East"
       ],
-      "shortDescription": "Cella#222B - Una cella simile a quella dove ti sei svegliato!",
+      "shortDescription": "#Cella 222B - A primo impatto sembra una cella uguale alla precedente.",
       "fullDescription": "Una luce fredda illumina la stanza. C’è una cassaforte alla tua sinistra con un’incisione dorata che recita “Avv.” e alla tua destra, un comodino simile a quello della cella 221B.",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
+        "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5"
       ],
       "interactableNeededToEnter": [
-        "209bb37b-ba48-4773-a9a4-4ca416bf6109"
+        "20070cbd-e100-4f46-ba3e-279257598a86"
       ],
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -100,21 +88,20 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio - Area 1: Un lungo corridoio. Ci sono quattro porte. Saranno chiuse? Controllare non fa mai male.",
-      "fullDescription": "Guardandovi indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA SINISTRA”. C\u0027è una porta alla tua sinista. Sembra chiusa, ma il corridoio è lungo...Alla tua destra noti un cadavere. ",
+      "shortDescription": "Corridoio ala sinistra zona 1A - Un lungo corridoio. Ci sono quattro porte. Saranno chiuse? Controllare non fa mai male.\n ",
+      "fullDescription": "Guardandovi indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA SINISTRA”. C\u0027è una porta alla tua sinistra, ma il corridoio è lungo...Alla tua destra noti un cadavere.",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…\n",
       "interactableHere": [
-        "209bb37b-ba48-4773-a9a4-4ca416bf6109",
-        "4161fc61-c3db-4b30-a7d1-a41ed07fc955"
+        "20070cbd-e100-4f46-ba3e-279257598a86",
+        "e0441288-a78c-42c7-b343-0b7358617957"
       ],
       "interactableNeededToEnter": [
-        "708259d9-031f-4c34-a8d2-c237f2455ba8"
+        "bfa63d12-e592-44af-8fe4-cffb4712245f"
       ],
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -129,7 +116,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -144,22 +130,29 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
-
     {
-      "allowedDirections": ["East"],
-      "shortDescription": "culo",
-      "fullDescription": "",
+      "allowedDirections": [
+        "East"
+      ],
+      "shortDescription": "#Cella 223B - A primo impatto sembra una cella uguale alla precedente.",
+      "fullDescription": "La luce della torcia ti permette di vedere meglio ciò che hai intorno. C’è un comodino con un cassetto alla tua destra.",
       "descriptionOffLimitsArea": "",
-      "interactableHere": [],
-      "interactableNeededToEnter": [],
-      "itemsToTake": [],
-      "itemToSwitch": [ "aab92751-a24f-433a-b7b1-d866914126bc" ],
-      "guessingGameToEnter": {},
-      "descriptionOfDarkRoom": "",
+      "interactableHere": [
+        "9e71b832-06bd-4730-acd2-29487ad76ea9",
+        "1d2b8a0d-3fc6-43e2-bd56-ad23365f3363",
+        "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5"
+      ],
+      "interactableNeededToEnter": [
+      ],
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+      "interactableToSwitchOnLight": "9e71b832-06bd-4730-acd2-29487ad76ea9",
+      "descriptionOfDarkRoom": "La cella è immersa nell’oscurità. Non si vede davvero nulla.\n",
       "hasGuessingGame": false,
       "neededToSwitchOnLight": true
     },
@@ -169,11 +162,10 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio - Area 2: Un lungo corridoio. Ci sono quattro porte. Saranno chiuse? Controllare non fa mai male.",
-      "fullDescription": "C\u0027è una porta alla tua sinistra. Il corridoio sembra non avere fine.",
-      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…\n",
+      "shortDescription": "Corridoio ala sinistra zona 1B - Un lungo corridoio. Ci sono quattro porte. Saranno chiuse? Controllare non fa mai male.",
+      "fullDescription": "Un corridoio davvero lungo, ma intravedi la fine. Alla tua sinistra una porta simile alle altre, sembra aperta...",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
-        "3880ee2b-fb68-4c92-b461-5e8ce87a3126"
       ],
       "interactableNeededToEnter": [
       ],
@@ -181,7 +173,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -196,7 +187,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -211,7 +201,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -226,7 +215,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -241,7 +229,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -256,7 +243,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
@@ -271,7 +257,6 @@
       ],
       "guessingGameToEnter": {
       },
-
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     }
