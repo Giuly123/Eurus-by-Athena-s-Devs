@@ -41,7 +41,7 @@ public enum Command
 
         if (strings.length > 1)
         {
-            strings[1] = Utilities.cleanCommand(strings[1], preposizioni);
+            strings[1] = Utilities.escapePreposizioni(strings[1], preposizioni);
             result.setValue(strings[1]);
         }
 

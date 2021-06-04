@@ -49,7 +49,7 @@ public class Utilities
     }
 
 
-    public static String cleanCommand(String startString, String[] listString)
+    public static String escapePreposizioni(String startString, String[] listString)
     {
         for(String string : listString)
         {
