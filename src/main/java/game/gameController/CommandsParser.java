@@ -167,10 +167,7 @@ public class CommandsParser
         if (command == Command.salva)
         {
             gameModel.getPlayer().saveFile();
-        }
-        else if (command == Command.esci)
-        {
-            // esci
+            gameView.appendText(Sentences.SAVE_GAME);
         }
         else if (command == Command.help)
         {
@@ -182,7 +179,7 @@ public class CommandsParser
         }
         else
         {
-            gameView.appendText("Hai finito il gioco non puoi usare questo comando.");
+            gameView.appendText(Sentences.END_GAME_HELP_STRING);
         }
     }
 
@@ -241,10 +238,7 @@ public class CommandsParser
             gameModel.getPlayer().saveFile();
             gameView.appendText(Sentences.SAVE_GAME);
         }
-        else if (command == Command.esci)
-        {
-            // esci
-        }
+
         else if (command == Command.help)
         {
             gameView.appendText(Sentences.HELP_MESSAGE);
@@ -268,7 +262,6 @@ public class CommandsParser
         {
             CommandsAllowedBeforeEndGame(command);
         }
-
     }
 
 

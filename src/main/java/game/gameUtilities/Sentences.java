@@ -84,5 +84,6 @@ public class Sentences
     public static final String SAVE_GAME = "Salvataggio effettuato";
 
     public static final String END_GAME_STRING = "Complimenti, hai finito il gioco. Grazie per aver giocato.";
+    public static final String END_GAME_HELP_STRING = "Hai finito il gioco non puoi usare questo comando";
 
 }
