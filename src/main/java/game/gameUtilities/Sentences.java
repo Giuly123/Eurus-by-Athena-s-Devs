@@ -25,7 +25,7 @@ public class Sentences
     public static final String TAKE_COMMAND = "Digita 'prendi + nome oggetto' per raccogliere un oggetto\n";
 
     public static final String HELP_MESSAGE =
-        "I comandi possibili sono:\n" + HELP_COMMAND + NORTH_COMMAND + SOUTH_COMMAND + WEST_COMMAND + EAST_COMMAND +
+        "I comandi possibili sono:\n\n" + HELP_COMMAND + NORTH_COMMAND + SOUTH_COMMAND + WEST_COMMAND + EAST_COMMAND +
             OPEN_COMMAND + READ_COMMAND + LOOK_COMMAND + SEE_TILE_COMMAND + USE_COMMAND + TO_ANSWER_COMMAND +TAKE_COMMAND + "\n";
 
     public static final String WRONG_COMMAND_ENTERED = "Questo comando non esiste";
