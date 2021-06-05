@@ -629,6 +629,10 @@ public class Player
             interactableHandler.setUsedIteractable(new ArrayList<>());
             inventoryManager.setInventoryList(new ArrayList<>());
             inventoryManager.setUsedItemsMap(new HashMap<>());
+            dialoguesHandler.setDialoguesMade(new ArrayList<>());
+            dialoguesHandler.setDialoguesMade(new ArrayList<>());
+            guessingGamesHandler.setUSedGuessingGame(new ArrayList<>());
+
             endGame = false;
         }
 
