@@ -5,7 +5,6 @@
       ],
       "interactableHere": [
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -24,7 +23,6 @@
         "bfa63d12-e592-44af-8fe4-cffb4712245f",
         "dd162e26-1bad-4e26-bf33-a0750f59ce05"
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -37,7 +35,6 @@
       ],
       "interactableHere": [
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -47,15 +44,19 @@
     },
     {
       "allowedDirections": [
+        "South"
       ],
-      "shortDescription": "",
-      "fullDescription": "",
-      "descriptionOffLimitsArea": "",
+      "shortDescription": "Stanza Vuota - Una camera a prima vista inutile",
+      "fullDescription": "Solo la tv nella camera...",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
+        "ac91d441-f3d0-4844-a961-f56d3519811c",
+        "30813974-9dc8-4d09-b6a4-3e93e87395b2"
       ],
-
       "itemsToTake": [
+        "3970fa72-b4bb-4758-950b-6b811416dbb9"
       ],
+      "dialogEventId": "63c8a9b8-d8cb-453e-95d3-916955298ee2",
       "guessingGameToEnter": {
         "text": "Qual è il pin?",
         "afterAnswered": "Pin corretto!",
@@ -74,9 +75,7 @@
       "interactableHere": [
         "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5"
       ],
-      "interactableNeededToEnter":
-      "20070cbd-e100-4f46-ba3e-279257598a86",
-
+      "interactableNeededToEnter": "20070cbd-e100-4f46-ba3e-279257598a86",
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -97,9 +96,7 @@
         "20070cbd-e100-4f46-ba3e-279257598a86",
         "e0441288-a78c-42c7-b343-0b7358617957"
       ],
-      "interactableNeededToEnter":
-      "bfa63d12-e592-44af-8fe4-cffb4712245f",
-
+      "interactableNeededToEnter": "bfa63d12-e592-44af-8fe4-cffb4712245f",
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -115,10 +112,9 @@
       "fullDescription": "Una luce fredda illumina la stanza, sembra una cella diversa dalle altre. Al centro della stanza c'è una valigetta!\n",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
+        "5bad8f54-1754-4a33-a973-0c3fbc4c135a"
       ],
-      "interactableNeededToEnter":
-      "574d2776-8e7e-4101-af3c-e5684f454783",
-
+      "interactableNeededToEnter": "574d2776-8e7e-4101-af3c-e5684f454783",
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -138,7 +134,6 @@
       "interactableHere": [
         "574d2776-8e7e-4101-af3c-e5684f454783"
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -158,7 +153,6 @@
         "1d2b8a0d-3fc6-43e2-bd56-ad23365f3363",
         "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5"
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -179,7 +173,6 @@
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -198,7 +191,6 @@
         "1ea9c42b-7987-41d0-9a2a-d105cbdfc050",
         "9c48b6c1-c1f2-492d-a515-5479687a127c"
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -219,7 +211,6 @@
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -238,8 +229,8 @@
       "fullDescription": "Una luce fredda illumina la stanza. Nella stanza c’è una scrivania. Sulla scrivania è riposto un borsello nero in pelle. \n",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
+        "e9297d9b-ae02-41a6-85c2-b4637f6aecac"
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -262,7 +253,6 @@
       "interactableHere": [
         "b34b3e7d-b887-489b-808e-66b309de560b"
       ],
-
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -278,16 +268,16 @@
         "East",
         "West"
       ],
-      "shortDescription": "Dopo aver aperto la porta blindata, al centro della nuova stanza noti una tv. Appena entrati questa si accende da sola e una voce comincia a parlare.\n“Ciao nome_giocatore, ti ricordi di me? Ti sono mancata?”, chiede la voce dallo schermo.\nLa tv mostra una figura femminile. E’ seduta in quella che sembra essere una sala di controllo.\n“Non è possibile…”, dice Cromyft, visibilmente preoccupato. “Vedi, caro nome_giocatore, siamo nell’ospedale psichiatrico di Risshenford, dove è rinchiusa nostra sorella, Eurus.”\n“Avete una sorella?”, domanda Nostaw con aria sorpresa. Cromyft annuisce con aria cupa senza aggiungere altro.\nEro sconvolto dalla notizia. Non sapevo di avere una sorella. Non avevo alcun ricordo di lei. \n...\nNel frattempo, la voce femminile riprende a parlare: “nome_giocatore, davvero non ti ricordi di me? Affascinante. Saltiamo gli inconvenevoli. Siete nel mio gioco. Ci rivredremo, se riuscirete ad uscirne. Altrimenti morirete qui, da soli e nessuno lo verrà a sapere!”. \n*Rumore di tv che si spegne* \nEravamo in un macabro gioco ideato da mia sorella. Fino a qualche minuto fa non avevo neanche una sorella… Ma perché era qui? Come aveva preso il controllo dell’ospedale in cui era rinchiusa? Ho troppe domande...\nNostaw: “Ci devi delle spiegazioni, Mr. 007”. \nCromyft: “Capiamo come uscire da qui e vi dirò tutto!”. Dopodiché cadde il silenzio.\nStanza Tetra - Al centro della stanza una vecchia tv poggiata su un tavolino. Sembra non funzionare più. Si vede ben poco, la stanza è buia.\n",
+      "shortDescription": "Stanza Tetra - Una tv spenta al centro della stanza...",
       "fullDescription": "A causa della poca luce, prima non ti eri accorto di una scritta sulla parete destra “Avv. 3826”. In fondo alla stanza, davanti a te, si trova una porta, sembra ci sia bisogno di risolvere un rompicapo. In alto, in un angolo, lampeggia la spia di una telecamera… Noti, infine, un bersaglio. Ti ricorda quando da piccolo lo colpivi con le freccette",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "34b00119-659a-4a1f-9166-d586764ee508",
-        "afd60cd7-5da0-4104-ac9d-1ca506baa678"
+        "afd60cd7-5da0-4104-ac9d-1ca506baa678",
+        "c8bf59e9-7e9c-4bc2-97a7-c4e71e671f33"
       ],
-      "interactableNeededToEnter":
-      "b34b3e7d-b887-489b-808e-66b309de560b",
-
+      "dialogEventId": "4ed6f4f1-361c-40a8-8062-4841554dd0b0",
+      "interactableNeededToEnter": "b34b3e7d-b887-489b-808e-66b309de560b",
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -302,14 +292,13 @@
         "South",
         "West"
       ],
-      "shortDescription": "Culo",
+      "shortDescription": "Sala dei computer - Una stanza piena di computer inutilizzabili...",
       "fullDescription": "Tanti computer e una porta da sbloccare. Intravedi una porta a Sud. In alto, in un angolo, lampeggia la spia di una telecamera…",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
-      "interactableNeededToEnter":
-      "afd60cd7-5da0-4104-ac9d-1ca506baa678",
-
+      "dialogEventId": "4e0819e2-4563-45ff-9b83-da512a70923d",
+      "interactableNeededToEnter": "afd60cd7-5da0-4104-ac9d-1ca506baa678",
       "itemsToTake": [
       ],
       "guessingGameToEnter": {

@@ -12,10 +12,6 @@
       "guessingGame": {
       },
       "alias": [
-        "comodino",
-        "cassa",
-        "chest",
-        "Chest",
         "cassetto"
       ],
       "id": "dd162e26-1bad-4e26-bf33-a0750f59ce05",
@@ -34,12 +30,10 @@
       "guessingGame": {
       },
       "alias": [
-        "porta",
-        "cancello"
       ],
       "id": "bfa63d12-e592-44af-8fe4-cffb4712245f",
       "name": "Porta",
-      "description": "Una porta blindata. Servirebbe una specie di chiave...",
+      "description": "Una porta blindata. Qualcosa potrebbe aprirla...",
       "afterUsed": "Porta aperta!"
     },
     {
@@ -54,13 +48,12 @@
       },
       "alias": [
         "corpo",
-        "morto",
-        "cadavere"
+        "morto"
       ],
       "id": "e0441288-a78c-42c7-b343-0b7358617957",
       "name": "Cadavere",
       "description": "Chissà cosa gli sarà successo...",
-      "afterUsed": ""
+      "afterUsed": "Sembra essere ancora caldo..."
     },
     {
       "interactableType": "door",
@@ -77,7 +70,7 @@
       ],
       "id": "20070cbd-e100-4f46-ba3e-279257598a86",
       "name": "Cella222B",
-      "description": "Una porta blindata. Servirebbe una specie di chiave...\n",
+      "description": "Una porta blindata. Qualcosa potrebbe aprirla...\n",
       "afterUsed": "Porta aperta!"
     },
     {
@@ -90,19 +83,33 @@
       ],
       "endGame": false,
       "guessingGame": {
-        "text": "Inserire il pin:",
-        "afterAnswered": "Pin corretto!",
+        "text": "Qual è il pin?",
+        "afterAnswered": "Pin corretto! La cassaforte sembra sbloccata! Riprova ad aprirla ora...",
         "correctAnswer": "3826"
       },
       "alias": [
-        "cassa",
-        "cassaforte",
-        "chest"
+        "cassa"
       ],
       "id": "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5",
       "name": "Cassaforte",
       "description": "Una cassaforte, per aprirla richiede una password!",
-      "afterUsed": "La cassaforte sembra sbloccata! Riprova ad aprirla ora..."
+      "afterUsed": "Hai preso tutti gli item nella cassaforte!"
+    },
+    {
+      "interactableType": "door",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "981d8411-bcb9-4c57-b277-936bb135b870",
+      "name": "Porta direttore",
+      "description": "Una porta, sembra diversa da quelle già incontrate... Richiede una password!",
+      "afterUsed": "Porta aperta!"
     },
     {
       "interactableType": "switchOnLight",
@@ -122,6 +129,204 @@
       "afterUsed": ""
     },
     {
+      "interactableType": "switchOnLight",
+      "itemsNeededToUse": [
+        "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5"
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "9c48b6c1-c1f2-492d-a515-5479687a127c",
+      "name": "StanzaTetra3",
+      "description": "",
+      "afterUsed": ""
+    },
+    {
+      "interactableType": "chest",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+        "5e849b0b-3fc4-413b-919a-28ff3485b850",
+        "a8f93b58-1ce7-45fb-895e-733ddadcd168"
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+        "scrigno"
+      ],
+      "id": "1ea9c42b-7987-41d0-9a2a-d105cbdfc050",
+      "name": "Baule",
+      "description": "Un baule, sembra davvero vecchio...",
+      "afterUsed": "Baule aperto!"
+    },
+    {
+      "interactableType": "door",
+      "itemsNeededToUse": [
+        "a8f93b58-1ce7-45fb-895e-733ddadcd168"
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "574d2776-8e7e-4101-af3c-e5684f454783",
+      "name": "Cella225B",
+      "description": "Una porta blindata. Qualcosa potrebbe aprirla...",
+      "afterUsed": "Porta Aperta!"
+    },
+    {
+      "interactableType": "switchOnLight",
+      "itemsNeededToUse": [
+        "3970fa72-b4bb-4758-950b-6b811416dbb9"
+      ],
+      "containedItems": [
+      ],
+      "endGame": true,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "ac91d441-f3d0-4844-a961-f56d3519811c",
+      "name": "Finale 1",
+      "description": "",
+      "afterUsed": "*Rumore di porta che si apre\n\nEurus: “NO! Fermati, aspetta!”\n\nLa mia strategia di ingannarla tentando il suicidio come mi consigliava quella nota, aveva funzionato.\n\n*Colpo di pistola\n\n\u003c\u003cL’hai colpita\u003e\u003e\nEurus: “non doveva finire così… dovevate essere voi a morire...”\n\nCromyft:”Hai fallito, sorellina”\n\n...\n\nNostaw: “Oltre la porta intravedo l’uscita.”\n\nCromyft: “Andiamo via. Fuori di qui vi racconterò tutto!”.\n\nGAME OVER!"
+    },
+    {
+      "interactableType": "switchOnLight",
+      "itemsNeededToUse": [
+        "bdfd4755-d983-4b92-be11-3b2a84199a16"
+      ],
+      "containedItems": [
+      ],
+      "endGame": true,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "30813974-9dc8-4d09-b6a4-3e93e87395b2",
+      "name": "Finale 2",
+      "description": "",
+      "afterUsed": "*Rumore di spari\n\n*Rumore di corpi che cadono al suolo.\n\nNon è possibile, non ci credo ancora di averlo fatto.\n\n*Rumore di porta che si apre\n\n“Alla fine hai scelto. Era tutto un test, questo gioco, questo posto… Dovevo vedere fino a che punto ti saresti spinto pur di salvarti. Però l’egoismo di portare a casa la pelle ha preso il sopravvento ed hai ucciso uno dei tuoi compagni di viaggio. Lo stesso egoismo di tuo fratello che mi rinchiuse qui quando ero solo una bambina, isolandomi dal resto del mondo. Hai fallito ed io ho avuto la mia vendetta!”\n\n*Colpo di pistola\n\n...\n\nGAME OVER!"
+    },
+    {
+      "interactableType": "switchOnLight",
+      "itemsNeededToUse": [
+        "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5"
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "c8bf59e9-7e9c-4bc2-97a7-c4e71e671f33",
+      "name": "StanzaTetra2",
+      "description": "",
+      "afterUsed": ""
+    },
+    {
+      "interactableType": "chest",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+        "477dbbe8-913a-4029-9e8c-83e0752b127d",
+        "74e2c786-7582-4e56-89d4-5d3e20630fa0"
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+        "valigetta"
+      ],
+      "id": "5bad8f54-1754-4a33-a973-0c3fbc4c135a",
+      "name": "Valigia",
+      "description": "Una valigia in pelle...",
+      "afterUsed": "Valigia aperta!"
+    },
+    {
+      "interactableType": "chest",
+      "itemsNeededToUse": [
+        "95e22959-004e-4dea-9440-29f391fbae73"
+      ],
+      "containedItems": [
+        "23f61a48-b4ca-4f8e-9b02-c3c88ac17d34"
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+        "cover"
+      ],
+      "id": "34b00119-659a-4a1f-9166-d586764ee508",
+      "name": "Custodia",
+      "description": "",
+      "afterUsed": "La custodia si è lacerata!"
+    },
+    {
+      "interactableType": "chest",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+        "dc55c4ef-59db-46b8-9c75-285cef6402f0",
+        "cd4bdae2-ac05-4f1d-b3d9-5a5993f269dc",
+        "0fcff3ce-712b-4e51-9db4-9633fec37e35",
+        "ec749676-742a-47bc-810f-e033309cda10",
+        "bdfd4755-d983-4b92-be11-3b2a84199a16"
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+        "borsa"
+      ],
+      "id": "e9297d9b-ae02-41a6-85c2-b4637f6aecac",
+      "name": "Borsello",
+      "description": "Il borsello del direttore...",
+      "afterUsed": "Borsello aperto!"
+    },
+    {
+      "interactableType": "door",
+      "itemsNeededToUse": [
+        "23f61a48-b4ca-4f8e-9b02-c3c88ac17d34"
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "afd60cd7-5da0-4104-ac9d-1ca506baa678",
+      "name": "Porta puzzle",
+      "description": "Una porta cosparsa di sangue, di chi sarà? Per passare richiede di risolvere un puzzle. Manca un pezzo!\n",
+      "afterUsed": "Porta aperta!"
+    },
+    {
+      "interactableType": "door",
+      "itemsNeededToUse": [
+        "d60c9e24-3088-44c4-b21c-feb999227e57"
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "b34b3e7d-b887-489b-808e-66b309de560b",
+      "name": "Porta con Serratura",
+      "description": "Una porta con una strana serratura...",
+      "afterUsed": ""
+    },
+    {
       "interactableType": "chest",
       "itemsNeededToUse": [
       ],
@@ -133,15 +338,11 @@
       "guessingGame": {
       },
       "alias": [
-        "comodino",
-        "cassa",
-        "chest",
-        "cassetto"
       ],
       "id": "1d2b8a0d-3fc6-43e2-bd56-ad23365f3363",
-      "name": "Comodino2",
-      "description": "Un comodino con un cassetto!",
-      "afterUsed": "Cassetto aperto!"
+      "name": "Armadio",
+      "description": "Un armadio enorme!",
+      "afterUsed": "Armadio aperto!"
     }
   ]
 }
