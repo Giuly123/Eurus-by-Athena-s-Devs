@@ -18,7 +18,6 @@ public enum Command
     est(new String[]{"est","e","destra","dx"}),
     ovest(new String[]{"ovest","o","sinistra","sx"}),
     salva(new String[]{"salva","save"}),
-    esci(new String[]{"exit","esci"}),
     help(new String[]{"-h","--help","help"});
 
 
