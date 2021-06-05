@@ -1,6 +1,5 @@
 package game.gui;
 
-
 import java.awt.event.*;
 import javax.swing.border.*;
 import game.entity.item.Item;
