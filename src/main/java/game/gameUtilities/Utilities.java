@@ -3,6 +3,8 @@ package game.gameUtilities;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 // Classe per variabili e metodi statici
@@ -21,6 +23,7 @@ public class Utilities
     public static final String START_CONFIG_JSON_PATH = "assets/game/startConfig.json";
     public static final String ITEMS_JSON_PATH = "assets/game/items.json";
     public static final String INTERACTABLES_JSON_PATH = "assets/game/interactables.json";
+    public static final String DIALOGS_JSON_PATH = "assets/game/dialogs.json";
     public static final String MAP_JSON_PATH = "assets/game/map.json";
     public static final String SAVE_JSON_PATH = "assets/save.json";
 
@@ -69,12 +72,13 @@ public class Utilities
     }
 
 
-    public static Boolean writeFile(String filePath, String content)
+
+    public static Boolean writeFile(String filePath, String content, boolean append)
     {
         Boolean isSuccessfully = true;
 
         try {
-            FileWriter fileWriter = new FileWriter(filePath);
+            FileWriter fileWriter = new FileWriter(filePath, append);
 
             fileWriter.write(content);
             fileWriter.close();
@@ -89,5 +93,11 @@ public class Utilities
     }
 
 
+    public static String getCurrentData()
+    {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        return dtf.format(now);
+    }
 
 }

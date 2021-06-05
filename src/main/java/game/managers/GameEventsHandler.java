@@ -1,5 +1,6 @@
 package game.managers;
 
+import game.entity.dialog.DialogEvent;
 import game.gameModel.GameModel;
 import game.entity.guessingGame.GuessingGame;
 import game.entity.interactable.Interactable;
@@ -18,13 +19,14 @@ public class GameEventsHandler
     private GameView gameView;
 
     private InteractableHandler interactableHandler;
+    private DialoguesHandler dialoguesHandler;
 
     private Observer<Interactable> observerUnlockInteractable = interactable -> onUnlockInteractable(interactable);
     private Observer<MovingStatus> observerTryMovePlayer = moveArgs -> onTryMovePlayer(moveArgs);
     private Observer<AnswerStatus> observeTryResolveGuessingGame = statusArgs -> onTryResolveGuessingGame(statusArgs);
     private Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
     private Observer<InteractStatus> observerTryInteract = interactArgs -> onTryInteract(interactArgs);
-    private Observer<TakeItemStatus> observerTryTakeItem = tekeItemArgs -> onTryTakeItem(tekeItemArgs);
+    private Observer<TakeItemStatus> observerTryTakeItem = takeItemArgs -> onTryTakeItem(takeItemArgs);
     private Observer<String> observerLookItem = ItemDescription -> onLookItem(ItemDescription);
     private Observer<String> observerObserve = description -> onObserve(description);
 
@@ -35,6 +37,7 @@ public class GameEventsHandler
     public GameEventsHandler(GameModel gameModel, GameView gameView) throws Exception
     {
         InventoryManager inventoryManager = InventoryManager.getInstance();
+        dialoguesHandler = DialoguesHandler.getInstance();
         interactableHandler = InteractableHandler.getInstance();
         interactableHandler.getOnUnlockInteractable().register(observerUnlockInteractable);
         gameModel.getPlayer().getOnTryMovePlayerSubject().register(observerTryMovePlayer);
@@ -200,27 +203,35 @@ public class GameEventsHandler
     }
 
 
+    private void checkDialogEvent(DialogEvent dialog)
+    {
+        if(dialog != null)
+        {
+            gameView.appendText(dialog.getDialogText());
+            dialoguesHandler.addDialogToMade(dialog.getId());
+        }
+    }
+
     private void onTryMovePlayer(MovingStatus status)
     {
         MoveStatusArgs args = status.args;
 
         if (status == MovingStatus.moved)
         {
+            checkDialogEvent(args.nextTile.getDialog());
             gameView.appendText(Sentences.MOVE_MOVED + args.coordinates.name());
             gameModel.getPlayer().observe(false);
         }
         else if (status == MovingStatus.needItem)
         {
-            //TODO da cambiare e rendere un questo ciclo / rimuovere lista ?
-            String description =
-                    interactableHandler.getInteractable(args.nexTile.getInteractableNeededToEnter().get(0)).getDescription();
+            String description = interactableHandler.getInteractable(args.nextTile.getInteractableNeededToEnter()).getDescription();
             gameView.appendText(description);
             gameView.appendText(Sentences.MOVE_NEED_ITEMS);
         }
         else if (status == MovingStatus.needAnswer)
         {
             gameView.appendText(Sentences.MOVE_NEED_ANSWER_1);
-            gameView.appendText(Sentences.MOVE_NEED_ANSWER_2 + args.nexTile.getGuessingGameToEnter().getText());
+            gameView.appendText(Sentences.MOVE_NEED_ANSWER_2 + args.nextTile.getGuessingGameToEnter().getText());
         }
         else if (status == MovingStatus.offTheMap)
         {

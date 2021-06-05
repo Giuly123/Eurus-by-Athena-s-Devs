@@ -10,7 +10,6 @@ import java.util.List;
 
 public class MapManager
 {
-
     public static MapManager instance;
 
     private boolean loaded = false;
@@ -28,7 +27,6 @@ public class MapManager
 
         loaded = true;
     }
-
 
     public static MapManager getInstance() throws Exception
     {
@@ -155,7 +153,6 @@ public class MapManager
         return currentPositionColonna >= dim || currentPositionRiga >= dim || currentPositionColonna < 0 || currentPositionRiga < 0;
     }
 
-
     private void setupMap(List<Tile> map)
     {
         dim = (int)java.lang.Math.sqrt(map.size());
@@ -166,7 +163,7 @@ public class MapManager
 
         for (int i = 0; i < dim; i++)
         {
-            for (int j=0; j < dim; j++)
+            for (int j = 0; j < dim; j++)
             {
                 matrixMap[i][j] = map.get(mapIndex);
                 mapIndex++;
@@ -187,8 +184,7 @@ public class MapManager
 
             } catch (Exception e)
             {
-                System.out.println(e.getMessage());
-                System.out.println("Errore: problema durante la fase di parsing");
+                throw new Exception("Errore: problema durante la fase di parsing");
             }
         }
         else

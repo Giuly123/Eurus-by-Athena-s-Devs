@@ -21,6 +21,7 @@ public class InteractableHandler
     private InteractableHandler() throws Exception
     {
         interactableDictionary = new HashMap<>();
+        usedIteractable = new ArrayList<>();
         onUnlockInteractable = new Subject<>();
         loadInteractableCollection();
     }
@@ -122,7 +123,10 @@ public class InteractableHandler
 
     public void setUsedIteractable(List<UUID> usedIteractable)
     {
-        this.usedIteractable = usedIteractable;
+        if (usedIteractable != null)
+        {
+            this.usedIteractable = usedIteractable;
+        }
     }
 
     public void addUsedInteractable(Interactable interactable)

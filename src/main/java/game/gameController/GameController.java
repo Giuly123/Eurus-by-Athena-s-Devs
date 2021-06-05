@@ -49,8 +49,17 @@ public class GameController
         catch (Exception e)
         {
             e.printStackTrace();
-            Utilities.writeFile(Utilities.ERROR_LOG_PATH, e.getMessage());
-            gameView.showFatalError(e.getMessage());
+
+            String errorMsg = e.getMessage() != null ? e.getMessage() : "Errore durante il loading del game', " +
+                    "controllare i file";
+
+            String fileMsg = "\n\n";
+            fileMsg += Utilities.getCurrentData() + "\n";
+            fileMsg += errorMsg;
+
+            Utilities.writeFile(Utilities.ERROR_LOG_PATH, fileMsg, true);
+
+            gameView.showFatalError(errorMsg);
         }
     }
 
@@ -76,17 +85,24 @@ public class GameController
     final private ActionListener onSaveButton = e -> saveGame();
 
 
-    private void onEnter(String string)
+    private void onEnter()
     {
-        gameView.setEditableSafe(gameView.getTextField(), false);
+        String string = Utilities.cleanString(gameView.getTextField().getText());
 
-        gameView.appendText(Sentences.START_STRING_PHRASE + string);
+        if(string.length() > 0)
+        {
+            gameView.setEditableSafe(gameView.getTextField(), false);
 
-        commandsParser.parseCommand(string);
+            gameView.appendText(Sentences.START_STRING_PHRASE + string);
 
-        gameView.setEditableSafe(gameView.getTextField(), true);
+            commandsParser.parseCommand(string);
 
-        gameView.requestFocusSafe(gameView.getTextField());
+            gameView.setEditableSafe(gameView.getTextField(), true);
+
+            gameView.requestFocusSafe(gameView.getTextField());
+        }
+
+        gameView.getTextField().setText("");
     }
 
 
@@ -97,14 +113,7 @@ public class GameController
         {
             Thread thread = new Thread(() -> {
                 try {
-                    String textFiledContent = Utilities.cleanString(gameView.getTextField().getText());
-
-                    if(textFiledContent.length() > 0)
-                    {
-                        onEnter(textFiledContent);
-                    }
-
-                    gameView.getTextField().setText("");
+                    onEnter();
                 }
                 catch (Exception exception)
                 {
@@ -147,6 +156,7 @@ public class GameController
     private void saveGame()
     {
         gameModel.getPlayer().saveFile();
+        gameView.appendText(Sentences.SAVE_GAME);
     }
 
 

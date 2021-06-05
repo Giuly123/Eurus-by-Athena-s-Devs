@@ -120,8 +120,16 @@ public class InventoryManager
 
     public boolean usedItemsContains(UUID idInteractable, UUID idItem)
     {
+        boolean result = false;
+
         List<UUID> listaId = usedItems.get(idInteractable);
-        return listaId.contains(idItem);
+
+        if (listaId != null)
+        {
+            result = listaId.contains(idItem);
+        }
+
+        return result;
     }
 
 
@@ -145,13 +153,19 @@ public class InventoryManager
 
     public void setInventoryList(List<UUID> inventoryList)
     {
-        this.inventoryList = inventoryList;
-        onLoadInventory.notifyObservers(this.inventoryList);
+        if (inventoryList != null)
+        {
+            this.inventoryList = inventoryList;
+            onLoadInventory.notifyObservers(this.inventoryList);
+        }
     }
 
     public void setUsedItemsMap(Map<UUID, List<UUID>> usedItems)
     {
-        this.usedItems = usedItems;
+        if (usedItems != null)
+        {
+            this.usedItems = usedItems;
+        }
     }
 
     public List<UUID> getInvetoryList()

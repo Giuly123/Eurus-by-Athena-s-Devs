@@ -13,7 +13,6 @@ public class ItemsHandler
 
     private Map<UUID, Item> itemsDictionary;
 
-
     private ItemsHandler() throws Exception
     {
         itemsDictionary = new HashMap<>();

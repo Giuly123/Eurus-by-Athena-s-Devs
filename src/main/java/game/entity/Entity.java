@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public abstract class Entity
+public abstract class Entity extends BaseEntity
 {
-    final protected UUID id;
-    final protected String name;
     final protected String description;
     final protected String afterUsed;
     final private List<String> alias;
@@ -15,19 +13,11 @@ public abstract class Entity
 
     public Entity(UUID id, String name, String description, String afterUsed, List<String> aliasName)
     {
-        this.id = id;
-        this.name = name;
+        super(id, name);
         this.description = description;
         this.afterUsed = afterUsed;
         this.alias = aliasName;
     }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public UUID getId() {return id;}
 
     public String getDescription()
     {

@@ -57,6 +57,8 @@ public class Sentences
             "altro oggetto\n(digitare rispondi con la risposta)";
     public static final String INTERACTABLE_AFTER_USED = "Evento: ";
 
+    public static final String SAVE_GAME = "Salvataggio effettuato";
+
     public static final String END_GAME_STRING = "Complimenti, hai finito il gioco. Grazie per aver giocato.";
 
 }

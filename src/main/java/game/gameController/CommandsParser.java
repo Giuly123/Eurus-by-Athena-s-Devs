@@ -239,6 +239,7 @@ public class CommandsParser
         else if (command == Command.salva)
         {
             gameModel.getPlayer().saveFile();
+            gameView.appendText(Sentences.SAVE_GAME);
         }
         else if (command == Command.esci)
         {

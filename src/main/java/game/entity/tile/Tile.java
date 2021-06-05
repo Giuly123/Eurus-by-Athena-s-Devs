@@ -1,6 +1,8 @@
 package game.entity.tile;
 
+import game.entity.dialog.DialogEvent;
 import game.entity.guessingGame.GuessingGame;
+import game.entity.interactable.Interactable;
 import game.gameUtilities.Coordinates;
 
 import java.util.ArrayList;
@@ -15,9 +17,10 @@ public class Tile
     final private String fullDescription;
     final private String descriptionOffLimitsArea;
     final private String descriptionOfDarkRoom;
+    final private DialogEvent dialogEvent;
 
     final private List<UUID> interactableHere;
-    final private List<UUID> interactableNeededToEnter;
+    final private UUID interactableNeededToEnter;
     final private List<UUID> itemsToTake;
     final private UUID interactableToSwitchOnLight;
 
@@ -33,12 +36,13 @@ public class Tile
                 String descriptionOffLimitsArea,
                 String descriptionOfDarkRoom,
                 List<UUID> interactableHere,
-                List<UUID> interactableNeededToEnter,
+                UUID interactableNeededToEnter,
                 List<UUID> itemToTake,
                 boolean hasGuessingGame,
                 GuessingGame guessingGameToEnter,
                 boolean neededToSwitchOnLight,
-                UUID interactableToSwitchOnLight
+                UUID interactableToSwitchOnLight,
+                DialogEvent dialogEvent
     )
     {
         this.allowedDirections = allowedDirections;
@@ -54,6 +58,7 @@ public class Tile
         this.interactableToSwitchOnLight = interactableToSwitchOnLight;
         this.neededToSwitchOnLight = neededToSwitchOnLight;
         this.descriptionOfDarkRoom = descriptionOfDarkRoom;
+        this.dialogEvent = dialogEvent;
     }
 
     public String getShortDescription()
@@ -81,9 +86,9 @@ public class Tile
         return interactableHere != null ? interactableHere : new ArrayList<>();
     }
 
-    public List<UUID> getInteractableNeededToEnter()
+    public UUID getInteractableNeededToEnter()
     {
-        return interactableNeededToEnter != null ? interactableNeededToEnter : new ArrayList<>();
+        return interactableNeededToEnter;
     }
 
     public List<UUID> getItemsToTake()
@@ -113,4 +118,8 @@ public class Tile
         return descriptionOfDarkRoom != null ? descriptionOfDarkRoom : "";
     }
 
+    public DialogEvent getDialog()
+    {
+        return dialogEvent;
+    }
 }

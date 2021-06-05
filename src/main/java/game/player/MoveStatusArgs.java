@@ -8,5 +8,5 @@ public class MoveStatusArgs
 {
     public Coordinates coordinates;
     public Tile startTile;
-    public Tile nexTile;
+    public Tile nextTile;
 };

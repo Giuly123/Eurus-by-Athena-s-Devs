@@ -1,14 +1,11 @@
 package game.player;
 
-import game.managers.MapManager;
+import game.managers.*;
 import game.StartConfig;
 import game.entity.tile.Tile;
 import game.gameUtilities.Coordinates;
 import game.gameUtilities.Sentences;
 import game.gameUtilities.observerPattern.Subject;
-import game.managers.InteractableHandler;
-import game.managers.InventoryManager;
-import game.managers.ItemsHandler;
 import game.entity.guessingGame.GuessingGame;
 import game.entity.interactable.Interactable;
 import game.entity.interactable.InteractableType;
@@ -40,6 +37,7 @@ public class Player
 
     private InteractableHandler interactableHandler;
     private ItemsHandler itemsHandler;
+    private DialoguesHandler dialoguesHandler;
 
     private int currentPositionRiga;
     private int currentPositionColonna;
@@ -59,7 +57,9 @@ public class Player
         interactableHandler = InteractableHandler.getInstance();
         inventoryManager = InventoryManager.getInstance();
         itemsHandler = ItemsHandler.getInstance();
-        this.map = MapManager.getInstance();
+        map = MapManager.getInstance();
+        dialoguesHandler = DialoguesHandler.getInstance();
+
         loadSaveFile(isContinuing, startConfig);
         isLoaded = true;
     }
@@ -235,24 +235,20 @@ public class Player
 
         if (tile != null)
         {
-            List<UUID> iteractableNeededToEnter = tile.getInteractableNeededToEnter();
+            UUID iteractableNeededToEnter = tile.getInteractableNeededToEnter();
 
-            for (int i = 0; i < iteractableNeededToEnter.size() && unlockedNecessaryInteractable; i++)
+            Interactable interactable = interactableHandler.getInteractable(iteractableNeededToEnter);
+
+            if (interactable != null && interactable.getInteractableType() == InteractableType.door)
             {
-                Interactable interactable =
-                        interactableHandler.getInteractable(iteractableNeededToEnter.get(i));
-
-                if (interactable != null && interactable.getInteractableType() == InteractableType.door)
+                if (!interactableHandler.getUsedIteractable().contains(interactable.getId()))
                 {
-                    if (!interactableHandler.getUsedIteractable().contains(interactable.getId()))
-                    {
-                        unlockedNecessaryInteractable = false;
-                    }
+                    unlockedNecessaryInteractable = false;
                 }
-                else
-                {
-                    // per appartenere a questa categoria deve decessariamente essere door ?
-                }
+            }
+            else
+            {
+                // per appartenere a questa categoria deve decessariamente essere door ?
             }
         }
         else
@@ -300,7 +296,7 @@ public class Player
                 status = MovingStatus.needItem;
             }
 
-            status.args.nexTile = tile;
+            status.args.nextTile = tile;
         }
 
         return status;
@@ -405,13 +401,20 @@ public class Player
 
         if (interactable != null)
         {
-            if (interactable.getInteractableType() == InteractableType.chest)
+            Tile currentTile = map.getTile(currentPositionRiga, currentPositionColonna);
+            boolean isHere =
+                    currentTile.getInteractableHere().contains(interactable.getId());
+
+            if (isHere)
             {
-                status = interactChest(interactable);
-            }
-            else if (interactable.getInteractableType() == InteractableType.chestGuessingGame)
-            {
-                status = interactChest(interactable);
+                if (interactable.getInteractableType() == InteractableType.chest)
+                {
+                    status = interactChest(interactable);
+                }
+                else if (interactable.getInteractableType() == InteractableType.chestGuessingGame)
+                {
+                    status = interactChest(interactable);
+                }
             }
         }
 
@@ -587,6 +590,7 @@ public class Player
                 interactableHandler.setUsedIteractable(player.usedInteractable);
                 inventoryManager.setInventoryList(player.inventory);
                 inventoryManager.setUsedItemsMap(player.usedItems);
+                dialoguesHandler.setDialoguesMade(player.dialoguesMade);
                 endGame = player.endGame;
             } catch (IOException e)
             {
@@ -614,9 +618,10 @@ public class Player
                     interactableHandler.getUsedIteractable(),
                     inventoryManager.getUsedItems(),
                     inventoryManager.getInvetoryList(),
+                    dialoguesHandler.getDialoguesMade(),
                     endGame);
             String content = JsonParser.SerializeClassToJson(player);
-            boolean result = Utilities.writeFile(Utilities.SAVE_JSON_PATH, content);
+            boolean result = Utilities.writeFile(Utilities.SAVE_JSON_PATH, content, false);
 
             if (!result)
             {
