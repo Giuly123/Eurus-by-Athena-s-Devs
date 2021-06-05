@@ -113,11 +113,14 @@ public class ItemsHandler
 
     private void loadItemsCollection() throws Exception
     {
+
+        RootItemsCollectionJson itemsCollectionJson = null;
+
         if (Utilities.fileExist(Utilities.ITEMS_JSON_PATH))
         {
             try
             {
-                RootItemsCollectionJson itemsCollectionJson = JsonParser.GetClassFromJson(Utilities.ITEMS_JSON_PATH, RootItemsCollectionJson.class);
+                itemsCollectionJson = JsonParser.GetClassFromJson(Utilities.ITEMS_JSON_PATH, RootItemsCollectionJson.class);
 
                 for(int i = 0; i < itemsCollectionJson.itemsList.size(); i++)
                 {
@@ -127,12 +130,12 @@ public class ItemsHandler
             }
             catch (Exception e)
             {
-                System.out.println("Errore: problema durante la fase di parsing Items");
+                System.out.println("Errore: problema parsing file items.json");
             }
         }
         else
         {
-            throw new Exception("File degli items non presente sul disco");
+            throw new Exception("File items.json non presente sul disco");
         }
 
     }

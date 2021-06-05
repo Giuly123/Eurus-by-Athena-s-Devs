@@ -184,12 +184,12 @@ public class MapManager
 
             } catch (Exception e)
             {
-                throw new Exception("Errore: problema durante la fase di parsing");
+                throw new Exception("Errore: problema parsing file map.json");
             }
         }
         else
         {
-            throw new Exception("File della mappa non presente sul disco");
+            throw new Exception("File map.json non presente sul disco");
         }
 
         return rootMapJson;

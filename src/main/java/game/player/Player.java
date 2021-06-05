@@ -455,7 +455,6 @@ public class Player
                     result.add(interactable.getGuessingGame());
                 }
             }
-
         }
         return result;
     }

@@ -1,8 +1,11 @@
 package game.entity.guessingGame;
 
-import java.util.Locale;
+import game.entity.BaseEntity;
 
-public class GuessingGame
+import java.util.Locale;
+import java.util.UUID;
+
+public class GuessingGame extends BaseEntity
 {
     private String text;
     private String afterAnswered;
@@ -11,8 +14,9 @@ public class GuessingGame
     // questa risposta non verra' salvata, quindi sara' necessario reinserirla a ogni run
     public boolean isResolved = false;
 
-    public GuessingGame (String text, String correctAnswer, String afterAnswered)
+    public GuessingGame (UUID id, String name, String text, String correctAnswer, String afterAnswered)
     {
+        super(id, name);
         this.text = text;
         this.correctAnswer = correctAnswer;
         this.afterAnswered = afterAnswered;

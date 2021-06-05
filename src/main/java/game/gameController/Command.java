@@ -9,14 +9,14 @@ public enum Command
     guarda(new String[]{"guarda"}),
     leggi(new String[]{"leggi", "read"}),
     usa(new String[]{"usa","use"}),
-    apri(new String[]{"apri"}),
+    apri(new String[]{"apri", "open"}),
     interagisci(new String[]{"interagisci"}),
     prendi(new String[]{"prendi", "take", "raccogli"}),
     rispondi(new String[]{"rispondi"}),
-    nord(new String[]{"nord","n"}),
-    sud(new String[]{"sud","s"}),
-    est(new String[]{"est","e"}),
-    ovest(new String[]{"ovest","o"}),
+    nord(new String[]{"nord","n", "su"}),
+    sud(new String[]{"sud","s", "giu"}),
+    est(new String[]{"est","e", "destra"}),
+    ovest(new String[]{"ovest","o", "sinistra"}),
     salva(new String[]{"salva","save"}),
     esci(new String[]{"exit","esci"}),
     help(new String[]{"-h","--help","help"});
@@ -29,7 +29,7 @@ public enum Command
         this.aliasList = aliasList;
     }
 
-    static private String[] preposizioni = {"con", "la", "il", "la", "lo"};
+    static private String[] prepositions = {"con", "la", "il", "la", "lo"};
 
     private static Pair<String, String> getCommandAndArg(String str)
     {
@@ -41,7 +41,7 @@ public enum Command
 
         if (strings.length > 1)
         {
-            strings[1] = Utilities.escapePreposizioni(strings[1], preposizioni);
+            strings[1] = Utilities.escapePreposizioni(strings[1], prepositions);
             result.setValue(strings[1]);
         }
 

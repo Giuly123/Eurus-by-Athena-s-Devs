@@ -5,8 +5,7 @@
       ],
       "interactableHere": [
       ],
-      "interactableNeededToEnter": [
-      ],
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -18,15 +17,14 @@
       "allowedDirections": [
         "North"
       ],
-      "shortDescription": "Cella#221B - Ti trovi in una cella. La luce bianca ti acceca.",
-      "fullDescription": "Sei in una cella, ci sono solo i tuoi amici, e alla tua destra un comodino con un cassetto. Sarà il caso di aprirlo, potrebbe contenere qualcosa!",
+      "shortDescription": "Cella 221B - Ti trovi in una cella. La luce bianca ti acceca.",
+      "fullDescription": "Sei in una cella, ci sono solo i tuoi amici, c'è, inoltre, un comodino con un cassetto. Sarà il caso di aprirlo, potrebbe contenere qualcosa!",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…\n",
       "interactableHere": [
         "bfa63d12-e592-44af-8fe4-cffb4712245f",
         "dd162e26-1bad-4e26-bf33-a0750f59ce05"
       ],
-      "interactableNeededToEnter": [
-      ],
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -39,8 +37,7 @@
       ],
       "interactableHere": [
       ],
-      "interactableNeededToEnter": [
-      ],
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -51,30 +48,35 @@
     {
       "allowedDirections": [
       ],
+      "shortDescription": "",
+      "fullDescription": "",
+      "descriptionOffLimitsArea": "",
       "interactableHere": [
       ],
-      "interactableNeededToEnter": [
-      ],
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
+        "text": "Qual è il pin?",
+        "afterAnswered": "Pin corretto!",
+        "correctAnswer": "9987"
       },
-      "hasGuessingGame": false,
+      "hasGuessingGame": true,
       "neededToSwitchOnLight": false
     },
     {
       "allowedDirections": [
         "East"
       ],
-      "shortDescription": "#Cella 222B - A primo impatto sembra una cella uguale alla precedente.",
-      "fullDescription": "Una luce fredda illumina la stanza. C’è una cassaforte alla tua sinistra con un’incisione dorata che recita “Avv.” e alla tua destra, un comodino simile a quello della cella 221B.",
+      "shortDescription": "Cella 222B - A primo impatto sembra una cella uguale alla precedente.",
+      "fullDescription": "Una luce fredda illumina la stanza. Nella stanza c’è una cassaforte con un’incisione dorata che recita “Avv.”. C'è un meccanismo di riconoscimento vocale che ci pone una domanda...",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5"
       ],
-      "interactableNeededToEnter": [
-        "20070cbd-e100-4f46-ba3e-279257598a86"
-      ],
+      "interactableNeededToEnter":
+      "20070cbd-e100-4f46-ba3e-279257598a86",
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -88,44 +90,16 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio ala sinistra zona 1A - Un lungo corridoio. Ci sono quattro porte. Saranno chiuse? Controllare non fa mai male.\n ",
-      "fullDescription": "Guardandovi indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA SINISTRA”. C\u0027è una porta alla tua sinistra, ma il corridoio è lungo...Alla tua destra noti un cadavere.",
+      "shortDescription": "Corridoio ala sinistra zona 1A - Un lungo corridoio. Ci delle porte. Saranno chiuse? Controllare non fa mai male.\n ",
+      "fullDescription": "Guardandovi indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA SINISTRA”. C\u0027è una porta alla tua sinistra, ma il corridoio è lungo... Noti inoltre un cadavere appoggiato al muro.",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…\n",
       "interactableHere": [
         "20070cbd-e100-4f46-ba3e-279257598a86",
         "e0441288-a78c-42c7-b343-0b7358617957"
       ],
-      "interactableNeededToEnter": [
-        "bfa63d12-e592-44af-8fe4-cffb4712245f"
-      ],
-      "itemsToTake": [
-      ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
-      "neededToSwitchOnLight": false
-    },
-    {
-      "allowedDirections": [
-      ],
-      "interactableHere": [
-      ],
-      "interactableNeededToEnter": [
-      ],
-      "itemsToTake": [
-      ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
-      "neededToSwitchOnLight": false
-    },
-    {
-      "allowedDirections": [
-      ],
-      "interactableHere": [
-      ],
-      "interactableNeededToEnter": [
-      ],
+      "interactableNeededToEnter":
+      "bfa63d12-e592-44af-8fe4-cffb4712245f",
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -137,16 +111,54 @@
       "allowedDirections": [
         "East"
       ],
-      "shortDescription": "#Cella 223B - A primo impatto sembra una cella uguale alla precedente.",
-      "fullDescription": "La luce della torcia ti permette di vedere meglio ciò che hai intorno. C’è un comodino con un cassetto alla tua destra.",
-      "descriptionOffLimitsArea": "",
+      "shortDescription": "Cella 225B - A primo impatto sembra una cella uguale alle precedenti.",
+      "fullDescription": "Una luce fredda illumina la stanza, sembra una cella diversa dalle altre. Al centro della stanza c'è una valigetta!\n",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "interactableHere": [
+      ],
+      "interactableNeededToEnter":
+      "574d2776-8e7e-4101-af3c-e5684f454783",
+
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+        "North",
+        "South",
+        "West"
+      ],
+      "shortDescription": "Corridoio ala destra zona 1E - Questo corridoio sembra non finire mai...",
+      "fullDescription": "Sei in un lungo corridoio. C\u0027è una porta ma non sembrerebbe essere aperta. Intravedi un cancello alla fine del corridoio.",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "interactableHere": [
+        "574d2776-8e7e-4101-af3c-e5684f454783"
+      ],
+
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+      },
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+        "East"
+      ],
+      "shortDescription": "Cella 223B - Entri già con la torcia accesa, a primo impatto sembra una cella uguale alle precedenti.",
+      "fullDescription": "La luce della torcia ti permette di vedere meglio ciò che hai intorno. Nella stanza c'è un armadio.",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "9e71b832-06bd-4730-acd2-29487ad76ea9",
         "1d2b8a0d-3fc6-43e2-bd56-ad23365f3363",
         "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5"
       ],
-      "interactableNeededToEnter": [
-      ],
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -162,13 +174,12 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio ala sinistra zona 1B - Un lungo corridoio. Ci sono quattro porte. Saranno chiuse? Controllare non fa mai male.",
+      "shortDescription": "Corridoio ala sinistra zona 1B - Un lungo corridoio. Ci sono delle porte. Saranno chiuse? Controllare non fa mai male.",
       "fullDescription": "Un corridoio davvero lungo, ma intravedi la fine. Alla tua sinistra una porta simile alle altre, sembra aperta...",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
-      "interactableNeededToEnter": [
-      ],
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
@@ -178,81 +189,127 @@
     },
     {
       "allowedDirections": [
+        "East"
       ],
+      "shortDescription": "Cella 224B - Entri già con la torcia accesa, a primo impatto sembra una cella uguale alle precedenti.",
+      "fullDescription": "La luce della torcia ti permette di vedere meglio ciò che hai intorno. Ci sono due teschi e un cumulo di ossa nella cella che sembrano essere stati impiccati. Ti ricordi di aver trovato un altro cadavere nell’ala destra dell’ospedale. Inorridisci.\nNella stanza è presente anche un vecchio baule.\n",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
+        "1ea9c42b-7987-41d0-9a2a-d105cbdfc050",
+        "9c48b6c1-c1f2-492d-a515-5479687a127c"
       ],
-      "interactableNeededToEnter": [
-      ],
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
+      },
+      "interactableToSwitchOnLight": "9c48b6c1-c1f2-492d-a515-5479687a127c",
+      "descriptionOfDarkRoom": "La cella è immersa nell’oscurità. Non si vede davvero nulla.",
+      "hasGuessingGame": false,
+      "neededToSwitchOnLight": true
+    },
+    {
+      "allowedDirections": [
+        "North",
+        "South",
+        "West"
+      ],
+      "shortDescription": "Corridoio ala destra zona 1D - Un lungo corridoio. Ci delle porte. Saranno chiuse? Controllare non fa mai male.\n",
+      "fullDescription": "Guardandoti indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA DESTRA”.\n\n Subito dopo, lo sguardo viene attirato da un biglietto attaccato alla porta che riporta “Nessun aiuto questa volta”. C\u0027è anche una porta che sembra aperta alla tua sinistra... In alto, in un angolo, lampeggia la spia di una telecamera…\n",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "interactableHere": [
+      ],
+
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+        "text": "Sulla porta c’è un foglietto con scritto: “Qual è il nome più frequente assegnato ad una variabile metasintattica? E’ anche un famoso personaggio di un cartone animato.”",
+        "afterAnswered": "Porta aperta!",
+        "correctAnswer": "pippo"
+      },
+      "hasGuessingGame": true,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+        "East"
+      ],
+      "shortDescription": "Stanza del direttore - Una camera molto più spaziosa delle altre!",
+      "fullDescription": "Una luce fredda illumina la stanza. Nella stanza c’è una scrivania. Sulla scrivania è riposto un borsello nero in pelle. \n",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "interactableHere": [
+      ],
+
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+        "text": "Qual è la parola d’ordine?\n",
+        "afterAnswered": "Risposta corretta!",
+        "correctAnswer": "vento"
+      },
+      "hasGuessingGame": true,
+      "neededToSwitchOnLight": false
+    },
+    {
+      "allowedDirections": [
+        "South",
+        "East",
+        "West"
+      ],
+      "shortDescription": "Corridoio ala sinistra zona 1C - Il corridoio sembra avere una fine...",
+      "fullDescription": "Il corridoio sembra avere una fine... Alla tua sinistra e alla tua destra ci sono due porte. Sembrano diverse dalle altre...",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "interactableHere": [
+        "b34b3e7d-b887-489b-808e-66b309de560b"
+      ],
+
+      "itemsToTake": [
+      ],
+      "guessingGameToEnter": {
+        "text": "La porta è chiusa da un sofisticato meccanismo. Una parola d’ordine è richiesta!\n",
+        "afterAnswered": "Risposta corretta!",
+        "correctAnswer": "vento"
       },
       "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
       "allowedDirections": [
+        "East",
+        "West"
       ],
+      "shortDescription": "Dopo aver aperto la porta blindata, al centro della nuova stanza noti una tv. Appena entrati questa si accende da sola e una voce comincia a parlare.\n“Ciao nome_giocatore, ti ricordi di me? Ti sono mancata?”, chiede la voce dallo schermo.\nLa tv mostra una figura femminile. E’ seduta in quella che sembra essere una sala di controllo.\n“Non è possibile…”, dice Cromyft, visibilmente preoccupato. “Vedi, caro nome_giocatore, siamo nell’ospedale psichiatrico di Risshenford, dove è rinchiusa nostra sorella, Eurus.”\n“Avete una sorella?”, domanda Nostaw con aria sorpresa. Cromyft annuisce con aria cupa senza aggiungere altro.\nEro sconvolto dalla notizia. Non sapevo di avere una sorella. Non avevo alcun ricordo di lei. \n...\nNel frattempo, la voce femminile riprende a parlare: “nome_giocatore, davvero non ti ricordi di me? Affascinante. Saltiamo gli inconvenevoli. Siete nel mio gioco. Ci rivredremo, se riuscirete ad uscirne. Altrimenti morirete qui, da soli e nessuno lo verrà a sapere!”. \n*Rumore di tv che si spegne* \nEravamo in un macabro gioco ideato da mia sorella. Fino a qualche minuto fa non avevo neanche una sorella… Ma perché era qui? Come aveva preso il controllo dell’ospedale in cui era rinchiusa? Ho troppe domande...\nNostaw: “Ci devi delle spiegazioni, Mr. 007”. \nCromyft: “Capiamo come uscire da qui e vi dirò tutto!”. Dopodiché cadde il silenzio.\nStanza Tetra - Al centro della stanza una vecchia tv poggiata su un tavolino. Sembra non funzionare più. Si vede ben poco, la stanza è buia.\n",
+      "fullDescription": "A causa della poca luce, prima non ti eri accorto di una scritta sulla parete destra “Avv. 3826”. In fondo alla stanza, davanti a te, si trova una porta, sembra ci sia bisogno di risolvere un rompicapo. In alto, in un angolo, lampeggia la spia di una telecamera… Noti, infine, un bersaglio. Ti ricorda quando da piccolo lo colpivi con le freccette",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
+        "34b00119-659a-4a1f-9166-d586764ee508",
+        "afd60cd7-5da0-4104-ac9d-1ca506baa678"
       ],
-      "interactableNeededToEnter": [
-      ],
+      "interactableNeededToEnter":
+      "b34b3e7d-b887-489b-808e-66b309de560b",
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
       },
+      "interactableToSwitchOnLight": "c8bf59e9-7e9c-4bc2-97a7-c4e71e671f33",
+      "descriptionOfDarkRoom": "Ora che la tv è spenta si vede poco e niente. Se solo si potesse illuminare…\n",
       "hasGuessingGame": false,
-      "neededToSwitchOnLight": false
+      "neededToSwitchOnLight": true
     },
     {
       "allowedDirections": [
+        "South",
+        "West"
       ],
+      "shortDescription": "Culo",
+      "fullDescription": "Tanti computer e una porta da sbloccare. Intravedi una porta a Sud. In alto, in un angolo, lampeggia la spia di una telecamera…",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
-      "interactableNeededToEnter": [
-      ],
-      "itemsToTake": [
-      ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
-      "neededToSwitchOnLight": false
-    },
-    {
-      "allowedDirections": [
-      ],
-      "interactableHere": [
-      ],
-      "interactableNeededToEnter": [
-      ],
-      "itemsToTake": [
-      ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
-      "neededToSwitchOnLight": false
-    },
-    {
-      "allowedDirections": [
-      ],
-      "interactableHere": [
-      ],
-      "interactableNeededToEnter": [
-      ],
-      "itemsToTake": [
-      ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
-      "neededToSwitchOnLight": false
-    },
-    {
-      "allowedDirections": [
-      ],
-      "interactableHere": [
-      ],
-      "interactableNeededToEnter": [
-      ],
+      "interactableNeededToEnter":
+      "afd60cd7-5da0-4104-ac9d-1ca506baa678",
+
       "itemsToTake": [
       ],
       "guessingGameToEnter": {
