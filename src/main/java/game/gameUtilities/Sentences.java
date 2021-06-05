@@ -5,15 +5,36 @@ public class Sentences
     public static final String ERROR_MESSAGE_GENERIC = "";
     public static final String ERROR_MESSAGE_PARSING = "";
 
-    public static final String HELP_MESSAGE = "I comandi possibili sono : etc ...";
+    public static final String HELP_COMMAND = "Digita 'help' per mostrare la lista dei comandi possibili\n";
+    public static final String NORTH_COMMAND = "Digita 'nord'/'n'/'su' per far muovere il protagonista verso nord\n";
+    public static final String SOUTH_COMMAND = "Digita 'sud'/'s'/'giu' per far muovere il protagonista verso sud\n";
+    public static final String WEST_COMMAND = "Digita 'ovest'/'o'/'sinistra'/'sx per far muovere il protagonista " +
+        "verso ovest\n";
+    public static final String EAST_COMMAND = "Digita 'est'/'e'/'destra'/'dx per far muovere il protagonista verso " +
+        "est\n";
+    public static final String OPEN_COMMAND = "Digita 'apri + nome oggetto' / 'interagisci [con][con il] + nome " +
+        "oggetto' per aprire eventuali oggetti di tipo chest / chest dove è richiesto un pin o altri oggetti\n";
+    public static final String READ_COMMAND = "Digita 'leggi + nome oggetto' per leggere oggetti di tipo documento\n";
+    public static final String LOOK_COMMAND = "Digita 'guarda + nome oggetto' / 'osserva + nome oggetto' per " +
+        "osservare l'oggetto. Mostra la descrizione dell'oggetto\n";
+    public static final String SEE_TILE_COMMAND = "Digita 'osserva' per avere più informazioni nella stanza in cui " +
+        "ti trovi\n";
+    public static final String USE_COMMAND = "Digita 'usa + nome oggetto' per usare un oggetto presente " +
+        "nell'inventario\n";
+    public static final String TO_ANSWER_COMMAND = "Digita 'rispondi' per rispondere agli indovinelli presenti\n";
+    public static final String TAKE_COMMAND = "Digita 'prendi + nome oggetto' per raccogliere un oggetto\n";
 
-    public static final String START_STRING_PHRASE = ">> ";
+    public static final String HELP_MESSAGE =
+        "I comandi possibili sono:\n" + HELP_COMMAND + NORTH_COMMAND + SOUTH_COMMAND + WEST_COMMAND + EAST_COMMAND +
+            OPEN_COMMAND + READ_COMMAND + LOOK_COMMAND + SEE_TILE_COMMAND + USE_COMMAND + TO_ANSWER_COMMAND +TAKE_COMMAND + "\n";
 
     public static final String WRONG_COMMAND_ENTERED = "Questo comando non esiste";
 
+    public static final String START_STRING_PHRASE = ">> ";
+
     public static final String LOOK_ITEM_DESCRIPTION = "Descrizione: ";
     public static final String LOOK_ITEM_WRONG = "Non possiedi questo oggetto e non si trova nelle vicinanze";
-    public static final String LOOK_ITEM_INCOMPLETE = "Devi aggiungere l'oggetto che vuoi gaurdare";
+    public static final String LOOK_ITEM_INCOMPLETE = "Devi aggiungere l'oggetto che vuoi guardare";
     public static final String LOOK_ITEM_ISNT_DOCUMENT = "Questo oggetto non puo' essere letto";
 
 
@@ -27,7 +48,7 @@ public class Sentences
     public static final String USE_ITEM_UNUSABLE = "Questo oggetto non puo' essere 'usato', prova a leggerlo";
     public static final String USE_ITEM_NOT_OWNED = "Non possiedi questo oggetto nell'inventario";
     public static final String USE_ITEM_UNKNOWN = "MSG DI ERRORE: C'e' un problema con questo oggetto, il typeItem " +
-            "selezionato nel file json non corrissponde a nessuno dei tipi ammissibili";
+            "selezionato nel file json non corrisponde a nessuno dei tipi ammissibili";
     public static final String READ_DOCUMENT = "C'e' scritto: ";
 
 
