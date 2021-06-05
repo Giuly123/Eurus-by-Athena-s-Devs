@@ -38,6 +38,14 @@ public class GuessingGamesHandler
         }
     }
 
+    public void addGuessingGameToResolved(UUID guessingGameId)
+    {
+        if (guessingGameId != null)
+        {
+            resolvedGuessingGame.add(guessingGameId);
+        }
+    }
+
     public boolean isResolvedGuessingGame(UUID guessingGameId)
     {
         return resolvedGuessingGame.contains(guessingGameId);

@@ -212,6 +212,7 @@ public class GameEventsHandler
         {
             gameView.appendText(Sentences.GIVE_ANSWER_SOLVED);
             gameView.appendText(answerStatus.guessingGame.getAfterAnswered());
+            guessingGamesHandler.addGuessingGameToResolved(answerStatus.guessingGame.getId());
         }
     }
 
