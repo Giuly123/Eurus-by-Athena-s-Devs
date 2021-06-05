@@ -184,40 +184,6 @@
     {
       "interactableType": "switchOnLight",
       "itemsNeededToUse": [
-        "3970fa72-b4bb-4758-950b-6b811416dbb9"
-      ],
-      "containedItems": [
-      ],
-      "endGame": true,
-      "guessingGame": {
-      },
-      "alias": [
-      ],
-      "id": "ac91d441-f3d0-4844-a961-f56d3519811c",
-      "name": "Finale 1",
-      "description": "",
-      "afterUsed": "*Rumore di porta che si apre\n\nEurus: “NO! Fermati, aspetta!”\n\nLa mia strategia di ingannarla tentando il suicidio come mi consigliava quella nota, aveva funzionato.\n\n*Colpo di pistola\n\n\u003c\u003cL’hai colpita\u003e\u003e\nEurus: “non doveva finire così… dovevate essere voi a morire...”\n\nCromyft:”Hai fallito, sorellina”\n\n...\n\nNostaw: “Oltre la porta intravedo l’uscita.”\n\nCromyft: “Andiamo via. Fuori di qui vi racconterò tutto!”.\n\nGAME OVER!"
-    },
-    {
-      "interactableType": "switchOnLight",
-      "itemsNeededToUse": [
-        "bdfd4755-d983-4b92-be11-3b2a84199a16"
-      ],
-      "containedItems": [
-      ],
-      "endGame": true,
-      "guessingGame": {
-      },
-      "alias": [
-      ],
-      "id": "30813974-9dc8-4d09-b6a4-3e93e87395b2",
-      "name": "Finale 2",
-      "description": "",
-      "afterUsed": "*Rumore di spari\n\n*Rumore di corpi che cadono al suolo.\n\nNon è possibile, non ci credo ancora di averlo fatto.\n\n*Rumore di porta che si apre\n\n“Alla fine hai scelto. Era tutto un test, questo gioco, questo posto… Dovevo vedere fino a che punto ti saresti spinto pur di salvarti. Però l’egoismo di portare a casa la pelle ha preso il sopravvento ed hai ucciso uno dei tuoi compagni di viaggio. Lo stesso egoismo di tuo fratello che mi rinchiuse qui quando ero solo una bambina, isolandomi dal resto del mondo. Hai fallito ed io ho avuto la mia vendetta!”\n\n*Colpo di pistola\n\n...\n\nGAME OVER!"
-    },
-    {
-      "interactableType": "switchOnLight",
-      "itemsNeededToUse": [
         "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5"
       ],
       "containedItems": [

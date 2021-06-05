@@ -1,7 +1,7 @@
 {
   "itemsList": [
     {
-      "assetName": "nota.jpg",
+      "assetName": "nota1.png",
       "itemType": "document",
       "isConsumable": false,
       "alias": [
@@ -13,11 +13,13 @@
       "afterUsed": ""
     },
     {
-      "assetName": "",
+      "assetName": "veleno.png",
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
       "alias": [
-        "boccetta"
+        "boccetta",
+        "pozione",
+        "poison"
       ],
       "id": "3970fa72-b4bb-4758-950b-6b811416dbb9",
       "name": "Veleno",
@@ -25,7 +27,7 @@
       "afterUsed": ""
     },
     {
-      "assetName": "pass.jpg",
+      "assetName": "pass221B.png",
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
       "alias": [
@@ -38,7 +40,7 @@
       "afterUsed": "Pass usato"
     },
     {
-      "assetName": "torcia.jpg",
+      "assetName": "torcia.png",
       "itemType": "itemToUseInteractable",
       "isConsumable": false,
       "alias": [
@@ -47,10 +49,10 @@
       "id": "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5",
       "name": "Torcia",
       "description": "Serve per fare luce nei posti bui!",
-      "afterUsed": "Ora puoi riosservare la stanza illuminata"
+      "afterUsed": "Ora puoi osservare la stanza illuminata"
     },
     {
-      "assetName": "nota.jpg",
+      "assetName": "nota3.png",
       "itemType": "document",
       "isConsumable": false,
       "alias": [
@@ -58,11 +60,11 @@
       ],
       "id": "5e849b0b-3fc4-413b-919a-28ff3485b850",
       "name": "Nota#3",
-      "description": "memorie paziente 6689\n\u003c\u003c Da qualche tempo, durante la notte, sento una voce. Una donna bisbiglia canticchiando le stesse macabre parole ogni volta “Quando ti trovi davanti ad una scelta tra te ed altri, scegli te. Tra vita e morte, scegli la morte.” Un ritornello a cui non riesco a non pensare.\u003e\u003e\n",
+      "description": "memorie paziente 6689\n\u003c\u003c Da qualche tempo, durante la notte, sento una voce. Una donna bisbiglia canticchiando le stesse macabre parole: “Quando ti trovi davanti ad una scelta tra te ed altri, scegli te. Tra vita e morte, scegli la morte.” Un ritornello a cui non riesco a non pensare.\u003e\u003e\n",
       "afterUsed": ""
     },
     {
-      "assetName": "pass.jpg",
+      "assetName": "pass225B.png",
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
       "alias": [
@@ -75,7 +77,7 @@
       "afterUsed": "Pass usato!"
     },
     {
-      "assetName": "",
+      "assetName": "fascicolo1.png",
       "itemType": "document",
       "isConsumable": false,
       "alias": [
@@ -86,18 +88,18 @@
       "afterUsed": ""
     },
     {
-      "assetName": "",
+      "assetName": "fascicolo2.png",
       "itemType": "document",
       "isConsumable": false,
       "alias": [
       ],
       "id": "0fcff3ce-712b-4e51-9db4-9633fec37e35",
       "name": "Fascicolo paziente 6688",
-      "description": "Referto medico paziente 6688\nNome: Benedict Cumberbatch\nSesso: M\nNella struttura dal: 19/07/1976\nDiagnosi: Sociopatia altamente funzionale\n",
+      "description": "Referto medico paziente 6688\nNome: Mark Gatiss\nSesso: M\nNella struttura dal: 17/10/1966\nDiagnosi: Sociopatia altamente funzionale\n",
       "afterUsed": ""
     },
     {
-      "assetName": "",
+      "assetName": "fascicolo3.png",
       "itemType": "document",
       "isConsumable": false,
       "alias": [
@@ -108,18 +110,18 @@
       "afterUsed": ""
     },
     {
-      "assetName": "",
+      "assetName": "fascicolo4.png",
       "itemType": "document",
       "isConsumable": false,
       "alias": [
       ],
       "id": "ec749676-742a-47bc-810f-e033309cda10",
       "name": "Fascicolo paziente 6689",
-      "description": "Referto medico paziente 6689\nNome: Amanda Abbington\nSesso: F\nNella struttura dal: 28/02/1974\nDiagnosi: Schizofrenia\n",
+      "description": "Referto medico paziente 6689\nNome: Lara Pulver\nSesso: F\nNella struttura dal: 01/09/1980\nDiagnosi: Schizofrenia\n",
       "afterUsed": ""
     },
     {
-      "assetName": "diario.jpg",
+      "assetName": "diario.png",
       "itemType": "document",
       "isConsumable": false,
       "alias": [
@@ -130,7 +132,7 @@
       "afterUsed": ""
     },
     {
-      "assetName": "nota.jpg",
+      "assetName": "nota4.png",
       "itemType": "document",
       "isConsumable": false,
       "alias": [
@@ -138,11 +140,11 @@
       ],
       "id": "74e2c786-7582-4e56-89d4-5d3e20630fa0",
       "name": "Nota#4",
-      "description": "\u003c\u003cSe la porta  sbloccare vorrai, le cifre del mio fascicolo, capovolte, utilizzare dovrai\u003e\u003e",
+      "description": "\u003c\u003cSe la porta sbloccar vorrai, le cifre del mio fascicolo, capovolte, utilizzar dovrai!\u003e\u003e",
       "afterUsed": ""
     },
     {
-      "assetName": "pass.jog",
+      "assetName": "pass222B.png",
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
       "alias": [
@@ -155,7 +157,7 @@
       "afterUsed": "Pass usato!"
     },
     {
-      "assetName": "nota.jpg",
+      "assetName": "nota2.png",
       "itemType": "document",
       "isConsumable": false,
       "alias": [
@@ -171,11 +173,10 @@
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
       "alias": [
-        "fionda",
-        "cerbottana"
+        "fionda"
       ],
       "id": "95e22959-004e-4dea-9440-29f391fbae73",
-      "name": "Cerbottana con dardo",
+      "name": "Cerbottana",
       "description": "Il dardo è pronto per essere sparato!",
       "afterUsed": "Dopo lo sparo la cerbottana si è rotta! É caduta una custodia!"
     },

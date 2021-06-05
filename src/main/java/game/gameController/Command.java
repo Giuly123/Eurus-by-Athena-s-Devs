@@ -5,14 +5,14 @@ import game.gameUtilities.pair.Pair;
 
 public enum Command
 {
-    osserva(new String[]{"osserva"}),
-    guarda(new String[]{"guarda"}),
-    leggi(new String[]{"leggi", "read"}),
+    osserva(new String[]{"osserva","observe"}),
+    guarda(new String[]{"guarda","look"}),
+    leggi(new String[]{"leggi","read"}),
     usa(new String[]{"usa","use"}),
-    apri(new String[]{"apri", "open"}),
-    interagisci(new String[]{"interagisci"}),
-    prendi(new String[]{"prendi", "take", "raccogli"}),
-    rispondi(new String[]{"rispondi"}),
+    apri(new String[]{"apri","open"}),
+    interagisci(new String[]{"interagisci", "interact"}),
+    prendi(new String[]{"prendi","take","raccogli"}),
+    rispondi(new String[]{"rispondi", "reply"}),
     nord(new String[]{"nord","n","su"}),
     sud(new String[]{"sud","s","giu"}),
     est(new String[]{"est","e","destra","dx"}),
@@ -28,7 +28,7 @@ public enum Command
         this.aliasList = aliasList;
     }
 
-    static private String[] prepositions = {"con", "la", "il", "la", "lo"};
+    static private String[] prepositions = {"con", "la", "il", "la", "lo", "with", "the"};
 
     private static Pair<String, String> getCommandAndArg(String str)
     {
