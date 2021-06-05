@@ -9,8 +9,6 @@
         "9d5ec29d-31a8-49e5-a190-000faa6e1b85"
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
         "cassetto"
       ],
@@ -27,8 +25,6 @@
       "containedItems": [
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
       ],
       "id": "bfa63d12-e592-44af-8fe4-cffb4712245f",
@@ -44,8 +40,6 @@
         "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5"
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
         "corpo",
         "morto"
@@ -63,8 +57,6 @@
       "containedItems": [
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
         "porta"
       ],
@@ -82,11 +74,6 @@
         "01f1733d-47f6-4eec-8d57-645612859e23"
       ],
       "endGame": false,
-      "guessingGame": {
-        "text": "Qual è il pin?",
-        "afterAnswered": "Pin corretto! La cassaforte sembra sbloccata! Riprova ad aprirla ora...",
-        "correctAnswer": "3826"
-      },
       "alias": [
         "cassa"
       ],
@@ -102,8 +89,6 @@
       "containedItems": [
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
       ],
       "id": "981d8411-bcb9-4c57-b277-936bb135b870",
@@ -119,8 +104,6 @@
       "containedItems": [
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
       ],
       "id": "9e71b832-06bd-4730-acd2-29487ad76ea9",
@@ -136,8 +119,6 @@
       "containedItems": [
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
       ],
       "id": "9c48b6c1-c1f2-492d-a515-5479687a127c",
@@ -154,8 +135,6 @@
         "a8f93b58-1ce7-45fb-895e-733ddadcd168"
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
         "scrigno"
       ],
@@ -172,8 +151,6 @@
       "containedItems": [
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
       ],
       "id": "574d2776-8e7e-4101-af3c-e5684f454783",
@@ -189,8 +166,6 @@
       "containedItems": [
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
       ],
       "id": "c8bf59e9-7e9c-4bc2-97a7-c4e71e671f33",
@@ -207,8 +182,6 @@
         "74e2c786-7582-4e56-89d4-5d3e20630fa0"
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
         "valigetta"
       ],
@@ -226,8 +199,6 @@
         "23f61a48-b4ca-4f8e-9b02-c3c88ac17d34"
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
         "cover"
       ],
@@ -248,8 +219,6 @@
         "bdfd4755-d983-4b92-be11-3b2a84199a16"
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
         "borsa"
       ],
@@ -266,8 +235,6 @@
       "containedItems": [
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
       ],
       "id": "afd60cd7-5da0-4104-ac9d-1ca506baa678",
@@ -283,8 +250,6 @@
       "containedItems": [
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
       ],
       "id": "b34b3e7d-b887-489b-808e-66b309de560b",
@@ -301,8 +266,6 @@
         "d60c9e24-3088-44c4-b21c-feb999227e57"
       ],
       "endGame": false,
-      "guessingGame": {
-      },
       "alias": [
       ],
       "id": "1d2b8a0d-3fc6-43e2-bd56-ad23365f3363",
