@@ -102,15 +102,23 @@ public class InteractableHandler
 
     private void loadInteractableCollection() throws Exception
     {
+        RootInteractableCollectionJson interactableCollectionJson = null;
+
         if (Utilities.fileExist(Utilities.INTERACTABLES_JSON_PATH))
         {
-            RootInteractableCollectionJson interactableCollectionJson = JsonParser.GetClassFromJson(Utilities.INTERACTABLES_JSON_PATH,
-                    RootInteractableCollectionJson.class);
-
-            for(int i = 0; i < interactableCollectionJson.interactableList.size(); i++)
+            try
             {
-                Interactable interactable = interactableCollectionJson.interactableList.get(i);
-                interactableDictionary.put(interactable.getId(), interactable);
+                interactableCollectionJson = JsonParser.GetClassFromJson(Utilities.INTERACTABLES_JSON_PATH, RootInteractableCollectionJson.class);
+
+                for(int i = 0; i < interactableCollectionJson.interactableList.size(); i++)
+                {
+                    Interactable interactable = interactableCollectionJson.interactableList.get(i);
+                    interactableDictionary.put(interactable.getId(), interactable);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errore: problema parsing file interactables.json");
             }
 
         }

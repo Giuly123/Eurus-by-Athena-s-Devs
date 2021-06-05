@@ -2,7 +2,6 @@ package game.entity.tile;
 
 import game.entity.dialog.DialogEvent;
 import game.entity.guessingGame.GuessingGame;
-import game.entity.interactable.Interactable;
 import game.gameUtilities.Coordinates;
 
 import java.util.ArrayList;
@@ -17,7 +16,7 @@ public class Tile
     final private String fullDescription;
     final private String descriptionOffLimitsArea;
     final private String descriptionOfDarkRoom;
-    final private DialogEvent dialogEvent;
+    final private UUID dialogEventId;
 
     final private List<UUID> interactableHere;
     final private UUID interactableNeededToEnter;
@@ -42,7 +41,7 @@ public class Tile
                 GuessingGame guessingGameToEnter,
                 boolean neededToSwitchOnLight,
                 UUID interactableToSwitchOnLight,
-                DialogEvent dialogEvent
+                UUID dialogEventId
     )
     {
         this.allowedDirections = allowedDirections;
@@ -58,7 +57,7 @@ public class Tile
         this.interactableToSwitchOnLight = interactableToSwitchOnLight;
         this.neededToSwitchOnLight = neededToSwitchOnLight;
         this.descriptionOfDarkRoom = descriptionOfDarkRoom;
-        this.dialogEvent = dialogEvent;
+        this.dialogEventId = dialogEventId;
     }
 
     public String getShortDescription()
@@ -118,8 +117,8 @@ public class Tile
         return descriptionOfDarkRoom != null ? descriptionOfDarkRoom : "";
     }
 
-    public DialogEvent getDialog()
+    public UUID getDialogId()
     {
-        return dialogEvent;
+        return dialogEventId;
     }
 }

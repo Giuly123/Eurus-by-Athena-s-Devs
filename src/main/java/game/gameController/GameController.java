@@ -48,19 +48,24 @@ public class GameController
         }
         catch (Exception e)
         {
-            e.printStackTrace();
-
-            String errorMsg = e.getMessage() != null ? e.getMessage() : "Errore durante il loading del game', " +
-                    "controllare i file";
-
-            String fileMsg = "\n\n";
-            fileMsg += Utilities.getCurrentData() + "\n";
-            fileMsg += errorMsg;
-
-            Utilities.writeFile(Utilities.ERROR_LOG_PATH, fileMsg, true);
-
-            gameView.showFatalError(errorMsg);
+            onException(e);
         }
+    }
+
+
+    private void onException(Exception e)
+    {
+        e.printStackTrace();
+
+        String errorMsg = e.getMessage() != null ? e.getMessage() : Sentences.GENERIC_ERROR;
+
+        String fileMsg = "\n\n";
+        fileMsg += Utilities.getCurrentData() + "\n";
+        fileMsg += errorMsg;
+
+        Utilities.writeFile(Utilities.ERROR_LOG_PATH, fileMsg, true);
+
+        gameView.showFatalError(errorMsg);
     }
 
 

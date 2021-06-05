@@ -12,6 +12,7 @@ import game.gameUtilities.Sentences;
 import game.player.*;
 import game.gui.GameView;
 
+import java.util.UUID;
 
 public class GameEventsHandler
 {
@@ -203,6 +204,11 @@ public class GameEventsHandler
     }
 
 
+    private void checkDialogEvent(UUID dialogId)
+    {
+        checkDialogEvent(dialoguesHandler.getDialog(dialogId));
+    }
+
     private void checkDialogEvent(DialogEvent dialog)
     {
         if(dialog != null)
@@ -218,7 +224,7 @@ public class GameEventsHandler
 
         if (status == MovingStatus.moved)
         {
-            checkDialogEvent(args.nextTile.getDialog());
+            checkDialogEvent(args.nextTile.getDialogId());
             gameView.appendText(Sentences.MOVE_MOVED + args.coordinates.name());
             gameModel.getPlayer().observe(false);
         }
