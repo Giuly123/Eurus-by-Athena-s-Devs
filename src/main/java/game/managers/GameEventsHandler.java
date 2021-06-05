@@ -155,6 +155,11 @@ public class GameEventsHandler
         }
         else if (status == UsingItemStatus.used)
         {
+            if (status.args.item.getItemType() == ItemType.itemToUseInteractable)
+            {
+                tryUnlockInteractable(status.args.interactable);
+            }
+
             gameView.appendText(Sentences.USE_ITEM_USED + status.args.item.getName());
             gameView.appendText(status.args.item.getAfterUsed());
 
@@ -162,12 +167,6 @@ public class GameEventsHandler
             {
                 gameModel.getPlayer().inventoryManager.removeItem(status.args.item);
             }
-
-            if (status.args.item.getItemType() == ItemType.itemToUseInteractable)
-            {
-                tryUnlockInteractable(status.args.interactable);
-            }
-
         }
         else if (status == UsingItemStatus.alreadyUsed)
         {
