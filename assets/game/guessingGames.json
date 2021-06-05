@@ -1,8 +1,11 @@
 {
   "guessingGameList" : [
     {
-      "id" : "15e3bed0-0a26-4006-a42e-7ed4f509885f",
-      "name" : "ciao"
+    "id": "273da62b-684e-4bce-9ad3-26a90ee12089",
+    "name": "IndovinelloCassaforte",
+    "text": "Qual è il pin?",
+    "afterAnswered": "Pin corretto! La cassaforte sembra sbloccata! Riprova ad aprirla ora...",
+    "correctAnswer": "3826"
     }
   ]
 }

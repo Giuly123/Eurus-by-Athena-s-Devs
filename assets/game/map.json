@@ -7,9 +7,6 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
@@ -25,9 +22,6 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
@@ -37,9 +31,6 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
@@ -57,12 +48,6 @@
         "3970fa72-b4bb-4758-950b-6b811416dbb9"
       ],
       "dialogEventId": "63c8a9b8-d8cb-453e-95d3-916955298ee2",
-      "guessingGameToEnter": {
-        "text": "Qual è il pin?",
-        "afterAnswered": "Pin corretto!",
-        "correctAnswer": "9987"
-      },
-      "hasGuessingGame": true,
       "neededToSwitchOnLight": false
     },
     {
@@ -78,9 +63,6 @@
       "interactableNeededToEnter": "20070cbd-e100-4f46-ba3e-279257598a86",
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
@@ -99,9 +81,6 @@
       "interactableNeededToEnter": "bfa63d12-e592-44af-8fe4-cffb4712245f",
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
@@ -117,9 +96,6 @@
       "interactableNeededToEnter": "574d2776-8e7e-4101-af3c-e5684f454783",
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
@@ -136,9 +112,6 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
@@ -155,11 +128,8 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
       "interactableToSwitchOnLight": "9e71b832-06bd-4730-acd2-29487ad76ea9",
       "descriptionOfDarkRoom": "La cella è immersa nell’oscurità. Non si vede davvero nulla.\n",
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": true
     },
     {
@@ -175,9 +145,6 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
@@ -193,11 +160,8 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
       "interactableToSwitchOnLight": "9c48b6c1-c1f2-492d-a515-5479687a127c",
       "descriptionOfDarkRoom": "La cella è immersa nell’oscurità. Non si vede davvero nulla.",
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": true
     },
     {
@@ -213,12 +177,6 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-        "text": "Sulla porta c’è un foglietto con scritto: “Qual è il nome più frequente assegnato ad una variabile metasintattica? E’ anche un famoso personaggio di un cartone animato.”",
-        "afterAnswered": "Porta aperta!",
-        "correctAnswer": "pippo"
-      },
-      "hasGuessingGame": true,
       "neededToSwitchOnLight": false
     },
     {
@@ -233,12 +191,6 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-        "text": "Qual è la parola d’ordine?\n",
-        "afterAnswered": "Risposta corretta!",
-        "correctAnswer": "vento"
-      },
-      "hasGuessingGame": true,
       "neededToSwitchOnLight": false
     },
     {
@@ -255,12 +207,6 @@
       ],
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-        "text": "La porta è chiusa da un sofisticato meccanismo. Una parola d’ordine è richiesta!\n",
-        "afterAnswered": "Risposta corretta!",
-        "correctAnswer": "vento"
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     },
     {
@@ -280,11 +226,8 @@
       "interactableNeededToEnter": "b34b3e7d-b887-489b-808e-66b309de560b",
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
       "interactableToSwitchOnLight": "c8bf59e9-7e9c-4bc2-97a7-c4e71e671f33",
       "descriptionOfDarkRoom": "Ora che la tv è spenta si vede poco e niente. Se solo si potesse illuminare…\n",
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": true
     },
     {
@@ -301,9 +244,6 @@
       "interactableNeededToEnter": "afd60cd7-5da0-4104-ac9d-1ca506baa678",
       "itemsToTake": [
       ],
-      "guessingGameToEnter": {
-      },
-      "hasGuessingGame": false,
       "neededToSwitchOnLight": false
     }
   ]

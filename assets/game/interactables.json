@@ -67,6 +67,7 @@
     },
     {
       "interactableType": "chestGuessingGame",
+      "guessingGameId": "273da62b-684e-4bce-9ad3-26a90ee12089",
       "itemsNeededToUse": [
       ],
       "containedItems": [
