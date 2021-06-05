@@ -50,3 +50,15 @@ Errore: problema parsing file dialogues.json
 
 2021/06/05 14:56:57
 Errore: problema parsing file guessingGames.json
+
+2021/06/05 15:52:54
+Errore: problema parsing file guessingGames.json
+
+2021/06/05 15:54:09
+Errore: problema parsing file guessingGames.json
+
+2021/06/05 15:54:38
+Errore: problema parsing file guessingGames.json
+
+2021/06/05 15:55:53
+Errore: problema parsing file guessingGames.json

@@ -3,6 +3,8 @@ package game.managers;
 import game.entity.guessingGame.GuessingGame;
 import game.gameUtilities.Utilities;
 import game.jsonParser.JsonParser;
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -15,6 +17,7 @@ public class GuessingGamesHandler
 
     private GuessingGamesHandler() throws Exception
     {
+        guessingGamesDictionary = new HashMap<>();
         loadGuessingGamesCollection();
     }
 
@@ -76,6 +79,7 @@ public class GuessingGamesHandler
             }
             catch (Exception e)
             {
+                e.printStackTrace();
                 throw new Exception("Errore: problema parsing file guessingGames.json");
             }
         }

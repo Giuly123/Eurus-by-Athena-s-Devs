@@ -100,6 +100,31 @@ public class InteractableHandler
     }
 
 
+    public void setUsedIteractable(List<UUID> usedIteractable)
+    {
+        if (usedIteractable != null)
+        {
+            this.usedIteractable = usedIteractable;
+        }
+    }
+
+    public void addUsedInteractable(Interactable interactable)
+    {
+        usedIteractable.add(interactable.getId());
+
+        onUnlockInteractable.notifyObservers(interactable);
+    }
+
+    public List<UUID> getUsedIteractable()
+    {
+        return usedIteractable;
+    }
+
+    public boolean isUsedInteractalbe(UUID interactableId)
+    {
+        return usedIteractable.contains(interactableId);
+    }
+
     private void loadInteractableCollection() throws Exception
     {
         RootInteractableCollectionJson interactableCollectionJson = null;
@@ -126,32 +151,6 @@ public class InteractableHandler
         {
             throw new Exception("File degli interactable non presente sul disco");
         }
-    }
-
-
-    public void setUsedIteractable(List<UUID> usedIteractable)
-    {
-        if (usedIteractable != null)
-        {
-            this.usedIteractable = usedIteractable;
-        }
-    }
-
-    public void addUsedInteractable(Interactable interactable)
-    {
-        usedIteractable.add(interactable.getId());
-
-        onUnlockInteractable.notifyObservers(interactable);
-    }
-
-    public List<UUID> getUsedIteractable()
-    {
-        return usedIteractable;
-    }
-
-    public boolean isUsedInteractalbe(UUID interactableId)
-    {
-        return usedIteractable.contains(interactableId);
     }
 
     private class RootInteractableCollectionJson
