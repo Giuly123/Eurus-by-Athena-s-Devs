@@ -113,7 +113,6 @@ public class ItemsHandler
 
     private void loadItemsCollection() throws Exception
     {
-
         RootItemsCollectionJson itemsCollectionJson = null;
 
         if (Utilities.fileExist(Utilities.ITEMS_JSON_PATH))

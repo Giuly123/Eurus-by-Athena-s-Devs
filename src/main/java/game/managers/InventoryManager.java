@@ -16,9 +16,7 @@ public class InventoryManager
     private ItemsHandler itemsHandler;
 
     private Subject<List<UUID>> onLoadInventory;
-
     private Subject<Item> onAddedItemToInventory;
-
     private Subject<Item> onRemovedItemToInventory;
 
     private InventoryManager() throws Exception

@@ -9,8 +9,8 @@ import game.entity.item.Item;
 import game.entity.item.ItemType;
 import game.gameUtilities.observerPattern.Observer;
 import game.gameUtilities.Sentences;
-import game.player.*;
 import game.gui.GameView;
+import game.player.status.*;
 
 import java.util.UUID;
 
