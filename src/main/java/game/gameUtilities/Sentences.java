@@ -5,24 +5,24 @@ public class Sentences
     public static final String ERROR_MESSAGE_GENERIC = "";
     public static final String ERROR_MESSAGE_PARSING = "";
 
-    public static final String HELP_COMMAND = "Digita 'help' per mostrare la lista dei comandi possibili\n";
-    public static final String NORTH_COMMAND = "Digita 'nord'/'n'/'su' per far muovere il protagonista verso nord\n";
-    public static final String SOUTH_COMMAND = "Digita 'sud'/'s'/'giu' per far muovere il protagonista verso sud\n";
-    public static final String WEST_COMMAND = "Digita 'ovest'/'o'/'sinistra'/'sx per far muovere il protagonista " +
+    public static final String HELP_COMMAND = " - Digita 'help' per mostrare la lista dei comandi possibili\n";
+    public static final String NORTH_COMMAND = " - Digita 'nord'/'n'/'su' per far muovere il protagonista verso nord\n";
+    public static final String SOUTH_COMMAND = " - Digita 'sud'/'s'/'giu' per far muovere il protagonista verso sud\n";
+    public static final String WEST_COMMAND = " - Digita 'ovest'/'o'/'sinistra'/'sx per far muovere il protagonista " +
         "verso ovest\n";
-    public static final String EAST_COMMAND = "Digita 'est'/'e'/'destra'/'dx per far muovere il protagonista verso " +
+    public static final String EAST_COMMAND = " - Digita 'est'/'e'/'destra'/'dx per far muovere il protagonista verso " +
         "est\n";
-    public static final String OPEN_COMMAND = "Digita 'apri + nome oggetto' / 'interagisci [con][con il] + nome " +
+    public static final String OPEN_COMMAND = " - Digita 'apri + nome oggetto' / 'interagisci [con][con il] + nome " +
         "oggetto' per aprire eventuali oggetti di tipo chest / chest dove è richiesto un pin o altri oggetti\n";
-    public static final String READ_COMMAND = "Digita 'leggi + nome oggetto' per leggere oggetti di tipo documento\n";
-    public static final String LOOK_COMMAND = "Digita 'guarda + nome oggetto' / 'osserva + nome oggetto' per " +
+    public static final String READ_COMMAND = " - Digita 'leggi + nome oggetto' per leggere oggetti di tipo documento\n";
+    public static final String LOOK_COMMAND = " - Digita 'guarda + nome oggetto' / 'osserva + nome oggetto' per " +
         "osservare l'oggetto. Mostra la descrizione dell'oggetto\n";
-    public static final String SEE_TILE_COMMAND = "Digita 'osserva' per avere più informazioni nella stanza in cui " +
+    public static final String SEE_TILE_COMMAND = " - Digita 'osserva' per avere più informazioni nella stanza in cui " +
         "ti trovi\n";
-    public static final String USE_COMMAND = "Digita 'usa + nome oggetto' per usare un oggetto presente " +
+    public static final String USE_COMMAND = " - Digita 'usa + nome oggetto' per usare un oggetto presente " +
         "nell'inventario\n";
-    public static final String TO_ANSWER_COMMAND = "Digita 'rispondi' per rispondere agli indovinelli presenti\n";
-    public static final String TAKE_COMMAND = "Digita 'prendi + nome oggetto' per raccogliere un oggetto\n";
+    public static final String TO_ANSWER_COMMAND = " - Digita 'rispondi' per rispondere agli indovinelli presenti\n";
+    public static final String TAKE_COMMAND = " - Digita 'prendi + nome oggetto' per raccogliere un oggetto\n";
 
     public static final String HELP_MESSAGE =
         "I comandi possibili sono:\n\n" + HELP_COMMAND + NORTH_COMMAND + SOUTH_COMMAND + WEST_COMMAND + EAST_COMMAND +
