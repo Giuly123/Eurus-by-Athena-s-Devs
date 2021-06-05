@@ -18,14 +18,14 @@
       "id": "2fbf2390-299a-4406-95c5-42d05c1ded64",
       "name": "IndovinelloPippo",
       "text": "Sulla porta c’è un foglietto con scritto: “Qual è il nome più frequente assegnato ad una variabile metasintattica? E’ anche un famoso personaggio di un cartone animato.”",
-      "afterAnswered": "Risposta corretta! Puoi avanzare nella prossima stanza...",
+      "afterAnswered": "Puoi avanzare nella prossima stanza...",
       "correctAnswer": "pippo"
     },
     {
       "id": "5ff60e9d-7836-4a50-88af-6f83df2f5939",
       "name": "IndovinelloVento",
-      "text": "Qual è la parola d’ordine?\n",
-      "afterAnswered": "Risposta corretta! Puoi avanzare nella stanza ora...",
+      "text": "Qual è la parola d’ordine?",
+      "afterAnswered": "Puoi avanzare nella stanza ora...",
       "correctAnswer": "vento"
     }
   ]

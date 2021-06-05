@@ -15,7 +15,7 @@
       ],
       "shortDescription": "Cella 221B - Ti trovi in una cella. La luce bianca ti acceca.",
       "fullDescription": "Sei in una cella, ci sono solo i tuoi amici, c'è, inoltre, un comodino con un cassetto. Sarà il caso di aprirlo, potrebbe contenere qualcosa!",
-      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…\n",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "bfa63d12-e592-44af-8fe4-cffb4712245f",
         "dd162e26-1bad-4e26-bf33-a0750f59ce05"
@@ -72,9 +72,9 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio ala sinistra zona 1A - Un lungo corridoio. Ci delle porte. Saranno chiuse? Controllare non fa mai male.\n ",
+      "shortDescription": "Corridoio ala sinistra zona 1A - Un lungo corridoio. Ci delle porte. Saranno chiuse? Controllare non fa mai male. ",
       "fullDescription": "Guardandovi indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA SINISTRA”. C\u0027è una porta alla tua sinistra, ma il corridoio è lungo... Noti inoltre un cadavere appoggiato al muro.",
-      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…\n",
+      "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione...",
       "interactableHere": [
         "20070cbd-e100-4f46-ba3e-279257598a86",
         "e0441288-a78c-42c7-b343-0b7358617957"
@@ -89,7 +89,7 @@
         "East"
       ],
       "shortDescription": "Cella 225B - A primo impatto sembra una cella uguale alle precedenti.",
-      "fullDescription": "Una luce fredda illumina la stanza, sembra una cella diversa dalle altre. Al centro della stanza c'è una valigetta!\n",
+      "fullDescription": "Una luce fredda illumina la stanza, sembra una cella diversa dalle altre. Al centro della stanza c'è una valigetta!",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "5bad8f54-1754-4a33-a973-0c3fbc4c135a"
@@ -105,8 +105,8 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio ala destra zona 1E - Questo corridoio sembra non finire mai...",
-      "fullDescription": "Sei in un lungo corridoio. C\u0027è una porta ma non sembrerebbe essere aperta. Intravedi un cancello alla fine del corridoio.",
+      "shortDescription": "Corridoio ala destra zona 1E - Il corridoio sembra avere una fine...",
+      "fullDescription": "Sei in un lungo corridoio. C\u0027è una porta alla tua sinistra ma non sembrerebbe essere aperta. Alla fine del corridoio vedi un cancello.",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "574d2776-8e7e-4101-af3c-e5684f454783"
@@ -130,7 +130,7 @@
       "itemsToTake": [
       ],
       "interactableToSwitchOnLight": "9e71b832-06bd-4730-acd2-29487ad76ea9",
-      "descriptionOfDarkRoom": "La cella è immersa nell’oscurità. Non si vede davvero nulla.\n",
+      "descriptionOfDarkRoom": "La cella è immersa nell’oscurità. Non si vede davvero nulla.",
       "neededToSwitchOnLight": true
     },
     {
@@ -153,7 +153,7 @@
         "East"
       ],
       "shortDescription": "Cella 224B - Entri già con la torcia accesa, a primo impatto sembra una cella uguale alle precedenti.",
-      "fullDescription": "La luce della torcia ti permette di vedere meglio ciò che hai intorno. Ci sono due teschi e un cumulo di ossa nella cella che sembrano essere stati impiccati. Ti ricordi di aver trovato un altro cadavere nell’ala destra dell’ospedale. Inorridisci.\nNella stanza è presente anche un vecchio baule.\n",
+      "fullDescription": "La luce della torcia ti permette di vedere meglio ciò che hai intorno. Ci sono due teschi e un cumulo di ossa nella cella che sembrano essere stati impiccati. Ti ricordi di aver trovato un altro cadavere nell’ala destra dell’ospedale. Inorridisci.\nNella stanza è presente anche un vecchio baule.",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "1ea9c42b-7987-41d0-9a2a-d105cbdfc050",
@@ -171,8 +171,8 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio ala destra zona 1D - Un lungo corridoio. Ci delle porte. Saranno chiuse? Controllare non fa mai male.\n",
-      "fullDescription": "Guardandoti indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA DESTRA”.\n\n Subito dopo, lo sguardo viene attirato da un biglietto attaccato alla porta che riporta “Nessun aiuto questa volta”. C\u0027è anche una porta che sembra aperta alla tua sinistra... In alto, in un angolo, lampeggia la spia di una telecamera…\n",
+      "shortDescription": "Corridoio ala destra zona 1D - Un lungo corridoio. Ci delle porte. Saranno chiuse? Controllare non fa mai male.",
+      "fullDescription": "Guardandoti indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA DESTRA”.\n\n Subito dopo, lo sguardo viene attirato da un biglietto attaccato alla porta che riporta “Nessun aiuto questa volta”. C\u0027è anche una porta che sembra aperta alla tua sinistra... In alto, in un angolo, lampeggia la spia di una telecamera…",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
@@ -186,7 +186,7 @@
         "East"
       ],
       "shortDescription": "Stanza del direttore - Una camera molto più spaziosa delle altre!",
-      "fullDescription": "Una luce fredda illumina la stanza. Nella stanza c’è una scrivania. Sulla scrivania è riposto un borsello nero in pelle. \n",
+      "fullDescription": "Una luce fredda illumina la stanza. Nella stanza c’è una scrivania. Sulla scrivania è riposto un borsello nero in pelle.",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "e9297d9b-ae02-41a6-85c2-b4637f6aecac"
@@ -230,7 +230,7 @@
       "itemsToTake": [
       ],
       "interactableToSwitchOnLight": "c8bf59e9-7e9c-4bc2-97a7-c4e71e671f33",
-      "descriptionOfDarkRoom": "Ora che la tv è spenta si vede poco e niente. Se solo si potesse illuminare…\n",
+      "descriptionOfDarkRoom": "Ora che la tv è spenta si vede poco e niente. Se solo si potesse illuminare…",
       "neededToSwitchOnLight": true
     },
     {
