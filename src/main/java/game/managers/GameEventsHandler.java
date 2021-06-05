@@ -160,8 +160,9 @@ public class GameEventsHandler
                 tryUnlockInteractable(status.args.interactable);
             }
 
-            gameView.appendText(Sentences.USE_ITEM_USED + status.args.item.getName());
             gameView.appendText(status.args.item.getAfterUsed());
+
+            gameView.appendText(Sentences.USE_ITEM_USED + status.args.item.getName());
 
             if(status.args.item.isConsumable())
             {
