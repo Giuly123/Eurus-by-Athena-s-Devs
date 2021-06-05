@@ -30,7 +30,7 @@
       "id": "bfa63d12-e592-44af-8fe4-cffb4712245f",
       "name": "Porta",
       "description": "Una porta blindata. Qualcosa potrebbe aprirla...",
-      "afterUsed": "Porta aperta!"
+      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "chest",
@@ -58,12 +58,11 @@
       ],
       "endGame": false,
       "alias": [
-        "porta"
       ],
       "id": "20070cbd-e100-4f46-ba3e-279257598a86",
       "name": "Cella222B",
       "description": "Una porta blindata. Qualcosa potrebbe aprirla...\n",
-      "afterUsed": "Porta aperta!"
+      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "chestGuessingGame",
@@ -95,7 +94,7 @@
       "id": "981d8411-bcb9-4c57-b277-936bb135b870",
       "name": "Porta direttore",
       "description": "Una porta, sembra diversa da quelle già incontrate... Richiede una password!",
-      "afterUsed": "Porta aperta!"
+      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "switchOnLight",
@@ -157,7 +156,7 @@
       "id": "574d2776-8e7e-4101-af3c-e5684f454783",
       "name": "Cella225B",
       "description": "Una porta blindata. Qualcosa potrebbe aprirla...",
-      "afterUsed": "Porta Aperta!"
+      "afterUsed": "Porta Aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "switchOnLight",
@@ -241,7 +240,7 @@
       "id": "afd60cd7-5da0-4104-ac9d-1ca506baa678",
       "name": "Porta puzzle",
       "description": "Una porta cosparsa di sangue, di chi sarà? Per passare richiede di risolvere un puzzle. Manca un pezzo!\n",
-      "afterUsed": "Porta aperta!"
+      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "door",
@@ -256,7 +255,7 @@
       "id": "b34b3e7d-b887-489b-808e-66b309de560b",
       "name": "Porta con Serratura",
       "description": "Una porta con una strana serratura...",
-      "afterUsed": ""
+      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "chest",
