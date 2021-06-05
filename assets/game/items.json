@@ -5,13 +5,23 @@
       "itemType": "document",
       "isConsumable": false,
       "alias": [
-        "nota#1",
-        "nota#1",
-        "nota#1"
+        "nota1"
       ],
       "id": "15e3bed0-0a26-4006-a42e-7ed4f509885f",
       "name": "Nota#1",
       "description": "Apri la cella e diamo inizio alle danze!",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "boccetta"
+      ],
+      "id": "3970fa72-b4bb-4758-950b-6b811416dbb9",
+      "name": "Veleno",
+      "description": "Un liquido di uno strano colore...",
       "afterUsed": ""
     },
     {
@@ -20,7 +30,6 @@
       "isConsumable": true,
       "alias": [
         "pass",
-        "Chiave",
         "chiave"
       ],
       "id": "9d5ec29d-31a8-49e5-a190-000faa6e1b85",
@@ -33,12 +42,103 @@
       "itemType": "itemToUseInteractable",
       "isConsumable": false,
       "alias": [
-        "torcia",
         "luce"
       ],
       "id": "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5",
       "name": "Torcia",
       "description": "Serve per fare luce nei posti bui!",
+      "afterUsed": "Ora puoi riosservare la stanza illuminata"
+    },
+    {
+      "assetName": "nota.jpg",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "nota3"
+      ],
+      "id": "5e849b0b-3fc4-413b-919a-28ff3485b850",
+      "name": "Nota#3",
+      "description": "memorie paziente 6689\n\u003c\u003c Da qualche tempo, durante la notte, sento una voce. Una donna bisbiglia canticchiando le stesse macabre parole ogni volta “Quando ti trovi davanti ad una scelta tra te ed altri, scegli te. Tra vita e morte, scegli la morte.” Un ritornello a cui non riesco a non pensare.\u003e\u003e\n",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "pass.jpg",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "pass",
+        "chiave"
+      ],
+      "id": "a8f93b58-1ce7-45fb-895e-733ddadcd168",
+      "name": "pass225B",
+      "description": "Apre sicuramente qualcosa...",
+      "afterUsed": "Pass usato!"
+    },
+    {
+      "assetName": "",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+      ],
+      "id": "dc55c4ef-59db-46b8-9c75-285cef6402f0",
+      "name": "Fascicolo paziente 6686",
+      "description": "Referto medico paziente 6686\nNome: Andrew Scott\nSesso: M\nNella struttura dal: 21/10/1976\nDiagnosi: Disturbo della personalità\n",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+      ],
+      "id": "0fcff3ce-712b-4e51-9db4-9633fec37e35",
+      "name": "Fascicolo paziente 6688",
+      "description": "Referto medico paziente 6688\nNome: Benedict Cumberbatch\nSesso: M\nNella struttura dal: 19/07/1976\nDiagnosi: Sociopatia altamente funzionale\n",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+      ],
+      "id": "cd4bdae2-ac05-4f1d-b3d9-5a5993f269dc",
+      "name": "Fascicolo paziente 66xx",
+      "description": "Referto medico paziente 66xx\nNome: Eurus xxxxx\nSesso: F\nNella struttura dal: xx/xx/xxxx\nDiagnosi: xxxxxxx\n",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+      ],
+      "id": "ec749676-742a-47bc-810f-e033309cda10",
+      "name": "Fascicolo paziente 6689",
+      "description": "Referto medico paziente 6689\nNome: Amanda Abbington\nSesso: F\nNella struttura dal: 28/02/1974\nDiagnosi: Schizofrenia\n",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "diario.jpg",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+      ],
+      "id": "477dbbe8-913a-4029-9e8c-83e0752b127d",
+      "name": "Diario",
+      "description": " Questo diario è tutto ciò che ho. Non mi è concesso altro in questo ospedale. E’ la cosa più vicina a qualcuno con cui parlare. Mi hanno abbandonata quando ero solo una bambina. Gliela farò pagare.\nIl resto delle pagine sono bruciate o comunque illeggibili...\n",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "nota.jpg",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "nota4"
+      ],
+      "id": "74e2c786-7582-4e56-89d4-5d3e20630fa0",
+      "name": "Nota#4",
+      "description": "\u003c\u003cSe la porta  sbloccare vorrai, le cifre del mio fascicolo, capovolte, utilizzare dovrai\u003e\u003e",
       "afterUsed": ""
     },
     {
@@ -46,6 +146,8 @@
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
       "alias": [
+        "pass",
+        "chiave"
       ],
       "id": "9b0c65f6-9653-4cf9-b5d8-2b3b5715d624",
       "name": "pass222B",
@@ -57,11 +159,11 @@
       "itemType": "document",
       "isConsumable": false,
       "alias": [
-        "nota"
+        "nota2"
       ],
       "id": "01f1733d-47f6-4eec-8d57-645612859e23",
-      "name": "Nota2",
-      "description": "#paziente 6088\n\u003c\u003cDevo scappare di qui prima che mi prenda. La mia cella è vicina a quella del direttore. L’ho sentito infinite volte ripetere ‘vento’ durante questi anni. Sarà qualcosa di importante.\u003e\u003e\n",
+      "name": "Nota#2",
+      "description": "#memorie paziente 6688\n\u003c\u003cDevo scappare di qui prima che mi prenda. La mia cella è vicina a quella del direttore. L’ho sentito infinite volte ripetere ‘vento’ durante questi anni. Sarà qualcosa di importante.\u003e\u003e\n",
       "afterUsed": ""
     },
     {
@@ -69,13 +171,38 @@
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
       "alias": [
-        "cerbottana",
-        "fionda"
+        "fionda",
+        "cerbottana"
       ],
       "id": "95e22959-004e-4dea-9440-29f391fbae73",
       "name": "Cerbottana con dardo",
       "description": "Il dardo è pronto per essere sparato!",
-      "afterUsed": "Dopo lo sparo la cerbottana si è rotta!"
+      "afterUsed": "Dopo lo sparo la cerbottana si è rotta! Ora la custodia può essere aperta!"
+    },
+    {
+      "assetName": "pistola.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": false,
+      "alias": [
+        "gun"
+      ],
+      "id": "bdfd4755-d983-4b92-be11-3b2a84199a16",
+      "name": "Pistola",
+      "description": "Una pistola carica, chi l\u0027ha messa qui ci sta prendendo in giro!",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "puzzle.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "pezzo",
+        "puzzle"
+      ],
+      "id": "23f61a48-b4ca-4f8e-9b02-c3c88ac17d34",
+      "name": "Pezzo puzzle",
+      "description": "Un pezzo di un puzzle, chissà dove va messo...",
+      "afterUsed": "Pezzo di Puzzle inserito!"
     },
     {
       "assetName": "grimaldello.png",
@@ -83,11 +210,11 @@
       "isConsumable": true,
       "alias": [
         "grimaldello",
-        "chiave"
+        "lock pick"
       ],
       "id": "d60c9e24-3088-44c4-b21c-feb999227e57",
       "name": "Grimaldello",
-      "description": "Serve per forzare le serrature...",
+      "description": "Utile per scassinare alcune serrature...",
       "afterUsed": "Dopo l\u0027utilizzo il grimaldello si è rotto!"
     }
   ]
