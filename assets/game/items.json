@@ -177,7 +177,7 @@
       "id": "95e22959-004e-4dea-9440-29f391fbae73",
       "name": "Cerbottana con dardo",
       "description": "Il dardo è pronto per essere sparato!",
-      "afterUsed": "Dopo lo sparo la cerbottana si è rotta! Ora la custodia può essere aperta!"
+      "afterUsed": "Dopo lo sparo la cerbottana si è rotta! É caduta una custodia!"
     },
     {
       "assetName": "pistola.png",
