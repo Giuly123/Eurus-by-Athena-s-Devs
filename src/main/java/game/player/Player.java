@@ -273,7 +273,7 @@ public class Player
     {
         boolean hasAnswer = true;
 
-        if (tile != null && tile.hasGuessingGame())
+        if (tile != null)
         {
             hasAnswer = haveNecessaryAnswer(tile.getGuessingGameToEnterId());
         }
@@ -434,7 +434,7 @@ public class Player
 
         for(Tile tile : contiguousTiles)
         {
-            if (tile.hasGuessingGame() && tile.getGuessingGameToEnterId() != null)
+            if (tile.getGuessingGameToEnterId() != null)
             {
                 GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(tile.getGuessingGameToEnterId());
 
@@ -632,7 +632,6 @@ public class Player
             dialoguesHandler.setDialoguesMade(new ArrayList<>());
             dialoguesHandler.setDialoguesMade(new ArrayList<>());
             guessingGamesHandler.setUSedGuessingGame(new ArrayList<>());
-
             endGame = false;
         }
 

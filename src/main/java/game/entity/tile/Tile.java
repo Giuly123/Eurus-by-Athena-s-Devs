@@ -18,9 +18,7 @@ public class Tile
     final private UUID interactableNeededToEnter;
     final private List<UUID> itemsToTake;
     final private UUID interactableToSwitchOnLight;
-
-    final private boolean hasGuessingGame;
-
+    
     final private boolean neededToSwitchOnLight;
 
     final private UUID guessingGameToEnterId;
@@ -33,7 +31,6 @@ public class Tile
                 List<UUID> interactableHere,
                 UUID interactableNeededToEnter,
                 List<UUID> itemToTake,
-                boolean hasGuessingGame,
                 UUID guessingGameToEnterId,
                 boolean neededToSwitchOnLight,
                 UUID interactableToSwitchOnLight,
@@ -49,7 +46,6 @@ public class Tile
         this.interactableNeededToEnter = interactableNeededToEnter;
         this.itemsToTake = itemToTake;
         this.guessingGameToEnterId = guessingGameToEnterId;
-        this.hasGuessingGame = hasGuessingGame;
         this.interactableToSwitchOnLight = interactableToSwitchOnLight;
         this.neededToSwitchOnLight = neededToSwitchOnLight;
         this.descriptionOfDarkRoom = descriptionOfDarkRoom;
@@ -94,11 +90,6 @@ public class Tile
     public UUID getGuessingGameToEnterId()
     {
         return guessingGameToEnterId;
-    }
-
-    public boolean hasGuessingGame()
-    {
-        return hasGuessingGame;
     }
 
     public UUID getInteractableToSwitchOnLight() {
