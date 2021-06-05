@@ -44,3 +44,9 @@ Errore: problema durante la fase di parsing
 
 2021/06/05 11:43:12
 java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 3 column 3 path $.dialogEventList[0]
+
+2021/06/05 14:54:33
+Errore: problema parsing file dialogues.json
+
+2021/06/05 14:56:57
+Errore: problema parsing file guessingGames.json

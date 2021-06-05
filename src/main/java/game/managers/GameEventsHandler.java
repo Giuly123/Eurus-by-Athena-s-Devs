@@ -21,6 +21,7 @@ public class GameEventsHandler
 
     private InteractableHandler interactableHandler;
     private DialoguesHandler dialoguesHandler;
+    private GuessingGamesHandler guessingGamesHandler;
 
 
     public GameEventsHandler(GameModel gameModel, GameView gameView) throws Exception
@@ -28,6 +29,7 @@ public class GameEventsHandler
         InventoryManager inventoryManager = InventoryManager.getInstance();
         dialoguesHandler = DialoguesHandler.getInstance();
         interactableHandler = InteractableHandler.getInstance();
+        guessingGamesHandler = GuessingGamesHandler.getInstance();
 
         Observer<Interactable> observerUnlockInteractable = interactable -> onUnlockInteractable(interactable);
         Observer<MovingStatus> observerTryMovePlayer = moveArgs -> onTryMovePlayer(moveArgs);
@@ -120,7 +122,7 @@ public class GameEventsHandler
         else if (status == InteractStatus.needAnswer)
         {
             gameView.appendText(Sentences.INTERACTABLE_NEED_ANSWER);
-            GuessingGame guessingGame = status.interactable.getGuessingGame();
+            GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(status.interactable.getGuessingGameId());
             gameView.appendText(Sentences.MOVE_NEED_ANSWER_2 + guessingGame.getText());
         }
     }
@@ -247,7 +249,8 @@ public class GameEventsHandler
         else if (status == MovingStatus.needAnswer)
         {
             gameView.appendText(Sentences.MOVE_NEED_ANSWER_1);
-            gameView.appendText(Sentences.MOVE_NEED_ANSWER_2 + args.nextTile.getGuessingGameToEnter().getText());
+            GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(args.nextTile.getGuessingGameToEnterId());
+            gameView.appendText(Sentences.MOVE_NEED_ANSWER_2 + guessingGame.getText());
         }
         else if (status == MovingStatus.offTheMap)
         {

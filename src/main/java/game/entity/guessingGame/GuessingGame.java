@@ -12,7 +12,6 @@ public class GuessingGame extends BaseEntity
     private String correctAnswer;
 
     // questa risposta non verra' salvata, quindi sara' necessario reinserirla a ogni run
-    public boolean isResolved = false;
 
     public GuessingGame (UUID id, String name, String text, String correctAnswer, String afterAnswered)
     {
@@ -38,7 +37,6 @@ public class GuessingGame extends BaseEntity
 
         if (answer.toLowerCase(Locale.ROOT).equals(correctAnswer.toLowerCase(Locale.ROOT)))
         {
-            isResolved = true;
             isRight = true;
         }
 

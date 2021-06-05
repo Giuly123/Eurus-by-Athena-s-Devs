@@ -6,7 +6,6 @@ import javax.swing.border.*;
 import game.entity.item.Item;
 import game.gameUtilities.AudioPlayer;
 import game.gameUtilities.Utilities;
-
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -16,9 +15,7 @@ import java.util.Map;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-/**
- * @author unknown
- */
+
 public class GameView
 {
     private TypeWriter typeWriter;

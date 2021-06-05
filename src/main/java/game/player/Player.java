@@ -33,14 +33,15 @@ public class Player
 
     public boolean endGame;
     public InventoryManager inventoryManager;
+    private MapManager map;
 
     private InteractableHandler interactableHandler;
     private ItemsHandler itemsHandler;
     private DialoguesHandler dialoguesHandler;
+    private GuessingGamesHandler guessingGamesHandler;
 
     private int currentPositionRiga;
     private int currentPositionColonna;
-    private MapManager map;
     private boolean isLoaded = false;
 
     public Player(boolean isContinuing, StartConfig startConfig) throws Exception
@@ -53,11 +54,13 @@ public class Player
         onLookItem = new Subject<>();
         onObserve = new Subject<>();
 
-        interactableHandler = InteractableHandler.getInstance();
-        inventoryManager = InventoryManager.getInstance();
         itemsHandler = ItemsHandler.getInstance();
-        map = MapManager.getInstance();
+        interactableHandler = InteractableHandler.getInstance();
         dialoguesHandler = DialoguesHandler.getInstance();
+        guessingGamesHandler = GuessingGamesHandler.getInstance();
+
+        map = MapManager.getInstance();
+        inventoryManager = InventoryManager.getInstance();
 
         loadSaveFile(isContinuing, startConfig);
         isLoaded = true;
@@ -259,9 +262,9 @@ public class Player
     }
 
 
-    private boolean haveNecessaryAnswer(GuessingGame guessingGame)
+    private boolean haveNecessaryAnswer(UUID guessingGame)
     {
-        return guessingGame == null || guessingGame.isResolved;
+        return guessingGame == null || guessingGamesHandler.isResolvedGuessingGame(guessingGame);
     }
 
 
@@ -271,7 +274,7 @@ public class Player
 
         if (tile != null && tile.hasGuessingGame())
         {
-            hasAnswer = haveNecessaryAnswer(tile.getGuessingGameToEnter());
+            hasAnswer = haveNecessaryAnswer(tile.getGuessingGameToEnterId());
         }
 
         return hasAnswer;
@@ -346,7 +349,7 @@ public class Player
     {
         InteractStatus status = InteractStatus.needAnswer;
 
-        if (haveNecessaryAnswer(interactable.getGuessingGame()))
+        if (haveNecessaryAnswer(interactable.getGuessingGameId()))
         {
             interactableHandler.addUsedInteractable(interactable);
             inventoryManager.addItems(interactable.getContainedItems());
@@ -430,9 +433,15 @@ public class Player
 
         for(Tile tile : contiguousTiles)
         {
-            if (tile.hasGuessingGame() && tile.getGuessingGameToEnter() != null)
+            if (tile.hasGuessingGame() && tile.getGuessingGameToEnterId() != null)
             {
-                result.add(tile.getGuessingGameToEnter());
+                GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(tile.getGuessingGameToEnterId());
+
+                if (guessingGame != null)
+                {
+                    result.add(guessingGame);
+                }
+
             }
         }
 
@@ -449,9 +458,15 @@ public class Player
         {
             if (interactable.getInteractableType() == InteractableType.chestGuessingGame)
             {
-                if (interactable.getGuessingGame() != null)
+                if (interactable.getGuessingGameId() != null)
                 {
-                    result.add(interactable.getGuessingGame());
+                    GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(interactable.getGuessingGameId());
+
+                    if (guessingGame != null)
+                    {
+                        result.add(guessingGame);
+                    }
+
                 }
             }
         }
@@ -473,7 +488,9 @@ public class Player
             {
                 status = status.getMajor(AnswerStatus.alreadySolved);
 
-                if (!guessingGame.isResolved)
+                boolean isResolved = guessingGamesHandler.isResolvedGuessingGame(guessingGame.getId());
+
+                if (!isResolved)
                 {
                     status = status.getMajor(AnswerStatus.notSolved);
 
@@ -576,24 +593,33 @@ public class Player
     }
 
 
-    private void loadSaveFile(boolean isContinuing, StartConfig startConfig)
+    private void loadSaveFile(boolean isContinuing, StartConfig startConfig) throws Exception
     {
         if (isContinuing)
         {
-            try
+            if (Utilities.fileExist(Utilities.SAVE_JSON_PATH))
             {
-                RootPlayerJson player = JsonParser.GetClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
-                currentPositionRiga = player.lastPositionRiga;
-                currentPositionColonna = player.lastPositionColonna;
-                interactableHandler.setUsedIteractable(player.usedInteractable);
-                inventoryManager.setInventoryList(player.inventory);
-                inventoryManager.setUsedItemsMap(player.usedItems);
-                dialoguesHandler.setDialoguesMade(player.dialoguesMade);
-                endGame = player.endGame;
-            } catch (IOException e)
-            {
-                e.printStackTrace();
+                try
+                {
+                    RootPlayerJson player = JsonParser.GetClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
+                    currentPositionRiga = player.lastPositionRiga;
+                    currentPositionColonna = player.lastPositionColonna;
+                    interactableHandler.setUsedIteractable(player.usedInteractable);
+                    inventoryManager.setInventoryList(player.inventory);
+                    inventoryManager.setUsedItemsMap(player.usedItems);
+                    dialoguesHandler.setDialoguesMade(player.dialoguesMade);
+                    guessingGamesHandler.setUSedGuessingGame(player.usedGuessingGame);
+                    endGame = player.endGame;
+                } catch (IOException e)
+                {
+                    throw new Exception("Errore: problema parsing file save.json");
+                }
             }
+            else
+            {
+                throw new Exception("File save.json non presente sul disco");
+            }
+
         }
         else
         {
@@ -602,6 +628,7 @@ public class Player
             interactableHandler.setUsedIteractable(new ArrayList<>());
             inventoryManager.setInventoryList(new ArrayList<>());
             inventoryManager.setUsedItemsMap(new HashMap<>());
+            endGame = false;
         }
 
     }
@@ -617,6 +644,7 @@ public class Player
                     inventoryManager.getUsedItems(),
                     inventoryManager.getInvetoryList(),
                     dialoguesHandler.getDialoguesMade(),
+                    guessingGamesHandler.getUsedGuessingGame(),
                     endGame);
             String content = JsonParser.SerializeClassToJson(player);
             boolean result = Utilities.writeFile(Utilities.SAVE_JSON_PATH, content, false);
