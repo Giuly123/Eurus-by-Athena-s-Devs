@@ -155,14 +155,14 @@ public class GameEventsHandler
         }
         else if (status == UsingItemStatus.used)
         {
+            gameView.appendText(Sentences.USE_ITEM_USED + status.args.item.getName());
+
             gameView.appendText(status.args.item.getAfterUsed());
 
             if (status.args.item.getItemType() == ItemType.itemToUseInteractable)
             {
                 tryUnlockInteractable(status.args.interactable);
             }
-
-            gameView.appendText(Sentences.USE_ITEM_USED + status.args.item.getName());
 
             if(status.args.item.isConsumable())
             {
