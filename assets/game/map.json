@@ -44,6 +44,7 @@
         "ac91d441-f3d0-4844-a961-f56d3519811c",
         "30813974-9dc8-4d09-b6a4-3e93e87395b2"
       ],
+      "guessingGameId": "5236bc8e-7a67-4de0-a84c-3102e65b5568",
       "itemsToTake": [
         "3970fa72-b4bb-4758-950b-6b811416dbb9"
       ],
@@ -175,6 +176,7 @@
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
+      "guessingGameId": "2fbf2390-299a-4406-95c5-42d05c1ded64",
       "itemsToTake": [
       ],
       "neededToSwitchOnLight": false
@@ -189,6 +191,7 @@
       "interactableHere": [
         "e9297d9b-ae02-41a6-85c2-b4637f6aecac"
       ],
+      "guessingGameId": "5ff60e9d-7836-4a50-88af-6f83df2f5939",
       "itemsToTake": [
       ],
       "neededToSwitchOnLight": false
