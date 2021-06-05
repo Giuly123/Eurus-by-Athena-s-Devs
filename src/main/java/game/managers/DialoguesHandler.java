@@ -64,9 +64,9 @@ public class DialoguesHandler
 
     private void loadDialoguesCollection() throws Exception
     {
-        if (Utilities.fileExist(Utilities.DIALOGS_JSON_PATH))
+        if (Utilities.fileExist(Utilities.DIALOGUES_JSON_PATH))
         {
-            RootDialoguesCollectionJson dialoguesCollectionJson = JsonParser.GetClassFromJson(Utilities.INTERACTABLES_JSON_PATH,
+            RootDialoguesCollectionJson dialoguesCollectionJson = JsonParser.GetClassFromJson(Utilities.DIALOGUES_JSON_PATH,
                     RootDialoguesCollectionJson.class);
 
             for(int i = 0; i < dialoguesCollectionJson.dialogEventList.size(); i++)

@@ -32,3 +32,6 @@ File della mappa non presente sul discoErrore: problema durante la fase di parsi
 
 2021/06/05 10:48:50
 Errore: problema durante la fase di parsing
+
+2021/06/05 11:07:22
+Errore: problema durante la fase di parsing
