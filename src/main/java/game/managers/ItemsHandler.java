@@ -130,7 +130,7 @@ public class ItemsHandler
             }
             catch (Exception e)
             {
-                System.out.println("Errore: problema parsing file items.json");
+                throw new Exception("Errore: problema parsing file items.json");
             }
         }
         else

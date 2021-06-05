@@ -46,6 +46,7 @@ public class DialoguesHandler
         dialoguesMade.add(dialogEventId);
     }
 
+
     public void setDialoguesMade(List<UUID> dialoguesMade)
     {
         if (dialoguesMade != null)
@@ -53,6 +54,12 @@ public class DialoguesHandler
             this.dialoguesMade = dialoguesMade;
         }
     }
+
+    public boolean isMadeDialog(UUID dialogID)
+    {
+        return dialoguesMade.contains(dialogID);
+    }
+
 
     public List<UUID> getDialoguesMade()
     {

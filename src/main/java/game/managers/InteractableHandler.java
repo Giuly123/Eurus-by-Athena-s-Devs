@@ -149,6 +149,11 @@ public class InteractableHandler
         return usedIteractable;
     }
 
+    public boolean isUsedInteractalbe(UUID interactableId)
+    {
+        return usedIteractable.contains(interactableId);
+    }
+
     private class RootInteractableCollectionJson
     {
         public List<Interactable> interactableList;

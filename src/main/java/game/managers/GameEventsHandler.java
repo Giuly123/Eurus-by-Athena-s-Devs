@@ -22,24 +22,24 @@ public class GameEventsHandler
     private InteractableHandler interactableHandler;
     private DialoguesHandler dialoguesHandler;
 
-    private Observer<Interactable> observerUnlockInteractable = interactable -> onUnlockInteractable(interactable);
-    private Observer<MovingStatus> observerTryMovePlayer = moveArgs -> onTryMovePlayer(moveArgs);
-    private Observer<AnswerStatus> observeTryResolveGuessingGame = statusArgs -> onTryResolveGuessingGame(statusArgs);
-    private Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
-    private Observer<InteractStatus> observerTryInteract = interactArgs -> onTryInteract(interactArgs);
-    private Observer<TakeItemStatus> observerTryTakeItem = takeItemArgs -> onTryTakeItem(takeItemArgs);
-    private Observer<String> observerLookItem = ItemDescription -> onLookItem(ItemDescription);
-    private Observer<String> observerObserve = description -> onObserve(description);
-
-    private Observer<Item> observerAddItemToInventory = item -> addItemToInventory(item);
-    private Observer<Item> observerRemoveItemToInventory = item -> removeItemToInventory(item);
-
 
     public GameEventsHandler(GameModel gameModel, GameView gameView) throws Exception
     {
         InventoryManager inventoryManager = InventoryManager.getInstance();
         dialoguesHandler = DialoguesHandler.getInstance();
         interactableHandler = InteractableHandler.getInstance();
+
+        Observer<Interactable> observerUnlockInteractable = interactable -> onUnlockInteractable(interactable);
+        Observer<MovingStatus> observerTryMovePlayer = moveArgs -> onTryMovePlayer(moveArgs);
+        Observer<AnswerStatus> observeTryResolveGuessingGame = statusArgs -> onTryResolveGuessingGame(statusArgs);
+        Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
+        Observer<InteractStatus> observerTryInteract = interactArgs -> onTryInteract(interactArgs);
+        Observer<TakeItemStatus> observerTryTakeItem = takeItemArgs -> onTryTakeItem(takeItemArgs);
+        Observer<String> observerLookItem = ItemDescription -> onLookItem(ItemDescription);
+        Observer<String> observerObserve = description -> onObserve(description);
+        Observer<Item> observerAddItemToInventory = item -> addItemToInventory(item);
+        Observer<Item> observerRemoveItemToInventory = item -> removeItemToInventory(item);
+
         interactableHandler.getOnUnlockInteractable().register(observerUnlockInteractable);
         gameModel.getPlayer().getOnTryMovePlayerSubject().register(observerTryMovePlayer);
         gameModel.getPlayer().getOnTrySolveGuessingGameSubject().register(observeTryResolveGuessingGame);
@@ -87,6 +87,15 @@ public class GameEventsHandler
     }
 
 
+    private void checkEndGame(Interactable interactable)
+    {
+        if (interactable.isEndGame())
+        {
+            gameView.appendText(Sentences.END_GAME_STRING);
+            gameModel.getPlayer().endGame = true;
+        }
+    }
+
     private void onTryInteract(InteractStatus status)
     {
         if (status == InteractStatus.used)
@@ -94,11 +103,7 @@ public class GameEventsHandler
             gameView.appendText(Sentences.INTERACTABLE_USED + status.interactable.getName());
             gameView.appendText(Sentences.INTERACTABLE_AFTER_USED + status.interactable.getAfterUsed());
 
-            if (status.interactable.isEndGame())
-            {
-                gameView.appendText(Sentences.END_GAME_STRING);
-                gameModel.getPlayer().endGame = true;
-            }
+            checkEndGame(status.interactable);
         }
         else if (status == InteractStatus.alreadyUsed)
         {
@@ -138,6 +143,11 @@ public class GameEventsHandler
                 interactableHandler.addUsedInteractable(interactable);
                 unlocked = true;
             }
+        }
+
+        if (unlocked)
+        {
+            checkEndGame(interactable);
         }
 
         return unlocked;
@@ -211,7 +221,7 @@ public class GameEventsHandler
 
     private void checkDialogEvent(DialogEvent dialog)
     {
-        if(dialog != null)
+        if(dialog != null && !dialoguesHandler.isMadeDialog(dialog.getId()))
         {
             gameView.appendText(dialog.getDialogText());
             dialoguesHandler.addDialogToMade(dialog.getId());

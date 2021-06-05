@@ -1,7 +1,7 @@
 package game.gameModel;
 
 
-import game.StartConfig;
+import game.player.StartConfig;
 import game.managers.MapManager;
 import game.player.Player;
 import game.managers.InteractableHandler;

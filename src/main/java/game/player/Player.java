@@ -1,7 +1,6 @@
 package game.player;
 
 import game.managers.*;
-import game.StartConfig;
 import game.entity.tile.Tile;
 import game.gameUtilities.Coordinates;
 import game.gameUtilities.Sentences;
@@ -174,7 +173,7 @@ public class Player
 
         if (interactable != null)
         {
-            boolean alreadyUsed = interactableHandler.getUsedIteractable().contains(interactable.getId());
+            boolean alreadyUsed = interactableHandler.isUsedInteractalbe(interactable.getId());
 
             if (!alreadyUsed)
             {
@@ -241,7 +240,7 @@ public class Player
 
             if (interactable != null && interactable.getInteractableType() == InteractableType.door)
             {
-                if (!interactableHandler.getUsedIteractable().contains(interactable.getId()))
+                if (!interactableHandler.isUsedInteractalbe(interactable.getId()))
                 {
                     unlockedNecessaryInteractable = false;
                 }
@@ -379,7 +378,7 @@ public class Player
     {
         InteractStatus status = InteractStatus.alreadyUsed;
 
-        if (!interactableHandler.getUsedIteractable().contains(interactable.getId()))
+        if (!interactableHandler.isUsedInteractalbe(interactable.getId()))
         {
             if (interactable.getInteractableType() == InteractableType.chest)
             {
@@ -526,7 +525,7 @@ public class Player
 
         if (tile.isNeededToSwitchOnLight())
         {
-            if (interactableHandler.getUsedIteractable().contains(tile.getInteractableToSwitchOnLight()))
+            if (interactableHandler.isUsedInteractalbe(tile.getInteractableToSwitchOnLight()))
             {
                 result = Sentences.LOOK_ITEM_DESCRIPTION + description;
             }
@@ -598,8 +597,8 @@ public class Player
         }
         else
         {
-            currentPositionRiga = startConfig.rootStartConfigJson.startPositionRiga;
-            currentPositionColonna = startConfig.rootStartConfigJson.startPositionColonna;
+            currentPositionRiga = startConfig.startConfigJson.startPositionRiga;
+            currentPositionColonna = startConfig.startConfigJson.startPositionColonna;
             interactableHandler.setUsedIteractable(new ArrayList<>());
             inventoryManager.setInventoryList(new ArrayList<>());
             inventoryManager.setUsedItemsMap(new HashMap<>());
