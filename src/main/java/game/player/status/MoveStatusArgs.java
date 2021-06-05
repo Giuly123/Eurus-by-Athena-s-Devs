@@ -1,5 +1,4 @@
-package game.player;
-
+package game.player.status;
 
 import game.entity.tile.Tile;
 import game.gameUtilities.Coordinates;

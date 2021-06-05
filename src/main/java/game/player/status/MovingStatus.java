@@ -1,4 +1,4 @@
-package game.player;
+package game.player.status;
 
 public enum MovingStatus
 {

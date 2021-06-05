@@ -10,19 +10,16 @@ import java.util.List;
 
 public class MapManager
 {
-    public static MapManager instance;
+    private static MapManager instance;
 
     private boolean loaded = false;
 
     private Tile[][] matrixMap;
     private int dim;
 
-    public int getDimension() {return dim;}
-
     private MapManager() throws Exception
     {
         RootMapJson rootMapJson = loadMap();
-
         setupMap(rootMapJson.tiles);
 
         loaded = true;
@@ -171,6 +168,10 @@ public class MapManager
         }
     }
 
+    public int getDimension()
+    {
+        return dim;
+    }
 
     private RootMapJson loadMap() throws Exception
     {

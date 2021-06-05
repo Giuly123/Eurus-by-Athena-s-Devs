@@ -24,6 +24,7 @@ public class Utilities
     public static final String ITEMS_JSON_PATH = "assets/game/items.json";
     public static final String INTERACTABLES_JSON_PATH = "assets/game/interactables.json";
     public static final String DIALOGUES_JSON_PATH = "assets/game/dialogues.json";
+    public static final String GUESSING_GAMES_JSON_PATH = "assets/game/guessingGames.json";
     public static final String MAP_JSON_PATH = "assets/game/map.json";
     public static final String SAVE_JSON_PATH = "assets/save.json";
 

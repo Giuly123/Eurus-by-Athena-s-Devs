@@ -10,7 +10,7 @@ import java.util.UUID;
 public class Interactable extends Entity
 {
     final private InteractableType interactableType;
-    final private GuessingGame guessingGame;
+    final private UUID guessingGameId;
     final private List<UUID> itemsNeededToUse;
     final private List<UUID> containedItems;
     final private boolean endGame;
@@ -21,7 +21,7 @@ public class Interactable extends Entity
                         String afterUsed,
                         List<String> aliasName,
                         InteractableType interactableType,
-                        GuessingGame guessingGame,
+                        UUID guessingGameId,
                         List<UUID> itemsNeededToUse,
                         List<UUID> containedItems,
                         boolean endGame)
@@ -31,7 +31,7 @@ public class Interactable extends Entity
         this.itemsNeededToUse = itemsNeededToUse;
         this.containedItems = containedItems;
         this.endGame = endGame;
-        this.guessingGame = guessingGame;
+        this.guessingGameId = guessingGameId;
     }
 
     public InteractableType getInteractableType()
@@ -49,9 +49,9 @@ public class Interactable extends Entity
         return containedItems != null ? containedItems : new ArrayList<>();
     }
 
-    public GuessingGame getGuessingGame()
+    public UUID getGuessingGameId()
     {
-        return guessingGame;
+        return guessingGameId;
     }
 
     public boolean isEndGame()

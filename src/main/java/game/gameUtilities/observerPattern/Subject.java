@@ -1,8 +1,5 @@
 package game.gameUtilities.observerPattern;
 
-
-import game.gameUtilities.observerPattern.Observer;
-
 import java.util.ArrayList;
 import java.util.List;
 

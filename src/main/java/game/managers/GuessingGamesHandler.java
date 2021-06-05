@@ -1,10 +1,8 @@
 package game.managers;
 
-import game.entity.dialog.DialogEvent;
 import game.entity.guessingGame.GuessingGame;
 import game.gameUtilities.Utilities;
 import game.jsonParser.JsonParser;
-
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -12,7 +10,7 @@ import java.util.UUID;
 public class GuessingGamesHandler
 {
     private static GuessingGamesHandler instance;
-    private List<UUID> guessingGameUsed;
+    private List<UUID> resolvedGuessingGame;
     private Map<UUID, GuessingGame> guessingGamesDictionary;
 
     private GuessingGamesHandler() throws Exception
@@ -31,17 +29,32 @@ public class GuessingGamesHandler
     }
 
 
-    public void setGuessingGameUsed(List<UUID> guessingGameUsed)
+    public void setUSedGuessingGame(List<UUID> guessingGameUsed)
     {
         if (guessingGameUsed != null)
         {
-            this.guessingGameUsed = guessingGameUsed;
+            this.resolvedGuessingGame = guessingGameUsed;
         }
     }
 
-    public boolean isUsedGuessingGame(UUID guessingGameId)
+    public boolean isResolvedGuessingGame(UUID guessingGameId)
     {
-        return guessingGameUsed.contains(guessingGameId);
+        return resolvedGuessingGame.contains(guessingGameId);
+    }
+
+    public boolean isResolvedGuessingGame(GuessingGame guessingGame)
+    {
+        return resolvedGuessingGame.contains(guessingGame.getId());
+    }
+
+    public List<UUID> getUsedGuessingGame()
+    {
+        return resolvedGuessingGame;
+    }
+
+    public GuessingGame getGuessingGame(UUID guessingGameId)
+    {
+        return guessingGamesDictionary.get(guessingGameId);
     }
 
 
@@ -49,11 +62,11 @@ public class GuessingGamesHandler
     {
         RootGuessingGamesCollectionJson guessingGamesCollectionJson = null;
 
-        if (Utilities.fileExist(Utilities.DIALOGUES_JSON_PATH))
+        if (Utilities.fileExist(Utilities.GUESSING_GAMES_JSON_PATH))
         {
             try
             {
-                guessingGamesCollectionJson = JsonParser.GetClassFromJson(Utilities.DIALOGUES_JSON_PATH, RootGuessingGamesCollectionJson.class);
+                guessingGamesCollectionJson = JsonParser.GetClassFromJson(Utilities.GUESSING_GAMES_JSON_PATH, RootGuessingGamesCollectionJson.class);
 
                 for(int i = 0; i < guessingGamesCollectionJson.guessingGameList.size(); i++)
                 {
@@ -63,12 +76,12 @@ public class GuessingGamesHandler
             }
             catch (Exception e)
             {
-                throw new Exception("Errore: problema parsing file dialogues.json");
+                throw new Exception("Errore: problema parsing file guessingGames.json");
             }
         }
         else
         {
-            throw new Exception("File dialogues.json non presente sul disco");
+            throw new Exception("File guessingGames.json non presente sul disco");
         }
     }
 

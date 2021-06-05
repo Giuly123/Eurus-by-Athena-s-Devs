@@ -1,7 +1,4 @@
-package game.player;
-
-import game.entity.interactable.Interactable;
-import game.entity.item.Item;
+package game.player.status;
 
 public enum UsingItemStatus
 {

@@ -1,7 +1,4 @@
 package game.entity.tile;
-
-import game.entity.dialog.DialogEvent;
-import game.entity.guessingGame.GuessingGame;
 import game.gameUtilities.Coordinates;
 
 import java.util.ArrayList;
@@ -10,7 +7,6 @@ import java.util.UUID;
 
 public class Tile
 {
-    //final private boolean isLastTile;
     final private List<Coordinates> allowedDirections;
     final private String shortDescription;
     final private String fullDescription;
@@ -27,7 +23,7 @@ public class Tile
 
     final private boolean neededToSwitchOnLight;
 
-    final private GuessingGame guessingGameToEnter;
+    final private UUID guessingGameToEnterId;
 
     public Tile(List<Coordinates> allowedDirections,
                 String shortDescription,
@@ -38,7 +34,7 @@ public class Tile
                 UUID interactableNeededToEnter,
                 List<UUID> itemToTake,
                 boolean hasGuessingGame,
-                GuessingGame guessingGameToEnter,
+                UUID guessingGameToEnterId,
                 boolean neededToSwitchOnLight,
                 UUID interactableToSwitchOnLight,
                 UUID dialogEventId
@@ -52,7 +48,7 @@ public class Tile
         this.interactableHere = interactableHere;
         this.interactableNeededToEnter = interactableNeededToEnter;
         this.itemsToTake = itemToTake;
-        this.guessingGameToEnter = guessingGameToEnter;
+        this.guessingGameToEnterId = guessingGameToEnterId;
         this.hasGuessingGame = hasGuessingGame;
         this.interactableToSwitchOnLight = interactableToSwitchOnLight;
         this.neededToSwitchOnLight = neededToSwitchOnLight;
@@ -95,9 +91,9 @@ public class Tile
         return itemsToTake != null ? itemsToTake : new ArrayList<>();
     }
 
-    public GuessingGame getGuessingGameToEnter()
+    public UUID getGuessingGameToEnterId()
     {
-        return guessingGameToEnter;
+        return guessingGameToEnterId;
     }
 
     public boolean hasGuessingGame()
