@@ -63,12 +63,7 @@ public class GameEventsHandler
     {
         gameView.appendText(interactable.getAfterUsed());
 
-        if (interactable.isEndGame())
-        {
-            //TODO
-            // FARE FINE GIOCO
-            gameView.appendText("E' finito il gioco");
-        }
+        checkEndGame(interactable);
     }
 
 
@@ -103,9 +98,6 @@ public class GameEventsHandler
         if (status == InteractStatus.used)
         {
             gameView.appendText(Sentences.INTERACTABLE_USED + status.interactable.getName());
-            gameView.appendText(Sentences.INTERACTABLE_AFTER_USED + status.interactable.getAfterUsed());
-
-            checkEndGame(status.interactable);
         }
         else if (status == InteractStatus.alreadyUsed)
         {
@@ -145,11 +137,6 @@ public class GameEventsHandler
                 interactableHandler.addUsedInteractable(interactable);
                 unlocked = true;
             }
-        }
-
-        if (unlocked)
-        {
-            checkEndGame(interactable);
         }
 
         return unlocked;
