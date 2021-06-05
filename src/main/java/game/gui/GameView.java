@@ -23,6 +23,7 @@ public class GameView
     private Map<String, Icon> imageCached = new HashMap<>();
 
     private static AudioPlayer audioPlayer;
+    private String currentInventoryImage;
 
     public GameView()
     {
@@ -91,6 +92,12 @@ public class GameView
     {
         SwingUtilities.invokeLater(() ->
         {
+            String tempImagePath = Utilities.texturesPath + item.getAssetName();
+            if(tempImagePath.equalsIgnoreCase(currentInventoryImage))
+            {
+                setImageItemSelected("");
+            }
+
             modelList.removeElement(item);
             inventoryList.updateUI();
         });
@@ -155,6 +162,7 @@ public class GameView
                 Image scaledImage = image.getScaledInstance(170, 170, Image.SCALE_SMOOTH);
                 icon = new ImageIcon(scaledImage);
                 imageCached.put(path, icon);
+                currentInventoryImage = path;
             }
 
             labelImage.setIcon(icon);
