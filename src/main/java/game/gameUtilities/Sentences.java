@@ -13,10 +13,10 @@ public class Sentences
     public static final String EAST_COMMAND = " - Digita 'est'/'e'/'destra'/'dx per far muovere il protagonista verso " +
         "est\n";
     public static final String OPEN_COMMAND = " - Digita 'apri + nome oggetto' / 'interagisci [con][con il] + nome " +
-        "oggetto' per aprire eventuali oggetti di tipo chest / chest dove è richiesto un pin o altri oggetti\n";
+        "oggetto' per\n   aprire eventuali oggetti di tipo chest / chest dove è richiesto un pin o altri oggetti\n";
     public static final String READ_COMMAND = " - Digita 'leggi + nome oggetto' per leggere oggetti di tipo documento\n";
     public static final String LOOK_COMMAND = " - Digita 'guarda + nome oggetto' / 'osserva + nome oggetto' per " +
-        "osservare l'oggetto. Mostra la descrizione dell'oggetto\n";
+        "osservare\n   l'oggetto. Mostra la descrizione dell'oggetto\n";
     public static final String SEE_TILE_COMMAND = " - Digita 'osserva' per avere più informazioni nella stanza in cui " +
         "ti trovi\n";
     public static final String USE_COMMAND = " - Digita 'usa + nome oggetto' per usare un oggetto presente " +

@@ -260,7 +260,7 @@ public class GameView
         //======== frame ========
         {
             frame.setMinimumSize(new Dimension(600, 550));
-            frame.setPreferredSize(new Dimension(700, 600));
+            frame.setPreferredSize(new Dimension(830, 600));
             frame.setBackground(new Color(51, 255, 102));
             Container frameContentPane = frame.getContentPane();
             frameContentPane.setLayout(new BorderLayout());
