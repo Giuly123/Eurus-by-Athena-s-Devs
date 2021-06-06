@@ -234,8 +234,13 @@ public class GameEventsHandler
         else if (status == MovingStatus.needAnswer)
         {
             gameView.appendText(Sentences.MOVE_NEED_ANSWER_1);
-            GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(args.nextTile.getInteractableNeededToEnter());
-            gameView.appendText(Sentences.MOVE_NEED_ANSWER_2 + guessingGame.getText());
+
+            Interactable interactable = interactableHandler.getInteractable(args.nextTile.getInteractableNeededToEnter());
+            GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(interactable.getGuessingGameId());
+            if (guessingGame != null)
+            {
+                gameView.appendText(Sentences.MOVE_NEED_ANSWER_2 + guessingGame.getText());
+            }
         }
         else if (status == MovingStatus.offTheMap)
         {
