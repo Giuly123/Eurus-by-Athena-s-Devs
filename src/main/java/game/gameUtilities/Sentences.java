@@ -91,7 +91,38 @@ public class Sentences
 
     public static final String SAVE_GAME = "Salvataggio effettuato";
 
-    public static final String END_GAME_STRING = "Complimenti, hai finito il gioco. Grazie per aver giocato.\n";
+    public static final String END_GAME_STRING = "Complimenti, hai finito il gioco. Grazie per aver giocato.\n\n" +
+        "MMMMMMMMMMMMMMMMMMMMMmsosyhmmdhysyhdmNNMMMMMMMMMMMMMMM\n" +
+        "MMMMMMMMMMMMMMMMMMMd-`++/smmdhyso+:-`-+yydNMMMMMMMMMMM\n" +
+        "MMMMMMMMMMMMMMMMMMh. hy:/:----:/osoo/-` :o:sNNMMMMMMMM\n" +
+        "MMMMMMMMMMMMMNho+++ys:.:+++//-` /mmhyyy+.`o--hNMMMMMMM\n" +
+        "MMMMMMMMMMmd/:/+++y/`sh/.:sso-s- -s///:/+-.s .mMMMMMMM\n" +
+        "MMMMMMMMMhhssoo/:o/ +N- yh. ://s  y-..`  ./y/ +MMMMMMM\n" +
+        "MMMMMMmNmyssd/:::+oosN/ oh-.-+d: `h---:/++``+-.MMMMMMM\n" +
+        "MMmhhsm+//..:mNdo.`/o+s+``-/+:` -h-:hmmd--d+ soNymMMMM\n" +
+        "Ns-y:md/-:oo:+oo+/o+/ys+oosoosss-y.d/ .hh`hM.+MMm:sMMM\n" +
+        "MMN//m+dms+oyo//y+:-/+-/+y+yo..h:y`h+  .-+NN.osNMd`+NM\n" +
+        "MMNo+hs:://oo+/+hyyo+yy+--s`:+s+h+/.oso+oyd+o/ -mN+ +M\n" +
+        "MMMMhNMNy-////o+.---oysoo+yh+--o--+s/:/+oso/:/  :Nm``h\n" +
+        "MMMMMMMN-:os+/--++od:-..:syoso+sy---syoy+.o. o   yM. /\n" +
+        "MMMMMMMm++.::.::- `++ys+h-.:://ooso/.o.-:oo: s`  /M- -\n" +
+        "MMMMMMMy` ommdo:`    :s-`:yoo+:+so//odo:.:hs+h:  :M` :\n" +
+        "MMMMMMh`  dNmy/.`     .//.`+oo//.--oy++s/::-.-+: oh  o\n" +
+        "MMMMNo                  `-//-+-:dss-:+o//+yy.: o+y. .N\n" +
+        "MMMN/                      -+`o+do+/-.--/o/sy::`h: `hM\n" +
+        "MMM/   ``                 `o:oys-/:`:ooo+sys/o/.s. yMM\n" +
+        "MMMh+:  .                  .::os  +-  y:.-::o//so`yMMM\n" +
+        "MMMMMd.`                   /s::s  `o` :so-`--/h+hdMMMM\n" +
+        "MMMMMy.-:::.               os/+s:  :+-/s-y/:s/`yMMMMMM\n" +
+        "MMMMMm.`-:.               `o`.:-/: :o::s./:`o  +MMMMMM\n" +
+        "MMMMMMo.                 -+      .+:s..s `so`  hMMMMMM\n" +
+        "MMMMMN/            .-::/:.    `::::y+ .o  s.  oMMMMMMM\n" +
+        "MMMMMMmo////+oss//:-``       //`      /: +s`.hMMMMMMMM\n" +
+        "MMMMMMMMMMMMMMMNo           .o      `///s.`:oNMMMMMMMM\n" +
+        "MMMMMMMMMMMMMMMMN:          `s     `o`-//:`  :NMMMMMMM\n" +
+        "MMMMMMMMMMMMMMMMMd.          +.    :: o. ./+ `hMNMMMMM\n" +
+        "MMMMMMMMMMMMMMMMMMd-`            :/./+/dMMMMMMMMMMMMMM\n" +
+        "MMMMMMMMMMMMMMMMMMMMNddhhso+///osyyhmNMMMMMMMMMMMMMMMM";
     public static final String END_GAME_HELP_STRING = "Hai finito il gioco non puoi usare questo comando";
 
 }
