@@ -35,11 +35,10 @@
     },
     {
       "allowedDirections": [
-        "North"
       ],
       "shortDescription": "Stanza Vuota - Una camera a prima vista inutile.",
-      "fullDescription": "Solo la tv nella camera...",
-      "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "fullDescription": "C'è solo una televisione nella stanza...",
+      "descriptionOffLimitsArea": "*SBAM* Non puoi andare da nessuna parte. Devi fare una scelta!",
       "interactableHere": [
         "ac91d441-f3d0-4844-a961-f56d3519811c",
         "30813974-9dc8-4d09-b6a4-3e93e87395b2"
@@ -55,7 +54,7 @@
       "allowedDirections": [
         "East"
       ],
-      "shortDescription": "Cella 222B - A primo impatto sembra una cella uguale alla precedente.",
+      "shortDescription": "Cella 222B - A primo impatto sembra una cella uguale alle precedenti.",
       "fullDescription": "Una luce fredda illumina la stanza. Nella stanza c’è una cassaforte con un’incisione dorata che recita “Avv.”. C'è un meccanismo di riconoscimento vocale che ci pone una domanda...",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
@@ -88,7 +87,7 @@
       "allowedDirections": [
         "East"
       ],
-      "shortDescription": "Cella 225B - A primo impatto sembra una cella uguale alle precedenti.",
+      "shortDescription": "Cella 225B - A primo impatto sembra una cella uguale alle precedenti, c'è un forte odore di umido.",
       "fullDescription": "Una luce fredda illumina la stanza, sembra una cella diversa dalle altre. Al centro della stanza c'è una valigetta!",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
@@ -110,7 +109,6 @@
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "574d2776-8e7e-4101-af3c-e5684f454783",
-        "5236bc8e-7a67-4de0-a84c-3102e65b5568",
         "181d950b-6965-4422-949e-2edeb7e03cfd"
       ],
       "itemsToTake": [
@@ -121,13 +119,12 @@
       "allowedDirections": [
         "East"
       ],
-      "shortDescription": "Cella 223B - *CLICK* Accendi la torcia. A primo impatto sembra una cella uguale alle precedenti.",
+      "shortDescription": "Cella 223B - *CLICK* La torcia ti permette di vedere meglio.",
       "fullDescription": "La luce della torcia ti permette di vedere meglio ciò che hai intorno. Nella stanza c'è un armadio.",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "9e71b832-06bd-4730-acd2-29487ad76ea9",
-        "1d2b8a0d-3fc6-43e2-bd56-ad23365f3363",
-        "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5"
+        "1d2b8a0d-3fc6-43e2-bd56-ad23365f3363"
       ],
       "itemsToTake": [
       ],
@@ -154,8 +151,8 @@
       "allowedDirections": [
         "East"
       ],
-      "shortDescription": "Cella 224B - *CLICK* Accendi la torcia. A primo impatto sembra una cella uguale alle precedenti.",
-      "fullDescription": "La luce della torcia ti permette di vedere meglio ciò che hai intorno. Ci sono due teschi e un cumulo di ossa nella cella che sembrano essere stati impiccati. Ti ricordi di aver trovato un altro cadavere nell’ala destra dell’ospedale. Inorridisci.\nNella stanza è presente anche un vecchio baule.",
+      "shortDescription": "Cella 224B - *CLICK* La torcia ti permette di vedere meglio. A primo impatto sembra una cella uguale alle precedenti, c'è un forte odore di cadaveri in putrefazione.",
+      "fullDescription": "La luce della torcia ti permette di vedere meglio ciò che hai intorno. Ci sono due teschi e un cumulo di ossa nella cella. Sembrano essere stati impiccati. Ti ricordi di aver trovato un altro cadavere nell’ala destra dell’ospedale. Inorridisci.\nNella stanza è presente anche un vecchio baule.",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "1ea9c42b-7987-41d0-9a2a-d105cbdfc050",
@@ -173,7 +170,7 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio ala destra zona 1D - Un lungo corridoio. Ci delle porte. Saranno chiuse? Controllare non fa mai male.",
+      "shortDescription": "Corridoio ala destra zona 1D - Un lungo corridoio. Ci sono delle porte. Saranno chiuse? Controllare non fa mai male.",
       "fullDescription": "Guardandoti indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA DESTRA”.\n\nSubito dopo, lo sguardo viene attirato da un biglietto attaccato alla porta che riporta “Nessun aiuto questa volta”. C\u0027è anche una porta che sembra aperta alla tua sinistra... In alto, in un angolo, lampeggia la spia di una telecamera…",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
@@ -220,7 +217,7 @@
         "East",
         "West"
       ],
-      "shortDescription": "Stanza Tetra - *CLICK* Accendi la torcia. Una tv spenta al centro della stanza...",
+      "shortDescription": "Stanza Tetra - *CLICK* La torcia ti permette di vedere meglio. Una tv spenta al centro della stanza...",
       "fullDescription": "A causa della poca luce, prima non ti eri accorto di una scritta sulla parete destra “Avv. 3826”. In fondo alla stanza, davanti a te, si trova una porta, sembra ci sia bisogno di risolvere un rompicapo. In alto, in un angolo, lampeggia la spia di una telecamera… Noti, infine, un bersaglio. Ti ricorda quando da piccolo lo colpivi con le freccette.",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
@@ -245,7 +242,6 @@
       "fullDescription": "Tanti computer e una porta da sbloccare. Intravedi una porta a Sud. In alto, in un angolo, lampeggia la spia di una telecamera…",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
-        "2fbf2390-299a-4406-95c5-42d05c1ded64",
         "c5583307-49ec-441d-aa9a-4f3a570549e5"
       ],
       "dialogEventId": "4e0819e2-4563-45ff-9b83-da512a70923d",

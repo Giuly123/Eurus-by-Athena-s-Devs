@@ -82,6 +82,9 @@
       "itemType": "document",
       "isConsumable": false,
       "alias": [
+        "6686",
+        "fascicolo 6686",
+        "paziente 6686"
       ],
       "id": "dc55c4ef-59db-46b8-9c75-285cef6402f0",
       "name": "Fascicolo paziente 6686",
@@ -93,6 +96,9 @@
       "itemType": "document",
       "isConsumable": false,
       "alias": [
+        "6687",
+        "fascicolo 6687",
+        "paziente 6687"
       ],
       "id": "0fcff3ce-712b-4e51-9db4-9633fec37e35",
       "name": "Fascicolo paziente 6687",
@@ -104,6 +110,9 @@
       "itemType": "document",
       "isConsumable": false,
       "alias": [
+        "66xx",
+        "fascicolo 66xx",
+        "paziente 66xx"
       ],
       "id": "cd4bdae2-ac05-4f1d-b3d9-5a5993f269dc",
       "name": "Fascicolo paziente 66xx",
@@ -115,6 +124,9 @@
       "itemType": "document",
       "isConsumable": false,
       "alias": [
+        "6689",
+        "fascicolo 6689",
+        "paziente 6689"
       ],
       "id": "ec749676-742a-47bc-810f-e033309cda10",
       "name": "Fascicolo paziente 6689",

@@ -14,9 +14,9 @@ public class Sentences
         "protagonista verso ovest;\n";
     public static final String EAST_COMMAND = " - Digita 'est'/'e'/'destra'/'dx per far muovere il\n   protagonista " +
         "verso est\n";
-    public static final String OPEN_COMMAND = " - Digita 'apri'/'open' + nome oggetto / 'interagisci'\n   [con][con " +
-        "il] + nome oggetto per aprire eventuali oggetti\n   di tipo chest / chest dove è richiesto un pin o altri\n" +
-        "   oggetti (non utilizzabile con le porte)\n";
+    public static final String OPEN_COMMAND = " - Digita 'interagisci' [con][con il] + nome oggetto\n   per aprire " +
+        "eventuali oggetti di tipo chest / chest dove è\n   richiesto un pin o altri oggetti (non utilizzabile con " +
+        "le\n   porte)\n";
     public static final String READ_COMMAND = " - Digita 'leggi'/'read' + nome oggetto per leggere oggetti\n   di " +
         "tipo documento\n";
     public static final String LOOK_COMMAND = " - Digita 'guarda + nome oggetto' / 'osserva + nome oggetto'\n   per " +
@@ -61,10 +61,10 @@ public class Sentences
     public static final String GIVE_ANSWER_NO_QUESTIONS = "Non ci sono indovinelli da risolvere";
     public static final String GIVE_ANSWER_NOT_SOLVED = "Risposta sbagliata";
     public static final String GIVE_ANSWER_ALREADY_SOLVED = "Hai gia' risposto a questa domanda";
-    public static final String GIVE_ANSWER_SOLVED = "Complimenti, hai risposto correttamente all'indovinello";
+    public static final String GIVE_ANSWER_SOLVED = "Complimenti, hai risposto correttamente all'indovinello!";
 
     public static final String MOVE_MOVED = "Ti sei spostato a : ";
-    public static final String MOVE_NEED_ITEMS = "Per passare da questa parte devi prima usare un oggetto";
+    public static final String MOVE_NEED_ITEMS = "Per passare da questa parte devi prima usare un oggetto!";
     public static final String MOVE_NEED_ANSWER_1 = "Per passare da questa parte devi prima rispondere a una " +
             "domanda!\n(digitare rispondi con la risposta)";
     public static final String MOVE_NEED_ANSWER_2 = "Domanda: ";
@@ -74,9 +74,9 @@ public class Sentences
 
     public static final String INTERACTABLE_ERROR = "Devi inserire qualcosa";
     public static final String INTERACTABLE_CHEST_ERROR = "Non puoi aprire questo oggetto poichè non è una chest!";
-    public static final String INTERACTABLE_WRONG= "Non c'e' nulla con cui interagire con questo nome";
+    public static final String INTERACTABLE_WRONG= "Non c'e' nulla con cui interagire con questo nome!";
     public static final String INTERACTABLE_USED = "Hai interagito con: ";
-    public static final String INTERACTABLE_ALREADY_USED = "Hai gia' interagito con questo oggetto";
+    public static final String INTERACTABLE_ALREADY_USED = "Hai gia' interagito con questo oggetto!";
     public static final String INTERACTABLE_NEED_ITEM = "Prima devi fare qualcosa...";
     public static final String INTERACTABLE_NEED_ANSWER = "Per usare questo oggetto devi prima inserire una " +
         "password!\n(digitare rispondi con la risposta)";
