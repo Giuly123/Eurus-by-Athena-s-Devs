@@ -110,8 +110,7 @@ public class Player
 
         if (item != null)
         {
-            boolean isHere = map.getTile(currentPositionRiga, currentPositionColonna).getItemsToTake().contains(item.getId());
-
+            boolean isHere = getCurrentTile().getItemsToTake().contains(item.getId());
             boolean isPossessed = inventoryManager.inventoryContains(item.getId());
 
             if (!isPossessed)
@@ -137,7 +136,6 @@ public class Player
     private Interactable getInteractableNeedingItem(Tile tile, Item item)
     {
         Interactable result = null;
-
         List<UUID> tileInteractable = tile.getInteractableHere();
 
         for (int i = 0; i < tileInteractable.size() && result == null; i++)
@@ -170,9 +168,7 @@ public class Player
     private UsingItemStatus useKey(Item item)
     {
         UsingItemStatus status = UsingItemStatus.wrongItem;
-
-        Tile tile = map.getTile(currentPositionRiga, currentPositionColonna);
-
+        Tile tile = getCurrentTile();
         Interactable interactable = getInteractableNeedingItem(tile, item);
 
         if (interactable != null)
@@ -216,7 +212,6 @@ public class Player
     public boolean haveNecessaryItemsToUseIt(Interactable interactable)
     {
         boolean isUsable = true;
-
         List<UUID> neededItems = interactable.getItemsNeededToUse();
 
         for (int i = 0; i < neededItems.size() && isUsable; i++)
@@ -231,53 +226,37 @@ public class Player
     }
 
 
-    private boolean isInteractableNeededToEnterUnlocked(Tile tile)
+    private MovingStatus isInteractableUnlocked(Tile tile)
     {
-        boolean unlockedNecessaryInteractable = true;
+        MovingStatus status = MovingStatus.moved;
+        UUID iteractableNeededToEnter = tile.getInteractableNeededToEnter();
+        Interactable interactable = interactableHandler.getInteractable(iteractableNeededToEnter);
 
-        if (tile != null)
+        if (interactable != null)
         {
-            UUID iteractableNeededToEnter = tile.getInteractableNeededToEnter();
-
-            Interactable interactable = interactableHandler.getInteractable(iteractableNeededToEnter);
-
-            if (interactable != null && interactable.getInteractableType() == InteractableType.door)
+            if (interactable.getInteractableType() == InteractableType.door)
             {
                 if (!interactableHandler.isUsedInteractalbe(interactable.getId()))
                 {
-                    unlockedNecessaryInteractable = false;
+                    status = MovingStatus.needItem;
                 }
             }
-            else
+            else if (interactable.getInteractableType() == InteractableType.doorGuessingGame)
             {
-                // per appartenere a questa categoria deve decessariamente essere door ?
+                if (!haveNecessaryAnswer(iteractableNeededToEnter))
+                {
+                    status = MovingStatus.needAnswer;
+                }
             }
         }
-        else
-        {
-            unlockedNecessaryInteractable = false;
-        }
 
-        return unlockedNecessaryInteractable;
+        return status;
     }
 
 
     private boolean haveNecessaryAnswer(UUID guessingGame)
     {
         return guessingGame == null || guessingGamesHandler.isResolvedGuessingGame(guessingGame);
-    }
-
-
-    private boolean tileHasNecessaryAnswer(Tile tile)
-    {
-        boolean hasAnswer = true;
-
-        if (tile != null)
-        {
-            hasAnswer = haveNecessaryAnswer(tile.getGuessingGameToEnterId());
-        }
-
-        return hasAnswer;
     }
 
 
@@ -289,14 +268,7 @@ public class Player
         {
             Tile tile = map.getNextTile(currentPositionRiga, currentPositionColonna, coordinates);
 
-            if (isInteractableNeededToEnterUnlocked(tile))
-            {
-                status = tileHasNecessaryAnswer(tile) ? MovingStatus.moved : MovingStatus.needAnswer;
-            }
-            else
-            {
-                status = MovingStatus.needItem;
-            }
+            status = isInteractableUnlocked(tile);
 
             status.args.nextTile = tile;
         }
@@ -309,7 +281,7 @@ public class Player
     public void tryMove(Coordinates coordinates)
     {
         MovingStatus status = isMovable(coordinates);
-        status.args.startTile = map.getTile(currentPositionRiga, currentPositionColonna);
+        status.args.startTile = getCurrentTile();
         status.args.coordinates = coordinates;
 
         if (coordinates == Coordinates.North)
@@ -367,7 +339,6 @@ public class Player
         if (haveNecessaryItemsToUseIt(interactable))
         {
             interactableHandler.addUsedInteractable(interactable);
-
             inventoryManager.addItems(interactable.getContainedItems());
 
             status = InteractStatus.used;
@@ -403,7 +374,7 @@ public class Player
 
         if (interactable != null)
         {
-            Tile currentTile = map.getTile(currentPositionRiga, currentPositionColonna);
+            Tile currentTile = getCurrentTile();
             boolean isHere =
                     currentTile.getInteractableHere().contains(interactable.getId());
 
@@ -421,32 +392,10 @@ public class Player
         }
 
         status.interactable = interactable;
-
         onTryInteractSubject.notifyObservers(status);
     }
 
 
-
-    private List<GuessingGame> getContiguousGuessingGame(List<Tile> contiguousTiles)
-    {
-        List<GuessingGame> result = new ArrayList<>();
-
-        for(Tile tile : contiguousTiles)
-        {
-            if (tile.getGuessingGameToEnterId() != null)
-            {
-                GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(tile.getGuessingGameToEnterId());
-
-                if (guessingGame != null)
-                {
-                    result.add(guessingGame);
-                }
-
-            }
-        }
-
-        return result;
-    }
 
 
     private List<GuessingGame> getInteractableGuessingGame(Tile tile)
@@ -456,7 +405,7 @@ public class Player
 
         for (Interactable interactable : interactables)
         {
-            if (interactable.getInteractableType() == InteractableType.chestGuessingGame)
+            if (interactable.getInteractableType() == InteractableType.chestGuessingGame || interactable.getInteractableType() == InteractableType.doorGuessingGame)
             {
                 if (interactable.getGuessingGameId() != null)
                 {
@@ -466,7 +415,6 @@ public class Player
                     {
                         result.add(guessingGame);
                     }
-
                 }
             }
         }
@@ -477,7 +425,6 @@ public class Player
     private AnswerStatus trySolveQuestion(List<GuessingGame> guessingGames, String answer)
     {
         AnswerStatus status = AnswerStatus.noQuestions;
-
         GuessingGame guessingGameFound = null;
 
         for (int i = 0; i < guessingGames.size() && guessingGameFound == null; i++)
@@ -487,7 +434,6 @@ public class Player
             if (guessingGame != null)
             {
                 status = status.getMajor(AnswerStatus.alreadySolved);
-
                 boolean isResolved = guessingGamesHandler.isResolvedGuessingGame(guessingGame.getId());
 
                 if (!isResolved)
@@ -511,7 +457,6 @@ public class Player
         }
 
         status.guessingGame = guessingGameFound;
-
         return status;
     }
 
@@ -519,16 +464,8 @@ public class Player
     public void solveQuestion(String answer)
     {
         AnswerStatus status;
-        List<GuessingGame> guessingGames = new ArrayList<>();
-
-        List<Tile> contiguousTiles =  map.getContiguousTiles(currentPositionRiga, currentPositionColonna);
-        Tile currentPos = map.getTile(currentPositionRiga, currentPositionColonna);
-
-        guessingGames.addAll(getContiguousGuessingGame(contiguousTiles));
-
-        guessingGames.addAll(getInteractableGuessingGame(currentPos));
-
-        status = trySolveQuestion(guessingGames, answer);
+        Tile currentPos = getCurrentTile();
+        status = trySolveQuestion(getInteractableGuessingGame(currentPos), answer);
 
         getOnTrySolveGuessingGameSubject().notifyObservers(status);
     }
@@ -537,7 +474,7 @@ public class Player
     public void observe(boolean isFullDescription)
     {
         String text = "";
-        Tile tile = map.getTile(currentPositionRiga, currentPositionColonna);
+        Tile tile = getCurrentTile();
         String description = isFullDescription ? tile.getFullDescription() : tile.getShortDescription();
 
         if (tile.isNeededToSwitchOnLight())
@@ -566,7 +503,7 @@ public class Player
 
         if (item != null)
         {
-            Tile tile = map.getTile(currentPositionRiga, currentPositionColonna);
+            Tile tile = getCurrentTile();
 
             if (tile.getItemsToTake().contains(item.getId()) || inventoryManager.inventoryContains(item.getId()))
             {
@@ -590,6 +527,11 @@ public class Player
         }
 
         onLookItem.notifyObservers(result);
+    }
+
+    private Tile getCurrentTile()
+    {
+        return map.getTile(currentPositionRiga, currentPositionColonna);
     }
 
 

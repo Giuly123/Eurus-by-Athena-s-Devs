@@ -21,8 +21,6 @@ public class Tile
     
     final private boolean neededToSwitchOnLight;
 
-    final private UUID guessingGameToEnterId;
-
     public Tile(List<Coordinates> allowedDirections,
                 String shortDescription,
                 String fullDescription,
@@ -45,7 +43,6 @@ public class Tile
         this.interactableHere = interactableHere;
         this.interactableNeededToEnter = interactableNeededToEnter;
         this.itemsToTake = itemToTake;
-        this.guessingGameToEnterId = guessingGameToEnterId;
         this.interactableToSwitchOnLight = interactableToSwitchOnLight;
         this.neededToSwitchOnLight = neededToSwitchOnLight;
         this.descriptionOfDarkRoom = descriptionOfDarkRoom;
@@ -87,10 +84,6 @@ public class Tile
         return itemsToTake != null ? itemsToTake : new ArrayList<>();
     }
 
-    public UUID getGuessingGameToEnterId()
-    {
-        return guessingGameToEnterId;
-    }
 
     public UUID getInteractableToSwitchOnLight() {
         return interactableToSwitchOnLight;

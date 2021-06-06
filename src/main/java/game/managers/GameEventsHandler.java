@@ -155,7 +155,6 @@ public class GameEventsHandler
         else if (status == UsingItemStatus.used)
         {
             gameView.appendText(Sentences.USE_ITEM_USED + status.args.item.getName());
-
             gameView.appendText(status.args.item.getAfterUsed());
 
             if (status.args.item.getItemType() == ItemType.itemToUseInteractable)
@@ -235,7 +234,7 @@ public class GameEventsHandler
         else if (status == MovingStatus.needAnswer)
         {
             gameView.appendText(Sentences.MOVE_NEED_ANSWER_1);
-            GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(args.nextTile.getGuessingGameToEnterId());
+            GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(args.nextTile.getInteractableNeededToEnter());
             gameView.appendText(Sentences.MOVE_NEED_ANSWER_2 + guessingGame.getText());
         }
         else if (status == MovingStatus.offTheMap)
