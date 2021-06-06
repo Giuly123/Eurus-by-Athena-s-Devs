@@ -37,7 +37,7 @@
       "id": "9d5ec29d-31a8-49e5-a190-000faa6e1b85",
       "name": "pass221B",
       "description": "Apre sicuramente qualcosa...",
-      "afterUsed": "Pass221B usato"
+      "afterUsed": "*TI TI* Pass221B usato"
     },
     {
       "assetName": "torcia.png",
@@ -49,7 +49,7 @@
       "id": "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5",
       "name": "Torcia",
       "description": "Serve per fare luce nei posti bui!",
-      "afterUsed": "Ora puoi osservare la stanza illuminata..."
+      "afterUsed": "*CLICK* Ora puoi osservare la stanza illuminata..."
     },
     {
       "assetName": "nota3.png",
@@ -74,7 +74,7 @@
       "id": "a8f93b58-1ce7-45fb-895e-733ddadcd168",
       "name": "pass225B",
       "description": "Apre sicuramente qualcosa...",
-      "afterUsed": "Pass225B usato!"
+      "afterUsed": "*TI TI* Pass225B usato!"
     },
     {
       "assetName": "fascicolo1.png",
@@ -154,7 +154,7 @@
       "id": "9b0c65f6-9653-4cf9-b5d8-2b3b5715d624",
       "name": "pass222B",
       "description": "Apre sicuramente qualcosa...",
-      "afterUsed": "Pass222B usato!"
+      "afterUsed": "*TI TI* Pass222B usato!"
     },
     {
       "assetName": "nota2.png",
@@ -178,7 +178,7 @@
       "id": "95e22959-004e-4dea-9440-29f391fbae73",
       "name": "Cerbottana",
       "description": "Il dardo è pronto per essere sparato!",
-      "afterUsed": "Dopo lo sparo la cerbottana si è rotta! É caduto qualcosa... Sembra una custodia!"
+      "afterUsed": "*FIIU* Dopo lo sparo la cerbottana si è rotta! *TCR TCR* É caduto qualcosa... Sembra una custodia!"
     },
     {
       "assetName": "pistola.png",
@@ -190,7 +190,7 @@
       "id": "bdfd4755-d983-4b92-be11-3b2a84199a16",
       "name": "Pistola",
       "description": "Una pistola carica, chi l\u0027ha messa qui ci sta prendendo in giro!",
-      "afterUsed": "*Rumore di spari..."
+      "afterUsed": "*PEW*"
     },
     {
       "assetName": "puzzle.png",
@@ -203,7 +203,7 @@
       "id": "23f61a48-b4ca-4f8e-9b02-c3c88ac17d34",
       "name": "Pezzo puzzle",
       "description": "Un pezzo di un puzzle, chissà dove va messo...",
-      "afterUsed": "Pezzo di Puzzle inserito!"
+      "afterUsed": "*TIC* Pezzo di Puzzle inserito!"
     },
     {
       "assetName": "grimaldello.png",
@@ -216,7 +216,7 @@
       "id": "d60c9e24-3088-44c4-b21c-feb999227e57",
       "name": "Grimaldello",
       "description": "Utile per scassinare alcune serrature...",
-      "afterUsed": "Dopo l\u0027utilizzo il grimaldello si è rotto!"
+      "afterUsed": "*CRACK* Dopo l\u0027utilizzo il grimaldello si è rotto!"
     }
   ]
 }

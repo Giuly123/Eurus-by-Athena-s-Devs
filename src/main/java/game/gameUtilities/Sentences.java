@@ -70,7 +70,7 @@ public class Sentences
     public static final String MOVE_MOVED = "Ti sei spostato a : ";
     public static final String MOVE_NEED_ITEMS = "Per passare da questa parte devi prima usare un oggetto";
     public static final String MOVE_NEED_ANSWER_1 = "Per passare da questa parte devi prima rispondere a una " +
-            "domanda\n(digitare rispondi con la risposta)";
+            "domanda!\n(digitare rispondi con la risposta)";
     public static final String MOVE_NEED_ANSWER_2 = "Domanda: ";
     public static final String MOVE_ERROR = "Errore spostamento";
 

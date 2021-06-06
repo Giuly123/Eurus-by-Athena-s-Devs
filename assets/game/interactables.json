@@ -15,7 +15,7 @@
       "id": "dd162e26-1bad-4e26-bf33-a0750f59ce05",
       "name": "Comodino",
       "description": "Un comodino con un cassetto!",
-      "afterUsed": "Cassetto aperto!"
+      "afterUsed": "*TRRRR* Cassetto aperto!"
     },
     {
       "interactableType": "door",
@@ -29,8 +29,8 @@
       ],
       "id": "bfa63d12-e592-44af-8fe4-cffb4712245f",
       "name": "Porta",
-      "description": "Cella 221B - Una porta blindata. Qualcosa potrebbe aprirla...",
-      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+      "description": "Una porta blindata. Qualcosa potrebbe aprirla... Noti una targhetta. C'è scritto 'Cella 221B'",
+      "afterUsed": "*SWUSH* Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
     "interactableType": "doorGuessingGame",
@@ -44,8 +44,8 @@
     ],
     "id": "d43f3425-0265-47bf-bb75-12c1a55290d4",
     "name": "Porta Direttore",
-    "description": "Cella 221B - Una porta blindata. Qualcosa potrebbe aprirla...",
-    "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+    "description": "Una porta blindata. Qualcosa potrebbe aprirla...Noti una targhetta. C'è scritto 'Stanza del direttore'",
+    "afterUsed": "*SWUSH* Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "doorGuessingGame",
@@ -59,8 +59,8 @@
       ],
       "id": "c5583307-49ec-441d-aa9a-4f3a570549e5",
       "name": "Porta Pippo",
-      "description": "Una porta con uno strano meccanismo di sblocco...",
-      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+      "description": "Una porta con uno strano meccanismo di sblocco...Noti una targhetta. C'è scritto 'Zona 1D'",
+      "afterUsed": "*SWUSH* Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "doorGuessingGame",
@@ -74,8 +74,8 @@
       ],
       "id": "181d950b-6965-4422-949e-2edeb7e03cfd",
       "name": "Porta Evento Finale",
-      "description": "Una porta con uno strano meccanismo di sblocco...",
-      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+      "description": "Una porta con uno strano meccanismo di sblocco... Noti una targhetta. C'è scritto 'Sala di comando'\"",
+      "afterUsed": "*SWUSH* Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "chest",
@@ -92,7 +92,7 @@
       "id": "e0441288-a78c-42c7-b343-0b7358617957",
       "name": "Cadavere",
       "description": "Chissà cosa gli sarà successo...",
-      "afterUsed": "Sembra essere ancora caldo..."
+      "afterUsed": "*KR KR* Sembra essere ancora caldo..."
     },
     {
       "interactableType": "door",
@@ -106,8 +106,8 @@
       ],
       "id": "20070cbd-e100-4f46-ba3e-279257598a86",
       "name": "Cella222B",
-      "description": "Cella222B - Una porta blindata. Qualcosa potrebbe aprirla...",
-      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+      "description": "Una porta blindata. Qualcosa potrebbe aprirla...Noti una targhetta. C'è scritto 'Cella 222B'",
+      "afterUsed": "*SWUSH* Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "chestGuessingGame",
@@ -125,21 +125,7 @@
       "id": "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5",
       "name": "Cassaforte",
       "description": "Una cassaforte, per aprirla richiede una password!",
-      "afterUsed": "Hai preso tutti gli item nella cassaforte!"
-    },
-    {
-      "interactableType": "door",
-      "itemsNeededToUse": [
-      ],
-      "containedItems": [
-      ],
-      "endGame": false,
-      "alias": [
-      ],
-      "id": "981d8411-bcb9-4c57-b277-936bb135b870",
-      "name": "Porta direttore",
-      "description": "Stanza del direttore - Una porta, sembra diversa da quelle già incontrate... Richiede una password!",
-      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+      "afterUsed": "*KRUN KRUN* Hai preso tutti gli item nella cassaforte!"
     },
     {
       "interactableType": "switchOnLight",
@@ -186,7 +172,7 @@
       "id": "1ea9c42b-7987-41d0-9a2a-d105cbdfc050",
       "name": "Baule",
       "description": "Un baule, sembra davvero vecchio...",
-      "afterUsed": "Baule aperto!"
+      "afterUsed": "*GNNNN* Baule aperto!"
     },
     {
       "interactableType": "door",
@@ -200,8 +186,8 @@
       ],
       "id": "574d2776-8e7e-4101-af3c-e5684f454783",
       "name": "Cella225B",
-      "description": "Cella225B - Una porta blindata. Qualcosa potrebbe aprirla...",
-      "afterUsed": "Porta Aperta! Puoi avanzare nella prossima stanza..."
+      "description": "Una porta blindata. Qualcosa potrebbe aprirla... Noti una targhetta. C'è scritto 'Cella 225B'",
+      "afterUsed": "*SWUSH* Porta Aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "switchOnLight",
@@ -233,7 +219,7 @@
       "id": "5bad8f54-1754-4a33-a973-0c3fbc4c135a",
       "name": "Valigia",
       "description": "Una valigia in pelle...",
-      "afterUsed": "Valigia aperta!"
+      "afterUsed": "*KRUK* Valigia aperta!"
     },
     {
       "interactableType": "chest",
@@ -250,7 +236,7 @@
       "id": "34b00119-659a-4a1f-9166-d586764ee508",
       "name": "Custodia",
       "description": "",
-      "afterUsed": "La custodia si è lacerata!"
+      "afterUsed": "*SQUIS* La custodia si è lacerata!"
     },
     {
       "interactableType": "chest",
@@ -271,7 +257,7 @@
       "id": "e9297d9b-ae02-41a6-85c2-b4637f6aecac",
       "name": "Borsello",
       "description": "Il borsello del direttore...",
-      "afterUsed": "Borsello aperto!"
+      "afterUsed": "*SNICKT* Borsello aperto!"
     },
     {
       "interactableType": "switchOnLight",
@@ -288,7 +274,7 @@
       "id": "ac91d441-f3d0-4844-a961-f56d3519811c",
       "name": "Finale 1",
       "description": "",
-      "afterUsed": "Eurus: “NO! Fermati, aspetta!”\n\nLa mia strategia di ingannarla tentando il suicidio come mi consigliava quella nota, aveva funzionato.\n\n*Colpo di pistola\n\n\u003c\u003cL’hai colpita\u003e\u003e\nEurus: “non doveva finire così… dovevate essere voi a morire...”\n\nCromyft:”Hai fallito, sorellina”\n\n...\n\nNostaw: “Oltre la porta intravedo l’uscita.”\n\nCromyft: “Andiamo via. Fuori di qui vi racconterò tutto!”.\n\nGAME OVER!"
+      "afterUsed": "*SWUSH* La porta si apre...\n\nEurus: “NO! Fermati, aspetta!”\n\nLa mia strategia di ingannarla tentando il suicidio come mi consigliava quella nota, aveva funzionato.\n\n*PEW* \n\n\u003c\u003cL’hai colpita\u003e\u003e\nEurus: “non doveva finire così… dovevate essere voi a morire...”\n\nCromyft:”Hai fallito, sorellina”\n\n...\n\nNostaw: “Oltre la porta intravedo l’uscita.”\n\nCromyft: “Andiamo via. Fuori di qui vi racconterò tutto!”.\n\nGAME OVER!"
     },
     {
       "interactableType": "switchOnLight",
@@ -305,7 +291,7 @@
       "id": "30813974-9dc8-4d09-b6a4-3e93e87395b2",
       "name": "Finale 2",
       "description": "",
-      "afterUsed": "*Rumore di corpi che cadono al suolo.\n\nNon è possibile, non ci credo ancora di averlo fatto.\n\n*Rumore di porta che si apre\n\n“Alla fine hai scelto. Era tutto un test, questo gioco, questo posto… Dovevo vedere fino a che punto ti saresti spinto pur di salvarti. Però l’egoismo di portare a casa la pelle ha preso il sopravvento ed hai ucciso uno dei tuoi compagni di viaggio. Lo stesso egoismo di tuo fratello che mi rinchiuse qui quando ero solo una bambina, isolandomi dal resto del mondo. Hai fallito ed io ho avuto la mia vendetta!”\n\n*Colpo di pistola\n\n...\n\nGAME OVER!"
+      "afterUsed": "*THUMP THUMP* Vedi i tuoi amici accasciarsi al suolo.\n\nNon è possibile, non ci credo ancora di averlo fatto.\n\n*SWUSH* La porta si apre.\n\n“Alla fine hai scelto. Era tutto un test, questo gioco, questo posto… Dovevo vedere fino a che punto ti saresti spinto pur di salvarti. Però l’egoismo di portare a casa la pelle ha preso il sopravvento ed hai ucciso uno dei tuoi compagni di viaggio. Lo stesso egoismo di tuo fratello che mi rinchiuse qui quando ero solo una bambina, isolandomi dal resto del mondo. Hai fallito ed io ho avuto la mia vendetta!”\n\n*PEW* \n\n*THUMP THUMP* Cadi al suolo...\n\nGAME OVER!"
     },
     {
       "interactableType": "door",
@@ -319,8 +305,8 @@
       ],
       "id": "afd60cd7-5da0-4104-ac9d-1ca506baa678",
       "name": "Porta puzzle",
-      "description": "Sala dei computer - Una porta cosparsa di sangue, di chi sarà? Per passare richiede di risolvere un puzzle. Manca un pezzo!",
-      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+      "description": "Una porta cosparsa di sangue, di chi sarà? Per passare richiede di risolvere un puzzle. Manca un pezzo!",
+      "afterUsed": "*SWUSH* Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "door",
@@ -334,8 +320,8 @@
       ],
       "id": "b34b3e7d-b887-489b-808e-66b309de560b",
       "name": "Porta con Serratura",
-      "description": "Stanza Tetra - Una porta con una strana serratura...",
-      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+      "description": "Una porta con una strana serratura...",
+      "afterUsed": "*SWUSH* Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
       "interactableType": "chest",
@@ -351,7 +337,7 @@
       "id": "1d2b8a0d-3fc6-43e2-bd56-ad23365f3363",
       "name": "Armadio",
       "description": "Un armadio enorme!",
-      "afterUsed": "Armadio aperto!"
+      "afterUsed": "*TRRRAM* Armadio aperto!"
     }
   ]
 }
