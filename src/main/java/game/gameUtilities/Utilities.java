@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 // Classe per variabili e metodi statici
 public class Utilities

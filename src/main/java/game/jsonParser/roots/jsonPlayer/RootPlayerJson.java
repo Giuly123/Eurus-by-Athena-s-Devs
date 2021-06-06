@@ -1,7 +1,5 @@
 package game.jsonParser.roots.jsonPlayer;
 
-import game.entity.dialog.DialogEvent;
-
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;

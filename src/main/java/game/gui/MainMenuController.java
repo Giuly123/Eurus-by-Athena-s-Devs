@@ -1,6 +1,5 @@
 package game.gui;
 
-
 import game.gameUtilities.Utilities;
 
 import java.awt.*;

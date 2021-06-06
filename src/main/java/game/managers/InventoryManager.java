@@ -1,6 +1,5 @@
 package game.managers;
 
-
 import game.entity.item.Item;
 import game.gameUtilities.observerPattern.Subject;
 
@@ -84,7 +83,6 @@ public class InventoryManager
 
     public void addItem(Item item)
     {
-//        inventoryDictionary.put(item.getId(), item);
         inventoryList.add(item.getId());
         onAddedItemToInventory.notifyObservers(item);
     }
@@ -92,7 +90,6 @@ public class InventoryManager
 
     public void removeItem(Item item)
     {
-//        inventoryDictionary.remove(item.getName());
         inventoryList.remove(item.getId());
         onRemovedItemToInventory.notifyObservers(item);
     }

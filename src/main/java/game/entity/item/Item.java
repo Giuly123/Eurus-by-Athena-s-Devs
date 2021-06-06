@@ -1,7 +1,6 @@
 package game.entity.item;
 
 import game.entity.Entity;
-
 import java.util.List;
 import java.util.UUID;
 

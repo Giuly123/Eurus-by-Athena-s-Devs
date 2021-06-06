@@ -29,7 +29,6 @@ public class StartConfig
         {
             throw new Exception("File startConfig.json non presente sul disco");
         }
-
     }
 
     public class RootStartConfigJson
@@ -38,7 +37,6 @@ public class StartConfig
         public String prologue;
         public int startPositionRiga;
         public int startPositionColonna;
-
     }
 }
 

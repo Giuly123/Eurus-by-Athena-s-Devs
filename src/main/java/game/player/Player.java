@@ -128,7 +128,6 @@ public class Player
 
             status.item = item;
         }
-
         onTryTakeItemSubject.notifyObservers(status);
     }
 
@@ -160,7 +159,6 @@ public class Player
                 System.out.println("Errore: questo id " + tileInteractable.get(i) + " non esiste");
             }
         }
-
         return result;
     }
 
@@ -221,7 +219,6 @@ public class Player
                 isUsable = false;
             }
         }
-
         return isUsable;
     }
 
@@ -338,7 +335,6 @@ public class Player
         {
             interactableHandler.addUsedInteractable(interactable);
             inventoryManager.addItems(interactable.getContainedItems());
-
             status = InteractStatus.used;
         }
 
@@ -392,8 +388,6 @@ public class Player
         status.interactable = interactable;
         onTryInteractSubject.notifyObservers(status);
     }
-
-
 
 
     private List<GuessingGame> getInteractableGuessingGame(Tile tile)

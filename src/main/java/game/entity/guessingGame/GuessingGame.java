@@ -40,5 +40,4 @@ public class GuessingGame extends BaseEntity
 
         return isRight;
     }
-
 }

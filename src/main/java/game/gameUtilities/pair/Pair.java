@@ -1,7 +1,5 @@
 package game.gameUtilities.pair;
 
-import game.gameUtilities.pair.IPair;
-
 public class Pair<K, V> implements IPair<K, V>
 {
     private K key;

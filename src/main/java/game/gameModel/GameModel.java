@@ -1,6 +1,5 @@
 package game.gameModel;
 
-
 import game.player.StartConfig;
 import game.managers.MapManager;
 import game.player.Player;
