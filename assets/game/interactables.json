@@ -33,6 +33,51 @@
       "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
+    "interactableType": "doorGuessingGame",
+    "guessingGameId": "5ff60e9d-7836-4a50-88af-6f83df2f5939",
+    "itemsNeededToUse": [
+    ],
+    "containedItems": [
+    ],
+    "endGame": false,
+    "alias": [
+    ],
+    "id": "d43f3425-0265-47bf-bb75-12c1a55290d4",
+    "name": "Porta Direttore",
+    "description": "Cella 221B - Una porta blindata. Qualcosa potrebbe aprirla...",
+    "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+    },
+    {
+      "interactableType": "doorGuessingGame",
+      "guessingGameId": "2fbf2390-299a-4406-95c5-42d05c1ded64",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "alias": [
+      ],
+      "id": "c5583307-49ec-441d-aa9a-4f3a570549e5",
+      "name": "Porta Pippo",
+      "description": "Una porta con uno strano meccanismo di sblocco...",
+      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+    },
+    {
+      "interactableType": "doorGuessingGame",
+      "guessingGameId": "5236bc8e-7a67-4de0-a84c-3102e65b5568",
+      "itemsNeededToUse": [
+      ],
+      "containedItems": [
+      ],
+      "endGame": false,
+      "alias": [
+      ],
+      "id": "181d950b-6965-4422-949e-2edeb7e03cfd",
+      "name": "Porta Evento Finale",
+      "description": "Una porta con uno strano meccanismo di sblocco...",
+      "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
+    },
+    {
       "interactableType": "chest",
       "itemsNeededToUse": [
       ],
