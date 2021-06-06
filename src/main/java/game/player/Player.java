@@ -243,7 +243,7 @@ public class Player
             }
             else if (interactable.getInteractableType() == InteractableType.doorGuessingGame)
             {
-                if (!haveNecessaryAnswer(iteractableNeededToEnter))
+                if (!haveNecessaryAnswer(interactable.getGuessingGameId()))
                 {
                     status = MovingStatus.needAnswer;
                 }
@@ -267,9 +267,7 @@ public class Player
         if (map.isPermittedMovement(currentPositionRiga, currentPositionColonna, coordinates))
         {
             Tile tile = map.getNextTile(currentPositionRiga, currentPositionColonna, coordinates);
-
             status = isInteractableUnlocked(tile);
-
             status.args.nextTile = tile;
         }
 
