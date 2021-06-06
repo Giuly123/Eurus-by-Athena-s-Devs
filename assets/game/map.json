@@ -44,7 +44,7 @@
         "ac91d441-f3d0-4844-a961-f56d3519811c",
         "30813974-9dc8-4d09-b6a4-3e93e87395b2"
       ],
-      "interactableNeededToEnter": "5236bc8e-7a67-4de0-a84c-3102e65b5568",
+      "interactableNeededToEnter": "181d950b-6965-4422-949e-2edeb7e03cfd",
       "itemsToTake": [
         "3970fa72-b4bb-4758-950b-6b811416dbb9"
       ],
@@ -110,7 +110,8 @@
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "574d2776-8e7e-4101-af3c-e5684f454783",
-        "5236bc8e-7a67-4de0-a84c-3102e65b5568"
+        "5236bc8e-7a67-4de0-a84c-3102e65b5568",
+        "181d950b-6965-4422-949e-2edeb7e03cfd"
       ],
       "itemsToTake": [
       ],
@@ -177,7 +178,7 @@
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
-      "interactableNeededToEnter": "2fbf2390-299a-4406-95c5-42d05c1ded64",
+      "interactableNeededToEnter": "c5583307-49ec-441d-aa9a-4f3a570549e5",
       "itemsToTake": [
       ],
       "neededToSwitchOnLight": false
@@ -192,7 +193,7 @@
       "interactableHere": [
         "e9297d9b-ae02-41a6-85c2-b4637f6aecac"
       ],
-      "interactableNeededToEnter": "5ff60e9d-7836-4a50-88af-6f83df2f5939",
+      "interactableNeededToEnter": "d43f3425-0265-47bf-bb75-12c1a55290d4",
       "itemsToTake": [
       ],
       "neededToSwitchOnLight": false
@@ -208,7 +209,7 @@
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "b34b3e7d-b887-489b-808e-66b309de560b",
-        "5ff60e9d-7836-4a50-88af-6f83df2f5939"
+        "d43f3425-0265-47bf-bb75-12c1a55290d4"
       ],
       "itemsToTake": [
       ],
@@ -244,7 +245,8 @@
       "fullDescription": "Tanti computer e una porta da sbloccare. Intravedi una porta a Sud. In alto, in un angolo, lampeggia la spia di una telecamera…",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
-        "2fbf2390-299a-4406-95c5-42d05c1ded64"
+        "2fbf2390-299a-4406-95c5-42d05c1ded64",
+        "c5583307-49ec-441d-aa9a-4f3a570549e5"
       ],
       "dialogEventId": "4e0819e2-4563-45ff-9b83-da512a70923d",
       "interactableNeededToEnter": "afd60cd7-5da0-4104-ac9d-1ca506baa678",
