@@ -29,15 +29,29 @@ public class GameView
         initComponents();
         initView();
 
+        setAudioSlider();
+
+        frame.setVisible(true);
+    }
+
+    private void setAudioSlider()
+    {
         if (audioPlayer == null)
         {
             audioPlayer = new AudioPlayer(Utilities.MUSIC_PATH);
         }
-        audioPlayer.play();
-        audioSlider.setValue((int)audioPlayer.gainControl.getValue());
 
-        frame.setVisible(true);
+        if (audioPlayer.status != AudioPlayer.AudioPlayerStatus.unLoaded)
+        {
+            audioPlayer.play();
+            audioSlider.setValue((int)audioPlayer.gainControl.getValue());
+        }
+        else
+        {
+            audioSlider.setVisible(false);
+        }
     }
+
 
     public JTextField getTextField()
     {
