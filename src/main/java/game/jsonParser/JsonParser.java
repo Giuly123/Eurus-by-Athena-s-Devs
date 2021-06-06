@@ -1,30 +1,15 @@
 package game.jsonParser;
 
 import com.google.gson.Gson;
+import game.gameUtilities.Utilities;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.stream.Stream;
 
 public class JsonParser
 {
-    public static <T> T GetClassFromJson(String pathFileJson, Class<T> typeClass) throws IOException
+    public static <T> T GetClassFromJson(String pathFileJson, Class<T> typeClass)
     {
-        StringBuilder stringBuilder = new StringBuilder();
-        try (Stream stream = Files.lines( Paths.get(pathFileJson), StandardCharsets.UTF_8))
-        {
-            stream.forEach(s -> stringBuilder.append(s).append("\n"));
-            Gson gson = new Gson();
-            return gson.fromJson(stringBuilder.toString(), typeClass);
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-        return null;
+        Gson gson = new Gson();
+        return gson.fromJson(Utilities.readFile(pathFileJson), typeClass);
     }
 
 

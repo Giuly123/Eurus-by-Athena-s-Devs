@@ -533,21 +533,15 @@ public class Player
         {
             if (Utilities.fileExist(Utilities.SAVE_JSON_PATH))
             {
-                try
-                {
-                    RootPlayerJson player = JsonParser.GetClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
-                    currentPositionRiga = player.lastPositionRiga;
-                    currentPositionColonna = player.lastPositionColonna;
-                    interactableHandler.setUsedIteractable(player.usedInteractable);
-                    inventoryManager.setInventoryList(player.inventory);
-                    inventoryManager.setUsedItemsMap(player.usedItems);
-                    dialoguesHandler.setDialoguesMade(player.dialoguesMade);
-                    guessingGamesHandler.setUSedGuessingGame(player.usedGuessingGame);
-                    endGame = player.endGame;
-                } catch (IOException e)
-                {
-                    throw new Exception("Errore: problema parsing file save.json");
-                }
+                RootPlayerJson player = JsonParser.GetClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
+                currentPositionRiga = player.lastPositionRiga;
+                currentPositionColonna = player.lastPositionColonna;
+                interactableHandler.setUsedIteractable(player.usedInteractable);
+                inventoryManager.setInventoryList(player.inventory);
+                inventoryManager.setUsedItemsMap(player.usedItems);
+                dialoguesHandler.setDialoguesMade(player.dialoguesMade);
+                guessingGamesHandler.setUSedGuessingGame(player.usedGuessingGame);
+                endGame = player.endGame;
             }
             else
             {

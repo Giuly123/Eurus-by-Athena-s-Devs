@@ -76,6 +76,13 @@ public class GameView
         typeWriter.Append(string);
     }
 
+    public void appendTextWithoutDelay(String string)
+    {
+        SwingUtilities.invokeLater(() -> {
+            textArea.setText(string);
+        });
+    }
+
     public void setTitleFrame(String string)
     {
         frame.setTitle(string);
@@ -120,6 +127,11 @@ public class GameView
     {
         saveButton.setEnabled(value);
         homeButton.setEnabled(value);
+    }
+
+    public String getTextAreaContent()
+    {
+        return textArea.getText();
     }
 
     public Point getLocationOnScreen()

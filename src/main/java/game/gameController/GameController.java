@@ -41,7 +41,7 @@ public class GameController
             commandsParser = new CommandsParser(gameModel, gameView);
 
             gameView.setTitleFrame(gameModel.getStartConfig().startConfigJson.gameName);
-            printFirstDescription(isContinuing);
+            printFirstMessage(isContinuing);
 
             gameView.addActionHomeButton(onClickHomeButton);
             gameView.addActionOnTextFiledEnter(onEnter);
@@ -70,7 +70,7 @@ public class GameController
     }
 
 
-    private void printFirstDescription(boolean isContinuing)
+    private void printFirstMessage(boolean isContinuing)
     {
         gameView.setEditableSafe(gameView.getTextField(), false);
 
@@ -78,6 +78,13 @@ public class GameController
         {
             //gameView.appendText(gameModel.getStartConfig().startConfigJson.gameName);
             gameView.appendText(gameModel.getStartConfig().startConfigJson.prologue);
+        }
+        else
+        {
+            if (Utilities.fileExist(Utilities.TEXT_AREA_PATH))
+            {
+                gameView.appendTextWithoutDelay(Utilities.readFile(Utilities.TEXT_AREA_PATH));
+            }
         }
 
         gameModel.getPlayer().observe(false);
@@ -164,6 +171,7 @@ public class GameController
     private void saveGame()
     {
         gameModel.getPlayer().saveFile();
+        Utilities.writeFile(Utilities.TEXT_AREA_PATH, gameView.getTextAreaContent(), false);
         gameView.appendText(Sentences.SAVE_GAME);
     }
 
