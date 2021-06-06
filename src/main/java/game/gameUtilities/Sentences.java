@@ -6,28 +6,28 @@ public class Sentences
     public static final String ERROR_MESSAGE_PARSING = "";
 
     public static final String HELP_COMMAND = " - Digita 'help' per mostrare la lista dei comandi possibili;\n";
-    public static final String NORTH_COMMAND = " - Digita 'nord'/'n'/'su' per far muovere il protagonista verso nord;" +
-        "\n";
-    public static final String SOUTH_COMMAND = " - Digita 'sud'/'s'/'giu' per far muovere il protagonista verso sud;\n";
-    public static final String WEST_COMMAND = " - Digita 'ovest'/'o'/'sinistra'/'sx per far muovere il protagonista " +
-        "verso ovest;\n";
-    public static final String EAST_COMMAND = " - Digita 'est'/'e'/'destra'/'dx per far muovere il protagonista verso " +
-        "est\n";
-    public static final String OPEN_COMMAND = " - Digita 'apri'/'open' + nome oggetto / 'interagisci [con][con il] + " +
-        "nome " +
-        "oggetto' per\n   aprire eventuali oggetti di tipo chest / chest dove è richiesto un pin o altri oggetti" +
-        "\n   (non utilizzabile con le porte)\n";
-    public static final String READ_COMMAND = " - Digita 'leggi'/'read' + nome oggetto per leggere oggetti di tipo " +
-        "documento\n";
-    public static final String LOOK_COMMAND = " - Digita 'guarda + nome oggetto' / 'osserva + nome oggetto' per " +
-        "osservare\n   l'oggetto. Mostra la descrizione dell'oggetto\n";
-    public static final String SEE_TILE_COMMAND = " - Digita 'osserva' per avere più informazioni nella stanza in cui " +
-        "ti trovi\n";
-    public static final String USE_COMMAND = " - Digita 'usa'/'use' + nome oggetto per usare un oggetto presente " +
+    public static final String NORTH_COMMAND = " - Digita 'nord'/'n'/'su' per far muovere il protagonista\n" +
+        "   verso nord;\n";
+    public static final String SOUTH_COMMAND = " - Digita 'sud'/'s'/'giu' per far muovere il protagonista\n   verso " +
+        "sud;\n";
+    public static final String WEST_COMMAND = " - Digita 'ovest'/'o'/'sinistra'/'sx per far muovere il\n   " +
+        "protagonista verso ovest;\n";
+    public static final String EAST_COMMAND = " - Digita 'est'/'e'/'destra'/'dx per far muovere il\n   protagonista " +
+        "verso est\n";
+    public static final String OPEN_COMMAND = " - Digita 'apri'/'open' + nome oggetto / 'interagisci'\n   [con][con " +
+        "il] + nome oggetto per aprire eventuali oggetti\n   di tipo chest / chest dove è richiesto un pin o altri\n" +
+        "   oggetti (non utilizzabile con le porte)\n";
+    public static final String READ_COMMAND = " - Digita 'leggi'/'read' + nome oggetto per leggere oggetti\n   di " +
+        "tipo documento\n";
+    public static final String LOOK_COMMAND = " - Digita 'guarda + nome oggetto' / 'osserva + nome oggetto'\n   per " +
+        "osservare l'oggetto. Mostra la descrizione\n   dell'oggetto\n";
+    public static final String SEE_TILE_COMMAND = " - Digita 'osserva' per avere più informazioni nella stanza\n   in" +
+        " cui ti trovi\n";
+    public static final String USE_COMMAND = " - Digita 'usa'/'use' + nome oggetto per usare un oggetto\n   presente " +
         "nell'inventario\n";
     public static final String TO_ANSWER_COMMAND = " - Digita 'rispondi' per rispondere agli indovinelli presenti\n";
-    public static final String TAKE_COMMAND = " - Digita 'prendi'/'take'/'raccogli' + nome oggetto per raccogliere un " +
-        "oggetto\n";
+    public static final String TAKE_COMMAND = " - Digita 'prendi'/'take'/'raccogli' + nome oggetto per\n   " +
+        "raccogliere un oggetto\n";
     public static final String SAVE_COMMAND = " - Digita 'salva'/'save' per salvare lo stato della partita\n";
 
 
@@ -91,7 +91,7 @@ public class Sentences
 
     public static final String SAVE_GAME = "Salvataggio effettuato";
 
-    public static final String END_GAME_STRING = "Complimenti, hai finito il gioco. Grazie per aver giocato.";
+    public static final String END_GAME_STRING = "Complimenti, hai finito il gioco. Grazie per aver giocato.\n";
     public static final String END_GAME_HELP_STRING = "Hai finito il gioco non puoi usare questo comando";
 
 }
