@@ -74,6 +74,10 @@ public class GameView
         this.homeButton.addActionListener(action);
     }
 
+    public void forceFocusOnAreaText()
+    {
+        textArea.setCaretPosition(textArea.getDocument().getLength());
+    }
 
     public void addActionSaveButton(ActionListener action)
     {
@@ -300,9 +304,8 @@ public class GameView
 
         //======== frame ========
         {
-            frame.setMinimumSize(new Dimension(900, 600));
-            frame.setMinimumSize(new Dimension(900, 600));
-            frame.setPreferredSize(new Dimension(900, 600));
+            frame.setMinimumSize(new Dimension(900, 900));
+            frame.setPreferredSize(new Dimension(900, 900));
             frame.setBackground(new Color(51, 255, 102));
             Container frameContentPane = frame.getContentPane();
             frameContentPane.setLayout(new BorderLayout());

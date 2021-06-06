@@ -28,6 +28,7 @@ public class CommandsParser
         this.gameView = gameView;
     }
 
+
     private void readDocument(String itemName)
     {
         if (itemName != null)
@@ -107,28 +108,28 @@ public class CommandsParser
         }
     }
 
-    private void open(String interactableName)
-    {
-        if (interactableName != null)
-        {
-            Interactable interactable = interactableHandler.getInteractable(interactableName);
-
-            if (interactable != null &&
-                    (interactable.getInteractableType() == InteractableType.chest
-                            || interactable.getInteractableType() == InteractableType.chestGuessingGame))
-            {
-                interact(interactable);
-            }
-            else
-            {
-                gameView.appendText(Sentences.INTERACTABLE_CHEST_ERROR);
-            }
-        }
-        else
-        {
-            gameView.appendText(Sentences.INTERACTABLE_ERROR);
-        }
-    }
+//    private void open(String interactableName)
+//    {
+//        if (interactableName != null)
+//        {
+//            Interactable interactable = interactableHandler.getInteractable(interactableName);
+//
+//            if (interactable != null &&
+//                    (interactable.getInteractableType() == InteractableType.chest
+//                            || interactable.getInteractableType() == InteractableType.chestGuessingGame))
+//            {
+//                interact(interactable);
+//            }
+//            else
+//            {
+//                gameView.appendText(Sentences.INTERACTABLE_CHEST_ERROR);
+//            }
+//        }
+//        else
+//        {
+//            gameView.appendText(Sentences.INTERACTABLE_ERROR);
+//        }
+//    }
 
     private void interact(String interactableName)
     {
@@ -143,10 +144,12 @@ public class CommandsParser
         }
     }
 
+
     private void interact(Interactable interactable)
     {
         gameModel.getPlayer().interact(interactable);
     }
+
 
     private void observe(String argument)
     {
@@ -200,10 +203,10 @@ public class CommandsParser
         {
             useItem(command.argComando);
         }
-        else if (command == Command.apri)
-        {
-            open(command.argComando);
-        }
+//        else if (command == Command.apri)
+//        {
+//            open(command.argComando);s
+//        }
         else if (command == Command.interagisci)
         {
             interact(command.argComando);

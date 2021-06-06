@@ -9,7 +9,7 @@ public enum Command
     guarda(new String[]{"guarda","look"}),
     leggi(new String[]{"leggi","read"}),
     usa(new String[]{"usa","use"}),
-    apri(new String[]{"apri","open"}),
+//    apri(new String[]{"apri","open"}),
     interagisci(new String[]{"interagisci", "interact"}),
     prendi(new String[]{"prendi","take","raccogli"}),
     rispondi(new String[]{"rispondi", "reply"}),

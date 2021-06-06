@@ -120,6 +120,7 @@ public class GameController
             gameView.setEditableSafe(gameView.getTextField(), true);
             gameView.enableButtons(true);
 
+            gameView.forceFocusOnAreaText();
             gameView.requestFocusSafe(gameView.getTextField());
         }
 

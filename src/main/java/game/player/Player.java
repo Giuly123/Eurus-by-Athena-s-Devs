@@ -15,7 +15,6 @@ import game.jsonParser.JsonParser;
 import game.jsonParser.roots.jsonPlayer.RootPlayerJson;
 import game.player.status.*;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
