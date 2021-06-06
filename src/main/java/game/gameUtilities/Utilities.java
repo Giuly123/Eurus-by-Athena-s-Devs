@@ -1,10 +1,17 @@
 package game.gameUtilities;
 
+import com.google.gson.Gson;
+
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.stream.Stream;
 
 // Classe per variabili e metodi statici
 public class Utilities
@@ -26,6 +33,7 @@ public class Utilities
     public static final String GUESSING_GAMES_JSON_PATH = "assets/game/guessingGames.json";
     public static final String MAP_JSON_PATH = "assets/game/map.json";
     public static final String SAVE_JSON_PATH = "assets/save.json";
+    public static final String TEXT_AREA_PATH = "assets/textArea.txt";
 
     public static final String texturesPath = "assets/textures/";
 
@@ -71,6 +79,25 @@ public class Utilities
         return cleanString(startString);
     }
 
+
+    public static String readFile(String filePath)
+    {
+        String result = "";
+
+        StringBuilder stringBuilder = new StringBuilder();
+        try (Stream stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8))
+        {
+            stream.forEach(s -> stringBuilder.append(s).append("\n"));
+            result = stringBuilder.toString();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            result = "";
+        }
+
+        return result;
+    }
 
 
     public static Boolean writeFile(String filePath, String content, boolean append)
