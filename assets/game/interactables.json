@@ -61,7 +61,7 @@
       ],
       "id": "20070cbd-e100-4f46-ba3e-279257598a86",
       "name": "Cella222B",
-      "description": "Una porta blindata. Qualcosa potrebbe aprirla...\n",
+      "description": "Una porta blindata. Qualcosa potrebbe aprirla...",
       "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
@@ -107,9 +107,9 @@
       "alias": [
       ],
       "id": "9e71b832-06bd-4730-acd2-29487ad76ea9",
-      "name": "CellaScura1",
+      "name": "StanzaTetra1",
       "description": "",
-      "afterUsed": ""
+      "afterUsed": "A primo impatto sembra una cella uguale alle precedenti."
     },
     {
       "interactableType": "switchOnLight",
@@ -124,7 +124,7 @@
       "id": "9c48b6c1-c1f2-492d-a515-5479687a127c",
       "name": "StanzaTetra3",
       "description": "",
-      "afterUsed": ""
+      "afterUsed": "A primo impatto sembra una cella uguale alle precedenti."
     },
     {
       "interactableType": "chest",
@@ -171,7 +171,7 @@
       "id": "c8bf59e9-7e9c-4bc2-97a7-c4e71e671f33",
       "name": "StanzaTetra2",
       "description": "",
-      "afterUsed": ""
+      "afterUsed": "Una tv spenta al centro della stanza..."
     },
     {
       "interactableType": "chest",
@@ -228,6 +228,40 @@
       "afterUsed": "Borsello aperto!"
     },
     {
+      "interactableType": "switchOnLight",
+      "itemsNeededToUse": [
+        "3970fa72-b4bb-4758-950b-6b811416dbb9"
+      ],
+      "containedItems": [
+      ],
+      "endGame": true,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "ac91d441-f3d0-4844-a961-f56d3519811c",
+      "name": "Finale 1",
+      "description": "",
+      "afterUsed": "Eurus: “NO! Fermati, aspetta!”\n\nLa mia strategia di ingannarla tentando il suicidio come mi consigliava quella nota, aveva funzionato.\n\n*Colpo di pistola\n\n\u003c\u003cL’hai colpita\u003e\u003e\nEurus: “non doveva finire così… dovevate essere voi a morire...”\n\nCromyft:”Hai fallito, sorellina”\n\n...\n\nNostaw: “Oltre la porta intravedo l’uscita.”\n\nCromyft: “Andiamo via. Fuori di qui vi racconterò tutto!”.\n\nGAME OVER!"
+    },
+    {
+      "interactableType": "switchOnLight",
+      "itemsNeededToUse": [
+        "bdfd4755-d983-4b92-be11-3b2a84199a16"
+      ],
+      "containedItems": [
+      ],
+      "endGame": true,
+      "guessingGame": {
+      },
+      "alias": [
+      ],
+      "id": "30813974-9dc8-4d09-b6a4-3e93e87395b2",
+      "name": "Finale 2",
+      "description": "",
+      "afterUsed": "*Rumore di corpi che cadono al suolo.\n\nNon è possibile, non ci credo ancora di averlo fatto.\n\n*Rumore di porta che si apre\n\n“Alla fine hai scelto. Era tutto un test, questo gioco, questo posto… Dovevo vedere fino a che punto ti saresti spinto pur di salvarti. Però l’egoismo di portare a casa la pelle ha preso il sopravvento ed hai ucciso uno dei tuoi compagni di viaggio. Lo stesso egoismo di tuo fratello che mi rinchiuse qui quando ero solo una bambina, isolandomi dal resto del mondo. Hai fallito ed io ho avuto la mia vendetta!”\n\n*Colpo di pistola\n\n...\n\nGAME OVER!"
+    },
+    {
       "interactableType": "door",
       "itemsNeededToUse": [
         "23f61a48-b4ca-4f8e-9b02-c3c88ac17d34"
@@ -239,7 +273,7 @@
       ],
       "id": "afd60cd7-5da0-4104-ac9d-1ca506baa678",
       "name": "Porta puzzle",
-      "description": "Una porta cosparsa di sangue, di chi sarà? Per passare richiede di risolvere un puzzle. Manca un pezzo!\n",
+      "description": "Una porta cosparsa di sangue, di chi sarà? Per passare richiede di risolvere un puzzle. Manca un pezzo!",
       "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {

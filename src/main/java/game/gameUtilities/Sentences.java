@@ -5,16 +5,18 @@ public class Sentences
     public static final String ERROR_MESSAGE_GENERIC = "";
     public static final String ERROR_MESSAGE_PARSING = "";
 
-    public static final String HELP_COMMAND = " - Digita 'help' per mostrare la lista dei comandi possibili\n";
-    public static final String NORTH_COMMAND = " - Digita 'nord'/'n'/'su' per far muovere il protagonista verso nord\n";
-    public static final String SOUTH_COMMAND = " - Digita 'sud'/'s'/'giu' per far muovere il protagonista verso sud\n";
+    public static final String HELP_COMMAND = " - Digita 'help' per mostrare la lista dei comandi possibili;\n";
+    public static final String NORTH_COMMAND = " - Digita 'nord'/'n'/'su' per far muovere il protagonista verso nord;" +
+        "\n";
+    public static final String SOUTH_COMMAND = " - Digita 'sud'/'s'/'giu' per far muovere il protagonista verso sud;\n";
     public static final String WEST_COMMAND = " - Digita 'ovest'/'o'/'sinistra'/'sx per far muovere il protagonista " +
-        "verso ovest\n";
+        "verso ovest;\n";
     public static final String EAST_COMMAND = " - Digita 'est'/'e'/'destra'/'dx per far muovere il protagonista verso " +
         "est\n";
     public static final String OPEN_COMMAND = " - Digita 'apri'/'open' + nome oggetto / 'interagisci [con][con il] + " +
         "nome " +
-        "oggetto' per\n   aprire eventuali oggetti di tipo chest / chest dove è richiesto un pin o altri oggetti\n";
+        "oggetto' per\n   aprire eventuali oggetti di tipo chest / chest dove è richiesto un pin o altri oggetti" +
+        "\n   (non utilizzabile con le porte)\n";
     public static final String READ_COMMAND = " - Digita 'leggi'/'read' + nome oggetto per leggere oggetti di tipo " +
         "documento\n";
     public static final String LOOK_COMMAND = " - Digita 'guarda + nome oggetto' / 'osserva + nome oggetto' per " +
@@ -62,7 +64,7 @@ public class Sentences
     public static final String GIVE_ANSWER_NO_QUESTIONS = "Non ci sono indovinelli da risolvere";
     public static final String GIVE_ANSWER_NOT_SOLVED = "Risposta sbagliata";
     public static final String GIVE_ANSWER_ALREADY_SOLVED = "Hai gia' risposto a questa domanda";
-    public static final String GIVE_ANSWER_SOLVED = "Complimenti hai risposto correttamente all'indovinello";
+    public static final String GIVE_ANSWER_SOLVED = "Complimenti, hai risposto correttamente all'indovinello";
 
 
     public static final String MOVE_MOVED = "Ti sei spostato a : ";
@@ -75,13 +77,13 @@ public class Sentences
 
 
     public static final String INTERACTABLE_ERROR = "Devi inserire qualcosa";
-    public static final String INTERACTABLE_CHEST_ERROR = "Non puoi aprire questo oggetto";
+    public static final String INTERACTABLE_CHEST_ERROR = "Non puoi aprire questo oggetto poichè non è una chest!";
     public static final String INTERACTABLE_WRONG= "Non c'e' nulla con cui interagire con questo nome";
     public static final String INTERACTABLE_USED = "Hai interagito con: ";
     public static final String INTERACTABLE_ALREADY_USED = "Hai gia' interagito con questo oggetto";
-    public static final String INTERACTABLE_NEED_ITEM = "Per usare questo oggetto hai bisogno di usare prima qualche ";
-    public static final String INTERACTABLE_NEED_ANSWER = "Per usare questo oggetto devi prima inserire una password"+
-            "altro oggetto\n(digitare rispondi con la risposta)";
+    public static final String INTERACTABLE_NEED_ITEM = "Prima devi fare qualcosa...";
+    public static final String INTERACTABLE_NEED_ANSWER = "Per usare questo oggetto devi prima inserire una password " +
+        "/ altro oggetto\n(digitare rispondi con la risposta)";
     public static final String INTERACTABLE_AFTER_USED = "Evento: ";
 
     public static final String GENERIC_ERROR = "Errore durante il loading del game', " +
