@@ -561,7 +561,6 @@ public class Player
             {
                 throw new Exception("File save.json non presente sul disco");
             }
-
         }
         else
         {
@@ -575,7 +574,6 @@ public class Player
             guessingGamesHandler.setUSedGuessingGame(new ArrayList<>());
             endGame = false;
         }
-
     }
 
     public void saveFile()
@@ -596,7 +594,7 @@ public class Player
 
             if (!result)
             {
-                // stampa errore
+                System.err.println("Problema durante la scrittura del file di salvataggio");
             }
         }
     }
