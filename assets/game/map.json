@@ -139,7 +139,7 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio ala sinistra zona 1B - Un lungo corridoio. Ci sono delle porte. Saranno chiuse? Controllare non fa mai male.",
+      "shortDescription": "Corridoio ala sinistra zona 1B - Il corridoio è ancora lungo, c'è una porta alla tua sinistra...",
       "fullDescription": "Un corridoio davvero lungo, ma intravedi la fine. Alla tua sinistra una porta simile alle altre, sembra aperta...",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
@@ -172,7 +172,7 @@
         "West"
       ],
       "shortDescription": "Corridoio ala destra zona 1D - Un lungo corridoio. Ci delle porte. Saranno chiuse? Controllare non fa mai male.",
-      "fullDescription": "Guardandoti indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA DESTRA”.\n\n Subito dopo, lo sguardo viene attirato da un biglietto attaccato alla porta che riporta “Nessun aiuto questa volta”. C\u0027è anche una porta che sembra aperta alla tua sinistra... In alto, in un angolo, lampeggia la spia di una telecamera…",
+      "fullDescription": "Guardandoti indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA DESTRA”.\n\nSubito dopo, lo sguardo viene attirato da un biglietto attaccato alla porta che riporta “Nessun aiuto questa volta”. C\u0027è anche una porta che sembra aperta alla tua sinistra... In alto, in un angolo, lampeggia la spia di una telecamera…",
       "descriptionOffLimitsArea": "Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],

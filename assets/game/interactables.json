@@ -29,7 +29,7 @@
       ],
       "id": "bfa63d12-e592-44af-8fe4-cffb4712245f",
       "name": "Porta",
-      "description": "Una porta blindata. Qualcosa potrebbe aprirla...",
+      "description": "Cella 221B - Una porta blindata. Qualcosa potrebbe aprirla...",
       "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
@@ -61,7 +61,7 @@
       ],
       "id": "20070cbd-e100-4f46-ba3e-279257598a86",
       "name": "Cella222B",
-      "description": "Una porta blindata. Qualcosa potrebbe aprirla...",
+      "description": "Cella222B - Una porta blindata. Qualcosa potrebbe aprirla...",
       "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
@@ -93,7 +93,7 @@
       ],
       "id": "981d8411-bcb9-4c57-b277-936bb135b870",
       "name": "Porta direttore",
-      "description": "Una porta, sembra diversa da quelle già incontrate... Richiede una password!",
+      "description": "Stanza del direttore - Una porta, sembra diversa da quelle già incontrate... Richiede una password!",
       "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
@@ -155,7 +155,7 @@
       ],
       "id": "574d2776-8e7e-4101-af3c-e5684f454783",
       "name": "Cella225B",
-      "description": "Una porta blindata. Qualcosa potrebbe aprirla...",
+      "description": "Cella225B - Una porta blindata. Qualcosa potrebbe aprirla...",
       "afterUsed": "Porta Aperta! Puoi avanzare nella prossima stanza..."
     },
     {
@@ -273,7 +273,7 @@
       ],
       "id": "afd60cd7-5da0-4104-ac9d-1ca506baa678",
       "name": "Porta puzzle",
-      "description": "Una porta cosparsa di sangue, di chi sarà? Per passare richiede di risolvere un puzzle. Manca un pezzo!",
+      "description": "Sala dei computer - Una porta cosparsa di sangue, di chi sarà? Per passare richiede di risolvere un puzzle. Manca un pezzo!",
       "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
@@ -288,7 +288,7 @@
       ],
       "id": "b34b3e7d-b887-489b-808e-66b309de560b",
       "name": "Porta con Serratura",
-      "description": "Una porta con una strana serratura...",
+      "description": "Stanza Tetra - Una porta con una strana serratura...",
       "afterUsed": "Porta aperta! Puoi avanzare nella prossima stanza..."
     },
     {
