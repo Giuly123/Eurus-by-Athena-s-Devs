@@ -37,8 +37,8 @@ public class GameEventsHandler
         Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
         Observer<InteractStatus> observerTryInteract = interactArgs -> onTryInteract(interactArgs);
         Observer<TakeItemStatus> observerTryTakeItem = takeItemArgs -> onTryTakeItem(takeItemArgs);
-        Observer<String> observerLookItem = ItemDescription -> onLookItem(ItemDescription);
-        Observer<String> observerObserve = description -> onObserve(description);
+        Observer<String> observerLookItem = itemDescription -> onLookItem(itemDescription);
+        Observer<ObserveArgs> observerObserve = observeArgs -> onObserve(observeArgs);
         Observer<Item> observerAddItemToInventory = item -> addItemToInventory(item);
         Observer<Item> observerRemoveItemToInventory = item -> removeItemToInventory(item);
 
@@ -62,7 +62,6 @@ public class GameEventsHandler
     private void onUnlockInteractable(Interactable interactable)
     {
         gameView.appendText(interactable.getAfterUsed());
-
         checkEndGame(interactable);
     }
 
@@ -224,7 +223,6 @@ public class GameEventsHandler
 
         if (status == MovingStatus.moved)
         {
-            checkDialogEvent(args.nextTile.getDialogId());
             gameView.appendText(Sentences.MOVE_MOVED + args.coordinates.name());
             gameModel.getPlayer().observe(false);
         }
@@ -251,9 +249,10 @@ public class GameEventsHandler
     }
 
 
-    private void onObserve(String description)
+    private void onObserve(ObserveArgs args)
     {
-        gameView.appendText(description);
+        checkDialogEvent(args.dialogId);
+        gameView.appendText(args.text);
     }
 
 

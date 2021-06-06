@@ -30,7 +30,7 @@ public class Player
     private Subject<InteractStatus> onTryInteractSubject;
     private Subject<TakeItemStatus> onTryTakeItemSubject;
     private Subject<String> onLookItem;
-    private Subject<String> onObserve;
+    private Subject<ObserveArgs> onObserve;
 
     public boolean endGame;
     public InventoryManager inventoryManager;
@@ -93,7 +93,7 @@ public class Player
         return onTryTakeItemSubject;
     }
 
-    public Subject<String> getOnObserveSubject()
+    public Subject<ObserveArgs> getOnObserveSubject()
     {
         return onObserve;
     }
@@ -195,7 +195,6 @@ public class Player
     }
 
 
-    // questo metodo serve per utilizzare un oggetti che abbiamo nell invetario e sblocarre una porta adiacente ( da moficare con tipi specifici oggetto )
     public void useItem(Item item)
     {
         UsingItemStatus status = UsingItemStatus.unknown;
@@ -537,7 +536,7 @@ public class Player
 
     public void observe(boolean isFullDescription)
     {
-        String result = "";
+        String text = "";
         Tile tile = map.getTile(currentPositionRiga, currentPositionColonna);
         String description = isFullDescription ? tile.getFullDescription() : tile.getShortDescription();
 
@@ -545,19 +544,19 @@ public class Player
         {
             if (interactableHandler.isUsedInteractalbe(tile.getInteractableToSwitchOnLight()))
             {
-                result = Sentences.LOOK_ITEM_DESCRIPTION + description;
+                text = Sentences.LOOK_ITEM_DESCRIPTION + description;
             }
             else
             {
-                result = Sentences.LOOK_ITEM_DESCRIPTION + tile.getDescriptionOfDarkRoom();
+                text = Sentences.LOOK_ITEM_DESCRIPTION + tile.getDescriptionOfDarkRoom();
             }
         }
         else
         {
-            result = Sentences.LOOK_ITEM_DESCRIPTION + description;
+            text = Sentences.LOOK_ITEM_DESCRIPTION + description;
         }
 
-        onObserve.notifyObservers(result);
+        onObserve.notifyObservers(new ObserveArgs(text, tile.getDialogId()));
     }
 
 
