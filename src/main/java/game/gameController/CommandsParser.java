@@ -54,7 +54,6 @@ public class CommandsParser
         {
             gameView.appendText(Sentences.LOOK_ITEM_INCOMPLETE);
         }
-
     }
 
     private void lookItem(String itemName)

@@ -75,7 +75,7 @@ public class GameController
 
         if (!isContinuing)
         {
-            gameView.appendText(gameModel.getStartConfig().startConfigJson.gameName);
+            //gameView.appendText(gameModel.getStartConfig().startConfigJson.gameName);
             gameView.appendText(gameModel.getStartConfig().startConfigJson.prologue);
         }
 

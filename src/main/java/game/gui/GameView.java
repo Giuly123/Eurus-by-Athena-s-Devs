@@ -248,6 +248,8 @@ public class GameView
     private void initComponents() {
         frame = new JFrame();
         topPanel = new JPanel();
+        stopwatchLabel = new JLabel();
+        hSpacer2 = new JPanel(null);
         leftPanel = new JPanel();
         audioSlider = new JSlider();
         rightPanel = new JPanel();
@@ -312,6 +314,13 @@ public class GameView
                         }
                     });
                     leftPanel.add(audioSlider);
+
+                    //---- hSpacer2 ----
+                    hSpacer2.setMinimumSize(new Dimension(25, 12));
+                    hSpacer2.setPreferredSize(new Dimension(25, 10));
+                    hSpacer2.setBackground(new Color(31, 31, 31));
+                    leftPanel.add(hSpacer2);
+
                 }
                 topPanel.add(leftPanel, BorderLayout.WEST);
 
@@ -360,6 +369,16 @@ public class GameView
                     );
                 }
                 topPanel.add(rightPanel, BorderLayout.EAST);
+
+                //---- stopwatchLabel ----
+                stopwatchLabel.setText("Time: 00:00");
+                stopwatchLabel.setHorizontalTextPosition(SwingConstants.LEFT);
+                stopwatchLabel.setHorizontalAlignment(SwingConstants.LEFT);
+                stopwatchLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
+                stopwatchLabel.setForeground(new Color(193, 229, 255));
+
+                topPanel.add(stopwatchLabel, BorderLayout.CENTER);
+
             }
             frameContentPane.add(topPanel, BorderLayout.NORTH);
 
@@ -406,6 +425,7 @@ public class GameView
                         inputField.setBackground(new Color(41, 41, 41));
                         inputField.setForeground(new Color(235, 235, 235));
                         inputField.setBorder(null);
+                        inputField.requestFocusInWindow();
                         textAreaPanel.add(inputField, BorderLayout.SOUTH);
                     }
                     mainPanel.add(textAreaPanel);
@@ -467,6 +487,7 @@ public class GameView
     private JFrame frame;
     private JPanel topPanel;
     private JPanel leftPanel;
+    private JPanel hSpacer2;
     private JSlider audioSlider;
     private JPanel rightPanel;
     private JButton saveButton;
@@ -475,6 +496,7 @@ public class GameView
     private JPanel midPanel;
     private JPanel mainPanel;
     private JPanel textAreaPanel;
+    private JLabel stopwatchLabel;
     private JScrollPane textAreaScrollPane;
     private JTextArea textArea;
     private JTextField inputField;

@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 // Classe per variabili e metodi statici
 public class Utilities
 {
-    public static final String GAME_NAME = "GiocoBello Alpha 0.01";
+    public static final String GAME_NAME = "Athena's Adventure Game";
 
     public static final String ICON_HOME_PATH = "assets/icons/home_icon.png";
     public static final String ICON_SAVE_PATH = "assets/icons/save_icon.png";
