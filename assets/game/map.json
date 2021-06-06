@@ -72,7 +72,7 @@
         "South",
         "West"
       ],
-      "shortDescription": "Corridoio ala sinistra zona 1A - Un lungo corridoio. Ci delle porte. Saranno chiuse? Controllare non fa mai male. ",
+      "shortDescription": "Corridoio ala sinistra zona 1A - Un lungo corridoio. Ci sono delle porte. Saranno chiuse? Controllare non fa mai male. ",
       "fullDescription": "Guardandovi indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA SINISTRA”. C\u0027è una porta alla tua sinistra, ma il corridoio è lungo... Noti inoltre un cadavere appoggiato al muro.",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione...",
       "interactableHere": [
