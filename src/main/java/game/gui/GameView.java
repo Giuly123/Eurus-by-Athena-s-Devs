@@ -113,6 +113,12 @@ public class GameView
         });
     }
 
+    public void enableButtons(boolean value)
+    {
+        saveButton.setEnabled(value);
+        homeButton.setEnabled(value);
+    }
+
     public Point getLocationOnScreen()
     {
         return frame.getLocationOnScreen();

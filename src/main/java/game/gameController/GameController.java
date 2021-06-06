@@ -97,12 +97,14 @@ public class GameController
         if(string.length() > 0)
         {
             gameView.setEditableSafe(gameView.getTextField(), false);
+            gameView.enableButtons(false);
 
             gameView.appendText(Sentences.START_STRING_PHRASE + string);
 
             commandsParser.parseCommand(string);
 
             gameView.setEditableSafe(gameView.getTextField(), true);
+            gameView.enableButtons(true);
 
             gameView.requestFocusSafe(gameView.getTextField());
         }
