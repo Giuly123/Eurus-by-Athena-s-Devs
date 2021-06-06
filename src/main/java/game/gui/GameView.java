@@ -388,6 +388,7 @@ public class GameView
                             textArea.setMargin(new Insets(4, 4, 4, 4));
                             textArea.setBackground(new Color(41, 41, 41));
                             textArea.setForeground(new Color(235, 235, 235));
+                            textArea.setFont(new Font("monospaced", Font.PLAIN, 14));
                             textArea.setBorder(null);
                             textAreaScrollPane.setViewportView(textArea);
                         }
