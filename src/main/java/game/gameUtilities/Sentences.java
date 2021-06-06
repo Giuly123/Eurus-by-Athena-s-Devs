@@ -30,7 +30,6 @@ public class Sentences
         "raccogliere un oggetto\n";
     public static final String SAVE_COMMAND = " - Digita 'salva'/'save' per salvare lo stato della partita\n";
 
-
     public static final String HELP_MESSAGE =
         "I comandi possibili sono:\n\n" + HELP_COMMAND + NORTH_COMMAND + SOUTH_COMMAND + WEST_COMMAND + EAST_COMMAND +
             OPEN_COMMAND + READ_COMMAND + LOOK_COMMAND + SEE_TILE_COMMAND + USE_COMMAND + TO_ANSWER_COMMAND +
@@ -45,7 +44,6 @@ public class Sentences
     public static final String LOOK_ITEM_INCOMPLETE = "Devi aggiungere l'oggetto che vuoi guardare";
     public static final String LOOK_ITEM_ISNT_DOCUMENT = "Questo oggetto non puo' essere letto";
 
-
     public static final String TAKE_ITEM_TAKEN = "Hai preso: ";
     public static final String TAKE_ITEM_ALREADY_TAKEN = "Hai gia' preso questo oggetto";
     public static final String TAKE_ITEM_WRONG = "Questo oggetto non e' nella stanza";
@@ -59,13 +57,11 @@ public class Sentences
             "selezionato nel file json non corrisponde a nessuno dei tipi ammissibili";
     public static final String READ_DOCUMENT = "C'e' scritto: ";
 
-
     public static final String GIVE_ANSWER_ERROR = "Devi dare una risposta stronzo";
     public static final String GIVE_ANSWER_NO_QUESTIONS = "Non ci sono indovinelli da risolvere";
     public static final String GIVE_ANSWER_NOT_SOLVED = "Risposta sbagliata";
     public static final String GIVE_ANSWER_ALREADY_SOLVED = "Hai gia' risposto a questa domanda";
     public static final String GIVE_ANSWER_SOLVED = "Complimenti, hai risposto correttamente all'indovinello";
-
 
     public static final String MOVE_MOVED = "Ti sei spostato a : ";
     public static final String MOVE_NEED_ITEMS = "Per passare da questa parte devi prima usare un oggetto";
@@ -82,9 +78,9 @@ public class Sentences
     public static final String INTERACTABLE_USED = "Hai interagito con: ";
     public static final String INTERACTABLE_ALREADY_USED = "Hai gia' interagito con questo oggetto";
     public static final String INTERACTABLE_NEED_ITEM = "Prima devi fare qualcosa...";
-    public static final String INTERACTABLE_NEED_ANSWER = "Per usare questo oggetto devi prima inserire una password " +
-        "/ altro oggetto\n(digitare rispondi con la risposta)";
-    public static final String INTERACTABLE_AFTER_USED = "Evento: ";
+    public static final String INTERACTABLE_NEED_ANSWER = "Per usare questo oggetto devi prima inserire una " +
+        "password!\n(digitare rispondi con la risposta)";
+
 
     public static final String GENERIC_ERROR = "Errore durante il loading del game', " +
             "controllare i file";
