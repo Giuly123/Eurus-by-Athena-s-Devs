@@ -71,12 +71,15 @@ public class GameView
         this.inputField.addActionListener(action);
     }
 
-
     public void appendText(String string)
     {
         typeWriter.Append(string);
     }
 
+    public void setTitleFrame(String string)
+    {
+        frame.setTitle(string);
+    }
 
     public void addItemToInventory(Item item)
     {

@@ -40,6 +40,7 @@ public class GameController
             gameEventsHandler = new GameEventsHandler(gameModel, gameView);
             commandsParser = new CommandsParser(gameModel, gameView);
 
+            gameView.setTitleFrame(gameModel.getStartConfig().startConfigJson.gameName);
             printFirstDescription(isContinuing);
 
             gameView.addActionHomeButton(onClickHomeButton);
