@@ -22,6 +22,7 @@ public class GameController
 {
     private GameEventsHandler gameEventsHandler;
     private CommandsParser commandsParser;
+    private InventoryManager inventoryManager;
     private GameModel gameModel;
     private GameView gameView;
 
@@ -34,7 +35,8 @@ public class GameController
 
         try
         {
-            InventoryManager.getInstance().getOnLoadInventory().register(observerLoadInventory);
+            inventoryManager = InventoryManager.getInstance();
+            inventoryManager.getOnLoadInventory().register(observerLoadInventory);
 
             gameModel.setup(isContinuing);
             gameEventsHandler = new GameEventsHandler(gameModel, gameView);
@@ -93,7 +95,11 @@ public class GameController
     }
 
 
-    final private ActionListener onClickHomeButton = e -> GUIManager.getInstance().backMainMenu();
+    final private ActionListener onClickHomeButton = e -> {
+        inventoryManager.getOnLoadInventory().unregister(observerLoadInventory);
+        gameEventsHandler.unregisterAllObservers();
+        GUIManager.getInstance().backMainMenu();
+    };
 
     final private ActionListener onSaveButton = e -> saveGame();
 

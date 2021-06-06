@@ -23,6 +23,16 @@ public class GameEventsHandler
     private DialoguesHandler dialoguesHandler;
     private GuessingGamesHandler guessingGamesHandler;
 
+    Observer<Interactable> observerUnlockInteractable = interactable -> onUnlockInteractable(interactable);
+    Observer<MovingStatus> observerTryMovePlayer = moveArgs -> onTryMovePlayer(moveArgs);
+    Observer<AnswerStatus> observeTryResolveGuessingGame = statusArgs -> onTryResolveGuessingGame(statusArgs);
+    Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
+    Observer<InteractStatus> observerTryInteract = interactArgs -> onTryInteract(interactArgs);
+    Observer<TakeItemStatus> observerTryTakeItem = takeItemArgs -> onTryTakeItem(takeItemArgs);
+    Observer<String> observerLookItem = itemDescription -> onLookItem(itemDescription);
+    Observer<ObserveArgs> observerObserve = observeArgs -> onObserve(observeArgs);
+    Observer<Item> observerAddItemToInventory = item -> addItemToInventory(item);
+    Observer<Item> observerRemoveItemToInventory = item -> removeItemToInventory(item);
 
     public GameEventsHandler(GameModel gameModel, GameView gameView) throws Exception
     {
@@ -31,16 +41,6 @@ public class GameEventsHandler
         interactableHandler = InteractableHandler.getInstance();
         guessingGamesHandler = GuessingGamesHandler.getInstance();
 
-        Observer<Interactable> observerUnlockInteractable = interactable -> onUnlockInteractable(interactable);
-        Observer<MovingStatus> observerTryMovePlayer = moveArgs -> onTryMovePlayer(moveArgs);
-        Observer<AnswerStatus> observeTryResolveGuessingGame = statusArgs -> onTryResolveGuessingGame(statusArgs);
-        Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
-        Observer<InteractStatus> observerTryInteract = interactArgs -> onTryInteract(interactArgs);
-        Observer<TakeItemStatus> observerTryTakeItem = takeItemArgs -> onTryTakeItem(takeItemArgs);
-        Observer<String> observerLookItem = itemDescription -> onLookItem(itemDescription);
-        Observer<ObserveArgs> observerObserve = observeArgs -> onObserve(observeArgs);
-        Observer<Item> observerAddItemToInventory = item -> addItemToInventory(item);
-        Observer<Item> observerRemoveItemToInventory = item -> removeItemToInventory(item);
 
         interactableHandler.getOnUnlockInteractable().register(observerUnlockInteractable);
         gameModel.getPlayer().getOnTryMovePlayerSubject().register(observerTryMovePlayer);
@@ -275,6 +275,18 @@ public class GameEventsHandler
     {
         gameView.addItemToInventory(item);
         gameView.appendText(Sentences.TAKE_ITEM_TAKEN + item.getName());
+    }
+
+    public void unregisterAllObservers()
+    {
+        interactableHandler.getOnUnlockInteractable().unregister(observerUnlockInteractable);
+        gameModel.getPlayer().getOnTryMovePlayerSubject().unregister(observerTryMovePlayer);
+        gameModel.getPlayer().getOnTrySolveGuessingGameSubject().unregister(observeTryResolveGuessingGame);
+        gameModel.getPlayer().getOnObserveSubject().unregister(observerObserve);
+        gameModel.getPlayer().getOnTryUseItemSubject().unregister(observerTryUseItem);
+        gameModel.getPlayer().getOnTryInteractSubject().unregister(observerTryInteract);
+        gameModel.getPlayer().getOnTryTakeItemSubject().unregister(observerTryTakeItem);
+        gameModel.getPlayer().getOnLookItem().unregister(observerLookItem);
     }
 
 }
