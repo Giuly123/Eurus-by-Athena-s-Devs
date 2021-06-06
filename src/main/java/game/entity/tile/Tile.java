@@ -1,6 +1,6 @@
 package game.entity.tile;
-import game.gameUtilities.Coordinates;
 
+import game.gameUtilities.Coordinates;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -29,7 +29,6 @@ public class Tile
                 List<UUID> interactableHere,
                 UUID interactableNeededToEnter,
                 List<UUID> itemToTake,
-                UUID guessingGameToEnterId,
                 boolean neededToSwitchOnLight,
                 UUID interactableToSwitchOnLight,
                 UUID dialogEventId

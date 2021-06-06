@@ -1,8 +1,6 @@
 package game.entity.interactable;
 
 import game.entity.Entity;
-import game.entity.guessingGame.GuessingGame;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -58,5 +56,4 @@ public class Interactable extends Entity
     {
         return endGame;
     }
-
 }

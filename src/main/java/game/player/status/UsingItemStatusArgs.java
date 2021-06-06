@@ -1,6 +1,5 @@
 package game.player.status;
 
-
 import game.entity.interactable.Interactable;
 import game.entity.item.Item;
 
