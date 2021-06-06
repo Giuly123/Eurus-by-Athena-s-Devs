@@ -274,7 +274,7 @@
       "id": "ac91d441-f3d0-4844-a961-f56d3519811c",
       "name": "Finale 1",
       "description": "",
-      "afterUsed": "*SWUSH* La porta si apre...\n\nEurus: “NO! Fermati, aspetta!”\n\nLa mia strategia di ingannarla tentando il suicidio come mi consigliava quella nota, aveva funzionato.\n\n*PEW* \n\n\u003c\u003cL’hai colpita\u003e\u003e\nEurus: “non doveva finire così… dovevate essere voi a morire...”\n\nCromyft:”Hai fallito, sorellina”\n\n...\n\nNostaw: “Oltre la porta intravedo l’uscita.”\n\nCromyft: “Andiamo via. Fuori di qui vi racconterò tutto!”.\n\nGAME OVER!"
+      "afterUsed": "*SWUSH* La porta si apre...\n\nEurus: “NO! Fermati, aspetta!”\n\nLa mia strategia di ingannarla tentando il suicidio come mi consigliava quella nota, aveva funzionato.\n\n*PEW* \n\n\u003c\u003cL’hai colpita\u003e\u003e\n\nEurus: “Non doveva finire così… Dovevate essere voi a morire...”\n\nCromyft:”Hai fallito, sorellina”\n\n...\n\nNostaw: “Oltre la porta intravedo l’uscita.”\n\nCromyft: “Andiamo via. Fuori di qui vi racconterò tutto!”.\n\nGAME OVER!"
     },
     {
       "interactableType": "switchOnLight",

@@ -19,7 +19,8 @@
       "alias": [
         "boccetta",
         "pozione",
-        "poison"
+        "poison",
+        "boccetta di vetro"
       ],
       "id": "3970fa72-b4bb-4758-950b-6b811416dbb9",
       "name": "Veleno",
@@ -198,10 +199,12 @@
       "isConsumable": true,
       "alias": [
         "pezzo",
-        "puzzle"
+        "puzzle",
+        "pezzo di puzzle",
+        "pezzo puzzle"
       ],
       "id": "23f61a48-b4ca-4f8e-9b02-c3c88ac17d34",
-      "name": "Pezzo puzzle",
+      "name": "Pezzo di un puzzle",
       "description": "Un pezzo di un puzzle, chissà dove va messo...",
       "afterUsed": "*TIC* Pezzo di Puzzle inserito!"
     },
