@@ -55,7 +55,7 @@
         "East"
       ],
       "shortDescription": "Cella 222B - A primo impatto sembra una cella uguale alle precedenti.",
-      "fullDescription": "Una luce fredda illumina la stanza. Nella stanza c’è una cassaforte con un’incisione dorata che recita “Avv.”. C'è un meccanismo di riconoscimento vocale che ci pone una domanda...",
+      "fullDescription": "Una luce fredda illumina la stanza. Nella stanza c’è una cassaforte con un’incisione dorata che recita “Avv.”. Per sbloccarla, un meccanismo di riconoscimento vocale ci pone una domanda...",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "2382039d-b1f1-4fc2-8dbf-db0e7a6b90d5"
@@ -202,7 +202,7 @@
         "West"
       ],
       "shortDescription": "Corridoio ala sinistra zona 1C - Il corridoio sembra avere una fine...",
-      "fullDescription": "Il corridoio sembra avere una fine... Alla tua sinistra e alla tua destra ci sono due porte. Sembrano diverse dalle altre...",
+      "fullDescription": "Il corridoio sembra avere una fine... Alla tua sinistra e alla tua destra ci sono due porte. Sembrano diverse dalle altre... Su quella alla tua sinistra noti una targhetta. C'è scritto 'Stanza del direttore'.",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "b34b3e7d-b887-489b-808e-66b309de560b",

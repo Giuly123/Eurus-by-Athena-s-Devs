@@ -155,7 +155,7 @@
       "id": "9c48b6c1-c1f2-492d-a515-5479687a127c",
       "name": "StanzaTetra3",
       "description": "",
-      "afterUsed": "A primo impatto sembra una cella uguale alle precedenti."
+      "afterUsed": "A primo impatto sembra una cella uguale alle precedenti, c'è un forte odore di cadaveri in putrefazione."
     },
     {
       "interactableType": "chest",
@@ -167,7 +167,8 @@
       ],
       "endGame": false,
       "alias": [
-        "scrigno"
+        "scrigno",
+        "vecchio baule"
       ],
       "id": "1ea9c42b-7987-41d0-9a2a-d105cbdfc050",
       "name": "Baule",
@@ -252,7 +253,9 @@
       "endGame": false,
       "alias": [
         "borsa",
-        "borsello nero"
+        "borsello nero",
+        "borsello nero in pelle",
+        "borsello nero di pelle"
       ],
       "id": "e9297d9b-ae02-41a6-85c2-b4637f6aecac",
       "name": "Borsello",
