@@ -106,13 +106,13 @@ public class Utilities
                     new FileOutputStream(filePath, append), "UTF-8"));
 
             out.write(content);
-            out.close();
         }
         catch (Exception e)
         {
             isSuccessfully = false;
             e.printStackTrace();
-        } finally
+        }
+        finally
         {
             try
             {
