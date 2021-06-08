@@ -193,6 +193,20 @@
       "description": "Il dardo è pronto per essere sparato!",
       "afterUsed": "*SBAM* Hai colpito in pieno il bersaglio! *FIIU* Dopo lo sparo la cerbottana si è rotta! *TCR TCR* É caduto qualcosa... Sembra una custodia!"
     },
+
+    {
+      "assetName": "foglietto.png",
+      "itemType": "document",
+      "isConsumable": true,
+      "alias": [
+        "foglio",
+        "carta"
+      ],
+      "id": "de45f8b9-a5d9-41e8-ac3f-b312c674c55f",
+      "name": "Foglietto",
+      "description": "“Qual è il nome più frequente assegnato ad una variabile metasintattica? E’ anche un famoso personaggio di un cartone animato.”",
+      "afterUsed": ""
+    },
     {
       "assetName": "pistola.png",
       "itemType": "itemToUseInteractable",
