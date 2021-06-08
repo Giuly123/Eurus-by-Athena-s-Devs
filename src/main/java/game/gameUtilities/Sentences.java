@@ -10,18 +10,18 @@ public class Sentences
         "   verso nord;\n";
     public static final String SOUTH_COMMAND = " - Digita 'sud'/'s'/'giu' per far muovere il protagonista\n   verso " +
         "sud;\n";
-    public static final String WEST_COMMAND = " - Digita 'ovest'/'o'/'sinistra'/'sx per far muovere il\n   " +
+    public static final String WEST_COMMAND = " - Digita 'ovest'/'o'/'sinistra'/'sx' per far muovere il\n   " +
         "protagonista verso ovest;\n";
-    public static final String EAST_COMMAND = " - Digita 'est'/'e'/'destra'/'dx per far muovere il\n   protagonista " +
+    public static final String EAST_COMMAND = " - Digita 'est'/'e'/'destra'/'dx' per far muovere il\n   protagonista " +
         "verso est\n";
     public static final String OPEN_COMMAND = " - Digita 'interagisci' [con][con il] + nome oggetto\n   per aprire " +
-        "eventuali oggetti di tipo chest / chest dove è\n   richiesto un pin o altri oggetti (non utilizzabile con " +
+        "eventuali oggetti di tipo chest / chest dove e'\n   richiesto un pin o altri oggetti (non utilizzabile con " +
         "le\n   porte)\n";
-    public static final String READ_COMMAND = " - Digita 'leggi'/'read' + nome oggetto per leggere oggetti\n   di " +
-        "tipo documento\n";
-    public static final String LOOK_COMMAND = " - Digita 'guarda + nome oggetto' / 'osserva + nome oggetto'\n   per " +
+    public static final String READ_COMMAND = " - Digita 'leggi'/'read' + nome oggetto + numero documento\n   per " +
+        "leggere oggetti di tipo documento\n";
+    public static final String LOOK_COMMAND = " - Digita 'guarda' + nome oggetto / 'osserva' + nome oggetto\n   per " +
         "osservare l'oggetto. Mostra la descrizione\n   dell'oggetto\n";
-    public static final String SEE_TILE_COMMAND = " - Digita 'osserva' per avere più informazioni nella stanza\n   in" +
+    public static final String SEE_TILE_COMMAND = " - Digita 'osserva' per avere piu' informazioni nella stanza\n   in" +
         " cui ti trovi\n";
     public static final String USE_COMMAND = " - Digita 'usa'/'use' + nome oggetto per usare un oggetto\n   presente " +
         "nell'inventario\n";

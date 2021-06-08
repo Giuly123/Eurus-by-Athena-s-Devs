@@ -191,7 +191,7 @@
       "id": "95e22959-004e-4dea-9440-29f391fbae73",
       "name": "Cerbottana",
       "description": "Il dardo è pronto per essere sparato!",
-      "afterUsed": "*FIIU* Dopo lo sparo la cerbottana si è rotta! *TCR TCR* É caduto qualcosa... Sembra una custodia!"
+      "afterUsed": "*SBAM* Hai colpito in pieno il bersaglio! *FIIU* Dopo lo sparo la cerbottana si è rotta! *TCR TCR* É caduto qualcosa... Sembra una custodia!"
     },
     {
       "assetName": "pistola.png",
