@@ -55,7 +55,7 @@ public class Utilities
     }
 
 
-    public static String escapePreposizioni(String startString, String[] listString)
+    public static String escapePrepositions(String startString, String[] listString)
     {
         for(String string : listString)
         {
@@ -149,7 +149,7 @@ public class Utilities
 
     public static String getCurrentData()
     {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         return dtf.format(now);
     }

@@ -40,7 +40,7 @@ public enum Command
 
         if (strings.length > 1)
         {
-            strings[1] = Utilities.escapePreposizioni(strings[1], prepositions);
+            strings[1] = Utilities.escapePrepositions(strings[1], prepositions);
             result.setValue(strings[1]);
         }
 
