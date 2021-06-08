@@ -1,8 +1,6 @@
 package game.gameUtilities;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -57,7 +55,7 @@ public class Utilities
     }
 
 
-    public static String escapePreposizioni(String startString, String[] listString)
+    public static String escapePrepositions(String startString, String[] listString)
     {
         for(String string : listString)
         {
@@ -101,25 +99,57 @@ public class Utilities
     {
         Boolean isSuccessfully = true;
 
-        try {
-            FileWriter fileWriter = new FileWriter(filePath, append);
+        Writer out = null;
+        try
+        {
+            out = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(filePath, append), "UTF-8"));
 
-            fileWriter.write(content);
-            fileWriter.close();
-
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-            isSuccessfully = false;
+            out.write(content);
         }
-
+        catch (Exception e)
+        {
+            isSuccessfully = false;
+            e.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                out.close();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
         return isSuccessfully;
     }
 
 
+//    public static Boolean writeFile(String filePath, String content, boolean append)
+//    {
+//        Boolean isSuccessfully = true;
+//
+//        try {
+//            FileWriter fileWriter = new FileWriter(filePath, append);
+//
+//            fileWriter.write(content);
+//            fileWriter.close();
+//
+//        } catch (IOException e) {
+//            System.out.println("An error occurred.");
+//            e.printStackTrace();
+//            isSuccessfully = false;
+//        }
+//
+//        return isSuccessfully;
+//    }
+
+
     public static String getCurrentData()
     {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         return dtf.format(now);
     }
