@@ -87,6 +87,7 @@ public class GameEventsHandler
     {
         if (interactable.isEndGame())
         {
+            gameModel.getStopwatch().pause();
             gameView.appendText(Sentences.END_GAME_STRING);
             gameModel.getPlayer().endGame = true;
         }

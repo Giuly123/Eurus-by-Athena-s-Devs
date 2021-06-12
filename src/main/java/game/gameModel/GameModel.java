@@ -62,6 +62,11 @@ public class GameModel
         return stopwatch.getTempoTrascorsoMillis();
     }
 
+    public Stopwatch getStopwatch()
+    {
+        return stopwatch;
+    }
+
     public void dispose()
     {
         if (stopwatch != null)
