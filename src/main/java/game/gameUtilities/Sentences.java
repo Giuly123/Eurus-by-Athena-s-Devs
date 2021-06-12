@@ -20,23 +20,25 @@ public class Sentences
     public static final String OPEN_COMMAND = " - Digita 'interagisci' [con][con il] + nome oggetto\n   per aprire " +
         "eventuali oggetti di tipo chest / chest dove e'\n   richiesto un pin o altri oggetti (non utilizzabile con " +
         "le\n   porte)\n";
-    public static final String READ_COMMAND = " - Digita 'leggi'/'read' + nome oggetto + numero documento\n   per " +
+    public static final String READ_COMMAND = " - Digita 'leggi' + nome oggetto + numero documento\n   per " +
         "leggere oggetti di tipo documento\n";
     public static final String LOOK_COMMAND = " - Digita 'guarda' + nome oggetto / 'osserva' + nome oggetto\n   per " +
         "osservare l'oggetto. Mostra la descrizione\n   dell'oggetto\n";
     public static final String SEE_TILE_COMMAND = " - Digita 'osserva' per avere piu' informazioni nella stanza\n   in" +
         " cui ti trovi\n";
-    public static final String USE_COMMAND = " - Digita 'usa'/'use' + nome oggetto per usare un oggetto\n   presente " +
+    public static final String USE_COMMAND = " - Digita 'usa' + nome oggetto per usare un oggetto\n   presente " +
         "nell'inventario\n";
     public static final String TO_ANSWER_COMMAND = " - Digita 'rispondi' per rispondere agli indovinelli presenti\n";
-    public static final String TAKE_COMMAND = " - Digita 'prendi'/'take'/'raccogli' + nome oggetto per\n   " +
+    public static final String TAKE_COMMAND = " - Digita 'prendi'/'raccogli' + nome oggetto per\n   " +
         "raccogliere un oggetto\n";
-    public static final String SAVE_COMMAND = " - Digita 'salva'/'save' per salvare lo stato della partita\n";
+    public static final String SAVE_COMMAND = " - Digita 'salva' per salvare lo stato della partita\n";
+
+    public static final String ENGLISH_COMMAND = " - Di ogni comando vale il corrispettivo inglese\n";
 
     public static final String HELP_MESSAGE =
         "I comandi possibili sono:\n\n" + HELP_COMMAND + NORTH_COMMAND + SOUTH_COMMAND + WEST_COMMAND + EAST_COMMAND +
             OPEN_COMMAND + READ_COMMAND + LOOK_COMMAND + SEE_TILE_COMMAND + USE_COMMAND + TO_ANSWER_COMMAND +
-            TAKE_COMMAND + SAVE_COMMAND + "\n";
+            TAKE_COMMAND + SAVE_COMMAND + "\n" + ENGLISH_COMMAND;
 
     public static final String WRONG_COMMAND_ENTERED = "Questo comando non esiste";
 
