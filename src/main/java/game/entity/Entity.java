@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Definisce le proprietà delle entità più complesse.
+ */
 public abstract class Entity extends BaseEntity
 {
     final protected String description;
@@ -19,16 +22,28 @@ public abstract class Entity extends BaseEntity
         this.alias = aliasName;
     }
 
+    /**
+     *
+     * @return una stringa con la descrizione dell'entità.
+     */
     public String getDescription()
     {
         return description;
     }
 
+    /**
+     *
+     * @return una lista di stringhe con i vari alias dell'entità.
+     */
     public List<String> getAlias()
     {
         return alias != null ? alias : new ArrayList<>();
     }
 
+    /**
+     *
+     * @return frase da stampare dopo aver utilizzato l'entità.
+     */
     public String getAfterUsed()
     {
         return afterUsed;

@@ -1,5 +1,8 @@
 package game.gameUtilities;
 
+/**
+ * Vi sono memorizzate tutte le stringhe costanti utilizzate nell'app.
+ */
 public class Sentences
 {
     public static final String ERROR_MESSAGE_GENERIC = "";

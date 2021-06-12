@@ -5,6 +5,9 @@ import game.entity.BaseEntity;
 import java.util.Locale;
 import java.util.UUID;
 
+/**
+ * Rappresenta le entità indovinello presenti nel file guessingGames.json.
+ */
 public class GuessingGame extends BaseEntity
 {
     private String text;
@@ -19,16 +22,30 @@ public class GuessingGame extends BaseEntity
         this.afterAnswered = afterAnswered;
     }
 
+    /**
+     *
+     * @return il testo dell'indovinello.
+     */
     public String getText()
     {
         return text;
     }
 
+    /**
+     *
+     * @return frase da stampare dopo aver risposto correttamente alla domanda.
+     */
     public String getAfterAnswered()
     {
         return afterAnswered;
     }
 
+    /**
+     * Verifica che la stringa passata come parametro
+     * sia uguale alla risposta corretta.
+     * @param answer risposta
+     * @return true se le due stringhe coincidono.
+     */
     public boolean giveAnswer(String answer)
     {
         boolean isRight = false;

@@ -3,6 +3,11 @@ package game.gameUtilities.observerPattern;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <<noECB>>
+ * Classe soggetto per implementazione del pattern Observer.
+ * @param <Type> tipo generico.
+ */
 public class Subject<Type>
 {
     private List<Observer<Type>> observers = new ArrayList<>();

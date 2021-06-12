@@ -2,6 +2,9 @@ package game.entity;
 
 import java.util.UUID;
 
+/**
+ * Definisce le proprietà base di ogni Entità.
+ */
 public abstract class BaseEntity
 {
     final protected UUID id;
@@ -13,11 +16,19 @@ public abstract class BaseEntity
         this.name = name;
     }
 
+    /**
+     *
+     * @return il nome dell'entità.
+     */
     public String getName()
     {
         return name;
     }
 
+    /**
+     *
+     * @return l'UUID dell'entità.
+     */
     public UUID getId() {return id;}
 
 }

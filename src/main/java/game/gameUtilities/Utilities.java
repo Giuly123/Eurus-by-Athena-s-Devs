@@ -8,7 +8,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Stream;
 
-// Classe per variabili e metodi statici
+/**
+ * CLasse di Utility statica che esegue operazioni eterogenee e frequentemente utilizzate.
+ */
 public class Utilities
 {
     public static final String GAME_NAME = "Athena's Adventure Game";
@@ -33,7 +35,6 @@ public class Utilities
     public static final String texturesPath = "assets/textures/";
     
     public static final int timeDelayTyperWrite = 5;
-    public static final char separatorChar = ' ';
 
     static final int NUM = 10;
     static final int DIVISION_PER_SECOND = 1000;
@@ -172,7 +173,6 @@ public class Utilities
 //
 //        return isSuccessfully;
 //    }
-
 
     public static String getCurrentData()
     {

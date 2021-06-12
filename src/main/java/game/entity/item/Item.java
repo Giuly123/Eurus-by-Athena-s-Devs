@@ -4,6 +4,9 @@ import game.entity.Entity;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Rappresenta le entità item presenti nel file items.json.
+ */
 public class Item extends Entity
 {
     final private String assetName;
@@ -20,11 +23,19 @@ public class Item extends Entity
 
     }
 
+    /**
+     *
+     * @return la stringa con il nome dell'item.
+     */
     public String getAssetName()
     {
         return assetName;
     }
 
+    /**
+     *
+     * @return il tipo item.
+     */
     public ItemType getItemType()
     {
         return itemType;
@@ -36,6 +47,10 @@ public class Item extends Entity
         return name;
     }
 
+    /**
+     *
+     * @return true se l'item è consumabile.
+     */
     public boolean isConsumable() {
         return isConsumable;
     }

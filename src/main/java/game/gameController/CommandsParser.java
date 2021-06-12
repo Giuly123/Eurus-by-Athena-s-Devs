@@ -11,6 +11,9 @@ import game.gameUtilities.Sentences;
 import game.gameModel.GameModel;
 import game.gui.GameView;
 
+/**
+ * Si occupa di effettuare il parse del comando e di invocare l'azione correlata.
+ */
 public class CommandsParser
 {
     public GameModel gameModel;

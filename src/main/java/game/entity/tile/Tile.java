@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Rappresenta le entità Tile presenti nel file map.json.
+ */
 public class Tile
 {
     final private List<Coordinates> allowedDirections;
@@ -48,54 +51,97 @@ public class Tile
         this.dialogEventId = dialogEventId;
     }
 
+    /**
+     *
+     * @return stringa con una descrizione parziale della stanza.
+     */
     public String getShortDescription()
     {
         return shortDescription != null ? shortDescription : "";
     }
 
+    /**
+     *
+     * @return stringa con una descrizione completa della stanza.
+     */
     public String getFullDescription()
     {
         return fullDescription != null ? fullDescription : "";
     }
 
+    /**
+     *
+     * @return stringa con una descrizione di una zona non accessibile.
+     */
     public String getDescriptionOffLimitsArea()
     {
         return descriptionOffLimitsArea != null ? descriptionOffLimitsArea : "";
     }
 
+    /**
+     *
+     * @return lista di cordinate ammesse.
+     */
     public List<Coordinates> getAllowedDirections()
     {
         return allowedDirections != null ? allowedDirections : new ArrayList<>();
     }
 
+    /**
+     *
+     * @return lista di UUID di interactables presenti nella stanza.
+     */
     public List<UUID> getInteractableHere()
     {
         return interactableHere != null ? interactableHere : new ArrayList<>();
     }
 
+    /**
+     *
+     * @return l'UUID dell' interactable da usare per accedere alla stanza.
+     */
     public UUID getInteractableNeededToEnter()
     {
         return interactableNeededToEnter;
     }
 
+    /**
+     *
+     * @return lista di UUID di item presenti nella stanza.
+     */
     public List<UUID> getItemsToTake()
     {
         return itemsToTake != null ? itemsToTake : new ArrayList<>();
     }
 
-
+    /**
+     *
+     * @return l'UUID dell'interactable che rende la stanza da illuminare.
+     */
     public UUID getInteractableToSwitchOnLight() {
         return interactableToSwitchOnLight;
     }
 
+    /**
+     *
+     * @return true se la stanza è da illuminare.
+     */
     public boolean isNeededToSwitchOnLight() {
         return neededToSwitchOnLight;
     }
 
+    /**
+     *
+     * @return una stringa con la descrizione della stanza da illuminare.
+     */
     public String getDescriptionOfDarkRoom() {
         return descriptionOfDarkRoom != null ? descriptionOfDarkRoom : "";
     }
 
+    /**
+     *
+     * @return l'UUID del dialogo presente nella stanza.
+     */
     public UUID getDialogId()
     {
         return dialogEventId;
