@@ -30,11 +30,19 @@ public class GameModel
         if (isContinuing)
         {
             Long value = gameDatabaseManager.getValueFromTable("time", "CURRENTPLAYER");
-            stopwatch.start(value != null ? value : 0);
+
+            if (player.endGame)
+            {
+                stopwatch.setTimePassed(value != null ? value : 0);
+            }
+            else
+            {
+                stopwatch.start(value != null ? value : 0);
+            }
         }
         else
         {
-            stopwatch.start(0);
+            stopwatch.start();
         }
     }
 
@@ -42,13 +50,13 @@ public class GameModel
     {
         gameDatabaseManager = GameDatabaseManager.getInstance();
 
-        setStopwatch(isContinuing);
-
         startConfig = new StartConfig();
         itemsHandler = ItemsHandler.getInstance();
         interactableHandler = InteractableHandler.getInstance();
         map = MapManager.getInstance();
         player = new Player(isContinuing, startConfig);
+
+        setStopwatch(isContinuing);
     }
 
 

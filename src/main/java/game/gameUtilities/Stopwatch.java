@@ -45,6 +45,10 @@ public class Stopwatch implements Runnable {
     }
 
 
+    public boolean start() {
+        return start(0);
+    }
+
     public boolean start(long startTime) {
         boolean result = false;
 
@@ -109,7 +113,7 @@ public class Stopwatch implements Runnable {
         isStarted = value;
     }
 
-    private synchronized void setTimePassed(final long value) {
+    public synchronized void setTimePassed(final long value) {
         timePassed = value;
     }
 
