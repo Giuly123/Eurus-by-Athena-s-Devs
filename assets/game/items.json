@@ -61,7 +61,7 @@
       ],
       "id": "5e849b0b-3fc4-413b-919a-28ff3485b850",
       "name": "Nota#3",
-      "description": "memorie paziente 6689\n\u003c\u003c Da qualche tempo, durante la notte, sento una voce. Una donna bisbiglia canticchiando le stesse macabre parole: “Quando ti trovi davanti ad una scelta tra te ed altri, scegli te. Tra vita e morte, scegli la morte.” Un ritornello a cui non riesco a non pensare.\u003e\u003e",
+      "description": "\nMemorie paziente 6689\n\n\u003c\u003c Da qualche tempo, durante la notte, sento una voce. Una donna bisbiglia canticchiando le stesse macabre parole: “Quando ti trovi davanti ad una scelta tra te ed altri, scegli te. Tra vita e morte, scegli la morte.” Un ritornello a cui non riesco a non pensare.\u003e\u003e",
       "afterUsed": ""
     },
     {
@@ -178,7 +178,7 @@
       ],
       "id": "01f1733d-47f6-4eec-8d57-645612859e23",
       "name": "Nota#2",
-      "description": "#memorie paziente 6687\n\u003c\u003cDevo scappare di qui prima che mi prenda. La mia cella è vicina a quella del direttore. L’ho sentito infinite volte ripetere ‘vento’ durante questi anni. Sarà qualcosa di importante.\u003e\u003e",
+      "description": "\nMemorie paziente 6687\n\n\u003c\u003cDevo scappare di qui prima che mi prenda. La mia cella è vicina a quella del direttore. L’ho sentito infinite volte ripetere ‘vento’ durante questi anni. Sarà qualcosa di importante.\u003e\u003e",
       "afterUsed": ""
     },
     {
@@ -191,7 +191,7 @@
       "id": "95e22959-004e-4dea-9440-29f391fbae73",
       "name": "Cerbottana",
       "description": "Il dardo è pronto per essere sparato!",
-      "afterUsed": "*SBAM* Hai colpito in pieno il bersaglio! *FIIU* Dopo lo sparo la cerbottana si è rotta! *TCR TCR* É caduto qualcosa... Sembra una custodia!"
+      "afterUsed": "*SBAM* Hai colpito in pieno il bersaglio! *FIIU* Dopo lo sparo la cerbottana si è rotta! *TCR TCR* É caduto qualcosa... Sembra una custodia, sarà meglio aprirla!"
     },
 
     {

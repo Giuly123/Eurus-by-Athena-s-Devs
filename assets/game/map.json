@@ -105,7 +105,7 @@
         "West"
       ],
       "shortDescription": "Corridoio ala destra zona 1E - Il corridoio sembra avere una fine...",
-      "fullDescription": "Sei in un lungo corridoio. C\u0027è una porta alla tua sinistra ma non sembrerebbe essere aperta. Alla fine del corridoio vedi un cancello.",
+      "fullDescription": "Sei in un lungo corridoio. C\u0027è una porta alla tua sinistra, chissà se è aperta! Alla fine del corridoio vedi un cancello.",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "574d2776-8e7e-4101-af3c-e5684f454783",
@@ -218,7 +218,7 @@
         "West"
       ],
       "shortDescription": "Stanza Tetra - *CLICK* La torcia ti permette di vedere meglio. Una tv spenta al centro della stanza...",
-      "fullDescription": "A causa della poca luce, prima non ti eri accorto di una scritta sulla parete destra “Avv. 3826”. In fondo alla stanza, davanti a te, si trova una porta, sembra ci sia bisogno di risolvere un rompicapo. In alto, in un angolo, lampeggia la spia di una telecamera… Noti, infine, un bersaglio. Ti ricorda quando da piccolo lo colpivi con le freccette.",
+      "fullDescription": "A causa della poca luce, prima non ti eri accorto di una scritta sulla parete destra “Avv. 3826”. In fondo alla stanza, davanti a te, si trova una porta, sembra ci sia bisogno di risolvere un rompicapo. In alto, in un angolo, lampeggia la spia di una telecamera… Noti, infine, un bersaglio sospeso sul soffitto. Ti ricorda quando da piccolo lo colpivi con le freccette.",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "34b00119-659a-4a1f-9166-d586764ee508",
