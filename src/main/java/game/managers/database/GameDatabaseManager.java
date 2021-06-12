@@ -130,7 +130,7 @@ public class GameDatabaseManager
     }
 
 
-    public <T> T getValueFromTable(String nameAttribute, String nameTable, Class<T> typeClass)
+    public <T> T getValueFromTable(String nameAttribute, String nameTable)
     {
         return (T) getObjectFromTable(nameAttribute, nameTable);
     }

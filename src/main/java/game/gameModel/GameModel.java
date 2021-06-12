@@ -29,7 +29,7 @@ public class GameModel
 
         if (isContinuing)
         {
-            Long value = gameDatabaseManager.getValueFromTable("time", "CURRENTPLAYER", Long.class);
+            Long value = gameDatabaseManager.getValueFromTable("time", "CURRENTPLAYER");
             stopwatch.start(value != null ? value : 0);
         }
         else

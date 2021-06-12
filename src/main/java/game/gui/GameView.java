@@ -49,7 +49,7 @@ public class GameView
 
             try
             {
-                Float value = GameDatabaseManager.getInstance().getValueFromTable("volume", "CURRENTPLAYER", Float.class);
+                Float value = GameDatabaseManager.getInstance().getValueFromTable("volume", "CURRENTPLAYER");
                 audioSlider.setValue(Math.round(value));
 
             } catch (Exception exception)
