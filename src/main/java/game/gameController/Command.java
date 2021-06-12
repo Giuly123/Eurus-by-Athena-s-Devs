@@ -17,8 +17,8 @@ public enum Command
     rispondi(new String[]{"rispondi", "reply"}),
     nord(new String[]{"nord","n","su"}),
     sud(new String[]{"sud","s","giu"}),
-    est(new String[]{"est","e","destra","dx"}),
-    ovest(new String[]{"ovest","o","sinistra","sx"}),
+    est(new String[]{"est","e","destra","dx","east"}),
+    ovest(new String[]{"ovest","o","sinistra","sx","west"}),
     salva(new String[]{"salva","save"}),
     help(new String[]{"-h","--help","help"});
 
