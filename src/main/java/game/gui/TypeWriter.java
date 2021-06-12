@@ -13,7 +13,7 @@ public class TypeWriter
         this.delay = delay;
     }
 
-    public void Append(String string)
+    public void append(String string)
     {
         try
         {

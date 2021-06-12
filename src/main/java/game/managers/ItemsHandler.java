@@ -119,7 +119,7 @@ public class ItemsHandler
         {
             try
             {
-                itemsCollectionJson = JsonParser.GetClassFromJson(Utilities.ITEMS_JSON_PATH, RootItemsCollectionJson.class);
+                itemsCollectionJson = JsonParser.getClassFromJson(Utilities.ITEMS_JSON_PATH, RootItemsCollectionJson.class);
 
                 for(int i = 0; i < itemsCollectionJson.itemsList.size(); i++)
                 {

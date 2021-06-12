@@ -8,10 +8,20 @@ public enum UsingItemStatus
     unusable,
     unknown;
 
-    public UsingItemStatusArgs args;
+    private UsingItemStatusArgs args;
 
     UsingItemStatus()
     {
         args = new UsingItemStatusArgs();
+    }
+
+    public UsingItemStatusArgs getArgs()
+    {
+        return args;
+    }
+
+    public void setArgs(UsingItemStatusArgs args)
+    {
+        this.args = args;
     }
 }

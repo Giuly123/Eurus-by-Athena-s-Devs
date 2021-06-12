@@ -10,6 +10,7 @@ import game.managers.InventoryManager;
 import game.managers.ItemsHandler;
 import game.gui.GUIManager;
 import game.gui.GameView;
+import game.managers.database.GameDatabaseManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,10 +22,12 @@ import java.util.UUID;
 public class GameController
 {
     private GameEventsHandler gameEventsHandler;
+    private GameDatabaseManager gameDatabaseManager;
     private CommandsParser commandsParser;
     private InventoryManager inventoryManager;
     private GameModel gameModel;
     private GameView gameView;
+    private boolean isPlaying;
 
     private Observer<List<UUID>> observerLoadInventory = itemsId -> loadInventory(itemsId);
 
@@ -32,26 +35,73 @@ public class GameController
     {
         this.gameModel = gameModel;
         this.gameView = gameView;
+        this.isPlaying = true;
 
         try
         {
+            gameDatabaseManager = GameDatabaseManager.getInstance();
             inventoryManager = InventoryManager.getInstance();
             inventoryManager.getOnLoadInventory().register(observerLoadInventory);
 
             gameModel.setup(isContinuing);
+            startThreadRefreshTime();
             gameEventsHandler = new GameEventsHandler(gameModel, gameView);
             commandsParser = new CommandsParser(gameModel, gameView);
 
             gameView.setTitleFrame(gameModel.getStartConfig().startConfigJson.gameName);
             printFirstMessage(isContinuing);
 
+
             gameView.addActionHomeButton(onClickHomeButton);
             gameView.addActionOnTextFiledEnter(onEnter);
             gameView.addActionSaveButton(onSaveButton);
+
         }
         catch (Exception e)
         {
             onException(e);
+        }
+    }
+
+    private void startThreadRefreshTime()
+    {
+        Thread refreshTime = new Thread(()->{
+            try
+            {
+                refreshTime();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        } );
+
+        refreshTime.start();
+    }
+
+
+    private void refreshTime()
+    {
+        while(this.isPlaying)
+        {
+            long time = gameModel.getTime();
+
+            if (time < Utilities.EASTER_EGG_TIME)
+            {
+                gameView.setTimeGame(time);
+            }
+            else
+            {
+                gameView.setTimeGame(Utilities.EASTER_EGG_TEMPO_STRING);
+            }
+
+            try
+            {
+                Thread.sleep(800);
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -96,10 +146,13 @@ public class GameController
 
 
     final private ActionListener onClickHomeButton = e -> {
+        this.isPlaying = false;
         inventoryManager.getOnLoadInventory().unregister(observerLoadInventory);
-        gameEventsHandler.unregisterAllObservers();
+        gameEventsHandler.dispose();
+        gameModel.dispose();
         GUIManager.getInstance().backMainMenu();
     };
+
 
     final private ActionListener onSaveButton = e -> saveGame();
 
@@ -153,6 +206,11 @@ public class GameController
         return gameView.getLocationOnScreen();
     }
 
+    public void dispose()
+    {
+        gameView.disposeFrame();
+    }
+
     private void loadInventory(List<UUID> items)
     {
         try
@@ -178,7 +236,10 @@ public class GameController
     private void saveGame()
     {
         gameModel.getPlayer().saveFile();
+        gameDatabaseManager.updateValue("time", "CURRENTPLAYER", Long.toString(gameModel.getTime()));
+        gameDatabaseManager.updateValue("volume", "CURRENTPLAYER", Integer.toString(gameView.getVolumeValue()));
         Utilities.writeFile(Utilities.TEXT_AREA_PATH, gameView.getTextAreaContent(), false);
+
         gameView.appendText(Sentences.SAVE_GAME);
     }
 

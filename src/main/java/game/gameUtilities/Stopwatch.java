@@ -19,7 +19,7 @@ public class Stopwatch implements Runnable {
             setIsRunning(true);
             result = true;
         } else {
-            start();
+            start(0);
         }
 
         return result;
@@ -45,11 +45,11 @@ public class Stopwatch implements Runnable {
     }
 
 
-    public boolean start() {
+    public boolean start(long startTime) {
         boolean result = false;
 
         if (!getStarted()) {
-            setTimePassed(0);
+            setTimePassed(startTime);
             setLastTimeRead(System.currentTimeMillis());
             setStarted(true);
             setIsRunning(true);
@@ -84,7 +84,6 @@ public class Stopwatch implements Runnable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
     }
 

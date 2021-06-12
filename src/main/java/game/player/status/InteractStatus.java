@@ -10,5 +10,15 @@ public enum InteractStatus
     alreadyUsed,
     wrongInteractable;
 
-    public Interactable interactable;
+    private Interactable interactable;
+
+    public Interactable getInteractable()
+    {
+        return interactable;
+    }
+
+    public void setInteractable(Interactable interactable)
+    {
+        this.interactable = interactable;
+    }
 }

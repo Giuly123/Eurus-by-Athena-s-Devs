@@ -75,7 +75,7 @@ public class GuessingGamesHandler
         {
             try
             {
-                guessingGamesCollectionJson = JsonParser.GetClassFromJson(Utilities.GUESSING_GAMES_JSON_PATH, RootGuessingGamesCollectionJson.class);
+                guessingGamesCollectionJson = JsonParser.getClassFromJson(Utilities.GUESSING_GAMES_JSON_PATH, RootGuessingGamesCollectionJson.class);
 
                 for(int i = 0; i < guessingGamesCollectionJson.guessingGameList.size(); i++)
                 {

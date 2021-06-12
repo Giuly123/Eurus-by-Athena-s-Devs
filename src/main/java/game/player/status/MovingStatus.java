@@ -8,10 +8,20 @@ public enum MovingStatus
     offTheMap,
     unknown;
 
-    public MoveStatusArgs args;
+    private MoveStatusArgs args;
 
     MovingStatus()
     {
         this.args = new MoveStatusArgs();
+    }
+
+    public MoveStatusArgs getArgs()
+    {
+        return args;
+    }
+
+    public void setArgs(MoveStatusArgs args)
+    {
+        this.args = args;
     }
 }

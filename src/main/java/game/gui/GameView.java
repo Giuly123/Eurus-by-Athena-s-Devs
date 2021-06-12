@@ -5,6 +5,8 @@ import javax.swing.border.*;
 import game.entity.item.Item;
 import game.gameUtilities.AudioPlayer;
 import game.gameUtilities.Utilities;
+import game.managers.database.GameDatabaseManager;
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -44,7 +46,18 @@ public class GameView
         if (audioPlayer.status != AudioPlayer.AudioPlayerStatus.unLoaded)
         {
             audioPlayer.play();
-            audioSlider.setValue((int)audioPlayer.gainControl.getValue());
+
+            try
+            {
+                Float value = GameDatabaseManager.getInstance().getValueFromTable("volume", "CURRENTPLAYER", Float.class);
+                audioSlider.setValue(Math.round(value));
+
+            } catch (Exception exception)
+            {
+                audioSlider.setValue((int)audioPlayer.gainControl.getValue());
+            }
+
+            setAudioVolume();
         }
         else
         {
@@ -52,6 +65,10 @@ public class GameView
         }
     }
 
+    public void disposeFrame()
+    {
+        frame.dispose();
+    }
 
     public JTextField getTextField()
     {
@@ -91,13 +108,31 @@ public class GameView
 
     public void appendText(String string)
     {
-        typeWriter.Append(string);
+        typeWriter.append(string);
     }
 
     public void appendTextWithoutDelay(String string)
     {
         SwingUtilities.invokeLater(() -> {
             textArea.setText(string);
+        });
+    }
+
+    public int getVolumeValue()
+    {
+       return audioSlider.getValue();
+    }
+
+    public void setTimeGame(long time)
+    {
+        setTimeGame("Time: " + Utilities.parseTime(time));
+    }
+
+    public void setTimeGame(String string)
+    {
+        SwingUtilities.invokeLater(() ->
+        {
+            stopwatchLabel.setText(string);
         });
     }
 
@@ -274,7 +309,9 @@ public class GameView
 
     private void audioSliderMouseReleased(MouseEvent e)
     {
-        setAudioVolume();
+        SwingUtilities.invokeLater(() -> {
+            setAudioVolume();
+        });
     }
 
 

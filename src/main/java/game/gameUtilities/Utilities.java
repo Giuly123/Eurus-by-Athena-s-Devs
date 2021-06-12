@@ -31,9 +31,17 @@ public class Utilities
     public static final String TEXT_AREA_PATH = "assets/textArea.txt";
 
     public static final String texturesPath = "assets/textures/";
-
+    
     public static final int timeDelayTyperWrite = 5;
     public static final char separatorChar = ' ';
+
+    static final int NUM = 10;
+    static final int DIVISION_PER_SECOND = 1000;
+    static final int DIVISION_PER_MINUTE = 60000;
+    static final int SECOND = 60;
+
+    public static final String EASTER_EGG_TEMPO_STRING = "Chronos dice: <<Non ti serve, sei scarso!>>";
+    public static final long EASTER_EGG_TIME = 1200000;
 
     public static Boolean fileExist(String path)
     {
@@ -116,7 +124,10 @@ public class Utilities
         {
             try
             {
-                out.close();
+                if (out != null)
+                {
+                    out.close();
+                }
             }
             catch (IOException e)
             {
@@ -126,6 +137,22 @@ public class Utilities
         return isSuccessfully;
     }
 
+
+    public static String parseTime(final long millisecondi) {
+        int seconds = (int) ((millisecondi / DIVISION_PER_SECOND) % SECOND);
+        int minutes = (int) (millisecondi / DIVISION_PER_MINUTE);
+
+        String time = "";
+        if (minutes < NUM) {
+            time += "0";
+        }
+        time += minutes + ":";
+        if (seconds < NUM) {
+            time += "0";
+        }
+        time += seconds;
+        return time;
+    }
 
 //    public static Boolean writeFile(String filePath, String content, boolean append)
 //    {

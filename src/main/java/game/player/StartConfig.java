@@ -18,7 +18,7 @@ public class StartConfig
         {
             try
             {
-                startConfigJson = JsonParser.GetClassFromJson(Utilities.START_CONFIG_JSON_PATH, RootStartConfigJson.class);
+                startConfigJson = JsonParser.getClassFromJson(Utilities.START_CONFIG_JSON_PATH, RootStartConfigJson.class);
             }
             catch (Exception e)
             {

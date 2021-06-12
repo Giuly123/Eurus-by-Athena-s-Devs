@@ -21,7 +21,7 @@ public enum Command
     help(new String[]{"-h","--help","help"});
 
 
-    public String argComando;
+    private String argComando;
     private String[] aliasList;
     Command(String[] aliasList)
     {
@@ -47,6 +47,10 @@ public enum Command
         return result;
     }
 
+    public String getArgComando()
+    {
+        return argComando;
+    }
 
     public static Command parseCommand(String str)
     {

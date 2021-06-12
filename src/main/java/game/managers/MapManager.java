@@ -181,7 +181,7 @@ public class MapManager
         {
             try
             {
-                rootMapJson = JsonParser.GetClassFromJson(Utilities.MAP_JSON_PATH, RootMapJson.class);
+                rootMapJson = JsonParser.getClassFromJson(Utilities.MAP_JSON_PATH, RootMapJson.class);
 
             } catch (Exception e)
             {

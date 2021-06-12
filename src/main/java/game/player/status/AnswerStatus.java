@@ -10,10 +10,20 @@ public enum AnswerStatus
     definitelyAlreadyResolved,
     solved;
 
-    public GuessingGame guessingGame;
+    private GuessingGame guessingGame;
 
     public AnswerStatus getMajor(AnswerStatus otherState)
     {
         return otherState.ordinal() > this.ordinal() ? otherState : this;
+    }
+
+    public GuessingGame getGuessingGame()
+    {
+        return guessingGame;
+    }
+
+    public void setGuessingGame(GuessingGame guessingGame)
+    {
+        this.guessingGame = guessingGame;
     }
 }

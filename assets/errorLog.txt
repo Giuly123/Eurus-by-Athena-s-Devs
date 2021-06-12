@@ -1,64 +1,49 @@
 
 
-2021/06/05 10:25:27
-java.lang.IllegalStateException: Expected a string but was BEGIN_ARRAY at line 8 column 37 path $.tiles[0].interactableNeededToEnter
+08/06/2021 08:58:50
+File dialogues.json non presente sul disco
 
-2021/06/05 10:26:21
-Errore: problema durante la fase di parsing
+12/06/2021 12:37:14
+Errore durante il loading del game', controllare i file
 
-2021/06/05 10:27:01
-Errore: problema durante la fase di parsing
+12/06/2021 12:38:30
+Errore durante il loading del game', controllare i file
 
-2021/06/05 10:29:17
-Errore: problema durante la fase di parsing
+12/06/2021 12:40:50
+Errore durante il loading del game', controllare i file
 
-2021/06/05 10:29:32
-Errore: problema durante la fase di parsing
+12/06/2021 12:41:21
+Errore durante il loading del game', controllare i file
 
-2021/06/05 10:30:32
-File della mappa non presente sul disco
+12/06/2021 12:41:35
+Errore durante il loading del game', controllare i file
 
-2021/06/05 10:31:41
-File della mappa non presente sul disco
+12/06/2021 12:41:48
+Problema con il database
 
-2021/06/05 10:34:17
-File della mappa non presente sul disco
+12/06/2021 12:42:28
+Problema con il database
 
-2021/06/05 10:34:36
-File della mappa non presente sul disco
+12/06/2021 12:44:24
+Problema con il database
 
-2021/06/05 10:46:21
-File della mappa non presente sul discoErrore: problema durante la fase di parsing
+12/06/2021 12:45:53
+Problema con il database
 
-2021/06/05 10:48:50
-Errore: problema durante la fase di parsing
+12/06/2021 13:16:58
+Problema con il database
 
-2021/06/05 11:07:22
-Errore: problema durante la fase di parsing
+12/06/2021 13:20:24
+Problema con il database
 
-2021/06/05 11:42:12
-Errore: problema durante la fase di parsing
+12/06/2021 13:20:58
+Problema con il database
 
-2021/06/05 11:42:35
-Errore: problema durante la fase di parsing
+12/06/2021 13:21:29
+Problema con il database
 
-2021/06/05 11:43:12
-java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 3 column 3 path $.dialogEventList[0]
+12/06/2021 13:30:01
+java.lang.Long cannot be cast to java.lang.Integer
 
-2021/06/05 14:54:33
-Errore: problema parsing file dialogues.json
-
-2021/06/05 14:56:57
-Errore: problema parsing file guessingGames.json
-
-2021/06/05 15:52:54
-Errore: problema parsing file guessingGames.json
-
-2021/06/05 15:54:09
-Errore: problema parsing file guessingGames.json
-
-2021/06/05 15:54:38
-Errore: problema parsing file guessingGames.json
-
-2021/06/05 15:55:53
-Errore: problema parsing file guessingGames.json
+12/06/2021 13:30:45
+java.lang.Long cannot be cast to java.lang.Integer

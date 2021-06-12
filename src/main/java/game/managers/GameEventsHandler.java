@@ -70,7 +70,7 @@ public class GameEventsHandler
     {
         if (status == TakeItemStatus.taken)
         {
-            gameView.appendText(Sentences.LOOK_ITEM_DESCRIPTION + status.item.getDescription());
+            gameView.appendText(Sentences.LOOK_ITEM_DESCRIPTION + status.getItem().getDescription());
         }
         else if (status == TakeItemStatus.alreadyTaken)
         {
@@ -96,7 +96,7 @@ public class GameEventsHandler
     {
         if (status == InteractStatus.used)
         {
-            gameView.appendText(Sentences.INTERACTABLE_USED + status.interactable.getName());
+            gameView.appendText(Sentences.INTERACTABLE_USED + status.getInteractable().getName());
         }
         else if (status == InteractStatus.alreadyUsed)
         {
@@ -113,7 +113,7 @@ public class GameEventsHandler
         else if (status == InteractStatus.needAnswer)
         {
             gameView.appendText(Sentences.INTERACTABLE_NEED_ANSWER);
-            GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(status.interactable.getGuessingGameId());
+            GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(status.getInteractable().getGuessingGameId());
             gameView.appendText(Sentences.MOVE_NEED_ANSWER_2 + guessingGame.getText());
         }
     }
@@ -154,17 +154,17 @@ public class GameEventsHandler
         }
         else if (status == UsingItemStatus.used)
         {
-            gameView.appendText(Sentences.USE_ITEM_USED + status.args.item.getName());
-            gameView.appendText(status.args.item.getAfterUsed());
+            gameView.appendText(Sentences.USE_ITEM_USED + status.getArgs().item.getName());
+            gameView.appendText(status.getArgs().item.getAfterUsed());
 
-            if (status.args.item.getItemType() == ItemType.itemToUseInteractable)
+            if (status.getArgs().item.getItemType() == ItemType.itemToUseInteractable)
             {
-                tryUnlockInteractable(status.args.interactable);
+                tryUnlockInteractable(status.getArgs().interactable);
             }
 
-            if(status.args.item.isConsumable())
+            if(status.getArgs().item.isConsumable())
             {
-                gameModel.getPlayer().inventoryManager.removeItem(status.args.item);
+                gameModel.getPlayer().inventoryManager.removeItem(status.getArgs().item);
             }
         }
         else if (status == UsingItemStatus.alreadyUsed)
@@ -196,8 +196,8 @@ public class GameEventsHandler
         else if (answerStatus == AnswerStatus.solved)
         {
             gameView.appendText(Sentences.GIVE_ANSWER_SOLVED);
-            gameView.appendText(answerStatus.guessingGame.getAfterAnswered());
-            guessingGamesHandler.addGuessingGameToResolved(answerStatus.guessingGame.getId());
+            gameView.appendText(answerStatus.getGuessingGame().getAfterAnswered());
+            guessingGamesHandler.addGuessingGameToResolved(answerStatus.getGuessingGame().getId());
         }
     }
 
@@ -218,7 +218,7 @@ public class GameEventsHandler
 
     private void onTryMovePlayer(MovingStatus status)
     {
-        MoveStatusArgs args = status.args;
+        MoveStatusArgs args = status.getArgs();
 
         if (status == MovingStatus.moved)
         {
@@ -277,7 +277,7 @@ public class GameEventsHandler
         gameView.appendText(Sentences.TAKE_ITEM_TAKEN + item.getName());
     }
 
-    public void unregisterAllObservers()
+    private void unregisterAllObservers()
     {
         interactableHandler.getOnUnlockInteractable().unregister(observerUnlockInteractable);
         gameModel.getPlayer().getOnTryMovePlayerSubject().unregister(observerTryMovePlayer);
@@ -289,4 +289,9 @@ public class GameEventsHandler
         gameModel.getPlayer().getOnLookItem().unregister(observerLookItem);
     }
 
+
+    public void dispose()
+    {
+        unregisterAllObservers();
+    }
 }

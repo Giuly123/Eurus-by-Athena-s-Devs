@@ -133,7 +133,7 @@ public class InteractableHandler
         {
             try
             {
-                interactableCollectionJson = JsonParser.GetClassFromJson(Utilities.INTERACTABLES_JSON_PATH, RootInteractableCollectionJson.class);
+                interactableCollectionJson = JsonParser.getClassFromJson(Utilities.INTERACTABLES_JSON_PATH, RootInteractableCollectionJson.class);
 
                 for(int i = 0; i < interactableCollectionJson.interactableList.size(); i++)
                 {

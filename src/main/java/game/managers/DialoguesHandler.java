@@ -74,7 +74,7 @@ public class DialoguesHandler
         {
             try
             {
-                dialoguesCollectionJson = JsonParser.GetClassFromJson(Utilities.DIALOGUES_JSON_PATH, RootDialoguesCollectionJson.class);
+                dialoguesCollectionJson = JsonParser.getClassFromJson(Utilities.DIALOGUES_JSON_PATH, RootDialoguesCollectionJson.class);
 
                 for(int i = 0; i < dialoguesCollectionJson.dialogEventList.size(); i++)
                 {

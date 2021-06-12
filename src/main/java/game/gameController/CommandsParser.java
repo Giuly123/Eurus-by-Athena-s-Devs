@@ -189,19 +189,19 @@ public class CommandsParser
     {
         if (command == Command.osserva)
         {
-            observe(command.argComando);
+            observe(command.getArgComando());
         }
         else if (command == Command.guarda)
         {
-            lookItem(command.argComando);
+            lookItem(command.getArgComando());
         }
         else if (command == Command.leggi)
         {
-            readDocument(command.argComando);
+            readDocument(command.getArgComando());
         }
         else if (command == Command.usa)
         {
-            useItem(command.argComando);
+            useItem(command.getArgComando());
         }
 //        else if (command == Command.apri)
 //        {
@@ -209,15 +209,15 @@ public class CommandsParser
 //        }
         else if (command == Command.interagisci)
         {
-            interact(command.argComando);
+            interact(command.getArgComando());
         }
         else if (command == Command.prendi)
         {
-            takeItem(command.argComando);
+            takeItem(command.getArgComando());
         }
         else if (command == Command.rispondi)
         {
-            giveAnswer(command.argComando);
+            giveAnswer(command.getArgComando());
         }
         else if (command == Command.nord)
         {

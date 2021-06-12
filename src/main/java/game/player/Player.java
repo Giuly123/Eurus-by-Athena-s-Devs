@@ -125,7 +125,7 @@ public class Player
                 status = TakeItemStatus.alreadyTaken;
             }
 
-            status.item = item;
+            status.setItem(item);
         }
         onTryTakeItemSubject.notifyObservers(status);
     }
@@ -182,7 +182,7 @@ public class Player
                 status = UsingItemStatus.alreadyUsed;
             }
 
-            status.args.interactable = interactable;
+            status.getArgs().interactable = interactable;
         }
         return status;
     }
@@ -201,7 +201,7 @@ public class Player
             status = UsingItemStatus.unusable;
         }
 
-        status.args.item = item;
+        status.getArgs().item = item;
         onTryUseItemSubject.notifyObservers(status);
     }
 
@@ -264,7 +264,7 @@ public class Player
         {
             Tile tile = map.getNextTile(currentPositionRiga, currentPositionColonna, coordinates);
             status = isInteractableUnlocked(tile);
-            status.args.nextTile = tile;
+            status.getArgs().nextTile = tile;
         }
 
         return status;
@@ -275,8 +275,8 @@ public class Player
     public void tryMove(Coordinates coordinates)
     {
         MovingStatus status = isMovable(coordinates);
-        status.args.startTile = getCurrentTile();
-        status.args.coordinates = coordinates;
+        status.getArgs().startTile = getCurrentTile();
+        status.getArgs().coordinates = coordinates;
 
         if (coordinates == Coordinates.North)
         {
@@ -384,7 +384,7 @@ public class Player
             }
         }
 
-        status.interactable = interactable;
+        status.setInteractable(interactable);
         onTryInteractSubject.notifyObservers(status);
     }
 
@@ -447,7 +447,7 @@ public class Player
             }
         }
 
-        status.guessingGame = guessingGameFound;
+        status.setGuessingGame(guessingGameFound);
         return status;
     }
 
@@ -532,7 +532,7 @@ public class Player
         {
             if (Utilities.fileExist(Utilities.SAVE_JSON_PATH))
             {
-                RootPlayerJson player = JsonParser.GetClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
+                RootPlayerJson player = JsonParser.getClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
                 currentPositionRiga = player.lastPositionRiga;
                 currentPositionColonna = player.lastPositionColonna;
                 interactableHandler.setUsedIteractable(player.usedInteractable);
@@ -574,7 +574,7 @@ public class Player
                     dialoguesHandler.getDialoguesMade(),
                     guessingGamesHandler.getUsedGuessingGame(),
                     endGame);
-            String content = JsonParser.SerializeClassToJson(player);
+            String content = JsonParser.serializeClassToJson(player);
             boolean result = Utilities.writeFile(Utilities.SAVE_JSON_PATH, content, false);
 
             if (!result)

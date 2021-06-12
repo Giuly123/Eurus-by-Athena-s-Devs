@@ -37,7 +37,7 @@ public class GUIManager
             MainMenuModel mainMenuModel = new MainMenuModel();
             mainMenuController = new MainMenuController(isFirstTime, mainMenuModel);
 
-            enableGameFrame(false);
+            //enableGameFrame(false);
             enableMainMenuFrame(true);
         });
 
@@ -69,27 +69,29 @@ public class GUIManager
 
     public void backMainMenu()
     {
-        if (mainMenuController != null)
+        if (mainMenuController != null && gameController != null)
         {
             mainMenuController.setLocation(gameController.getLocationOnScreen());
+            gameController.dispose();
+            gameController = null;
         }
 
-        enableGameFrame(false);
+        //enableGameFrame(false);
         enableMainMenuFrame(true);
         this.isPlaying = false;
     }
 
 
-    private void enableGameFrame(boolean isVisible)
-    {
-        SwingUtilities.invokeLater(() ->
-        {
-            if (gameController != null)
-            {
-                gameController.setVisible(isVisible);
-            }
-        });
-    }
+//    private void enableGameFrame(boolean isVisible)
+//    {
+//        SwingUtilities.invokeLater(() ->
+//        {
+//            if (gameController != null)
+//            {
+//                gameController.setVisible(isVisible);
+//            }
+//        });
+//    }
 
 
     private void enableMainMenuFrame(boolean isVisible)
