@@ -120,7 +120,7 @@ public class MainMenuController {
         frame.setLocation(point);
     }
 
-    private class ImagePanel extends JPanel
+    private static class ImagePanel extends JPanel
     {
         private Image img;
 

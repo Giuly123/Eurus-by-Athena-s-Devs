@@ -12,7 +12,7 @@ public class MapManager
 {
     private static MapManager instance;
 
-    private boolean loaded = false;
+
 
     private Tile[][] matrixMap;
     private int dim;
@@ -21,8 +21,6 @@ public class MapManager
     {
         RootMapJson rootMapJson = loadMap();
         setupMap(rootMapJson.tiles);
-
-        loaded = true;
     }
 
     public static MapManager getInstance() throws Exception
