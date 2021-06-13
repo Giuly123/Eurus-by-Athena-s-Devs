@@ -42,29 +42,48 @@ public class Utilities
     static final int SECOND = 60;
 
     public static final String EASTER_EGG_TEMPO_STRING = "Chronos dice: <<Non ti serve, sei scarso!>>";
-    public static final long EASTER_EGG_TIME = 1200000;
+    public static final long EASTER_EGG_TIME = 1800000;
 
+    /**
+     * Verifica se un file esiste.
+     * @param path del file
+     * @return true se esiste e non è una directory
+     */
     public static Boolean fileExist(String path)
     {
         File f = new File(path);
         return  f.exists() && !f.isDirectory();
     }
 
-
+    /**
+     * Si occupa di togliere gli spazi in eccesso da una stringa.
+     * @param str stringa su cui lavorare
+     * @return la stringa senza spazi in eccesso
+     */
     public static String cleanString(String str)
     {
         return str.trim();
     }
 
-
+    /**
+     * Divide una stringa ogni volta che c'è un separatore.
+     * @param str stringa su cui lavorare
+     * @param separator separatore
+     * @return l'array delle stringhe separate
+     */
     public static String[] splitString(String str, char separator)
     {
         String s = String.valueOf(separator);
         return str.split(s, -1);
     }
 
-
-    public static String escapePrepositions(String startString, String[] listString)
+    /**
+     * Rimuove le preposizioni dalla stringa.
+     * @param startString stringa su cui lavorare
+     * @param listString array di preposizioni da rimuovere
+     * @return stringa lavorata
+     */
+    public static String removePrepositions(String startString, String[] listString)
     {
         for(String string : listString)
         {
@@ -83,7 +102,11 @@ public class Utilities
         return cleanString(startString);
     }
 
-
+    /**
+     * Legge un file.
+     * @param filePath file path da leggere
+     * @return il contenuto del file letto sotto forma di stringa
+     */
     public static String readFile(String filePath)
     {
         String result = "";
@@ -104,6 +127,13 @@ public class Utilities
     }
 
 
+    /**
+     * Scrive un file.
+     * @param filePath file path da scrivere
+     * @param content il contenuto del file
+     * @param append se deve concatenare il file
+     * @return true se l'operazione di scrittura è andata a buon fine
+     */
     public static Boolean writeFile(String filePath, String content, boolean append)
     {
         Boolean isSuccessfully = true;
@@ -139,6 +169,11 @@ public class Utilities
     }
 
 
+    /**
+     * Effettua il parse da millisecondi a stringa nel formato ("mm:ss").
+     * @param millisecondi tempo in millisecondi
+     * @return stringa tempo nel formato ("mm:ss")
+     */
     public static String parseTime(final long millisecondi) {
         int seconds = (int) ((millisecondi / DIVISION_PER_SECOND) % SECOND);
         int minutes = (int) (millisecondi / DIVISION_PER_MINUTE);
@@ -174,6 +209,10 @@ public class Utilities
 //        return isSuccessfully;
 //    }
 
+    /**
+     *
+     * @return la data e l'ora corrente sotto forma di stringa
+     */
     public static String getCurrentData()
     {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");

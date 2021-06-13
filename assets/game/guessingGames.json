@@ -11,21 +11,21 @@
       "id": "5236bc8e-7a67-4de0-a84c-3102e65b5568",
       "name": "IndovinelloCancello",
       "text": "Qual è il pin?",
-      "afterAnswered": "Pin corretto! *SWUSH* Puoi avanzare nella prossima stanza...",
+      "afterAnswered": "Pin corretto! *SWOOSH* Puoi avanzare nella prossima stanza...",
       "correctAnswer": "9988"
     },
     {
       "id": "2fbf2390-299a-4406-95c5-42d05c1ded64",
       "name": "IndovinelloPippo",
       "text": "Qual è la parola d'ordine?",
-      "afterAnswered": "Password corretta! *SWUSH* Puoi avanzare nella prossima stanza...",
+      "afterAnswered": "Password corretta! *SWOOSH* Puoi avanzare nella prossima stanza...",
       "correctAnswer": "pippo"
     },
     {
       "id": "5ff60e9d-7836-4a50-88af-6f83df2f5939",
       "name": "IndovinelloVento",
       "text": "Qual è la parola d’ordine?",
-      "afterAnswered": "Password corretta! *SWUSH* Puoi avanzare nella stanza ora...",
+      "afterAnswered": "Password corretta! *SWOOSH* Puoi avanzare nella stanza ora...",
       "correctAnswer": "vento"
     }
   ]

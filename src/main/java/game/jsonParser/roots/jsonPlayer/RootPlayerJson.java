@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+/**
+ * Rappresenta il file di salvataggio del gioco nel file save.json.
+ */
 public class RootPlayerJson
 {
     public final List<UUID> usedInteractable;

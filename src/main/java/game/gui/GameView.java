@@ -16,7 +16,9 @@ import java.util.Map;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-
+/**
+ * Si occupa della gestione dell'interfacciamento con l'utente.
+ */
 public class GameView
 {
     private TypeWriter typeWriter;
@@ -36,6 +38,9 @@ public class GameView
         frame.setVisible(true);
     }
 
+    /**
+     * Imposta lo Slider del volume.
+     */
     private void setAudioSlider()
     {
         if (audioPlayer == null)
@@ -65,52 +70,91 @@ public class GameView
         }
     }
 
+    /**
+     * Si occupa del dispose del frame.
+     */
     public void disposeFrame()
     {
         frame.dispose();
     }
 
+    /**
+     *
+     * @return l'input field.
+     */
     public JTextField getTextField()
     {
         return inputField;
     }
 
+    /**
+     * Reimposta il focus sull'ultima cosa scritta.
+     * @param jComponent componente swing
+     */
     public void requestFocusSafe(JComponent jComponent)
     {
         SwingUtilities.invokeLater(() -> jComponent.requestFocus());
     }
 
+    /**
+     * Setta la proprietà editable sui jComponent.
+     * @param jComponent componente swing
+     * @param enabled valore da assegnare alla proprietà
+     */
     public void setEditableSafe(JComponent jComponent, boolean enabled)
     {
         SwingUtilities.invokeLater(() -> jComponent.setEnabled(enabled));
     }
 
+    /**
+     * Aggiunge un listener all'home button.
+     * @param action azione da aggiungere quando l'home button viene cliccato
+     */
     public void addActionHomeButton(ActionListener action)
     {
         this.homeButton.addActionListener(e-> {audioPlayer.pause();});
         this.homeButton.addActionListener(action);
     }
 
+    /**
+     * Riporta lo scroll della text area alla fine.
+     */
     public void forceFocusOnAreaText()
     {
         textArea.setCaretPosition(textArea.getDocument().getLength());
     }
 
+    /**
+     * Aggiunge un listener al save button.
+     * @param action azione da aggiungere quando il save button viene cliccato
+     */
     public void addActionSaveButton(ActionListener action)
     {
         this.saveButton.addActionListener(action);
     }
 
+    /**
+     * Aggiunge un listener al test field.
+     * @param action azione da aggiungere quando viene premuto il tasto invio
+     */
     public void addActionOnTextFiledEnter(ActionListener action)
     {
         this.inputField.addActionListener(action);
     }
 
+    /**
+     * Esegue l'append di una stringa alla text area con l'effetto "macchina da scrivere".
+     * @param string stringa da concatenare
+     */
     public void appendText(String string)
     {
         typeWriter.append(string);
     }
 
+    /**
+     * Esegue l'append di una stringa alla text area senza l'effetto "macchina da scrivere".
+     * @param string stringa da concatenare
+     */
     public void appendTextWithoutDelay(String string)
     {
         SwingUtilities.invokeLater(() -> {
@@ -118,16 +162,28 @@ public class GameView
         });
     }
 
+    /**
+     *
+     * @return il valore del volume
+     */
     public int getVolumeValue()
     {
        return audioSlider.getValue();
     }
 
+    /**
+     * Imposta il testo della label time.
+     * @param time tempo espresso in millisecondi
+     */
     public void setTimeGame(long time)
     {
         setTimeGame("Time: " + Utilities.parseTime(time));
     }
 
+    /**
+     * Imposta il testo della label time.
+     * @param string stringa da impostare
+     */
     public void setTimeGame(String string)
     {
         SwingUtilities.invokeLater(() ->
@@ -136,11 +192,19 @@ public class GameView
         });
     }
 
+    /**
+     * Imposta il titolo del Frame.
+     * @param string stringa da impostare
+     */
     public void setTitleFrame(String string)
     {
         frame.setTitle(string);
     }
 
+    /**
+     * Aggiunge un item alla lista dell'inventario.
+     * @param item oggetto di tipo item da aggiungere
+     */
     public void addItemToInventory(Item item)
     {
         SwingUtilities.invokeLater(() ->
@@ -150,6 +214,10 @@ public class GameView
         });
     }
 
+    /**
+     * Rimuove un item dalla lista dell'inventario.
+     * @param item oggetto di tipo item da rimuovere
+     */
     public void removeItemToInventory(Item item)
     {
         SwingUtilities.invokeLater(() ->
@@ -165,6 +233,10 @@ public class GameView
         });
     }
 
+    /**
+     * Istanzia l'error panel.
+     * @param errorMessage messaggio di errore stampato
+     */
     public void showFatalError(String errorMessage)
     {
         SwingUtilities.invokeLater(() -> {
@@ -176,12 +248,20 @@ public class GameView
         });
     }
 
+    /**
+     * Imposta la proprietà enable dei pulsanti.
+     * @param value valore da assegnare alla proprietà
+     */
     public void enableButtons(boolean value)
     {
         saveButton.setEnabled(value);
         homeButton.setEnabled(value);
     }
 
+    /**
+     *
+     * @return il contenuto della text area sotto forma di stringa
+     */
     public String getTextAreaContent()
     {
         return textArea.getText();
@@ -192,11 +272,21 @@ public class GameView
         return frame.getLocationOnScreen();
     }
 
+    /**
+     * Imposta la proprietà visible del frame.
+     * @param value valore da assegnare alla proprietà visible
+     */
     public void setVisible(boolean value)
     {
         frame.setVisible(value);
     }
 
+    /**
+     * Effettua il setup di un pulsante.
+     * @param button pulsante da impostare
+     * @param pathIcon path dell'icona
+     * @param size dimensione del pulsante
+     */
     private void setButton(JButton button, String pathIcon, int size)
     {
         try {
@@ -218,6 +308,10 @@ public class GameView
     }
 
 
+    /**
+     * Fa comparire l'asset dell'item selezionato nell'apposito pannello.
+     * @param path path dell'item selezionato
+     */
     private void setImageItemSelected(String path)
     {
         try
@@ -247,6 +341,9 @@ public class GameView
         }
     }
 
+    /**
+     * Effettua il setup dell'inventory list.
+     */
     private void setInventoryList()
     {
         inventoryList.setModel(modelList);
@@ -264,6 +361,9 @@ public class GameView
     }
 
 
+    /**
+     * Inizializza la view.
+     */
     private void initView()
     {
         //System.out.println(SwingUtilities.isEventDispatchThread());
@@ -286,6 +386,9 @@ public class GameView
         frame.setVisible(false);
     }
 
+    /**
+     * Imposta il volume dell'applicativo.
+     */
     private void setAudioVolume()
     {
         if (audioPlayer != null)
@@ -307,6 +410,10 @@ public class GameView
     }
 
 
+    /**
+     * Azione effettuata al rilascio dello slider da parte del mouse.
+     * @param e rilascio del mouse
+     */
     private void audioSliderMouseReleased(MouseEvent e)
     {
         SwingUtilities.invokeLater(() -> {
@@ -314,7 +421,9 @@ public class GameView
         });
     }
 
-
+    /**
+     * Inizializza le componenti.
+     */
     private void initComponents() {
         frame = new JFrame();
         topPanel = new JPanel();

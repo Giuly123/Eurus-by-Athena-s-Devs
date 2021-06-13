@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- *
+ * Pannello dialog custom che mostra una stringa
+ * e forza la chiusura dell'applicativo.
  */
 public class JErrorPanel extends JFrame
 {
@@ -17,8 +18,8 @@ public class JErrorPanel extends JFrame
     }
 
     /**
-     *
-     * @param errorMsg
+     * Inizializza le componenti.
+     * @param errorMsg messaggio da mostrare
      */
     private void initComponents(String errorMsg) {
 

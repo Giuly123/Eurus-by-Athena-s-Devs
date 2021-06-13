@@ -40,7 +40,7 @@ public class Sentences
             OPEN_COMMAND + READ_COMMAND + LOOK_COMMAND + SEE_TILE_COMMAND + USE_COMMAND + TO_ANSWER_COMMAND +
             TAKE_COMMAND + SAVE_COMMAND + "\n" + ENGLISH_COMMAND;
 
-    public static final String WRONG_COMMAND_ENTERED = "Questo comando non esiste";
+    public static final String WRONG_COMMAND_ENTERED = "Questo comando non esiste!";
 
     public static final String START_STRING_PHRASE = ">> ";
 
@@ -56,19 +56,19 @@ public class Sentences
 
 
     public static final String USE_ITEM_USED = "Hai usato: ";
-    public static final String USE_ITEM_ALREADY_USED = "Hai gia' usato questo oggetto";
-    public static final String USE_ITEM_WRONG = "Questo oggetto non va usato qui";
-    public static final String USE_ITEM_UNUSABLE = "Questo oggetto non puo' essere 'usato', prova a leggerlo";
-    public static final String USE_ITEM_NOT_OWNED = "Non possiedi questo oggetto nell'inventario";
+    public static final String USE_ITEM_ALREADY_USED = "Hai gia' usato questo oggetto!";
+    public static final String USE_ITEM_WRONG = "Questo oggetto non va usato qui!";
+    public static final String USE_ITEM_UNUSABLE = "Questo oggetto non puo' essere 'usato', prova a leggerlo!";
+    public static final String USE_ITEM_NOT_OWNED = "Non possiedi questo oggetto nell'inventario!";
     public static final String USE_ITEM_UNKNOWN = "MSG DI ERRORE: C'e' un problema con questo oggetto, il typeItem " +
-            "selezionato nel file json non corrisponde a nessuno dei tipi ammissibili";
+            "selezionato nel file json non corrisponde a nessuno dei tipi ammissibili!";
     public static final String USE_ERROR = "Devi inserire l'oggetto da usare!";
     public static final String READ_DOCUMENT = "C'e' scritto: ";
 
-    public static final String GIVE_ANSWER_ERROR = "Devi dare una risposta stronzo";
-    public static final String GIVE_ANSWER_NO_QUESTIONS = "Non ci sono indovinelli da risolvere";
-    public static final String GIVE_ANSWER_NOT_SOLVED = "Risposta sbagliata";
-    public static final String GIVE_ANSWER_ALREADY_SOLVED = "Hai gia' risposto a questa domanda";
+    public static final String GIVE_ANSWER_ERROR = "Devi dare una risposta!";
+    public static final String GIVE_ANSWER_NO_QUESTIONS = "Non ci sono indovinelli da risolvere!";
+    public static final String GIVE_ANSWER_NOT_SOLVED = "Risposta sbagliata!";
+    public static final String GIVE_ANSWER_ALREADY_SOLVED = "Hai gia' risposto a questa domanda!";
     public static final String GIVE_ANSWER_SOLVED = "Complimenti, hai risposto correttamente all'indovinello!";
 
     public static final String MOVE_MOVED = "Ti sei spostato a : ";
@@ -76,7 +76,7 @@ public class Sentences
     public static final String MOVE_NEED_ANSWER_1 = "Per passare da questa parte devi prima rispondere a una " +
             "domanda!\n(digitare rispondi con la risposta)";
     public static final String MOVE_NEED_ANSWER_2 = "Domanda: ";
-    public static final String MOVE_ERROR = "Errore spostamento";
+    public static final String MOVE_ERROR = "Errore spostamento!";
 
 
 
