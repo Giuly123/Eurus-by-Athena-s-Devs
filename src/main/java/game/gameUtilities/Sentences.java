@@ -33,7 +33,7 @@ public class Sentences
         "raccogliere un oggetto\n";
     public static final String SAVE_COMMAND = " - Digita 'salva' per salvare lo stato della partita\n";
 
-    public static final String ENGLISH_COMMAND = " - Di ogni comando vale il corrispettivo inglese\n";
+    public static final String ENGLISH_COMMAND = " - Di ogni comando vale il corrispettivo inglese!\n";
 
     public static final String HELP_MESSAGE =
         "I comandi possibili sono:\n\n" + HELP_COMMAND + NORTH_COMMAND + SOUTH_COMMAND + WEST_COMMAND + EAST_COMMAND +
