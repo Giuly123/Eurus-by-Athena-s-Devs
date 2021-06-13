@@ -3,6 +3,9 @@ package game.gui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ *
+ */
 public class JErrorPanel extends JFrame
 {
     private JButton closeAppButton;
@@ -13,6 +16,10 @@ public class JErrorPanel extends JFrame
         this.setVisible(true);
     }
 
+    /**
+     *
+     * @param errorMsg
+     */
     private void initComponents(String errorMsg) {
 
         this.setTitle("Fatal Error");

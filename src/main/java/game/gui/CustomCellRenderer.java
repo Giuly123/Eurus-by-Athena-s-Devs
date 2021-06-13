@@ -3,6 +3,9 @@ package game.gui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Versione custom del cell renderer della jList.
+ */
 public class CustomCellRenderer extends DefaultListCellRenderer
 {
     public Component getListCellRendererComponent(

@@ -52,6 +52,8 @@ public class Sentences
     public static final String TAKE_ITEM_TAKEN = "Hai preso: ";
     public static final String TAKE_ITEM_ALREADY_TAKEN = "Hai gia' preso questo oggetto!";
     public static final String TAKE_ITEM_WRONG = "Questo oggetto non e' nella stanza!";
+    public static final String TAKE_ERROR = "Devi inserire l'oggetto da prendere!";
+
 
     public static final String USE_ITEM_USED = "Hai usato: ";
     public static final String USE_ITEM_ALREADY_USED = "Hai gia' usato questo oggetto";
@@ -60,6 +62,7 @@ public class Sentences
     public static final String USE_ITEM_NOT_OWNED = "Non possiedi questo oggetto nell'inventario";
     public static final String USE_ITEM_UNKNOWN = "MSG DI ERRORE: C'e' un problema con questo oggetto, il typeItem " +
             "selezionato nel file json non corrisponde a nessuno dei tipi ammissibili";
+    public static final String USE_ERROR = "Devi inserire l'oggetto da usare!";
     public static final String READ_DOCUMENT = "C'e' scritto: ";
 
     public static final String GIVE_ANSWER_ERROR = "Devi dare una risposta stronzo";
@@ -78,7 +81,6 @@ public class Sentences
 
 
     public static final String INTERACTABLE_ERROR = "Devi inserire qualcosa!";
-    public static final String TAKE_ERROR = "Devi inserire l'oggetto da prendere!";
     public static final String INTERACTABLE_WRONG= "Non c'e' nulla con cui interagire con questo nome!";
     public static final String INTERACTABLE_USED = "Hai interagito con: ";
     public static final String INTERACTABLE_ALREADY_USED = "Hai gia' interagito con questo oggetto!";

@@ -121,6 +121,10 @@ public class CommandsParser
                 gameView.appendText(Sentences.USE_ITEM_NOT_OWNED);
             }
         }
+        else
+        {
+            gameView.appendText(Sentences.USE_ERROR);
+        }
     }
 
     /**
