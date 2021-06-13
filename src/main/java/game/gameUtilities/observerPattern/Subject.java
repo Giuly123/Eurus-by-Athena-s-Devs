@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <<noECB>>
  * Classe soggetto per implementazione del pattern Observer.
  * @param <Type> tipo generico.
  */
@@ -13,16 +12,29 @@ public class Subject<Type>
     private List<Observer<Type>> observers = new ArrayList<>();
     private List<Observer<Type>> unregistered = new ArrayList<>();
 
+    /**
+     * Registra un observer al soggetto.
+     * @param observer
+     */
     public void register(Observer<Type> observer)
     {
         observers.add(observer);
     }
 
+    /**
+     * Unregistra un observer al soggetto.
+     * @param observer
+     */
     public void unregister(Observer<Type> observer)
     {
         unregistered.add(observer);
     }
 
+    /**
+     * Notifica tutti gli observer che sono registrati al
+     * soggetto di un avvenuto cambiamento.
+     * @param arg argomento passato agli observer
+     */
     public void notifyObservers(Type arg)
     {
         observers.removeAll(unregistered);

@@ -6,10 +6,16 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 import java.io.File;
 
+/**
+ * Si occupa di riprodurre file audio.
+ */
 public class AudioPlayer
 {
     Clip clip;
 
+    /**
+     * Stati dell'audioplayer.
+     */
     public enum AudioPlayerStatus {play, paused, stopped, loaded, unLoaded}
 
     public AudioPlayerStatus status = AudioPlayerStatus.unLoaded;
@@ -18,6 +24,10 @@ public class AudioPlayer
 
     AudioInputStream audioInputStream;
 
+    /**
+     * Costruttore audioplayer.
+     * @param filePath file da riprodurre
+     */
     public AudioPlayer(String filePath)
     {
         try
@@ -47,6 +57,9 @@ public class AudioPlayer
         }
     }
 
+    /**
+     * Starta la riproduzione del file.
+     */
     public void play()
     {
         if (status != AudioPlayerStatus.unLoaded)
@@ -57,6 +70,9 @@ public class AudioPlayer
         }
     }
 
+    /**
+     * Mette in pausa la riproduzione del file.
+     */
     public void pause()
     {
         if (status != AudioPlayerStatus.unLoaded)
@@ -66,6 +82,10 @@ public class AudioPlayer
         }
     }
 
+    /**
+     * Setta il volume dell'applicativo.
+     * @param value valore del gain da settare.
+     */
     public void setVolume(float value)
     {
         try

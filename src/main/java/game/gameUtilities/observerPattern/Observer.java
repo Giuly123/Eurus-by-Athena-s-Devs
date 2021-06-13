@@ -6,5 +6,10 @@ package game.gameUtilities.observerPattern;
  */
 public interface Observer<Type>
 {
+    /**
+     * Azione che deve essere eseguita quando l'observer
+     * viene notificato da un soggetto.
+     * @param arg
+     */
     public void onChanged(Type arg);
 }

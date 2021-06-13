@@ -1,5 +1,10 @@
 package game.gameUtilities.pair;
 
+/**
+ * Classe che prende due argomenti chiave, valore.
+ * @param <K> tipo generico per la chiave
+ * @param <V> tipo generico per il valore
+ */
 public class Pair<K, V> implements IPair<K, V>
 {
     private K key;

@@ -31,7 +31,7 @@ public enum Command
     }
 
     /**
-     * Preposizioni che verranno escapate dal comando.
+     * Preposizioni che verranno rimosse dal comando.
      */
     static private String[] prepositions = {"con", "la", "il", "la", "lo", "with", "the"};
 
@@ -51,7 +51,7 @@ public enum Command
 
         if (strings.length > 1)
         {
-            strings[1] = Utilities.escapePrepositions(strings[1], prepositions);
+            strings[1] = Utilities.removePrepositions(strings[1], prepositions);
             result.setValue(strings[1]);
         }
 

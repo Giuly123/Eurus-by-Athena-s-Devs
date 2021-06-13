@@ -35,6 +35,11 @@ public class CommandsParser
     }
 
 
+    /**
+     * Se consentito, invoca l'azione di
+     * lettura del testo (descrizione) degli item di tipo document.
+     * @param itemName nome dell'item
+     */
     private void readDocument(String itemName)
     {
         if (itemName != null)
@@ -63,6 +68,10 @@ public class CommandsParser
         }
     }
 
+    /**
+     * Se consentito, invoca l'azione di osservazione dell'item.
+     * @param itemName nome dell'item
+     */
     private void lookItem(String itemName)
     {
         if (itemName != null)
@@ -76,6 +85,10 @@ public class CommandsParser
         }
     }
 
+    /**
+     * Se consentito, invoca l'azione di raccolta dell'item.
+     * @param itemName nome dell'item
+     */
     private void takeItem(String itemName)
     {
         if (itemName != null)
@@ -89,6 +102,10 @@ public class CommandsParser
         }
     }
 
+    /**
+     * Se consentito, invoca l'azione di utilizzo dell'item.
+     * @param itemName nome dell'item
+     */
     private void useItem(String itemName)
     {
         if (itemName != null)
@@ -106,6 +123,10 @@ public class CommandsParser
         }
     }
 
+    /**
+     * Se consentito, invoca l'azione di risposta ad un indovinello.
+     * @param answer risposta
+     */
     private void giveAnswer(String answer)
     {
         if (answer != null)
@@ -141,6 +162,10 @@ public class CommandsParser
 //        }
 //    }
 
+    /**
+     * Se consentito, invoca l'azione di interazione con un interactable.
+     * @param interactableName nome dell'interactable
+     */
     private void interact(String interactableName)
     {
         if (interactableName != null)
@@ -154,13 +179,20 @@ public class CommandsParser
         }
     }
 
-
+    /**
+     * Invoca l'azione di interazione con un interactable.
+     * @param interactable interactable
+     */
     private void interact(Interactable interactable)
     {
         gameModel.getPlayer().interact(interactable);
     }
 
 
+    /**
+     * Se consentito, invoca l'azione di osservazione dell'item.
+     * @param argument argomento (item da osservare)
+     */
     private void observe(String argument)
     {
         if (argument == null || argument.length() == 0)
@@ -174,6 +206,10 @@ public class CommandsParser
     }
 
 
+    /**
+     * Comandi ammessi dopo la fine del gioco.
+     * @param command comando
+     */
     private void CommandsAllowedAfterEndGame(Command command)
     {
         if (command == Command.salva)
@@ -195,6 +231,10 @@ public class CommandsParser
         }
     }
 
+    /**
+     * Comandi ammessi in game.
+     * @param command comandi
+     */
     private void CommandsAllowedBeforeEndGame(Command command)
     {
         if (command == Command.osserva)
@@ -260,6 +300,9 @@ public class CommandsParser
     }
 
 
+    /**
+     * Salva informazioni della partita corrente.
+     */
     public void saveGame()
     {
         gameModel.getPlayer().saveFile();
@@ -269,6 +312,10 @@ public class CommandsParser
         gameView.appendText(Sentences.SAVE_GAME);
     }
 
+    /**
+     * Effettua il parse del comando passato come stringa.
+     * @param str comando sotto forma di stringa
+     */
     public void parseCommand(String str)
     {
         Command command = Command.parseCommand(str);

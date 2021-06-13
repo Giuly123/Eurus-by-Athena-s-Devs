@@ -10,7 +10,6 @@ import game.managers.InventoryManager;
 import game.managers.ItemsHandler;
 import game.gui.GUIManager;
 import game.gui.GameView;
-import game.managers.database.GameDatabaseManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +18,10 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Gestisce il  flusso dei dati del GameModel
+ * e l'update dei dati, qualora ce ne fosse bisogno, nel GameView.
+ */
 public class GameController
 {
     private GameEventsHandler gameEventsHandler;
@@ -30,6 +33,12 @@ public class GameController
 
     private Observer<List<UUID>> observerLoadInventory = itemsId -> loadInventory(itemsId);
 
+    /**
+     * Inizializza il gioco.
+     * @param gameModel model
+     * @param gameView view
+     * @param isContinuing se deve riprendere dall'ultimo salvataggio effettuato
+     */
     public GameController(GameModel gameModel, GameView gameView, boolean isContinuing)
     {
         this.gameModel = gameModel;
@@ -41,7 +50,7 @@ public class GameController
             inventoryManager = InventoryManager.getInstance();
             inventoryManager.getOnLoadInventory().register(observerLoadInventory);
 
-            gameModel.setup(isContinuing);
+            gameModel.init(isContinuing);
             startThreadRefreshTime();
             gameEventsHandler = new GameEventsHandler(gameModel, gameView);
             commandsParser = new CommandsParser(gameModel, gameView);
@@ -59,6 +68,9 @@ public class GameController
         }
     }
 
+    /**
+     * Avvia thread che si occupa di aggiornare la label nella view.
+     */
     private void startThreadRefreshTime()
     {
         Thread refreshTime = new Thread(()->{
@@ -75,6 +87,10 @@ public class GameController
     }
 
 
+    /**
+     * Aggiorna la label time nella view, superati i 20 minuti
+     * inserisce l'easter egg.
+     */
     private void refreshTime()
     {
         while(this.isPlaying)
@@ -102,6 +118,10 @@ public class GameController
     }
 
 
+    /**
+     * Mostra il pannello Fatal Error e memorizza nel file log l'errore con la data.
+     * @param e eccezione
+     */
     private void onException(Exception e)
     {
         e.printStackTrace();
@@ -118,6 +138,11 @@ public class GameController
     }
 
 
+    /**
+     * Si occupa di scrivere le prime informazioni quando si inizia una partita o
+     * di recuperare le informazioni scritte prima del salvataggio quando si continua una partita.
+     * @param isContinuing se deve riprendere dall'ultimo salvataggio effettuato
+     */
     private void printFirstMessage(boolean isContinuing)
     {
         gameView.setEditableSafe(gameView.getTextField(), false);
@@ -141,6 +166,9 @@ public class GameController
     }
 
 
+    /**
+     * Azione eseguita al click del bottone Home.
+     */
     final private ActionListener onClickHomeButton = e -> {
         this.isPlaying = false;
         inventoryManager.getOnLoadInventory().unregister(observerLoadInventory);
@@ -149,10 +177,14 @@ public class GameController
         GUIManager.getInstance().backMainMenu();
     };
 
-
+    /**
+     * Azione eseguita al click del bottone Save.
+     */
     final private ActionListener onSaveButton = e -> saveGame();
 
-
+    /**
+     * Azione eseguita quando si invia dal textField un comando.
+     */
     private void onEnter()
     {
         String string = Utilities.cleanString(gameView.getTextField().getText());
@@ -176,7 +208,9 @@ public class GameController
         gameView.getTextField().setText("");
     }
 
-
+    /**
+     * Azione eseguita all'invio del comando nel textField.
+     */
     Action onEnter = new AbstractAction()
     {
         @Override
@@ -196,17 +230,28 @@ public class GameController
         }
     };
 
-    
+    /**
+     *
+     * @return il punto di locazione dello schermo.
+     */
     public Point getLocationOnScreen()
     {
         return gameView.getLocationOnScreen();
     }
 
+    /**
+     * Dispose del frame.
+     */
     public void dispose()
     {
         gameView.disposeFrame();
     }
 
+    /**
+     * Si occupa del loading della lista di UUID degli item
+     * presenti nell'inventario al momento del salvataggio.
+     * @param items lista UUID degli item
+     */
     private void loadInventory(List<UUID> items)
     {
         try
@@ -223,12 +268,9 @@ public class GameController
         }
     }
 
-
-    public void setVisible(boolean isVisible)
-    {
-        gameView.setVisible(isVisible);
-    }
-
+    /**
+     * Salva informazioni della partita corrente.
+     */
     private void saveGame()
     {
         commandsParser.saveGame();
