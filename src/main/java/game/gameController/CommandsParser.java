@@ -2,25 +2,28 @@ package game.gameController;
 
 import game.entity.item.ItemType;
 import game.gameUtilities.Coordinates;
+import game.gameUtilities.Utilities;
 import game.managers.InteractableHandler;
 import game.managers.ItemsHandler;
 import game.entity.interactable.Interactable;
-import game.entity.interactable.InteractableType;
 import game.entity.item.Item;
 import game.gameUtilities.Sentences;
 import game.gameModel.GameModel;
 import game.gui.GameView;
+import game.managers.database.GameDatabaseManager;
 
 public class CommandsParser
 {
     public GameModel gameModel;
     public GameView gameView;
+    private GameDatabaseManager gameDatabaseManager;
     private InteractableHandler interactableHandler;
     private ItemsHandler itemsHandler;
 
 
     public CommandsParser(GameModel gameModel, GameView gameView) throws Exception
     {
+        gameDatabaseManager = GameDatabaseManager.getInstance();
         interactableHandler = InteractableHandler.getInstance();
         itemsHandler = ItemsHandler.getInstance();
 
@@ -237,10 +240,8 @@ public class CommandsParser
         }
         else if (command == Command.salva)
         {
-            gameModel.getPlayer().saveFile();
-            gameView.appendText(Sentences.SAVE_GAME);
+            saveGame();
         }
-
         else if (command == Command.help)
         {
             gameView.appendText(Sentences.HELP_MESSAGE);
@@ -251,6 +252,15 @@ public class CommandsParser
         }
     }
 
+
+    public void saveGame()
+    {
+        gameModel.getPlayer().saveFile();
+        gameDatabaseManager.updateValue("time", "CURRENTPLAYER", Long.toString(gameModel.getTime()));
+        gameDatabaseManager.updateValue("volume", "CURRENTPLAYER", Integer.toString(gameView.getVolumeValue()));
+        Utilities.writeFile(Utilities.TEXT_AREA_PATH, gameView.getTextAreaContent(), false);
+        gameView.appendText(Sentences.SAVE_GAME);
+    }
 
     public void parseCommand(String str)
     {
