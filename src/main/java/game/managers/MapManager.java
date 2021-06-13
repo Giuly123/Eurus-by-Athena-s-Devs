@@ -5,7 +5,6 @@ import game.gameUtilities.Coordinates;
 import game.gameUtilities.Utilities;
 import game.jsonParser.JsonParser;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

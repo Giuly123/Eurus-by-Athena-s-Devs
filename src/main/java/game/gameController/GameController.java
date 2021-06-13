@@ -56,7 +56,7 @@ public class GameController
             commandsParser = new CommandsParser(gameModel, gameView);
 
             gameView.setTitleFrame(gameModel.getStartConfig().startConfigJson.gameName);
-            printFirstMessage(isContinuing);
+            printFirstMessage(isContinuing, gameModel.getPlayer().endGame);
 
             gameView.addActionHomeButton(onClickHomeButton);
             gameView.addActionOnTextFiledEnter(onEnter);
@@ -143,7 +143,7 @@ public class GameController
      * di recuperare le informazioni scritte prima del salvataggio quando si continua una partita.
      * @param isContinuing se deve riprendere dall'ultimo salvataggio effettuato
      */
-    private void printFirstMessage(boolean isContinuing)
+    private void printFirstMessage(boolean isContinuing, boolean isEndGame)
     {
         gameView.setEditableSafe(gameView.getTextField(), false);
 
@@ -160,7 +160,15 @@ public class GameController
             }
         }
 
-        gameModel.getPlayer().observe(false);
+        if (isEndGame)
+        {
+            gameView.appendText(Sentences.END_GAME_RESUME_GAME);
+        }
+        else
+        {
+            gameModel.getPlayer().observe(false);
+        }
+
         gameView.setEditableSafe(gameView.getTextField(), true);
         gameView.requestFocusSafe(gameView.getTextField());
     }

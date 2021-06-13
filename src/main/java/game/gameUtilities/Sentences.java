@@ -94,6 +94,7 @@ public class Sentences
 
     public static final String SAVE_GAME = "Salvataggio effettuato";
 
+    public static final String END_GAME_RESUME_GAME = "Hai gia' finito questa run ..." ;
     public static final String END_GAME_STRING = "Complimenti, hai finito il gioco. Grazie per aver giocato.\n\n" +
     "MMMMMMMMMMMMMMMMMMMMMmsosyhmmdhysyhdmNNMMMMMMMMMMMMMMM\n" +
     "MMMMMMMMMMMMMMMMMMMd-`++/smmdhyso+:-`-+yydNMMMMMMMMMMM\n" +
