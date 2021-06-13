@@ -598,7 +598,7 @@ public class Player
      * - Limitata.
      * Corta e dettagliata dipendono dal valore passato come parametro,
      * limitata dallo stato corrente della tile (illuminata o meno).
-     * @param isFullDescription
+     * @param isFullDescription true se la descrizione è dettagliata
      */
     public void observe(boolean isFullDescription)
     {

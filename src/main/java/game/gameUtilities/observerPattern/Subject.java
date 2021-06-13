@@ -14,7 +14,7 @@ public class Subject<Type>
 
     /**
      * Registra un observer al soggetto.
-     * @param observer
+     * @param observer observer da registrare
      */
     public void register(Observer<Type> observer)
     {
@@ -23,7 +23,7 @@ public class Subject<Type>
 
     /**
      * Unregistra un observer al soggetto.
-     * @param observer
+     * @param observer observer da unregistrare
      */
     public void unregister(Observer<Type> observer)
     {

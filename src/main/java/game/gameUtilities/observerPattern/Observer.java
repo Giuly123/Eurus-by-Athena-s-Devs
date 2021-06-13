@@ -9,7 +9,7 @@ public interface Observer<Type>
     /**
      * Azione che deve essere eseguita quando l'observer
      * viene notificato da un soggetto.
-     * @param arg
+     * @param arg argomento
      */
     public void onChanged(Type arg);
 }
