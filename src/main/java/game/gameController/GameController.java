@@ -22,7 +22,6 @@ import java.util.UUID;
 public class GameController
 {
     private GameEventsHandler gameEventsHandler;
-    private GameDatabaseManager gameDatabaseManager;
     private CommandsParser commandsParser;
     private InventoryManager inventoryManager;
     private GameModel gameModel;
@@ -39,7 +38,6 @@ public class GameController
 
         try
         {
-            gameDatabaseManager = GameDatabaseManager.getInstance();
             inventoryManager = InventoryManager.getInstance();
             inventoryManager.getOnLoadInventory().register(observerLoadInventory);
 
@@ -51,11 +49,9 @@ public class GameController
             gameView.setTitleFrame(gameModel.getStartConfig().startConfigJson.gameName);
             printFirstMessage(isContinuing);
 
-
             gameView.addActionHomeButton(onClickHomeButton);
             gameView.addActionOnTextFiledEnter(onEnter);
             gameView.addActionSaveButton(onSaveButton);
-
         }
         catch (Exception e)
         {
@@ -235,12 +231,7 @@ public class GameController
 
     private void saveGame()
     {
-        gameModel.getPlayer().saveFile();
-        gameDatabaseManager.updateValue("time", "CURRENTPLAYER", Long.toString(gameModel.getTime()));
-        gameDatabaseManager.updateValue("volume", "CURRENTPLAYER", Integer.toString(gameView.getVolumeValue()));
-        Utilities.writeFile(Utilities.TEXT_AREA_PATH, gameView.getTextAreaContent(), false);
-
-        gameView.appendText(Sentences.SAVE_GAME);
+        commandsParser.saveGame();
     }
 
 
