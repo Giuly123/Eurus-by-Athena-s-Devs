@@ -8,11 +8,12 @@ import game.jsonParser.JsonParser;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Manager della mappa.
+ */
 public class MapManager
 {
     private static MapManager instance;
-
-
 
     private Tile[][] matrixMap;
     private int dim;
@@ -23,6 +24,11 @@ public class MapManager
         setupMap(rootMapJson.tiles);
     }
 
+    /**
+     *
+     * @return l'istanza della classe.
+     * @throws Exception eccezione che si potrebbe generare
+     */
     public static MapManager getInstance() throws Exception
     {
         if (instance == null)
@@ -33,28 +39,32 @@ public class MapManager
         return instance;
     }
 
+//    public List<Tile> getContiguousTiles(int posRiga, int posColonna)
+//    {
+//        Tile currentTile = getTile(posRiga, posColonna);
+//
+//        List<Tile> tiles = new ArrayList<>();
+//
+//        Tile nord = getTile(posRiga + 1, posColonna);
+//        Tile sud = getTile(posRiga - 1, posColonna);
+//        Tile est = getTile(posRiga, posColonna + 1);
+//        Tile ovest = getTile(posRiga, posColonna - 1);
+//
+//        if (nord != null && currentTile.getAllowedDirections().contains(Coordinates.North)) tiles.add(nord);
+//        if (sud != null && currentTile.getAllowedDirections().contains(Coordinates.South)) tiles.add(sud);
+//        if (est != null && currentTile.getAllowedDirections().contains(Coordinates.East)) tiles.add(est);
+//        if (ovest != null && currentTile.getAllowedDirections().contains(Coordinates.West)) tiles.add(ovest);
+//
+//        return tiles;
+//    }
 
-    public List<Tile> getContiguousTiles(int posRiga, int posColonna)
-    {
-        Tile currentTile = getTile(posRiga, posColonna);
-
-        List<Tile> tiles = new ArrayList<>();
-
-        Tile nord = getTile(posRiga + 1, posColonna);
-        Tile sud = getTile(posRiga - 1, posColonna);
-        Tile est = getTile(posRiga, posColonna + 1);
-        Tile ovest = getTile(posRiga, posColonna - 1);
-
-        if (nord != null && currentTile.getAllowedDirections().contains(Coordinates.North)) tiles.add(nord);
-        if (sud != null && currentTile.getAllowedDirections().contains(Coordinates.South)) tiles.add(sud);
-        if (est != null && currentTile.getAllowedDirections().contains(Coordinates.East)) tiles.add(est);
-        if (ovest != null && currentTile.getAllowedDirections().contains(Coordinates.West)) tiles.add(ovest);
-
-        return tiles;
-    }
-
-
-
+    /**
+     *
+     * @param currentPosRiga posizione riga corrente
+     * @param currentPosColonna posizione colonna corrente
+     * @param coordinates coordinata rispetto alla quale prelevare la tile successiva
+     * @return la tile successiva rispetto alla coordinata passata come parametro, se possibile
+     */
     public Tile getNextTile(int currentPosRiga, int currentPosColonna, Coordinates coordinates)
     {
         Tile tile = null;
@@ -79,11 +89,17 @@ public class MapManager
         return tile;
     }
 
+    /**
+     *
+     * @param posRiga posizione riga
+     * @param posColonna posizione colonna
+     * @return tile nella posizione indicata, se quest'ultima è ammissibile
+     */
     public Tile getTile(int posRiga, int posColonna)
     {
         Tile tile = null;
 
-        if (posRiga >= 0 && posRiga < dim && posColonna >=0 && posColonna < dim)
+        if (!isOffTheMap(posRiga, posColonna))
         {
             tile = matrixMap[posRiga][posColonna];
         }
@@ -91,7 +107,13 @@ public class MapManager
         return tile;
     }
 
-
+    /**
+     *
+     * @param currentPositionRiga posizione riga corrente
+     * @param currentPositionColonna posizione colonna corrente
+     * @param coordinatesShift coordinata verso la quale mi muovo
+     * @return true se il movimento è permesso
+     */
     public boolean isPermittedMovement(int currentPositionRiga, int currentPositionColonna, Coordinates coordinatesShift)
     {
         boolean isPermitted = false;
@@ -142,12 +164,21 @@ public class MapManager
         return isPermitted;
     }
 
-
-    public boolean isOffTheMap(int currentPositionRiga, int currentPositionColonna)
+    /**
+     *
+     * @param positionRiga posizione riga
+     * @param positionColonna posizione colonna
+     * @return true se la posizione è errata
+     */
+    public boolean isOffTheMap(int positionRiga, int positionColonna)
     {
-        return currentPositionColonna >= dim || currentPositionRiga >= dim || currentPositionColonna < 0 || currentPositionRiga < 0;
+        return positionColonna >= dim || positionRiga >= dim || positionColonna < 0 || positionRiga < 0;
     }
 
+    /**
+     * Setup della mappa
+     * @param map lista delle Tile che compongono la mappa
+     */
     private void setupMap(List<Tile> map)
     {
         dim = (int)java.lang.Math.sqrt(map.size());
@@ -166,11 +197,16 @@ public class MapManager
         }
     }
 
-    public int getDimension()
-    {
-        return dim;
-    }
 
+//    public int getDimension()
+//    {
+//        return dim;
+//    }
+
+    /**
+     * Deserializza le informazioni dal file json.
+     * @throws Exception eccezione durante il parse del file
+     */
     private RootMapJson loadMap() throws Exception
     {
         RootMapJson rootMapJson = null;
@@ -194,7 +230,9 @@ public class MapManager
         return rootMapJson;
     }
 
-
+    /**
+     * Classe necessaria per la deserializzazione del file json.
+     */
     private class RootMapJson
     {
         public List<Tile> tiles;

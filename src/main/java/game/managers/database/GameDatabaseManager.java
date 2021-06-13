@@ -3,6 +3,11 @@ package game.managers.database;
 import java.sql.*;
 import java.util.Properties;
 
+/**
+ * Classe che gestisce il database locale.
+ * Nel database locale vi sono le informazioni relative a:
+ * - volume; - tempo di gioco.
+ */
 public class GameDatabaseManager
 {
     private Connection connection;
@@ -21,6 +26,11 @@ public class GameDatabaseManager
 
     private static GameDatabaseManager instance;
 
+    /**
+     *
+     * @return l'istanza della classe.
+     * @throws Exception eccezione che si potrebbe generare
+     */
     public static GameDatabaseManager getInstance() throws Exception
     {
         if (instance == null)
@@ -30,6 +40,10 @@ public class GameDatabaseManager
         return instance;
     }
 
+    /**
+     * Costruttore della classe che inizializza il database.
+     * @throws Exception eccezione che si potrebbe generare
+     */
     private GameDatabaseManager() throws Exception
     {
         try
@@ -47,7 +61,12 @@ public class GameDatabaseManager
         }
     }
 
-
+    /**
+     *
+     * @param nameTable nome della tabella
+     * @return la lunghezza dalla tabella
+     * @throws SQLException eccezione che si potrebbe generare
+     */
     private int getLenghTable(String nameTable) throws SQLException
     {
         int size = 0;
@@ -86,6 +105,10 @@ public class GameDatabaseManager
     }
 
 
+    /**
+     * Inizializza il database.
+     * @throws Exception eccezione che si potrebbe generare
+     */
     private void initDB() throws Exception
     {
         Statement stm = null;
@@ -129,14 +152,25 @@ public class GameDatabaseManager
         }
     }
 
-
+    /**
+     * Effettua una query sul database e preleva il primo attributo della tabella.
+     * @param nameAttribute nome dell'attributo da prendere
+     * @param nameTable nome della tabella
+     * @param <T> tipo generico
+     * @return il valore dell'attributo preso dalla tabella.
+     */
     public <T> T getValueFromTable(String nameAttribute, String nameTable)
     {
         return (T) getObjectFromTable(nameAttribute, nameTable);
     }
 
-
-    public void updateValue(String nameAttribute, String nameTable, String value)
+    /**
+     * Effettua una query che aggiorna il valore di un attributo.
+     * @param nameAttribute nome dell'attributo da aggiornare
+     * @param nameTable nome della tabella
+     * @param value valore da aggiornare
+     */
+    public void updateValue(String nameAttribute, String nameTable, String key, String value)
     {
         StringBuilder queryString = new StringBuilder();
         queryString.append("UPDATE ");
@@ -145,7 +179,9 @@ public class GameDatabaseManager
         queryString.append(nameAttribute);
         queryString.append(" = ");
         queryString.append(value);
-        queryString.append(" where currentplayer = 'currentplayer'");
+        queryString.append(" where currentplayer = '");
+        queryString.append(key);
+        queryString.append("'");
 
         Statement stm = null;
 
@@ -174,7 +210,12 @@ public class GameDatabaseManager
         }
     }
 
-
+    /**
+     * Effettua una query che restituisce un attributo dalla tabella specificata.
+     * @param nameAttribute nome dell'attributo da prendere
+     * @param nameTable nome della tabella
+     * @return l'attributo richiesto
+     */
     private Object getObjectFromTable(String nameAttribute, String nameTable)
     {
         Object result = null;

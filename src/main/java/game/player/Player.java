@@ -20,7 +20,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-
+/**
+ * Gestisce la logica del gioco.
+ */
 public class Player
 {
     private Subject<MovingStatus> onTryMovePlayerSubject;
@@ -44,6 +46,13 @@ public class Player
     private int currentPositionColonna;
     private boolean isLoaded = false;
 
+    /**
+     * Costruttore della classe player che inizializza il game
+     * e deserializza e importa le informazioni dell'ultimo salvataggio.
+     * @param isContinuing se deve riprendere dall'ultimo salvataggio effettuato
+     * @param startConfig informazioni iniziali
+     * @throws Exception eccezioni relative al parse dei json
+     */
     public Player(boolean isContinuing, StartConfig startConfig) throws Exception
     {
         onTryMovePlayerSubject = new Subject<>();
@@ -66,43 +75,78 @@ public class Player
         isLoaded = true;
     }
 
-
+    /**
+     *
+     * @return il subject onTryMovePlayerSubject
+     */
     public Subject<MovingStatus> getOnTryMovePlayerSubject()
     {
         return onTryMovePlayerSubject;
     }
 
+    /**
+     *
+     * @return il subject onTrySolveGuessingGameSubject
+     */
     public Subject<AnswerStatus> getOnTrySolveGuessingGameSubject()
     {
         return onTrySolveGuessingGameSubject;
     }
 
+    /**
+     *
+     * @return il subject onTryUseItemSubject
+     */
     public Subject<UsingItemStatus> getOnTryUseItemSubject()
     {
         return onTryUseItemSubject;
     }
 
+    /**
+     *
+     * @return il subject onTryInteractSubject
+     */
     public Subject<InteractStatus> getOnTryInteractSubject()
     {
         return onTryInteractSubject;
     }
 
+    /**
+     *
+     * @return il subject onTryTakeItemSubject
+     */
     public Subject<TakeItemStatus> getOnTryTakeItemSubject()
     {
         return onTryTakeItemSubject;
     }
 
+    /**
+     *
+     * @return il subject onObserve
+     */
     public Subject<ObserveArgs> getOnObserveSubject()
     {
         return onObserve;
     }
 
+    /**
+     *
+     * @return il subject onLookItem
+     */
     public Subject<String> getOnLookItem()
     {
         return onLookItem;
     }
 
-
+    /**
+     * Aggiunge all'inventario l'oggetto passato come parametro, se:
+     * - è diverso da null;
+     * - se è presente nella tile corrente;
+     * - se non si è già raccolto.
+     * Notifica agli observer, registrati al soggetto onTryTakeItemSubject,
+     * lo stato di questa operazione.
+     * @param item item da prendere
+     */
     public void takeItem(Item item)
     {
         TakeItemStatus status = TakeItemStatus.wrongItem;
@@ -130,7 +174,13 @@ public class Player
         onTryTakeItemSubject.notifyObservers(status);
     }
 
-
+    /**
+     *
+     * @param tile tile corrente
+     * @param item item che necessita
+     * @return l'interactable nella tile corrente che contiene nella sua lista
+     * itemNeededToUse l'item passato come parametro.
+     */
     private Interactable getInteractableNeedingItem(Tile tile, Item item)
     {
         Interactable result = null;
@@ -161,8 +211,12 @@ public class Player
         return result;
     }
 
-
-    private UsingItemStatus useKey(Item item)
+    /**
+     *
+     * @param item item da usare
+     * @return lo stato dell'operazione
+     */
+    private UsingItemStatus tryUseItem(Item item)
     {
         UsingItemStatus status = UsingItemStatus.wrongItem;
         Tile tile = getCurrentTile();
@@ -187,14 +241,20 @@ public class Player
         return status;
     }
 
-
+    /**
+     * Prova ad utilizzare l'oggetto. Se l'operazione va a buon
+     * fine aggiunge l'item al dizionario degl'item utilizzati.
+     * Notifica agli observer, registrati al soggetto onTryUseItemSubject,
+     * lo stato di questa operazione.
+     * @param item item da usare
+     */
     public void useItem(Item item)
     {
         UsingItemStatus status = UsingItemStatus.unknown;
 
         if (item.getItemType() == ItemType.itemToUseInteractable)
         {
-            status = useKey(item);
+            status = tryUseItem(item);
         }
         else if (item.getItemType() == ItemType.document)
         {
@@ -205,8 +265,13 @@ public class Player
         onTryUseItemSubject.notifyObservers(status);
     }
 
-
-    public boolean haveNecessaryItemsToUseIt(Interactable interactable)
+    /**
+     * Controlla se possiedi nell'inventario gli item necessari
+     * per utilizzare l'interactable passato come parametro.
+     * @param interactable interactable passato
+     * @return true se possiedi tutti gli item
+     */
+    public boolean haveNecessaryItemsToUseInteractable(Interactable interactable)
     {
         boolean isUsable = true;
         List<UUID> neededItems = interactable.getItemsNeededToUse();
@@ -221,8 +286,12 @@ public class Player
         return isUsable;
     }
 
-
-    private MovingStatus isInteractableUnlocked(Tile tile)
+    /**
+     *
+     * @param tile tile corrente
+     * @return stato di questo controllo
+     */
+    private MovingStatus isInteractableNeededToEnterUnlocked(Tile tile)
     {
         MovingStatus status = MovingStatus.moved;
         UUID iteractableNeededToEnter = tile.getInteractableNeededToEnter();
@@ -250,31 +319,34 @@ public class Player
     }
 
 
-    private boolean haveNecessaryAnswer(UUID guessingGame)
-    {
-        return guessingGame == null || guessingGamesHandler.isResolvedGuessingGame(guessingGame);
-    }
-
-
-    private MovingStatus isMovable(Coordinates coordinates)
+    /**
+     * Controlla se uno spostamento è consentito.
+     * @param coordinates coordinate verso la quale si vuole effettuare lo spostamento
+     * @return stato dell'operazione
+     */
+    private MovingStatus isMovingAllowed(Coordinates coordinates)
     {
         MovingStatus status = MovingStatus.offTheMap;
 
         if (map.isPermittedMovement(currentPositionRiga, currentPositionColonna, coordinates))
         {
             Tile tile = map.getNextTile(currentPositionRiga, currentPositionColonna, coordinates);
-            status = isInteractableUnlocked(tile);
+            status = isInteractableNeededToEnterUnlocked(tile);
             status.getArgs().nextTile = tile;
         }
 
         return status;
     }
 
-
-    // Restituisce false se e' stato possibile proseguire o meno
+    /**
+     * Prova ad effettuare lo spostamento nella direzione passata come parametro.
+     * Notifica agli observer, registrati al soggetto onTryMovePlayerSubject,
+     * lo stato di questa operazione.
+     * @param coordinates coordinate verso la quale si vuole effettuare lo spostamento
+     */
     public void tryMove(Coordinates coordinates)
     {
-        MovingStatus status = isMovable(coordinates);
+        MovingStatus status = isMovingAllowed(coordinates);
         status.getArgs().startTile = getCurrentTile();
         status.getArgs().coordinates = coordinates;
 
@@ -310,7 +382,25 @@ public class Player
         onTryMovePlayerSubject.notifyObservers(status);
     }
 
+    /**
+     * Controlla se hai già risposto all'indovinello passato come parametro.
+     * @param guessingGame UUID dell'indovinello
+     * @return true se hai giò risposto all'indovinello
+     */
+    private boolean haveNecessaryAnswer(UUID guessingGame)
+    {
+        return guessingGame == null || guessingGamesHandler.isResolvedGuessingGame(guessingGame);
+    }
 
+    /**
+     * Interagisci con un interactable di tipo chest con indovinello.
+     * Se l'operazione va a buon fine aggiunge l'interactable alla lista
+     * degli interactable usati. Aggiunge gli oggetti contenuti
+     * nell'inteactable all'inventario. L'operazione va
+     * a buon fine se la risposta alla domanda è stata data.
+     * @param interactable interactable con indovinello
+     * @return lo stato dell'operazione
+     */
     private InteractStatus interactChestGuessingGame(Interactable interactable)
     {
         InteractStatus status = InteractStatus.needAnswer;
@@ -325,12 +415,20 @@ public class Player
         return status;
     }
 
-
+    /**
+     * Interagisci con un interactable di tipo senza indovinello.
+     * Se l'operazione va a buon fine aggiunge l'interactable alla lista
+     * degli interactable usati. Aggiunge gli oggetti contenuti
+     * nell'interactable all'inventario. L'operazione va a
+     * buon fine se tutti gli item necessari sono stati usati, se questi ci sono.
+     * @param interactable interactable senza indovinello
+     * @return lo stato dell'operazione
+     */
     private InteractStatus interactNormalChest(Interactable interactable)
     {
         InteractStatus status = InteractStatus.needItem;
 
-        if (haveNecessaryItemsToUseIt(interactable))
+        if (haveNecessaryItemsToUseInteractable(interactable))
         {
             interactableHandler.addUsedInteractable(interactable);
             inventoryManager.addItems(interactable.getContainedItems());
@@ -340,7 +438,11 @@ public class Player
         return status;
     }
 
-
+    /**
+     * Gestisce l'interazione con un interactable di tipo chest.
+     * @param interactable interactable
+     * @return lo stato dell'operazione
+     */
     private InteractStatus interactChest(Interactable interactable)
     {
         InteractStatus status = InteractStatus.alreadyUsed;
@@ -360,7 +462,14 @@ public class Player
         return status;
     }
 
-
+    /**
+     * Interagisce con un interactable.
+     * Se l'operazione va a buon fine aggiunge l'interactable alla lista
+     * degli interactable usati. Aggiunge gli oggetti contenuti
+     * nell'interactable all'inventario, se di tipo chest.
+     * Notifica agli observer, registrati al subject onTryInteractSubject, lo stato di questa operazione.
+     * @param interactable interactable
+     */
     public void interact(Interactable interactable)
     {
         InteractStatus status = InteractStatus.wrongInteractable;
@@ -388,7 +497,12 @@ public class Player
         onTryInteractSubject.notifyObservers(status);
     }
 
-
+    /**
+     *
+     * @param tile tile nella quale è presente l'interactable
+     * @return restituisce la lista degli indovinelli presenti nella
+     * tile passata come parametro
+     */
     private List<GuessingGame> getInteractableGuessingGame(Tile tile)
     {
         List<GuessingGame> result = new ArrayList<>();
@@ -412,7 +526,15 @@ public class Player
         return result;
     }
 
-
+    /**
+     * Prova a risolvere uno degli indovinelli presente
+     * nella lista passata come parametro usando come risposta
+     * la stringa passata come parametro. Lo stato dell'operazione
+     * viene determinato sulla base di un sistema di priorità.
+     * @param guessingGames indovinello proposto
+     * @param answer risposta
+     * @return stato dell'operazione
+     */
     private AnswerStatus trySolveQuestion(List<GuessingGame> guessingGames, String answer)
     {
         AnswerStatus status = AnswerStatus.noQuestions;
@@ -451,17 +573,33 @@ public class Player
         return status;
     }
 
-
+    /**
+     * Prova a risolvere un indovinello presente
+     * nella tile corrente usando come risposta
+     * la stringa passata come parametro.
+     * Notifica agli observer, registrati al soggetto onTrySolveGuessingGameSubject,
+     * lo stato di questa operazione.
+     * @param answer risposta
+     */
     public void solveQuestion(String answer)
     {
         AnswerStatus status;
         Tile currentPos = getCurrentTile();
         status = trySolveQuestion(getInteractableGuessingGame(currentPos), answer);
 
-        getOnTrySolveGuessingGameSubject().notifyObservers(status);
+        onTrySolveGuessingGameSubject.notifyObservers(status);
     }
 
-
+    /**
+     * Notifica agli observer, registrati al subject onObserve,
+     * la descrizione della tile corrente. Questa può essere:
+     * - Corta;
+     * - Dettagliata;
+     * - Limitata.
+     * Corta e dettagliata dipendono dal valore passato come parametro,
+     * limitata dallo stato corrente della tile (illuminata o meno).
+     * @param isFullDescription
+     */
     public void observe(boolean isFullDescription)
     {
         String text = "";
@@ -487,7 +625,13 @@ public class Player
         onObserve.notifyObservers(new ObserveArgs(text, tile.getDialogId()));
     }
 
-
+    /**
+     * Notifica agli observer, registrati al subject onLookItem,
+     * la descrizione dell'item passato come
+     * parametro. Se questo è di tipo document ci sarà
+     * una variazione nella stringa.
+     * @param item item da osservare
+     */
     public void lookItem(Item item)
     {
         String result;
@@ -520,12 +664,22 @@ public class Player
         onLookItem.notifyObservers(result);
     }
 
+    /**
+     *
+     * @return la tile corrente
+     */
     private Tile getCurrentTile()
     {
         return map.getTile(currentPositionRiga, currentPositionColonna);
     }
 
-
+    /**
+     * Deserializza le informazioni dal file json se isContinuing
+     * vale true, altrimenti inizializza da zero il game.
+     * @param isContinuing se deve riprendere dall'ultimo salvataggio effettuato
+     * @param startConfig informazioni iniziali
+     * @throws Exception eccezione durante il parse del file
+     */
     private void loadSaveFile(boolean isContinuing, StartConfig startConfig) throws Exception
     {
         if (isContinuing)
@@ -561,6 +715,10 @@ public class Player
         }
     }
 
+    /**
+     * Serializza le informazioni relative al salvataggio
+     * e le scrive nel file save.json.
+     */
     public void saveFile()
     {
         if (isLoaded)
@@ -579,7 +737,7 @@ public class Player
 
             if (!result)
             {
-                System.err.println("Problema durante la scrittura del file di salvataggio");
+                System.err.println("Problema durante la scrittura del file di salvataggio!");
             }
         }
     }

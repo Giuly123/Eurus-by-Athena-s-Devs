@@ -310,8 +310,8 @@ public class CommandsParser
     public void saveGame()
     {
         gameModel.getPlayer().saveFile();
-        gameDatabaseManager.updateValue("time", "CURRENTPLAYER", Long.toString(gameModel.getTime()));
-        gameDatabaseManager.updateValue("volume", "CURRENTPLAYER", Integer.toString(gameView.getVolumeValue()));
+        gameDatabaseManager.updateValue("time", "CURRENTPLAYER", "currentplayer", Long.toString(gameModel.getTime()));
+        gameDatabaseManager.updateValue("volume", "CURRENTPLAYER", "currentplayer", Integer.toString(gameView.getVolumeValue()));
         Utilities.writeFile(Utilities.TEXT_AREA_PATH, gameView.getTextAreaContent(), false);
         gameView.appendText(Sentences.SAVE_GAME);
     }

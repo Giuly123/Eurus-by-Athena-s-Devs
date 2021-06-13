@@ -2,6 +2,9 @@ package game.player.status;
 
 import java.util.UUID;
 
+/**
+ * Classe che rappresenta gli argomenti dell'azione 'observe'.
+ */
 public class ObserveArgs
 {
     public String text;

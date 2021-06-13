@@ -6,6 +6,9 @@ import game.jsonParser.JsonParser;
 
 import java.util.*;
 
+/**
+ * Handler degli indovinelli.
+ */
 public class GuessingGamesHandler
 {
     private static GuessingGamesHandler instance;
@@ -19,6 +22,11 @@ public class GuessingGamesHandler
         loadGuessingGamesCollection();
     }
 
+    /**
+     *
+     * @return l'istanza della classe.
+     * @throws Exception eccezioni che potrebbero generarsi
+     */
     public static GuessingGamesHandler getInstance() throws Exception
     {
         if (instance == null)
@@ -29,7 +37,10 @@ public class GuessingGamesHandler
         return instance;
     }
 
-
+    /**
+     * Setta gli indovinelli già risolti.
+     * @param guessingGameUsed indovinelli risolti
+     */
     public void setUSedGuessingGame(List<UUID> guessingGameUsed)
     {
         if (guessingGameUsed != null)
@@ -38,6 +49,10 @@ public class GuessingGamesHandler
         }
     }
 
+    /**
+     * Aggiunge un indovinello alla lista degli indovinelli risolti.
+     * @param guessingGameId UUID dell'indovinello
+     */
     public void addGuessingGameToResolved(UUID guessingGameId)
     {
         if (guessingGameId != null)
@@ -46,27 +61,49 @@ public class GuessingGamesHandler
         }
     }
 
+    /**
+     *
+     * @param guessingGameId  UUID dell'indovinello
+     * @return true se l'indovinello è risolto
+     */
     public boolean isResolvedGuessingGame(UUID guessingGameId)
     {
         return resolvedGuessingGame.contains(guessingGameId);
     }
 
+    /**
+     *
+     * @param guessingGame indovinello
+     * @return true se l'indovinello è risolto
+     */
     public boolean isResolvedGuessingGame(GuessingGame guessingGame)
     {
         return resolvedGuessingGame.contains(guessingGame.getId());
     }
 
+    /**
+     *
+     * @return lista di UUID degli indovinelli già risolti
+     */
     public List<UUID> getUsedGuessingGame()
     {
         return resolvedGuessingGame;
     }
 
+    /**
+     *
+     * @param guessingGameId UUID dell'indovinello
+     * @return l'indovinello se esiste
+     */
     public GuessingGame getGuessingGame(UUID guessingGameId)
     {
         return guessingGamesDictionary.get(guessingGameId);
     }
 
-
+    /**
+     * Deserializza le informazioni dal file json.
+     * @throws Exception eccezione durante il parse del file
+     */
     private void loadGuessingGamesCollection() throws Exception
     {
         RootGuessingGamesCollectionJson guessingGamesCollectionJson = null;
@@ -95,7 +132,9 @@ public class GuessingGamesHandler
         }
     }
 
-
+    /**
+     * Classe necessaria per la deserializzazione del file json.
+     */
     private class RootGuessingGamesCollectionJson
     {
         public List<GuessingGame> guessingGameList;

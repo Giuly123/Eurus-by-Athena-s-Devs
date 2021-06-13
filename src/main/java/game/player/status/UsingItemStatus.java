@@ -1,5 +1,8 @@
 package game.player.status;
 
+/**
+ * Possibili stati dell'azione 'use'.
+ */
 public enum UsingItemStatus
 {
     used,
@@ -10,18 +13,19 @@ public enum UsingItemStatus
 
     private UsingItemStatusArgs args;
 
+
     UsingItemStatus()
     {
         args = new UsingItemStatusArgs();
     }
 
+    /**
+     *
+     * @return argomento dello stato.
+     */
     public UsingItemStatusArgs getArgs()
     {
         return args;
     }
 
-    public void setArgs(UsingItemStatusArgs args)
-    {
-        this.args = args;
-    }
 }

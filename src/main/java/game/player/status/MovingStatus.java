@@ -1,5 +1,8 @@
 package game.player.status;
 
+/**
+ * Possibili stati dell'azione 'move'.
+ */
 public enum MovingStatus
 {
     moved,
@@ -15,13 +18,13 @@ public enum MovingStatus
         this.args = new MoveStatusArgs();
     }
 
+    /**
+     *
+     * @return l'argomento dello stato
+     */
     public MoveStatusArgs getArgs()
     {
         return args;
     }
 
-    public void setArgs(MoveStatusArgs args)
-    {
-        this.args = args;
-    }
 }

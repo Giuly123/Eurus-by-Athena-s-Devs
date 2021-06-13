@@ -14,6 +14,9 @@ import game.player.status.*;
 
 import java.util.UUID;
 
+/**
+ * Handler dei Game Event
+ */
 public class GameEventsHandler
 {
     private GameModel gameModel;
@@ -23,7 +26,7 @@ public class GameEventsHandler
     private DialoguesHandler dialoguesHandler;
     private GuessingGamesHandler guessingGamesHandler;
 
-    Observer<Interactable> observerUnlockInteractable = interactable -> onUnlockInteractable(interactable);
+    Observer<Interactable> observerUsedInteractable = interactable -> onUsedInteractable(interactable);
     Observer<MovingStatus> observerTryMovePlayer = moveArgs -> onTryMovePlayer(moveArgs);
     Observer<AnswerStatus> observeTryResolveGuessingGame = statusArgs -> onTryResolveGuessingGame(statusArgs);
     Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
@@ -31,9 +34,15 @@ public class GameEventsHandler
     Observer<TakeItemStatus> observerTryTakeItem = takeItemArgs -> onTryTakeItem(takeItemArgs);
     Observer<String> observerLookItem = itemDescription -> onLookItem(itemDescription);
     Observer<ObserveArgs> observerObserve = observeArgs -> onObserve(observeArgs);
-    Observer<Item> observerAddItemToInventory = item -> addItemToInventory(item);
-    Observer<Item> observerRemoveItemToInventory = item -> removeItemToInventory(item);
+    Observer<Item> observerAddItemToInventory = item -> onAddItemToInventory(item);
+    Observer<Item> observerRemoveItemToInventory = item -> onRemoveItemToInventory(item);
 
+    /**
+     * Registra gli observer ai vari eventi del gioco.
+     * @param gameModel game model
+     * @param gameView game view
+     * @throws Exception eccezioni che potrebbero generarsi
+     */
     public GameEventsHandler(GameModel gameModel, GameView gameView) throws Exception
     {
         InventoryManager inventoryManager = InventoryManager.getInstance();
@@ -42,7 +51,7 @@ public class GameEventsHandler
         guessingGamesHandler = GuessingGamesHandler.getInstance();
 
 
-        interactableHandler.getOnUnlockInteractable().register(observerUnlockInteractable);
+        interactableHandler.getOnUsedInteractable().register(observerUsedInteractable);
         gameModel.getPlayer().getOnTryMovePlayerSubject().register(observerTryMovePlayer);
         gameModel.getPlayer().getOnTrySolveGuessingGameSubject().register(observeTryResolveGuessingGame);
         gameModel.getPlayer().getOnObserveSubject().register(observerObserve);
@@ -58,14 +67,22 @@ public class GameEventsHandler
         this.gameView = gameView;
     }
 
-
-    private void onUnlockInteractable(Interactable interactable)
+    /**
+     * Azione che viene eseguita dopo che un interactable
+     * è stato aggiunto alla lista degli interactable usati.
+     * @param interactable interactable
+     */
+    private void onUsedInteractable(Interactable interactable)
     {
         gameView.appendText(interactable.getAfterUsed());
         checkEndGame(interactable);
     }
 
-
+    /**
+     * Azione che viene effettuata dopo aver
+     * eseguito il comando take.
+     * @param status stato dell'operazione
+     */
     private void onTryTakeItem(TakeItemStatus status)
     {
         if (status == TakeItemStatus.taken)
@@ -82,7 +99,10 @@ public class GameEventsHandler
         }
     }
 
-
+    /**
+     * Controlla se hai terminato il gioco.
+     * @param interactable interactable
+     */
     private void checkEndGame(Interactable interactable)
     {
         if (interactable.isEndGame())
@@ -93,6 +113,11 @@ public class GameEventsHandler
         }
     }
 
+    /**
+     * Azione che viene effettuata dopo aver
+     * eseguito il comando use.
+     * @param status stato dell'operazione
+     */
     private void onTryInteract(InteractStatus status)
     {
         if (status == InteractStatus.used)
@@ -119,30 +144,37 @@ public class GameEventsHandler
         }
     }
 
-
-    private boolean tryUnlockInteractable(Interactable interactable)
+    /**
+     *
+     * @param interactable interactable
+     * @return true se l'interactable è stato usato
+     */
+    private boolean tryUseInteractable(Interactable interactable)
     {
-        boolean unlocked = false;
+        boolean used = false;
 
         if(interactable.getInteractableType() == InteractableType.switchOnLight)
         {
             interactableHandler.addUsedInteractable(interactable);
-            unlocked = true;
+            used = true;
         }
 
         else if (interactable.getInteractableType() == InteractableType.door)
         {
-            if (gameModel.getPlayer().haveNecessaryItemsToUseIt(interactable))
+            if (gameModel.getPlayer().haveNecessaryItemsToUseInteractable(interactable))
             {
                 interactableHandler.addUsedInteractable(interactable);
-                unlocked = true;
+                used = true;
             }
         }
 
-        return unlocked;
+        return used;
     }
 
-
+    /**
+     * Azione che viene effettuata dopo aver eseguito il comando use.
+     * @param status stato dell'operazione
+     */
     private void onTryUseItem(UsingItemStatus status)
     {
         if (status == UsingItemStatus.wrongItem)
@@ -160,7 +192,7 @@ public class GameEventsHandler
 
             if (status.getArgs().item.getItemType() == ItemType.itemToUseInteractable)
             {
-                tryUnlockInteractable(status.getArgs().interactable);
+                tryUseInteractable(status.getArgs().interactable);
             }
 
             if(status.getArgs().item.isConsumable())
@@ -179,7 +211,10 @@ public class GameEventsHandler
 
     }
 
-
+    /**
+     * Azione che viene effettuata dopo avere eseguito il comando reply.
+     * @param answerStatus stato della risposta
+     */
     private void onTryResolveGuessingGame(AnswerStatus answerStatus)
     {
         if (answerStatus == AnswerStatus.noQuestions)
@@ -202,12 +237,19 @@ public class GameEventsHandler
         }
     }
 
-
+    /**
+     * Controlla se c'è un dialogo e nel caso lo stampa.
+     * @param dialogId UUID del dialogo
+     */
     private void checkDialogEvent(UUID dialogId)
     {
         checkDialogEvent(dialoguesHandler.getDialog(dialogId));
     }
 
+    /**
+     * Controlla se c'è un dialogo e nel caso lo stampa.
+     * @param dialog evento dialogo
+     */
     private void checkDialogEvent(DialogEvent dialog)
     {
         if(dialog != null && !dialoguesHandler.isMadeDialog(dialog.getId()))
@@ -217,6 +259,11 @@ public class GameEventsHandler
         }
     }
 
+    /**
+     * Azione che viene effettuato dopo
+     * aver eseguito un comando di spostamento.
+     * @param status stato dello spostamento
+     */
     private void onTryMovePlayer(MovingStatus status)
     {
         MoveStatusArgs args = status.getArgs();
@@ -253,34 +300,50 @@ public class GameEventsHandler
         }
     }
 
-
+    /**
+     * Azione che viene effettuata dopo aver eseguito il comando observe.
+     * @param args argomenti dell'operazione (descizione tile e dialogID)
+     */
     private void onObserve(ObserveArgs args)
     {
         checkDialogEvent(args.dialogId);
         gameView.appendText(args.text);
     }
 
-
+    /**
+     * Azione che viene effettuata dopo aver eseguito il comando look.
+     * @param description descrizione dell'oggetto
+     */
     private void onLookItem(String description)
     {
         gameView.appendText(description);
     }
 
-
-    private void removeItemToInventory(Item item)
+    /**
+     * Azione che viene effettuata dopo aver rimosso un item dall'inventario.
+     * @param item item rimosso dall'inventario
+     */
+    private void onRemoveItemToInventory(Item item)
     {
         gameView.removeItemToInventory(item);
     }
 
-    private void addItemToInventory(Item item)
+    /**
+     * Azione che viene effettuata dopo aver aggiunto un item all'inventario.
+     * @param item item aggiunto all'inventario
+     */
+    private void onAddItemToInventory(Item item)
     {
         gameView.addItemToInventory(item);
         gameView.appendText(Sentences.TAKE_ITEM_TAKEN + item.getName());
     }
 
+    /**
+     * Disiscrive tutti gli observer.
+     */
     private void unregisterAllObservers()
     {
-        interactableHandler.getOnUnlockInteractable().unregister(observerUnlockInteractable);
+        interactableHandler.getOnUsedInteractable().unregister(observerUsedInteractable);
         gameModel.getPlayer().getOnTryMovePlayerSubject().unregister(observerTryMovePlayer);
         gameModel.getPlayer().getOnTrySolveGuessingGameSubject().unregister(observeTryResolveGuessingGame);
         gameModel.getPlayer().getOnObserveSubject().unregister(observerObserve);
@@ -290,7 +353,9 @@ public class GameEventsHandler
         gameModel.getPlayer().getOnLookItem().unregister(observerLookItem);
     }
 
-
+    /**
+     * Esegue il dispose della classe.
+     */
     public void dispose()
     {
         unregisterAllObservers();

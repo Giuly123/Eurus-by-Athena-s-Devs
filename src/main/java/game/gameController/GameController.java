@@ -48,7 +48,7 @@ public class GameController
         try
         {
             inventoryManager = InventoryManager.getInstance();
-            inventoryManager.getOnLoadInventory().register(observerLoadInventory);
+            inventoryManager.getOnLoadedInventory().register(observerLoadInventory);
 
             gameModel.init(isContinuing);
             startThreadRefreshTime();
@@ -171,7 +171,7 @@ public class GameController
      */
     final private ActionListener onClickHomeButton = e -> {
         this.isPlaying = false;
-        inventoryManager.getOnLoadInventory().unregister(observerLoadInventory);
+        inventoryManager.getOnLoadedInventory().unregister(observerLoadInventory);
         gameEventsHandler.dispose();
         gameModel.dispose();
         GUIManager.getInstance().backMainMenu();
@@ -240,7 +240,7 @@ public class GameController
     }
 
     /**
-     * Dispose del frame.
+     * Esegue il dispose della classe.
      */
     public void dispose()
     {
