@@ -512,6 +512,7 @@ public class GameView
 
                         //======== inventoryScrollPane ========
                         {
+                            inventoryList.setCellRenderer(new CustomCellRenderer());
                             inventoryList.setBackground(new Color(41, 41, 41));
                             inventoryList.setForeground(new Color(235, 235, 235));
                             inventoryList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
