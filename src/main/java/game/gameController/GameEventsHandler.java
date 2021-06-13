@@ -1,4 +1,4 @@
-package game.managers;
+package game.gameController;
 
 import game.entity.dialog.DialogEvent;
 import game.gameModel.GameModel;
@@ -10,6 +10,10 @@ import game.entity.item.ItemType;
 import game.gameUtilities.observerPattern.Observer;
 import game.gameUtilities.Sentences;
 import game.gui.GameView;
+import game.managers.DialoguesHandler;
+import game.managers.GuessingGamesHandler;
+import game.managers.InteractableHandler;
+import game.managers.InventoryManager;
 import game.player.status.*;
 
 import java.util.UUID;

@@ -1,6 +1,5 @@
 package game.gameController;
 
-import game.managers.GameEventsHandler;
 import game.gameModel.GameModel;
 import game.entity.item.Item;
 import game.gameUtilities.observerPattern.Observer;
