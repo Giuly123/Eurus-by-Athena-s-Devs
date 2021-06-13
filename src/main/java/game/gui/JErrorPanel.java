@@ -7,7 +7,7 @@ import java.awt.*;
  * Pannello dialog custom che mostra una stringa
  * e forza la chiusura dell'applicativo.
  */
-public class JErrorPanel extends JFrame
+class JErrorPanel extends JFrame
 {
     private JButton closeAppButton;
     private JLabel errorMessageTextLabel;

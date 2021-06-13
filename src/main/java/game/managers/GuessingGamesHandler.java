@@ -2,7 +2,7 @@ package game.managers;
 
 import game.entity.guessingGame.GuessingGame;
 import game.gameUtilities.Utilities;
-import game.jsonParser.JsonParser;
+import game.gameUtilities.jsonParserUtilities.JsonParserUtilities;
 
 import java.util.*;
 
@@ -112,7 +112,7 @@ public class GuessingGamesHandler
         {
             try
             {
-                guessingGamesCollectionJson = JsonParser.getClassFromJson(Utilities.GUESSING_GAMES_JSON_PATH, RootGuessingGamesCollectionJson.class);
+                guessingGamesCollectionJson = JsonParserUtilities.getClassFromJson(Utilities.GUESSING_GAMES_JSON_PATH, RootGuessingGamesCollectionJson.class);
 
                 for(int i = 0; i < guessingGamesCollectionJson.guessingGameList.size(); i++)
                 {

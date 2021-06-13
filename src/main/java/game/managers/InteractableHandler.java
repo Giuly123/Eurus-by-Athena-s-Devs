@@ -3,7 +3,7 @@ package game.managers;
 import game.entity.interactable.Interactable;
 import game.gameUtilities.observerPattern.Subject;
 import game.gameUtilities.Utilities;
-import game.jsonParser.JsonParser;
+import game.gameUtilities.jsonParserUtilities.JsonParserUtilities;
 
 import java.util.*;
 
@@ -178,7 +178,7 @@ public class InteractableHandler
         {
             try
             {
-                interactableCollectionJson = JsonParser.getClassFromJson(Utilities.INTERACTABLES_JSON_PATH, RootInteractableCollectionJson.class);
+                interactableCollectionJson = JsonParserUtilities.getClassFromJson(Utilities.INTERACTABLES_JSON_PATH, RootInteractableCollectionJson.class);
 
                 for(int i = 0; i < interactableCollectionJson.interactableList.size(); i++)
                 {

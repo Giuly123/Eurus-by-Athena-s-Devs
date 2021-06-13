@@ -6,7 +6,7 @@ import game.gameUtilities.pair.Pair;
 /**
  * Rappresenta i vari comandi utilizzabili all'interno del gioco.
  */
-public enum Command
+enum Command
 {
     osserva(new String[]{"osserva","observe"}),
     guarda(new String[]{"guarda","look"}),

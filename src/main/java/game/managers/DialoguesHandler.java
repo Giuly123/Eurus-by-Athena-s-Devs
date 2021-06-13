@@ -2,7 +2,7 @@ package game.managers;
 
 import game.entity.dialog.DialogEvent;
 import game.gameUtilities.Utilities;
-import game.jsonParser.JsonParser;
+import game.gameUtilities.jsonParserUtilities.JsonParserUtilities;
 
 import java.util.*;
 
@@ -108,7 +108,7 @@ public class DialoguesHandler
         {
             try
             {
-                dialoguesCollectionJson = JsonParser.getClassFromJson(Utilities.DIALOGUES_JSON_PATH, RootDialoguesCollectionJson.class);
+                dialoguesCollectionJson = JsonParserUtilities.getClassFromJson(Utilities.DIALOGUES_JSON_PATH, RootDialoguesCollectionJson.class);
 
                 for(int i = 0; i < dialoguesCollectionJson.dialogEventList.size(); i++)
                 {

@@ -1,7 +1,7 @@
 package game.player;
 
 import game.gameUtilities.Utilities;
-import game.jsonParser.JsonParser;
+import game.gameUtilities.jsonParserUtilities.JsonParserUtilities;
 
 /**
  * Classe che rappresenta la configurazione iniziale.
@@ -25,7 +25,7 @@ public class StartConfig
         {
             try
             {
-                startConfigJson = JsonParser.getClassFromJson(Utilities.START_CONFIG_JSON_PATH, RootStartConfigJson.class);
+                startConfigJson = JsonParserUtilities.getClassFromJson(Utilities.START_CONFIG_JSON_PATH, RootStartConfigJson.class);
             }
             catch (Exception e)
             {

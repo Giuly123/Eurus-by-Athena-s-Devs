@@ -3,7 +3,7 @@ package game.managers;
 import game.entity.tile.Tile;
 import game.gameUtilities.Coordinates;
 import game.gameUtilities.Utilities;
-import game.jsonParser.JsonParser;
+import game.gameUtilities.jsonParserUtilities.JsonParserUtilities;
 
 import java.util.List;
 
@@ -214,7 +214,7 @@ public class MapManager
         {
             try
             {
-                rootMapJson = JsonParser.getClassFromJson(Utilities.MAP_JSON_PATH, RootMapJson.class);
+                rootMapJson = JsonParserUtilities.getClassFromJson(Utilities.MAP_JSON_PATH, RootMapJson.class);
 
             } catch (Exception e)
             {

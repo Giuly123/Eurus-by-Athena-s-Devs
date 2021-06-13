@@ -1,4 +1,4 @@
-package game.jsonParser;
+package game.gameUtilities.jsonParserUtilities;
 
 import com.google.gson.Gson;
 import game.gameUtilities.Utilities;
@@ -7,7 +7,7 @@ import game.gameUtilities.Utilities;
  * Classe utilities per la serializzazione e
  * deserializzazione dei file json.
  */
-public class JsonParser
+public class JsonParserUtilities
 {
     /**
      * Deserializza una classe da un file json.

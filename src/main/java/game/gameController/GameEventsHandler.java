@@ -21,7 +21,7 @@ import java.util.UUID;
 /**
  * Handler dei Game Event
  */
-public class GameEventsHandler
+class GameEventsHandler
 {
     private GameModel gameModel;
     private GameView gameView;

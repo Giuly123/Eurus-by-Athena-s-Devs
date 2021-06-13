@@ -6,7 +6,7 @@ import java.awt.*;
 /**
  * Versione custom del cell renderer della jList.
  */
-public class CustomCellRenderer extends DefaultListCellRenderer
+class CustomCellRenderer extends DefaultListCellRenderer
 {
     public Component getListCellRendererComponent(
             JList list, Object value, int index, boolean isSelected, boolean cellHasFocus)

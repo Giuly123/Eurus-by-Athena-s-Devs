@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 /**
  * Gestisce la logica del main menu.
  */
-public class MainMenuModel
+class MainMenuModel
 {
     public MainMenuModel()
     {

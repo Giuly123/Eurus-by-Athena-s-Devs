@@ -1,6 +1,5 @@
 package game.player;
 
-import game.managers.*;
 import game.entity.tile.Tile;
 import game.gameUtilities.Coordinates;
 import game.gameUtilities.Sentences;
@@ -11,8 +10,8 @@ import game.entity.interactable.InteractableType;
 import game.entity.item.Item;
 import game.entity.item.ItemType;
 import game.gameUtilities.Utilities;
-import game.jsonParser.JsonParser;
-import game.jsonParser.roots.jsonPlayer.RootPlayerJson;
+import game.gameUtilities.jsonParserUtilities.JsonParserUtilities;
+import game.managers.*;
 import game.player.status.*;
 
 import java.util.ArrayList;
@@ -686,7 +685,7 @@ public class Player
         {
             if (Utilities.fileExist(Utilities.SAVE_JSON_PATH))
             {
-                RootPlayerJson player = JsonParser.getClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
+                RootPlayerJson player = JsonParserUtilities.getClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
                 currentPositionRiga = player.lastPositionRiga;
                 currentPositionColonna = player.lastPositionColonna;
                 interactableHandler.setUsedIteractable(player.usedInteractable);
@@ -732,7 +731,7 @@ public class Player
                     dialoguesHandler.getDialoguesMade(),
                     guessingGamesHandler.getUsedGuessingGame(),
                     endGame);
-            String content = JsonParser.serializeClassToJson(player);
+            String content = JsonParserUtilities.serializeClassToJson(player);
             boolean result = Utilities.writeFile(Utilities.SAVE_JSON_PATH, content, false);
 
             if (!result)

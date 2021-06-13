@@ -10,7 +10,7 @@ import javax.swing.*;
 /**
  * Gestisce l'interazione con l'utente del menu principale.
  */
-public class MainMenuController {
+class MainMenuController {
 
     private MainMenuModel model;
     private ImageIcon iconLogo = new ImageIcon(Utilities.PATH_LOGO);

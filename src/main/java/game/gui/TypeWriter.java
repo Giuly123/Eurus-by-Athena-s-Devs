@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  * Simula l'effetto "macchina da scrivere".
  */
-public class TypeWriter
+class TypeWriter
 {
     public JTextArea textArea;
     public int delay;

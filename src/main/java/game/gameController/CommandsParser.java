@@ -15,7 +15,7 @@ import game.managers.database.GameDatabaseManager;
 /**
  * Si occupa di effettuare il parse del comando e di invocare l'azione correlata.
  */
-public class CommandsParser
+class CommandsParser
 {
     public GameModel gameModel;
     public GameView gameView;

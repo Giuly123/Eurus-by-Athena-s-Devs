@@ -2,7 +2,7 @@ package game.managers;
 
 import game.entity.item.Item;
 import game.gameUtilities.Utilities;
-import game.jsonParser.JsonParser;
+import game.gameUtilities.jsonParserUtilities.JsonParserUtilities;
 
 import java.util.*;
 import java.util.Map;
@@ -146,7 +146,7 @@ public class ItemsHandler
         {
             try
             {
-                itemsCollectionJson = JsonParser.getClassFromJson(Utilities.ITEMS_JSON_PATH, RootItemsCollectionJson.class);
+                itemsCollectionJson = JsonParserUtilities.getClassFromJson(Utilities.ITEMS_JSON_PATH, RootItemsCollectionJson.class);
 
                 for(int i = 0; i < itemsCollectionJson.itemsList.size(); i++)
                 {
