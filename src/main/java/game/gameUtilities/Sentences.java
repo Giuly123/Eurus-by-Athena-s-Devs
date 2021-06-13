@@ -45,13 +45,13 @@ public class Sentences
     public static final String START_STRING_PHRASE = ">> ";
 
     public static final String LOOK_ITEM_DESCRIPTION = "Descrizione: ";
-    public static final String LOOK_ITEM_WRONG = "Non possiedi questo oggetto e non si trova nelle vicinanze";
-    public static final String LOOK_ITEM_INCOMPLETE = "Devi aggiungere l'oggetto che vuoi guardare";
-    public static final String LOOK_ITEM_ISNT_DOCUMENT = "Questo oggetto non puo' essere letto";
+    public static final String LOOK_ITEM_WRONG = "Non possiedi questo oggetto e non si trova nelle vicinanze!";
+    public static final String LOOK_ITEM_INCOMPLETE = "Devi aggiungere l'oggetto che vuoi guardare!";
+    public static final String LOOK_ITEM_ISNT_DOCUMENT = "Questo oggetto non puo' essere letto!";
 
     public static final String TAKE_ITEM_TAKEN = "Hai preso: ";
-    public static final String TAKE_ITEM_ALREADY_TAKEN = "Hai gia' preso questo oggetto";
-    public static final String TAKE_ITEM_WRONG = "Questo oggetto non e' nella stanza";
+    public static final String TAKE_ITEM_ALREADY_TAKEN = "Hai gia' preso questo oggetto!";
+    public static final String TAKE_ITEM_WRONG = "Questo oggetto non e' nella stanza!";
 
     public static final String USE_ITEM_USED = "Hai usato: ";
     public static final String USE_ITEM_ALREADY_USED = "Hai gia' usato questo oggetto";
@@ -77,8 +77,8 @@ public class Sentences
 
 
 
-    public static final String INTERACTABLE_ERROR = "Devi inserire qualcosa";
-    public static final String INTERACTABLE_CHEST_ERROR = "Non puoi aprire questo oggetto poichè non è una chest!";
+    public static final String INTERACTABLE_ERROR = "Devi inserire qualcosa!";
+    public static final String TAKE_ERROR = "Devi inserire l'oggetto da prendere!";
     public static final String INTERACTABLE_WRONG= "Non c'e' nulla con cui interagire con questo nome!";
     public static final String INTERACTABLE_USED = "Hai interagito con: ";
     public static final String INTERACTABLE_ALREADY_USED = "Hai gia' interagito con questo oggetto!";

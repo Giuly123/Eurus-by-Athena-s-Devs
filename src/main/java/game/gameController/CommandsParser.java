@@ -80,6 +80,10 @@ public class CommandsParser
             Item item = itemsHandler.getItem(itemName);
             gameModel.getPlayer().takeItem(item);
         }
+        else
+        {
+            gameView.appendText(Sentences.TAKE_ERROR);
+        }
     }
 
     private void useItem(String itemName)
