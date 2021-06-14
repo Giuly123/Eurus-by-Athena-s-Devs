@@ -4,23 +4,20 @@
 
 <br/>
 
-1. [Introduzione](#Introduzione)
-  * [Trama](#Trama)
-  * [Mappa](#Mappa)
-2. [Requisiti specifici](#Requisiti-specifici)
+1. [Introduzione](#introduzione)
+  * [Trama](#trama)
+  * [Mappa](#mappa)
+2. [Requisiti specifici](#requisiti-specifici)
   * [Requisiti funzionali](#requisiti-funzionali)
   * [Requisiti non funzionali](#requisiti-non-funzionali)
-3. [System Design](#System-Design)
-  * [Stile architetturale adottato](#Stile-architetturale-adottato)
-  * [Dettagli implementativi e tecnologie utilizzate](#Dettagli-implementativi-e-tecnologie-utilizzate)
-4. [O.O. Design](#OO-Design)
-  * [Diagramma delle classi](#Diagramma-delle-classi)
-  * [Design pattern utilizzati](#Design-pattern-utilizzati)
-5. [Specifica algebrica di una struttura dati utilizzata](#Specifica-algebrica-di-una-struttura-dati-utilizzata)
-6. [Soluzione completa del gioco](#Soluzione-completa-del-gioco)
-7. [Dettagli sulla compilazione](#Dettagli-sulla-compilazione)
-8. [Organizzazione del lavoro e strumenti utilizzati](#Organizzazione-del-lavoro-e-strumenti-utilizzati)
-  * [Piattaforme di comunicazione](#Piattaforme-di-comunicazione)
+3. [System Design](#system-Design)
+  * [Pattern e stile architetturale utilizzati](#pattern-e-stile-architetturale-utilizzati)
+4. [Dettagli implementativi e tecnologie utilizzate](#dettagli-implementativi-e-tecnologie-utilizzate)
+5. [Specifica algebrica di una struttura dati utilizzata](#specifica-algebrica-di-una-struttura-dati-utilizzata)
+6. [Soluzione completa del gioco](#soluzione-completa-del-gioco)
+7. [Dettegli sulla compilazione](#dettagli-sulla-compilazione)
+8. [Organizzazione del lavoro e strumenti utilizzati](#organizzazione-del-lavoro-e-strumenti-utilizzati)
+  * [Piattaforme di comunicazione](#piattaforme-di-comunicazione)
 9. [Conclusione](#Conclusione)
 
 <br/><br/>
@@ -52,7 +49,7 @@ Eurus è un avventura testuale ispirata alla serie BBC ```Sherlock```. Riuscirai
 
 <center><img src = "../assets/relazione/mappa.PNG"></center>
 
-[Torna all'indice](#Indice)
+[Torna all'indice](#indice)
 <br/>
 
 ## **Requisiti specifici**
@@ -113,7 +110,7 @@ Il software può essere reimpiegato per lo sviluppo di applicazioni. Infatti, ba
 
 La JDK utilizzata per sviluppare l'avventura è stata la 8.0.
 
-[Torna all'indice](#Indice)
+[Torna all'indice](#indice)
 <br/>
 
 ## **System Design**
@@ -161,7 +158,7 @@ Ogni qual volta lo stato interno della classe ```Player``` (la quale implementa 
 
 In aggiunta, abbiamo anche utilizzato il pattern **[Singleton](https://it.wikipedia.org/wiki/Singleton_(informatica))**, nei diversi Handler/Manager che compongono l'applicativo.
 
-[Torna all'indice](#Indice)
+[Torna all'indice](#indice)
 <br/>
 
 ## **Dettagli implementativi e tecnologie utilizzate**
@@ -195,9 +192,21 @@ L'editor, infine, esporta direttamente tutti i file json necessari per il funzio
 
 Inoltre, abbiamo sfruttato il **[database H2](https://www.h2database.com/html/main.html)** per il salvataggio delle informazioni relative al tempo di gioco e quelle relative al livello del volume della musica inserita all'interno del gioco.
 
-## **Diagramma delle classi**
+[Torna all'indice](#indice)
+<br/>
 
 ## **Specifica algebrica di una struttura dati utilizzata**
+
+<center><img src = "../assets/relazione/specifica1.PNG"></center>
+
+<center><img src = "../assets/relazione/specifica2.PNG"></center>
+
+<center><img src = "../assets/relazione/specifica3.PNG"></center>
+
+[Torna all'indice](#indice)
+<br/>
+
+## **Diagramma delle classi**
 
 
 
@@ -261,7 +270,7 @@ Questa fornita è la soluzione più completa, si può arrivare comunque alla fin
 
 **Occhio a scovare l'Easter Egg!**
 
-[Torna all'indice](#Indice)
+[Torna all'indice](#indice)
 <br/>
 
 ## **Dettagli sulla compilazione**
@@ -275,7 +284,7 @@ La risoluzione consigliata è la seguente:
 <center><img src = "../assets/relazione/risoluzioneConsigliata.PNG"></center>
 
 
-[Torna all'indice](#Indice)
+[Torna all'indice](#indice)
 <br/>
 
 ## **Organizzazione del lavoro e strumenti utilizzati**
@@ -297,7 +306,7 @@ La seconda è stata scelta poichè, essendo anche questa familiare, era il mezzo
 
 <center><img src = "../assets/relazione/whatsapp.PNG"></center>
 
-[Torna all'indice](#Indice)
+[Torna all'indice](#indice)
 <br/>
 
 ## **Conclusione**
