@@ -42,7 +42,7 @@ public class Utilities
     static final int SECOND = 60;
 
     public static final String EASTER_EGG_TEMPO_STRING = "Chronos dice: <<Non ti serve, sei scarso!>>";
-    public static final long EASTER_EGG_TIME = 1800000;
+    public static final long EASTER_EGG_TIME = 1200000;
 
     /**
      * Verifica se un file esiste.

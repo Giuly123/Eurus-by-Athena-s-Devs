@@ -14,11 +14,12 @@
   * [Pattern e stile architetturale utilizzati](#pattern-e-stile-architetturale-utilizzati)
 4. [Dettagli implementativi e tecnologie utilizzate](#dettagli-implementativi-e-tecnologie-utilizzate)
 5. [Specifica algebrica di una struttura dati utilizzata](#specifica-algebrica-di-una-struttura-dati-utilizzata)
-6. [Soluzione completa del gioco](#soluzione-completa-del-gioco)
-7. [Dettegli sulla compilazione](#dettagli-sulla-compilazione)
-8. [Organizzazione del lavoro e strumenti utilizzati](#organizzazione-del-lavoro-e-strumenti-utilizzati)
+6. [Diagramma di una classe significativa](#diagramma-di-una-classe-significativa)
+7. [Soluzione completa del gioco](#soluzione-completa-del-gioco)
+8. [Dettegli sulla compilazione](#dettagli-sulla-compilazione)
+9. [Organizzazione del lavoro e strumenti utilizzati](#organizzazione-del-lavoro-e-strumenti-utilizzati)
   * [Piattaforme di comunicazione](#piattaforme-di-comunicazione)
-9. [Conclusione](#Conclusione)
+10. [Conclusione](#conclusione)
 
 <br/><br/>
 
@@ -31,15 +32,12 @@ L'obiettivo di questo progetto è quello di dimostrare le competenze acquisiste 
 
 Lo scopo di questo progetto è quello di creare un'avventura testuale, scritta in Java, che potrà essere giocata da tutti coloro i quali hanno una conoscenza almeno dilettantistica del suo funzionamento.
 
-L'interfaccia utente è stata implementata sia in versione grafica (Graphical User Interface - GUI) sia a riga di comando (Command Line Interface - CLI).
-
 L'applicativo software, oggetto del documento, è stato sviluppato dal gruppo **[Athena's devs]()**, composto da:
 
 * **[Riccardo Ranieri](https://github.com/RickNewere)**
 * **[Giuliano Picilli](https://github.com/Giuly123)**
 * **[Fabio Spaccavento](https://github.com/fabiospaccavento)**
 
-All'interno, è stata anche generata la Javadoc.
 
 ## **Trama**
 
@@ -47,7 +45,7 @@ Eurus è un avventura testuale ispirata alla serie BBC ```Sherlock```. Riuscirai
 
 ## **Mappa**
 
-<center><img src = "../assets/relazione/mappa.PNG"></center>
+<center><img src = "../doc/relazione/mappa.PNG"></center>
 
 [Torna all'indice](#indice)
 <br/>
@@ -58,14 +56,14 @@ Di seguito l'elenco dei requisiti specifici (funzionali e non funzionali):
 
 ## **Requisiti funzionali**
 
-Avviata l'applicazione ci troveremo nella home menù del gioco.
+Avviata l'applicazione ci troveremo nel Main Menu.
 
-<center><img src = "../assets/relazione/inizioGioco.PNG"></center>
+<center><img src = "../doc/relazione/inizioGioco.PNG"></center>
 
 Abbiamo tre pulsanti:
 
 * ```Inizia```: comincia una nuova partita.
-* ```Continua```: riprende l'ultima partita salvata. Altrimenti comincia una nuova partita.
+* ```Continua```: riprende l'ultima partita salvata, se ne è stata salvata una.
 * ```Esci```: chiude l'applicazione.
 
 Iniziando o continuando una partita ci ritroveremo nella vera e propria schermata di gioco.
@@ -85,9 +83,17 @@ Il gioco sarà predisposto a ricevere comandi del tipo:
 * ```rispondi```: per rispondere ad indovinalli presenti nel gioco;
 * ```prendi + nome oggetto```: per raccogliere un oggetto.
 
+Un comando può essere formulato anche con diverse preposizioni. Ad esempio:
+
+* ```prendi foglietto```
+* ```prendi il foglietto```
+* ```interagisci con il cadavere```
+* ```interagisci con cadavere```
+* ```interagisci cadavere```
+
 Di tutti i comandi valgono anche i corrispettivi inglesi!
 
-<center><img src = "../assets/relazione/schermataIniziale.PNG"></center>
+<center><img src = "../doc/relazione/schermataIniziale.PNG"></center>
 
 
 ## **Requisiti non funzionali**
@@ -95,7 +101,7 @@ Di tutti i comandi valgono anche i corrispettivi inglesi!
 **Robustezza**
 
 Il software prevede che l'utente conosca le regole generali di una avventura testuale. Il livello di protezione dagli errori dell'utente consiste nella rigorosa analisi dell'input con opportune notifiche di comandi o mosse errate.
-Inoltre, l'applicazione gestisce tutte le eventuali eccezioni.
+Inoltre, l'applicazione gestisce tutte le eventuali eccezioni. Vi è anche un  pannello che in caso di Fatal Error  notifica all'utente il problema che si è verificato e forza la chiusura del gioco. Inoltre, viene salvato il problema in un file di log, chiamato ```errorLog.txt```, con la data, l'ora e l'eccezione generata.
 
 **Estendibilità**
 
@@ -104,7 +110,7 @@ Il software è progettato in modo da poter consentire, con semplicitá, l'implem
 
 **Riusabilità**
 
-Il software può essere reimpiegato per lo sviluppo di applicazioni. Infatti, basterà avere creatività e modificare solo la storia.
+Il software può essere reimpiegato per lo sviluppo di applicazioni. Infatti, basterà avere creatività e [modificare solo la storia](#json).
 
 **Portabilità**
 
@@ -115,7 +121,7 @@ La JDK utilizzata per sviluppare l'avventura è stata la 8.0.
 
 ## **System Design**
 
-L'applicazione è interamente sviluppata in **[Java](https://www.java.com/it/)**. Questo è un linguaggio orientato agli oggetti, che permette l'esecuzione dei suoi applicativi su tutti i sistemi per cui è stata sviluppata una java virtual machine. L'intero progetto è contenuto all'interno di una repository privato su **[GitHub](https://github.com/)**. Inoltre, abbiamo utilizzato **[Maven](https://maven.apache.org/)** come sistema per l'automazione dello sviluppo e **[SpotBugs](https://spotbugs.github.io/)**, strumento utile per scovare bug nascosti nel codice. Per quest'ultimo, si è scelto di lasciar alcuni che ritenevamo non essere veri e propri bug.
+L'applicazione è interamente sviluppata in **[Java](https://www.java.com/it/)**. Questo è un linguaggio orientato agli oggetti, che permette l'esecuzione dei suoi applicativi su tutti i sistemi per cui è stata sviluppata una java virtual machine. L'intero progetto è contenuto all'interno di una repository pubblica su **[GitHub](https://github.com/)**. Inoltre, abbiamo utilizzato **[Maven](https://maven.apache.org/)** come sistema per l'automazione dello sviluppo e **[SpotBugs](https://spotbugs.github.io/)**, strumento utile per scovare bug nascosti nel codice. Per quest'ultimo, si è scelto di lasciar alcuni errori che ritenevamo non essere veri e propri bug. Inoltre, è stata generata anche la **[Javadoc](https://it.wikipedia.org/wiki/Javadoc)** del progetto. Questa è contenuta nella directory ```javadoc``` contenuta a sua volta nella directory ```doc```.
 
 ## **Pattern e stile architetturale utilizzati**
 
@@ -133,7 +139,7 @@ Pertanto:
 
 * **GameController**
 
-  Si interfaccia con le due classi.
+  Interfaccia le due classi sopraccitate.
 
 Inoltre, abbiamo affiancato al pattern MVC il Pattern
 **[Observer](https://it.wikipedia.org/wiki/Observer_pattern)**, per mantenere un alto livello di consistenza fra classi correlate, senza produrre situazioni di forte dipendenza e di accoppiamento elevato.
@@ -154,7 +160,7 @@ L'applicazione di questo pattern è particolarmente utilizzata nelle classi:
 
 * ```GameEventsHandler```.
 
-Ogni qual volta lo stato interno della classe ```Player``` (la quale implementa la logica utilizzata dal ```GameModel```) subisce un cambiamento, il subject relativo all'azione notifica il cambiamento agli observer ad esso registrati. Questi ultimi,(contenuti nella classe ```GameEventsHandler```) ricevuta la notifica dal subject, triggerano l'aggiornamento della GUI tramite la classe ```GameView```. In questo modo si garantisce la corretta forma del pattern MVC.  
+Ogni qual volta lo stato interno della classe ```Player``` (la quale implementa la logica utilizzata dal ```GameModel```) subisce un cambiamento, il subject relativo all'azione notifica il cambiamento agli observer ad esso registrati. Questi ultimi (contenuti nella classe ```GameEventsHandler```) ricevuta la notifica dal subject, triggerano l'aggiornamento della GUI tramite la classe ```GameView```. In questo modo si garantisce la corretta forma del pattern MVC.  
 
 In aggiunta, abbiamo anche utilizzato il pattern **[Singleton](https://it.wikipedia.org/wiki/Singleton_(informatica))**, nei diversi Handler/Manager che compongono l'applicativo.
 
@@ -163,51 +169,84 @@ In aggiunta, abbiamo anche utilizzato il pattern **[Singleton](https://it.wikipe
 
 ## **Dettagli implementativi e tecnologie utilizzate**
 
-## **JSON**
+## **Json**
 
 Abbiamo utilizzato la libreria esterna **[Gson](https://github.com/google/gson)** che ci permette di serializzare e deserializzare oggetti direttamente in **[Json](https://it.wikipedia.org/wiki/JavaScript_Object_Notation)**.
 
 L'applicativo software è stato sviluppato in modo tale che, cambiando opportunamente i file di gioco (.json), ognuno può scrivere la propria avventura testuale. Difatti il nostro applicativo non è un gioco bensì è un parser di avventure testuali che seguono uno standard da noi definito.
 
-Per popolare i nostri file .json, abbiamo realizzato un editor in java (per uso personale) in modo tale da rendere questa operazione human readeble.
+Per popolare i nostri file .json, abbiamo realizzato un editor in java (per uso personale) in modo tale da rendere questa operazione human readable.
 
 
 Di seguito alcune foto significative ed esplicative dell'editor realizzato per uso personale:
 
 Pagina iniziale dell'editor dove puoi impostare il titolo del gioco, il prologo e il numero di stanze (che può essere variabile):
 
-<center><img src = "../assets/relazione/editorPaginaIniziale.PNG"></center>
+<center><img src = "../doc/relazione/editorPaginaIniziale.PNG"></center>
 
-Pagina in cui, in ogni stanza, se la stanza in questione è il punto di spawn o di fine gioco, puoi inserire le direzioni permesse, c'è sia una descrizione breve della stanza, sia una descrizione lunga e puoi inserire gli UUID degli interactable con cui interagire e degli item da raccogliere, etc...:
+<br>
 
-<center><img src = "../assets/relazione/tileEditor.PNG"></center>
+Pannello in cui a sinistra si può visualizzare l'intera mappa, mentre a destra si possono visualizzare e modificare le informazioni relative alla Tile(stanza) cliccata.
+Alcune delle informazioni modificabili sono:
+* se è la tile di spawn, 
+* le direzioni permesse, 
+* una descrizione breve della stanza, 
+* una descrizione dettagliata, 
+* gli UUID degli interactable con cui interagire e degli item da raccogliere, 
+* etc...
 
-Pagina relativa agl'item dove poter inserire il tipo di item, una descrizione, i suoi alias, se serve per interagire con un interactable, se è consumabile, etc...:
+<center><img src = "../doc/relazione/tileEditor.PNG"></center>
 
-<center><img src = "../assets/relazione/itemEditor.PNG"></center>
+<br>
+
+Pannello in cui a sinistra si possono aggiungere o togliere gli Item, mentre a destra si possono visualizzare e modificare le informazioni relative agl'Item selezionati.
+Alcune delle informazioni modificabili sono:
+* una sua descrizione breve, 
+* i suoi alias, 
+* se serve per interagire con un interactable, 
+* se è consumabile, 
+* etc...
+
+<center><img src = "../doc/relazione/itemEditor.PNG"></center>
+
+Ogni qual volta viene creata un'entità viene automaticamente generato un UUID che le verrà associato.
 
 L'editor, infine, esporta direttamente tutti i file json necessari per il funzionamento del gioco tramite il pulsante, che si può vedere nella seconda foto, "Save File".
 
+Per ogni file json generato c'è un pannello dedicato all'interno dell'editor, come quelli sopraccitati.
+
 ## **Database**
 
-Inoltre, abbiamo sfruttato il **[database H2](https://www.h2database.com/html/main.html)** per il salvataggio delle informazioni relative al tempo di gioco e quelle relative al livello del volume della musica inserita all'interno del gioco.
+Inoltre, abbiamo sfruttato il **[database H2](https://www.h2database.com/html/main.html)** per il salvataggio delle informazioni relative al tempo e al livello del volume della musica inserita all'interno del gioco.
+
+## **File**
+
+Oltre ai file json, utilizziamo altri due file. Questi ci servono per:
+
+* Salvare la log degli errori con la relativa data, ora ed eccezione generata;
+* Salvare il contenuto della textArea ad ogni salvataggio.  
+
+Quest'ultimo file testuale verrà creato nel momento in cui andremo a salvare una partita, sovrascritto (il contenuto) in caso di ulteriore salvataggio ed utilizzato nel momento in cui andremo a continuare una partita, tramite il bottone continua nel Main Menu Iniziale.
 
 [Torna all'indice](#indice)
 <br/>
 
 ## **Specifica algebrica di una struttura dati utilizzata**
 
-<center><img src = "../assets/relazione/specifica1.PNG"></center>
+<center><img src = "../doc/relazione/specifica1.PNG"></center>
 
-<center><img src = "../assets/relazione/specifica2.PNG"></center>
+<center><img src = "../doc/relazione/specifica2.PNG"></center>
 
-<center><img src = "../assets/relazione/specifica3.PNG"></center>
+<center><img src = "../doc/relazione/specifica3.PNG"></center>
 
 [Torna all'indice](#indice)
 <br/>
 
-## **Diagramma delle classi**
+## **Diagramma delle classi significative**
 
+<center><img src = "../doc/relazione/diagrammaClassiSignificative.svg"></center>
+
+Si è deciso di non riportare alcuni getter e setter!
 
 
 ## **Soluzione completa del gioco**
@@ -248,6 +287,7 @@ Dopo aver premuto il bottone ```Inizia```, inserire i comandi nell'ordine citato
 * ```interagisci con custodia```;
 * ```usa pezzo```;
 * ```est```;
+* ```prendi foglietto```;
 * ```rispondi pippo```;
 * ```sud```;
 * ```ovest```;
@@ -264,25 +304,28 @@ Dopo aver premuto il bottone ```Inizia```, inserire i comandi nell'ordine citato
 * ```usa veleno```. --> Finale 1
 * ```usa pistola```. --> Finale 2
 
-Inserendoli in questo ordine, si arriva alla fine del gioco. Per poter avanzare, leggere le note è fondamentale dato che queste contengono suggerimenti per le soluzioni dei vari enigmi. Inoltre tutti gli item sono dotati di alias quindi possono esser chiamati con altri nomi.
+Inserendoli in questo ordine, si arriva alla fine del gioco. 
 
-Questa fornita è la soluzione più completa, si può arrivare comunque alla fine del gioco eseguendo meno comandi perdendo, però, i lgusto del gioco.
+Per poter avanzare è fondamentale leggere le note poichè queste contengono i suggerimenti per le soluzioni dei vari enigmi. Inoltre tutti gli item sono dotati di alias quindi possono esser chiamati con altri nomi.
 
-**Occhio a scovare l'Easter Egg!**
+Si può arrivare comunque alla fine del gioco eseguendo meno comandi perdendo, però, il gusto del gioco.
+
+**Occhio all'Easter Egg!**
 
 [Torna all'indice](#indice)
 <br/>
 
 ## **Dettagli sulla compilazione**
 
-Qualora l'IDE lo consigli, premere il pulstante **"Trust Project"**. Infatti, scaricando solo il progetto in **"Safe Mode"** questo non importerà le librerie utili a **Json**.
+Qualora l'IDE lo consigli, premere il pulsante **"Trust Project"**. Infatti, scaricando solo il progetto in **"Safe Mode"** questo non importerà le librerie esterne utili a **Json** e al **database H2**.
 
-Inoltre, se si vuole runnare direttamente il file .jar, mettere nella stessa cartella del .jar anche la cartella 'assets'.
+Inoltre, se si vuole runnare direttamente il file .jar, è necessario inserire nella stessa cartella del .jar anche la cartella 'assets'.
+
+Rilasciamo all'interno del progetto una cartella compressa con la versione già buildata del progetto pronta per l'uso.
 
 La risoluzione consigliata è la seguente: 
 
-<center><img src = "../assets/relazione/risoluzioneConsigliata.PNG"></center>
-
+<center><img src = "../doc/relazione/risoluzioneConsigliata.PNG"></center>
 
 [Torna all'indice](#indice)
 <br/>
@@ -300,18 +343,18 @@ Per la comunicazione, il nostro gruppo, ha adottato due piattaforme:
 
 La prima è stata scelta poichè una piattaforma a tutti i membri del gruppo familiare, la quale permetteva di fare videoconferenze e di condividere lo schermo. Ciò è stato molto utile in quanto la piattaforma permette di condividere più schermi contemporaneamente.
 
-<center><img src = "../assets/relazione/discord.PNG"></center>
+<center><img src = "../doc/relazione/discord.PNG"></center>
 
 La seconda è stata scelta poichè, essendo anche questa familiare, era il mezzo di comunicazione più veloce in ogni momento. Tramite essa ci si confrontava durante le lezioni, si decidevano i giorni e gli orari per i **meeting** e ci si teneva in contatto.
 
-<center><img src = "../assets/relazione/whatsapp.PNG"></center>
+<center><img src = "../doc/relazione/whatsapp.PNG"></center>
 
 [Torna all'indice](#indice)
 <br/>
 
 ## **Conclusione**
 
-Riteniamo che questo progetto sia stato un importante banco di prova. Nonostante le difficoltà siamo riusciti comunque a centrare gli obiettivi stabiliti e a trarre il meglio da questa esperienza formativa.
+Riteniamo che questo progetto sia stato un importante banco di prova. Nonostante le difficoltà del periodo siamo riusciti comunque a centrare gli obiettivi stabiliti e a trarre il meglio da questa esperienza formativa.
 
 <center>
 
