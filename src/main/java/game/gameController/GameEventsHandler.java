@@ -19,7 +19,7 @@ import game.player.status.*;
 import java.util.UUID;
 
 /**
- * Handler dei Game Event
+ * Handler degli eventi del gioco
  */
 class GameEventsHandler
 {
