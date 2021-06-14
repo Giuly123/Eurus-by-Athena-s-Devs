@@ -30,16 +30,16 @@ class GameEventsHandler
     private DialoguesHandler dialoguesHandler;
     private GuessingGamesHandler guessingGamesHandler;
 
-    Observer<Interactable> observerUsedInteractable = interactable -> onUsedInteractable(interactable);
-    Observer<MovingStatus> observerTryMovePlayer = moveArgs -> onTryMovePlayer(moveArgs);
-    Observer<AnswerStatus> observeTryResolveGuessingGame = statusArgs -> onTryResolveGuessingGame(statusArgs);
-    Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
-    Observer<InteractStatus> observerTryInteract = interactArgs -> onTryInteract(interactArgs);
-    Observer<TakeItemStatus> observerTryTakeItem = takeItemArgs -> onTryTakeItem(takeItemArgs);
-    Observer<String> observerLookItem = itemDescription -> onLookItem(itemDescription);
-    Observer<ObserveArgs> observerObserve = observeArgs -> onObserve(observeArgs);
-    Observer<Item> observerAddItemToInventory = item -> onAddItemToInventory(item);
-    Observer<Item> observerRemoveItemToInventory = item -> onRemoveItemToInventory(item);
+    private Observer<Interactable> observerUsedInteractable = interactable -> onUsedInteractable(interactable);
+    private Observer<MovingStatus> observerTryMovePlayer = moveArgs -> onTryMovePlayer(moveArgs);
+    private Observer<AnswerStatus> observeTryResolveGuessingGame = statusArgs -> onTryResolveGuessingGame(statusArgs);
+    private Observer<UsingItemStatus> observerTryUseItem = useItemArgs -> onTryUseItem(useItemArgs);
+    private Observer<InteractStatus> observerTryInteract = interactArgs -> onTryInteract(interactArgs);
+    private Observer<TakeItemStatus> observerTryTakeItem = takeItemArgs -> onTryTakeItem(takeItemArgs);
+    private Observer<String> observerLookItem = itemDescription -> onLookItem(itemDescription);
+    private Observer<ObserveArgs> observerObserve = observeArgs -> onObserve(observeArgs);
+    private Observer<Item> observerAddItemToInventory = item -> onAddItemToInventory(item);
+    private Observer<Item> observerRemoveItemToInventory = item -> onRemoveItemToInventory(item);
 
     /**
      * Registra gli observer ai vari eventi del gioco.
