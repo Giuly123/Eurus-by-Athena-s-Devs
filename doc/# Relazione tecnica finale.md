@@ -283,6 +283,7 @@ Dopo aver premuto il bottone ```Inizia```, inserire i comandi nell'ordine citato
 * ```interagisci con borsello```;
 * ```est```;
 * ```est```;
+* ```usa torcia```;
 * ```usa cerbottana```;
 * ```interagisci con custodia```;
 * ```usa pezzo```;
@@ -292,11 +293,13 @@ Dopo aver premuto il bottone ```Inizia```, inserire i comandi nell'ordine citato
 * ```sud```;
 * ```ovest```;
 * ```usa torica```;
-* ```apri baule```;
+* ```interagisci con baule```;
 * ```est```;
 * ```sud```;
-* ```apri valigetta```;
-* ```ovest```;
+* ```usa pass```
+* ```ovest```
+* ```interagisci con valigetta```;
+* ```est```;
 * ```sud```;
 * ```rispondi 9988```;
 * ```sud```;
