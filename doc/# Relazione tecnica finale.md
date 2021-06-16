@@ -246,8 +246,10 @@ Quest'ultimo file testuale verrà creato nel momento in cui andremo a salvare un
 
 <center><img src = "../doc/relazione/diagrammaClassiSignificative.svg"></center>
 
-Si è deciso di non riportare alcuni getter e setter!
+Si è deciso di non riportare alcuni getter e setter! Per le responsabilità delle classi consultare la Javadoc!
 
+[Torna all'indice](#indice)
+<br/>
 
 ## **Soluzione completa del gioco**
 
