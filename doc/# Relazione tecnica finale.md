@@ -327,6 +327,7 @@ Qualora l'IDE lo consigli, premere il pulsante **"Trust Project"**. Infatti, sca
 Inoltre, se si vuole runnare direttamente il file .jar, è necessario inserire nella stessa cartella del .jar anche la cartella 'assets'.
 
 Rilasciamo all'interno del progetto una cartella compressa con la versione già buildata del progetto pronta per l'uso.
+( Lo zip sopraccitato si trova nella cartella doc e si chiama progettoMap.zip )
 
 <center><img src = "../doc/relazione/esempioCartella.PNG"></center>
 
