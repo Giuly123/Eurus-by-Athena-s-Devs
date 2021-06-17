@@ -76,19 +76,13 @@ class MainMenuController {
         {
             mainPanel.setLayout(new FlowLayout());
 
-            //---- Inizia ----
-            startButton.setText("Inizia");
-            startButton.setPreferredSize(new Dimension(150, 50));
+            GUIUtilities.setButton(startButton, Utilities.ICON_NEWGAME_PATH, new Dimension(200, 80));
             mainPanel.add(startButton);
 
-            //---- Continua ----
-            continueButton.setText("Continua");
-            continueButton.setPreferredSize(new Dimension(150, 50));
+            GUIUtilities.setButton(continueButton, Utilities.ICON_RESUME_PATH, new Dimension(200, 80));
             mainPanel.add(continueButton);
 
-            //---- Esci ----
-            exitButton.setText("Esci");
-            exitButton.setPreferredSize(new Dimension(150, 50));
+            GUIUtilities.setButton(exitButton, Utilities.ICON_EXIT_PATH, new Dimension(200, 80));
             mainPanel.add(exitButton);
         }
 
@@ -119,6 +113,8 @@ class MainMenuController {
         });
 
     }
+
+
 
     /**
      * Imposta la proprietà visible del frame.

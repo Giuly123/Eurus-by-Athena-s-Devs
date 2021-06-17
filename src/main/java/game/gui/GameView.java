@@ -281,31 +281,6 @@ public class GameView
         frame.setVisible(value);
     }
 
-    /**
-     * Effettua il setup di un pulsante.
-     * @param button pulsante da impostare
-     * @param pathIcon path dell'icona
-     * @param size dimensione del pulsante
-     */
-    private void setButton(JButton button, String pathIcon, int size)
-    {
-        try {
-            if (Utilities.fileExist(pathIcon))
-            {
-                Image image = ImageIO.read(new File(pathIcon));
-                Image scaledImage = image.getScaledInstance(size, size, Image.SCALE_SMOOTH);
-                button.setText("");
-                button.setIcon(new ImageIcon(scaledImage));
-                button.setContentAreaFilled(false);
-                button.setOpaque(false);
-                button.setBorder(null);
-            }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
 
 
     /**
@@ -378,8 +353,8 @@ public class GameView
         typeWriter = new TypeWriter(textArea, Utilities.timeDelayTyperWrite);
 
         //Set Home button
-        setButton(homeButton, Utilities.ICON_HOME_PATH, 35);
-        setButton(saveButton, Utilities.ICON_SAVE_PATH, 35);
+        GUIUtilities.setButton(homeButton, Utilities.ICON_HOME_PATH, new Dimension(35, 35));
+        GUIUtilities.setButton(saveButton, Utilities.ICON_SAVE_PATH, new Dimension(35, 35));
 
         setInventoryList();
 

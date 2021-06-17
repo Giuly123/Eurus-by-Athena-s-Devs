@@ -1,5 +1,8 @@
 package game.gameUtilities;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -17,6 +20,9 @@ public class Utilities
 
     public static final String ICON_HOME_PATH = "assets/icons/home_icon.png";
     public static final String ICON_SAVE_PATH = "assets/icons/save_icon.png";
+    public static final String ICON_EXIT_PATH = "assets/icons/exit_icon.png";
+    public static final String ICON_NEWGAME_PATH = "assets/icons/newgame_icon.png";
+    public static final String ICON_RESUME_PATH = "assets/icons/resume_icon.png";
     public static final String BACKGROUND_PATH = "assets/icons/sfondo.jpg";
     public static final String MUSIC_PATH = "assets/sounds/music.wav";
 
