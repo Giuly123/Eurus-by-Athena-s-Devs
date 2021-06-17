@@ -77,12 +77,15 @@ class MainMenuController {
             mainPanel.setLayout(new FlowLayout());
 
             GUIUtilities.setButton(startButton, Utilities.ICON_NEWGAME_PATH, new Dimension(200, 80));
+            startButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             mainPanel.add(startButton);
 
             GUIUtilities.setButton(continueButton, Utilities.ICON_RESUME_PATH, new Dimension(200, 80));
+            continueButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             mainPanel.add(continueButton);
 
             GUIUtilities.setButton(exitButton, Utilities.ICON_EXIT_PATH, new Dimension(200, 80));
+            exitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             mainPanel.add(exitButton);
         }
 
