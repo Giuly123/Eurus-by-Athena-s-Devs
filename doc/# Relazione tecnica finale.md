@@ -173,7 +173,7 @@ In aggiunta, abbiamo anche utilizzato il pattern **[Singleton](https://it.wikipe
 
 Abbiamo utilizzato la libreria esterna **[Gson](https://github.com/google/gson)** che ci permette di serializzare e deserializzare oggetti direttamente in **[Json](https://it.wikipedia.org/wiki/JavaScript_Object_Notation)**.
 
-L'applicativo software è stato sviluppato in modo tale che, cambiando opportunamente i file di gioco (.json), ognuno può scrivere la propria avventura testuale. Difatti il nostro applicativo non è un gioco bensì è un parser di avventure testuali che seguono uno standard da noi definito.
+L'applicativo software è stato sviluppato in modo tale che, cambiando opportunamente i file di gioco (.json), ognuno può scrivere la propria avventura testuale. Difatti il nostro applicativo non è un gioco bensì un parser di avventure testuali che seguono uno standard da noi definito.
 
 Per popolare i nostri file .json, abbiamo realizzato un editor in java (per uso personale) in modo tale da rendere questa operazione human readable.
 
