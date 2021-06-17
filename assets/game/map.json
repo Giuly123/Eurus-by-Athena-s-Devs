@@ -73,7 +73,7 @@
       ],
       "shortDescription": "Corridoio ala sinistra zona 1A - Un lungo corridoio. Ci sono delle porte. Saranno chiuse? Controllare non fa mai male. ",
       "fullDescription": "Guardandovi indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA SINISTRA”. C\u0027è una porta alla tua sinistra, ma il corridoio è lungo... Noti inoltre un cadavere appoggiato al muro.",
-      "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione...",
+      "descriptionOffLimitsArea": "*OUCH* Ancora un muro! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "20070cbd-e100-4f46-ba3e-279257598a86",
         "e0441288-a78c-42c7-b343-0b7358617957"
@@ -106,7 +106,7 @@
       ],
       "shortDescription": "Corridoio ala destra zona 1E - Il corridoio sembra avere una fine...",
       "fullDescription": "Sei in un lungo corridoio. C\u0027è una porta alla tua sinistra, chissà se è aperta! Alla fine del corridoio vedi un cancello.",
-      "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "descriptionOffLimitsArea": "*OUCH* Ancora un muro! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "574d2776-8e7e-4101-af3c-e5684f454783",
         "181d950b-6965-4422-949e-2edeb7e03cfd"
@@ -140,7 +140,7 @@
       ],
       "shortDescription": "Corridoio ala sinistra zona 1B - Il corridoio è ancora lungo, c'è una porta alla tua sinistra...",
       "fullDescription": "Un corridoio davvero lungo, ma intravedi la fine. Alla tua sinistra una porta simile alle altre, sembra aperta...",
-      "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "descriptionOffLimitsArea": "*OUCH* Ancora un muro! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
       "itemsToTake": [
@@ -172,7 +172,7 @@
       ],
       "shortDescription": "Corridoio ala destra zona 1D - Un lungo corridoio. Ci sono delle porte. Saranno chiuse? Controllare non fa mai male.",
       "fullDescription": "Guardandoti indietro verso la porta appena chiusa notate una placca di metallo che recita “ALA DESTRA”.\n\nSubito dopo, lo sguardo viene attirato da un biglietto attaccato alla porta che riporta “Nessun aiuto questa volta”. C\u0027è anche una porta che sembra aperta alla tua sinistra... In alto, in un angolo, lampeggia la spia di una telecamera…",
-      "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "descriptionOffLimitsArea": "*OUCH* Ancora un muro! Meglio provare in un’altra direzione…",
       "interactableHere": [
       ],
       "interactableNeededToEnter": "c5583307-49ec-441d-aa9a-4f3a570549e5",
@@ -203,7 +203,7 @@
       ],
       "shortDescription": "Corridoio ala sinistra zona 1C - Il corridoio sembra avere una fine...",
       "fullDescription": "Il corridoio sembra avere una fine... Alla tua sinistra e alla tua destra ci sono due porte. Sembrano diverse dalle altre... Su quella alla tua sinistra noti una targhetta. C'è scritto 'Stanza del direttore'.",
-      "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
+      "descriptionOffLimitsArea": "*OUCH* Ancora un muro! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "b34b3e7d-b887-489b-808e-66b309de560b",
         "d43f3425-0265-47bf-bb75-12c1a55290d4"
@@ -239,7 +239,7 @@
         "West"
       ],
       "shortDescription": "Sala dei computer - Una stanza piena di computer inutilizzabili...",
-      "fullDescription": "Tanti computer e una porta da sbloccare. Intravedi una porta a Sud. In alto, in un angolo, lampeggia la spia di una telecamera…",
+      "fullDescription": "Tanti computer e una porta da sbloccare. Intravedi una porta a Sud. Sulla porta c'è appiccicato un foglietto! In alto, in un angolo, lampeggia la spia di una telecamera…",
       "descriptionOffLimitsArea": "*SBAM* Un muro ti ostacola la via! Meglio provare in un’altra direzione…",
       "interactableHere": [
         "c5583307-49ec-441d-aa9a-4f3a570549e5"

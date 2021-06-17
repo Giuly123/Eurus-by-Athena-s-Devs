@@ -24,7 +24,7 @@
     {
       "id": "5ff60e9d-7836-4a50-88af-6f83df2f5939",
       "name": "IndovinelloVento",
-      "text": "Qual è la parola d’ordine?",
+      "text": "Non ha voce e grida fa, non ha ali e a volo va, non ha bocca e versi fa! Cos'è?",
       "afterAnswered": "Password corretta! *SWOOSH* Puoi avanzare nella stanza ora...",
       "correctAnswer": "vento"
     }
