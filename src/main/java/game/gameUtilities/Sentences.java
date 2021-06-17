@@ -89,12 +89,12 @@ public class Sentences
         "password!\n(digitare rispondi con la risposta)";
 
 
-    public static final String GENERIC_ERROR = "Errore durante il loading del game', " +
+    public static final String GENERIC_ERROR = "Errore durante il loading del game, " +
             "controllare i file";
 
     public static final String SAVE_GAME = "Salvataggio effettuato";
 
-    public static final String END_GAME_RESUME_GAME = "Hai gia' finito questa run ..." ;
+    public static final String END_GAME_RESUME_GAME = "Hai gia' finito questa run..." ;
     public static final String END_GAME_STRING = "Complimenti, hai finito il gioco. Grazie per aver giocato.\n\n" +
     "MMMMMMMMMMMMMMMMMMMMMmsosyhmmdhysyhdmNNMMMMMMMMMMMMMMM\n" +
     "MMMMMMMMMMMMMMMMMMMd-`++/smmdhyso+:-`-+yydNMMMMMMMMMMM\n" +
@@ -127,6 +127,6 @@ public class Sentences
     "MMMMMMMMMMMMMMMMMd.          +.    :: o. ./+ `hMNMMMMM\n" +
     "MMMMMMMMMMMMMMMMMMd-`            :/./+/dMMMMMMMMMMMMMM\n" +
     "MMMMMMMMMMMMMMMMMMMMNddhhso+///osyyhmNMMMMMMMMMMMMMMMM";
-    public static final String END_GAME_HELP_STRING = "Hai finito il gioco non puoi usare questo comando";
+    public static final String END_GAME_HELP_STRING = "Hai finito il gioco non puoi usare questo comando!";
 
 }
