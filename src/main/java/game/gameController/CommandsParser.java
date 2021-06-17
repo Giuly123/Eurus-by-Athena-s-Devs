@@ -28,13 +28,13 @@ class CommandsParser
 
     public CommandsParser(GameController gameController) throws Exception
     {
-        gameDatabaseManager = GameDatabaseManager.getInstance();
-        interactableHandler = InteractableHandler.getInstance();
-        itemsHandler = ItemsHandler.getInstance();
-
         this.gameModel = gameController.gameModel;
         this.gameView = gameController.gameView;
         this.gameController = gameController;
+
+        gameDatabaseManager = GameDatabaseManager.getInstance();
+        interactableHandler = InteractableHandler.getInstance();
+        itemsHandler = ItemsHandler.getInstance();
     }
 
 

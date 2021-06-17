@@ -50,6 +50,10 @@ class GameEventsHandler
     public GameEventsHandler(GameController gameController) throws Exception
     {
         InventoryManager inventoryManager = InventoryManager.getInstance();
+        this.gameModel = gameController.gameModel;
+        this.gameView = gameController.gameView;
+        this.gameController = gameController;
+
         dialoguesHandler = DialoguesHandler.getInstance();
         interactableHandler = InteractableHandler.getInstance();
         guessingGamesHandler = GuessingGamesHandler.getInstance();
@@ -65,10 +69,6 @@ class GameEventsHandler
 
         inventoryManager.getOnAddedItemToInventory().register(observerAddItemToInventory);
         inventoryManager.getOnRemovedItemToInventory().register(observerRemoveItemToInventory);
-
-        this.gameModel = gameController.gameModel;
-        this.gameView = gameController.gameView;
-        this.gameController = gameController;
     }
 
     /**
