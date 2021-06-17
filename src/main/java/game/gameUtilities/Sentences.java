@@ -28,7 +28,8 @@ public class Sentences
         " cui ti trovi;\n";
     public static final String USE_COMMAND = " - Digita 'usa' + nome oggetto per usare un oggetto\n   presente " +
         "nell'inventario;\n";
-    public static final String TO_ANSWER_COMMAND = " - Digita 'rispondi' per rispondere agli indovinelli presenti;\n";
+    public static final String TO_ANSWER_COMMAND = " - Digita 'rispondi' per rispondere agli indovinelli\n   " +
+        "presenti;\n";
     public static final String TAKE_COMMAND = " - Digita 'prendi'/'raccogli' + nome oggetto per\n   " +
         "raccogliere un oggetto;\n";
     public static final String SAVE_COMMAND = " - Digita 'salva' per salvare lo stato della partita.\n";

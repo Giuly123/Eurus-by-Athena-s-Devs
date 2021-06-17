@@ -62,9 +62,9 @@ Avviata l'applicazione ci troveremo nel Main Menu.
 
 Abbiamo tre pulsanti:
 
-* ```Inizia```: comincia una nuova partita.
-* ```Continua```: riprende l'ultima partita salvata, se ne è stata salvata una.
-* ```Esci```: chiude l'applicazione.
+* ```New Game```: comincia una nuova partita.
+* ```Load Game```: riprende l'ultima partita salvata, se ne è stata salvata una.
+* ```Exit```: chiude l'applicazione.
 
 Iniziando o continuando una partita ci ritroveremo nella vera e propria schermata di gioco.
 
@@ -322,15 +322,19 @@ Si può arrivare comunque alla fine del gioco eseguendo meno comandi perdendo, p
 
 ## **Dettagli sulla compilazione**
 
-Qualora l'IDE lo consigli, premere il pulsante **"Trust Project"**. Infatti, scaricando solo il progetto in **"Safe Mode"** questo non importerà le librerie esterne utili a **Json** e al **database H2**.
+Qualora l'IDE lo consigli, premere il pulsante **"Trust Project"**. Infatti, scaricando solo il progetto in **"Safe Mode"** questo non importerà le librerie esterne necessarie per **Json** e al **database H2**.
 
 Inoltre, se si vuole runnare direttamente il file .jar, è necessario inserire nella stessa cartella del .jar anche la cartella 'assets'.
 
 Rilasciamo all'interno del progetto una cartella compressa con la versione già buildata del progetto pronta per l'uso.
 
+<center><img src = "../doc/relazione/esempioCartella.PNG"></center>
+
 La risoluzione consigliata è la seguente: 
 
 <center><img src = "../doc/relazione/risoluzioneConsigliata.PNG"></center>
+
+<br/>
 
 [Torna all'indice](#indice)
 <br/>
