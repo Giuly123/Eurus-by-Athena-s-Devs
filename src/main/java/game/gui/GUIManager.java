@@ -1,12 +1,15 @@
 package game.gui;
 
-import game.GameModel;
+import game.gameModel.GameModel;
 import game.gameController.GameController;
 import game.gameUtilities.Utilities;
 
 import javax.swing.*;
 
-
+/**
+ * Gestisce il cambio di view: da main menu
+ * frame al game frame e viceversa.
+ */
 public class GUIManager
 {
     // singleton
@@ -16,6 +19,10 @@ public class GUIManager
 
     GameController gameController;
 
+    /**
+     *
+     * @return l'istanza della classe.
+     */
     public static GUIManager getInstance()
     {
         if (instance == null)
@@ -26,6 +33,9 @@ public class GUIManager
         return instance;
     }
 
+    /**
+     * Inizializza la view e il model del main menu.
+     */
     private GUIManager()
     {
         this.isPlaying = false;
@@ -37,19 +47,21 @@ public class GUIManager
             MainMenuModel mainMenuModel = new MainMenuModel();
             mainMenuController = new MainMenuController(isFirstTime, mainMenuModel);
 
-            enableGameFrame(false);
+            //enableGameFrame(false);
             enableMainMenuFrame(true);
         });
 
     }
 
-
+    /**
+     * Inizia il game e disabilita il frame del main menu.
+     * @param isContinuing se deve riprendere dall'ultimo salvataggio effettuato
+     */
     public void startNewGame(boolean isContinuing)
     {
-        SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>()
+        Thread thread = new Thread(() ->
         {
-            @Override
-            protected Void doInBackground() throws Exception
+            try
             {
                 GameModel gameModel = new GameModel();
                 GameView gameView = new GameView();
@@ -57,40 +69,49 @@ public class GUIManager
                 enableMainMenuFrame(false);
 
                 gameController = new GameController(gameModel, gameView, isContinuing);
-
-                return null;
             }
-        };
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        });
 
-        worker.execute();
+        thread.start();
     }
 
-
+    /**
+     * Torna al main menu ed effettua il dispose del vecchio game controller.
+     */
     public void backMainMenu()
     {
-        if (mainMenuController != null)
+        if (mainMenuController != null && gameController != null)
         {
             mainMenuController.setLocation(gameController.getLocationOnScreen());
+            gameController.dispose();
+            gameController = null;
         }
 
-        enableGameFrame(false);
+        //enableGameFrame(false);
         enableMainMenuFrame(true);
         this.isPlaying = false;
     }
 
 
-    private void enableGameFrame(boolean isVisible)
-    {
-        SwingUtilities.invokeLater(() ->
-        {
-            if (gameController != null)
-            {
-                gameController.setVisible(isVisible);
-            }
-        });
-    }
+//    private void enableGameFrame(boolean isVisible)
+//    {
+//        SwingUtilities.invokeLater(() ->
+//        {
+//            if (gameController != null)
+//            {
+//                gameController.setVisible(isVisible);
+//            }
+//        });
+//    }
 
-
+    /**
+     * Imposta la proprietà visible al frame del main menu.
+     * @param isVisible valore da assegnare alla proprietà visible
+     */
     private void enableMainMenuFrame(boolean isVisible)
     {
         SwingUtilities.invokeLater(() ->

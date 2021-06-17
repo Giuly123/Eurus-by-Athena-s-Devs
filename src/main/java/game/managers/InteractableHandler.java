@@ -1,13 +1,15 @@
 package game.managers;
 
 import game.entity.interactable.Interactable;
-import game.gameUtilities.Subject;
+import game.gameUtilities.observerPattern.Subject;
 import game.gameUtilities.Utilities;
-import game.jsonParser.JsonParser;
+import game.gameUtilities.jsonParserUtilities.JsonParserUtilities;
 
 import java.util.*;
 
-
+/**
+ * Handler degli interactable.
+ */
 public class InteractableHandler
 {
     private static InteractableHandler instance;
@@ -16,15 +18,21 @@ public class InteractableHandler
 
     private Map<UUID, Interactable> interactableDictionary;
 
-    private Subject<Interactable> onUnlockInteractable;
+    private Subject<Interactable> onUsedInteractable;
 
     private InteractableHandler() throws Exception
     {
         interactableDictionary = new HashMap<>();
-        onUnlockInteractable = new Subject<>();
+        usedIteractable = new ArrayList<>();
+        onUsedInteractable = new Subject<>();
         loadInteractableCollection();
     }
 
+    /**
+     *
+     * @return l'istanza della classe
+     * @throws Exception eccezioni che potrebbero generarsi
+     */
     public static InteractableHandler getInstance() throws Exception
     {
         if (instance == null)
@@ -35,18 +43,30 @@ public class InteractableHandler
         return instance;
     }
 
-    public Subject<Interactable> getOnUnlockInteractable()
+    /**
+     *
+     * @return il soggetto onUsedInteractable
+     */
+    public Subject<Interactable> getOnUsedInteractable()
     {
-        return onUnlockInteractable;
+        return onUsedInteractable;
     }
 
-
+    /**
+     *
+     * @param idInteractable UUID dell'interactable
+     * @return l'interactale se esiste
+     */
     public Interactable getInteractable(UUID idInteractable)
     {
         return interactableDictionary.get(idInteractable);
     }
 
-
+    /**
+     *
+     * @param interactablesId lista di UUID degli interactable
+     * @return la lista degli interactable
+     */
     public List<Interactable> getInteractables(List<UUID> interactablesId)
     {
         List<Interactable> result = new ArrayList<>();
@@ -66,6 +86,12 @@ public class InteractableHandler
         return result;
     }
 
+    /**
+     * Restituisce un interactable che ha come nome
+     * o come alias la stringa passata come parametro.
+     * @param name nome dell'interactable
+     * @return restituisce l'interactable se esiste
+     */
     public Interactable getInteractable(String name)
     {
         Interactable interactable = null;
@@ -98,18 +124,71 @@ public class InteractableHandler
         return interactable;
     }
 
+    /**
+     * Imposta la lista di interactable usati
+     * @param usedIteractable lista di UUID di interactable
+     */
+    public void setUsedIteractable(List<UUID> usedIteractable)
+    {
+        if (usedIteractable != null)
+        {
+            this.usedIteractable = usedIteractable;
+        }
+    }
 
+    /**
+     * Aggiunge un interactable alla lista di interactable usati
+     * @param interactable interactable
+     */
+    public void addUsedInteractable(Interactable interactable)
+    {
+        usedIteractable.add(interactable.getId());
+
+        onUsedInteractable.notifyObservers(interactable);
+    }
+
+    /**
+     *
+     * @return la lista di UUID degli interactable usati
+     */
+    public List<UUID> getUsedIteractable()
+    {
+        return usedIteractable;
+    }
+
+    /**
+     *
+     * @param interactableId UUID dell'interactable
+     * @return true se è stato usato
+     */
+    public boolean isUsedInteractalbe(UUID interactableId)
+    {
+        return usedIteractable.contains(interactableId);
+    }
+
+    /**
+     * Deserializza le informazioni dal file json.
+     * @throws Exception eccezione durante il parse del file
+     */
     private void loadInteractableCollection() throws Exception
     {
+        RootInteractableCollectionJson interactableCollectionJson = null;
+
         if (Utilities.fileExist(Utilities.INTERACTABLES_JSON_PATH))
         {
-            RootInteractableCollectionJson interactableCollectionJson = JsonParser.GetClassFromJson(Utilities.INTERACTABLES_JSON_PATH,
-                    RootInteractableCollectionJson.class);
-
-            for(int i = 0; i < interactableCollectionJson.interactableList.size(); i++)
+            try
             {
-                Interactable interactable = interactableCollectionJson.interactableList.get(i);
-                interactableDictionary.put(interactable.getId(), interactable);
+                interactableCollectionJson = JsonParserUtilities.getClassFromJson(Utilities.INTERACTABLES_JSON_PATH, RootInteractableCollectionJson.class);
+
+                for(int i = 0; i < interactableCollectionJson.interactableList.size(); i++)
+                {
+                    Interactable interactable = interactableCollectionJson.interactableList.get(i);
+                    interactableDictionary.put(interactable.getId(), interactable);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errore: problema parsing file interactables.json");
             }
 
         }
@@ -119,24 +198,9 @@ public class InteractableHandler
         }
     }
 
-
-    public void setUsedIteractable(List<UUID> usedIteractable)
-    {
-        this.usedIteractable = usedIteractable;
-    }
-
-    public void addUsedInteractable(Interactable interactable)
-    {
-        usedIteractable.add(interactable.getId());
-
-        onUnlockInteractable.notifyObservers(interactable);
-    }
-
-    public List<UUID> getUsedIteractable()
-    {
-        return usedIteractable;
-    }
-
+    /**
+     * Classe necessaria per la deserializzazione del file json.
+     */
     private class RootInteractableCollectionJson
     {
         public List<Interactable> interactableList;

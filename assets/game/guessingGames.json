@@ -1,0 +1,32 @@
+{
+  "guessingGameList" : [
+    {
+    "id": "273da62b-684e-4bce-9ad3-26a90ee12089",
+    "name": "IndovinelloCassaforte",
+    "text": "Qual è il pin?",
+    "afterAnswered": "Pin corretto! *STACK* La cassaforte sembra sbloccata! Riprova ad aprirla ora...",
+    "correctAnswer": "3826"
+    },
+    {
+      "id": "5236bc8e-7a67-4de0-a84c-3102e65b5568",
+      "name": "IndovinelloCancello",
+      "text": "Qual è il pin?",
+      "afterAnswered": "Pin corretto! *SWOOSH* Puoi avanzare nella prossima stanza...",
+      "correctAnswer": "9988"
+    },
+    {
+      "id": "2fbf2390-299a-4406-95c5-42d05c1ded64",
+      "name": "IndovinelloPippo",
+      "text": "Qual è la parola d'ordine?",
+      "afterAnswered": "Password corretta! *SWOOSH* Puoi avanzare nella prossima stanza...",
+      "correctAnswer": "pippo"
+    },
+    {
+      "id": "5ff60e9d-7836-4a50-88af-6f83df2f5939",
+      "name": "IndovinelloVento",
+      "text": "Non ha voce e grida fa, non ha ali e a volo va, non ha bocca e versi fa! Cos'è?",
+      "afterAnswered": "Password corretta! *SWOOSH* Puoi avanzare nella stanza ora...",
+      "correctAnswer": "vento"
+    }
+  ]
+}

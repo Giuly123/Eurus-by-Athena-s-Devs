@@ -2,38 +2,54 @@ package game.gameController;
 
 import game.entity.item.ItemType;
 import game.gameUtilities.Coordinates;
+import game.gameUtilities.Utilities;
 import game.managers.InteractableHandler;
 import game.managers.ItemsHandler;
 import game.entity.interactable.Interactable;
-import game.entity.interactable.InteractableType;
 import game.entity.item.Item;
 import game.gameUtilities.Sentences;
-import game.GameModel;
+import game.gameModel.GameModel;
 import game.gui.GameView;
+import game.managers.database.GameDatabaseManager;
 
-public class CommandsParser
+/**
+ * Si occupa di effettuare il parse del comando e di invocare l'azione correlata.
+ */
+class CommandsParser
 {
-    public GameModel gameModel;
-    public GameView gameView;
+    private GameModel gameModel;
+    private GameView gameView;
+    private GameController gameController;
+
+    private GameDatabaseManager gameDatabaseManager;
     private InteractableHandler interactableHandler;
     private ItemsHandler itemsHandler;
 
 
-    public CommandsParser(GameModel gameModel, GameView gameView) throws Exception
+    public CommandsParser(GameController gameController) throws Exception
     {
+        this.gameModel = gameController.gameModel;
+        this.gameView = gameController.gameView;
+        this.gameController = gameController;
+
+        gameDatabaseManager = GameDatabaseManager.getInstance();
         interactableHandler = InteractableHandler.getInstance();
         itemsHandler = ItemsHandler.getInstance();
-
-        this.gameModel = gameModel;
-        this.gameView = gameView;
     }
 
+
+    /**
+     * Se consentito, invoca l'azione di
+     * lettura del testo (descrizione) degli item di tipo document.
+     * @param itemName nome dell'item
+     */
     private void readDocument(String itemName)
     {
         if (itemName != null)
         {
             Item item = itemsHandler.getItem(itemName);
-            if(item != null)
+
+            if (item != null)
             {
                 if (item.getItemType() == ItemType.document)
                 {
@@ -53,9 +69,12 @@ public class CommandsParser
         {
             gameView.appendText(Sentences.LOOK_ITEM_INCOMPLETE);
         }
-
     }
 
+    /**
+     * Se consentito, invoca l'azione di osservazione dell'item.
+     * @param itemName nome dell'item
+     */
     private void lookItem(String itemName)
     {
         if (itemName != null)
@@ -69,6 +88,10 @@ public class CommandsParser
         }
     }
 
+    /**
+     * Se consentito, invoca l'azione di raccolta dell'item.
+     * @param itemName nome dell'item
+     */
     private void takeItem(String itemName)
     {
         if (itemName != null)
@@ -76,8 +99,16 @@ public class CommandsParser
             Item item = itemsHandler.getItem(itemName);
             gameModel.getPlayer().takeItem(item);
         }
+        else
+        {
+            gameView.appendText(Sentences.TAKE_ERROR);
+        }
     }
 
+    /**
+     * Se consentito, invoca l'azione di utilizzo dell'item.
+     * @param itemName nome dell'item
+     */
     private void useItem(String itemName)
     {
         if (itemName != null)
@@ -92,11 +123,17 @@ public class CommandsParser
             {
                 gameView.appendText(Sentences.USE_ITEM_NOT_OWNED);
             }
-
         }
-
+        else
+        {
+            gameView.appendText(Sentences.USE_ERROR);
+        }
     }
 
+    /**
+     * Se consentito, invoca l'azione di risposta ad un indovinello.
+     * @param answer risposta
+     */
     private void giveAnswer(String answer)
     {
         if (answer != null)
@@ -109,29 +146,33 @@ public class CommandsParser
         }
     }
 
-    private void open(String interactableName)
-    {
-        if (interactableName != null)
-        {
-            Interactable interactable = interactableHandler.getInteractable(interactableName);
+//    private void open(String interactableName)
+//    {
+//        if (interactableName != null)
+//        {
+//            Interactable interactable = interactableHandler.getInteractable(interactableName);
+//
+//            if (interactable != null &&
+//                    (interactable.getInteractableType() == InteractableType.chest
+//                            || interactable.getInteractableType() == InteractableType.chestGuessingGame))
+//            {
+//                interact(interactable);
+//            }
+//            else
+//            {
+//                gameView.appendText(Sentences.INTERACTABLE_CHEST_ERROR);
+//            }
+//        }
+//        else
+//        {
+//            gameView.appendText(Sentences.INTERACTABLE_ERROR);
+//        }
+//    }
 
-            if (interactable != null &&
-                    (interactable.getInteractableType() == InteractableType.chest
-                            || interactable.getInteractableType() == InteractableType.chestGuessingGame))
-            {
-                interact(interactable);
-            }
-            else
-            {
-                gameView.appendText(Sentences.INTERACTABLE_CHEST_ERROR);
-            }
-        }
-        else
-        {
-            gameView.appendText(Sentences.INTERACTABLE_ERROR);
-        }
-    }
-
+    /**
+     * Se consentito, invoca l'azione di interazione con un interactable.
+     * @param interactableName nome dell'interactable
+     */
     private void interact(String interactableName)
     {
         if (interactableName != null)
@@ -145,14 +186,23 @@ public class CommandsParser
         }
     }
 
+    /**
+     * Invoca l'azione di interazione con un interactable.
+     * @param interactable interactable
+     */
     private void interact(Interactable interactable)
     {
         gameModel.getPlayer().interact(interactable);
     }
 
+
+    /**
+     * Se consentito, invoca l'azione di osservazione dell'item.
+     * @param argument argomento (item da osservare)
+     */
     private void observe(String argument)
     {
-        if(argument == null || argument.length() == 0)
+        if (argument == null || argument.length() == 0)
         {
             gameModel.getPlayer().observe(true);
         }
@@ -162,41 +212,69 @@ public class CommandsParser
         }
     }
 
-    public void parseCommand(String str)
-    {
-        Command command = Command.parseCommand(str);
 
+    /**
+     * Comandi ammessi dopo la fine del gioco.
+     * @param command comando
+     */
+    private void CommandsAllowedAfterEndGame(Command command)
+    {
+        if (command == Command.salva)
+        {
+            gameModel.getPlayer().saveFile();
+            gameView.appendText(Sentences.SAVE_GAME);
+        }
+        else if (command == Command.help)
+        {
+            gameView.appendText(Sentences.HELP_MESSAGE);
+        }
+        else if (command == null)
+        {
+            gameView.appendText(Sentences.WRONG_COMMAND_ENTERED);
+        }
+        else
+        {
+            gameView.appendText(Sentences.END_GAME_HELP_STRING);
+        }
+    }
+
+    /**
+     * Comandi ammessi in game.
+     * @param command comandi
+     */
+    private void CommandsAllowedBeforeEndGame(Command command)
+    {
         if (command == Command.osserva)
         {
-            observe(command.argComando);
+            observe(command.getArgComando());
         }
         else if (command == Command.guarda)
         {
-            lookItem(command.argComando);
+            lookItem(command.getArgComando());
         }
         else if (command == Command.leggi)
         {
-            readDocument(command.argComando);
+            readDocument(command.getArgComando());
         }
         else if (command == Command.usa)
         {
-            useItem(command.argComando);
+            useItem(command.getArgComando());
         }
-        else if (command == Command.apri)
-        {
-            open(command.argComando);
-        }
+//        else if (command == Command.apri)
+//        {
+//            open(command.argComando);s
+//        }
         else if (command == Command.interagisci)
         {
-            interact(command.argComando);
+            interact(command.getArgComando());
         }
         else if (command == Command.prendi)
         {
-            takeItem(command.argComando);
+            takeItem(command.getArgComando());
         }
         else if (command == Command.rispondi)
         {
-            giveAnswer(command.argComando);
+            giveAnswer(command.getArgComando());
         }
         else if (command == Command.nord)
         {
@@ -216,11 +294,7 @@ public class CommandsParser
         }
         else if (command == Command.salva)
         {
-            gameModel.getPlayer().saveFile();
-        }
-        else if (command == Command.esci)
-        {
-            // esci
+            saveGame();
         }
         else if (command == Command.help)
         {
@@ -233,7 +307,35 @@ public class CommandsParser
     }
 
 
+    /**
+     * Salva informazioni della partita corrente.
+     */
+    public void saveGame()
+    {
+        gameModel.getPlayer().saveFile();
+        gameDatabaseManager.updateValue("time", "CURRENTPLAYER", "currentplayer", Long.toString(gameModel.getTime()));
+        gameDatabaseManager.updateValue("volume", "CURRENTPLAYER", "currentplayer", Integer.toString(gameView.getVolumeValue()));
+        Utilities.writeFile(Utilities.TEXT_AREA_PATH, gameView.getTextAreaContent(), false);
+        gameView.appendText(Sentences.SAVE_GAME);
+    }
 
+    /**
+     * Effettua il parse del comando passato come stringa.
+     * @param str comando sotto forma di stringa
+     */
+    public void parseCommand(String str)
+    {
+        Command command = Command.parseCommand(str);
+
+        if (gameModel.getPlayer().endGame)
+        {
+            CommandsAllowedAfterEndGame(command);
+        }
+        else
+        {
+            CommandsAllowedBeforeEndGame(command);
+        }
+    }
 
 
 }

@@ -6,11 +6,16 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 import java.io.File;
 
+/**
+ * Si occupa di riprodurre file audio.
+ */
 public class AudioPlayer
 {
-    Long currentFrame;
     Clip clip;
 
+    /**
+     * Stati dell'audioplayer.
+     */
     public enum AudioPlayerStatus {play, paused, stopped, loaded, unLoaded}
 
     public AudioPlayerStatus status = AudioPlayerStatus.unLoaded;
@@ -19,6 +24,10 @@ public class AudioPlayer
 
     AudioInputStream audioInputStream;
 
+    /**
+     * Costruttore audioplayer.
+     * @param filePath file da riprodurre
+     */
     public AudioPlayer(String filePath)
     {
         try
@@ -28,13 +37,11 @@ public class AudioPlayer
                 audioInputStream = AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
 
                 clip = AudioSystem.getClip();
-
                 clip.open(audioInputStream);
-
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
 
                 gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                gainControl.setValue(-10.0f);
+                gainControl.setValue(-28.0f);
 
                 status = AudioPlayerStatus.loaded;
             }
@@ -50,38 +57,41 @@ public class AudioPlayer
         }
     }
 
+    /**
+     * Starta la riproduzione del file.
+     */
     public void play()
     {
-        if (status != AudioPlayerStatus.unLoaded && status != AudioPlayerStatus.play)
+        if (status != AudioPlayerStatus.unLoaded)
         {
             clip.start();
-            if (this.status == AudioPlayerStatus.paused)
-            {
-                clip.setMicrosecondPosition(this.currentFrame);
-            }
-
             clip.loop(Clip.LOOP_CONTINUOUSLY);
             status = AudioPlayerStatus.play;
         }
     }
 
+    /**
+     * Mette in pausa la riproduzione del file.
+     */
     public void pause()
     {
-        if (status != AudioPlayerStatus.unLoaded && status != AudioPlayerStatus.paused)
+        if (status != AudioPlayerStatus.unLoaded)
         {
-            this.currentFrame = this.clip.getMicrosecondPosition();
             clip.stop();
-
             status = AudioPlayerStatus.paused;
         }
     }
 
+    /**
+     * Setta il volume dell'applicativo.
+     * @param value valore del gain da settare.
+     */
     public void setVolume(float value)
     {
         try
         {
             FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-            gainControl.setValue(value); // Reduce volume by 10 decibels.
+            gainControl.setValue(value);
         }
         catch (Exception e)
         {

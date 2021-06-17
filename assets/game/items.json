@@ -1,49 +1,251 @@
 {
   "itemsList": [
     {
-      "assetName": "pass.png",
-      "itemType": "itemToUseInteractable",
-      "isConsumable": true,
-      "id": "c08fb5ce-8492-4b16-a0ae-d747f3b7d6b5",
-      "name": "pass221B",
-      "description": "Un pass magnetico. Potrebbe aprire una porta...",
-      "afterUsed": "Pass utilizzato. Porta aperta!"
-    },
-    {
-      "assetName": "nota.jpg",
+      "assetName": "nota1.png",
       "itemType": "document",
       "isConsumable": false,
-      "id": "ec59fe4c-d9da-4678-90b9-51485a464620",
-      "name": "nota#1",
-      "description": "“Apri la cella e diamo inizio alle danze.”",
+      "alias": [
+        "nota1"
+      ],
+      "id": "15e3bed0-0a26-4006-a42e-7ed4f509885f",
+      "name": "Nota#1",
+      "description": "Apri la cella e diamo inizio alle danze!",
       "afterUsed": ""
     },
     {
-      "assetName": "torcia.jpg",
-      "itemType": "itemToUseInteractable",
-      "isConsumable": false,
-      "id": "aab92751-a24f-433a-b7b1-d866914126bc",
-      "name": "torcia",
-      "description": "Una torcia con pile. Può tornarmi utile!",
-      "afterUsed": "La torcia è accesa!"
-    },
-    {
-      "assetName": "pass.png",
+      "assetName": "veleno.png",
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
-      "id": "4135868e-edcc-4c24-9930-77ccfa6f7026",
-      "name": "pass cella#222B",
-      "description": "Un pass magnetico. Potrebbe aprire una porta...",
-      "afterUsed": "Pass utilizzato. Porta aperta!"
+      "alias": [
+        "boccetta",
+        "pozione",
+        "poison",
+        "boccetta di vetro"
+      ],
+      "id": "3970fa72-b4bb-4758-950b-6b811416dbb9",
+      "name": "Veleno",
+      "description": "Un liquido di uno strano colore...",
+      "afterUsed": "*SLAM*"
+    },
+    {
+      "assetName": "pass221B.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "pass",
+        "chiave"
+      ],
+      "id": "9d5ec29d-31a8-49e5-a190-000faa6e1b85",
+      "name": "pass221B",
+      "description": "Apre sicuramente qualcosa...",
+      "afterUsed": "*TI TI* Pass221B usato"
+    },
+    {
+      "assetName": "torcia.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": false,
+      "alias": [
+        "luce"
+      ],
+      "id": "9144a34a-9fb5-4fff-b68a-4cfc3f95bcd5",
+      "name": "Torcia",
+      "description": "Serve per fare luce nei posti bui!",
+      "afterUsed": "*CLICK* Ora puoi osservare la stanza illuminata..."
+    },
+    {
+      "assetName": "nota3.png",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "nota3"
+      ],
+      "id": "5e849b0b-3fc4-413b-919a-28ff3485b850",
+      "name": "Nota#3",
+      "description": "\nMemorie paziente 6689\n\n\u003c\u003c Da qualche tempo, durante la notte, sento una voce. Una donna bisbiglia canticchiando le stesse macabre parole: “Quando ti trovi davanti ad una scelta tra te ed altri, scegli te. Tra vita e morte, scegli la morte.” Un ritornello a cui non riesco a non pensare.\u003e\u003e",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "pass225B.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "pass",
+        "chiave"
+      ],
+      "id": "a8f93b58-1ce7-45fb-895e-733ddadcd168",
+      "name": "pass225B",
+      "description": "Apre sicuramente qualcosa...",
+      "afterUsed": "*TI TI* Pass225B usato!"
+    },
+    {
+      "assetName": "fascicolo1.png",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "6686",
+        "fascicolo 6686",
+        "paziente 6686"
+      ],
+      "id": "dc55c4ef-59db-46b8-9c75-285cef6402f0",
+      "name": "Fascicolo paziente 6686",
+      "description": "Referto medico paziente 6686\nNome: Andrew Scott\nSesso: M\nNella struttura dal: 21/10/1976\nDiagnosi: Disturbo della personalità",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "fascicolo2.png",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "6687",
+        "fascicolo 6687",
+        "paziente 6687"
+      ],
+      "id": "0fcff3ce-712b-4e51-9db4-9633fec37e35",
+      "name": "Fascicolo paziente 6687",
+      "description": "Referto medico paziente 6687\nNome: Mark Gatiss\nSesso: M\nNella struttura dal: 17/10/1966\nDiagnosi: Sociopatia altamente funzionale",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "fascicolo3.png",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "66xx",
+        "fascicolo 66xx",
+        "paziente 66xx"
+      ],
+      "id": "cd4bdae2-ac05-4f1d-b3d9-5a5993f269dc",
+      "name": "Fascicolo paziente 66xx",
+      "description": "Referto medico paziente 66xx\nNome: Eurus xxxxx\nSesso: F\nNella struttura dal: xx/xx/xxxx\nDiagnosi: xxxxxxx",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "fascicolo4.png",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "6689",
+        "fascicolo 6689",
+        "paziente 6689"
+      ],
+      "id": "ec749676-742a-47bc-810f-e033309cda10",
+      "name": "Fascicolo paziente 6689",
+      "description": "Referto medico paziente 6689\nNome: Lara Pulver\nSesso: F\nNella struttura dal: 01/09/1980\nDiagnosi: Schizofrenia",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "diario.png",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+      ],
+      "id": "477dbbe8-913a-4029-9e8c-83e0752b127d",
+      "name": "Diario",
+      "description": " Questo diario è tutto ciò che ho. Non mi è concesso altro in questo ospedale. E’ la cosa più vicina a qualcuno con cui parlare. Mi hanno abbandonata quando ero solo una bambina. Gliela farò pagare!\nIl resto delle pagine sono bruciate o comunque illeggibili...",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "nota4.png",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "nota4"
+      ],
+      "id": "74e2c786-7582-4e56-89d4-5d3e20630fa0",
+      "name": "Nota#4",
+      "description": "\u003c\u003cSe la porta sbloccar vorrai, le cifre del mio fascicolo, capovolte, utilizzar dovrai!\u003e\u003e",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "pass222B.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "chiave",
+        "pass"
+      ],
+      "id": "9b0c65f6-9653-4cf9-b5d8-2b3b5715d624",
+      "name": "pass222B",
+      "description": "Apre sicuramente qualcosa...",
+      "afterUsed": "*TI TI* Pass222B usato!"
+    },
+    {
+      "assetName": "nota2.png",
+      "itemType": "document",
+      "isConsumable": false,
+      "alias": [
+        "nota2"
+      ],
+      "id": "01f1733d-47f6-4eec-8d57-645612859e23",
+      "name": "Nota#2",
+      "description": "\nMemorie paziente 6687\n\n\u003c\u003cDevo scappare di qui prima che mi prenda. La mia cella è vicina a quella del direttore. L’ho sentito infinite volte ripetere ‘vento’ durante questi anni. Sarà qualcosa di importante.\u003e\u003e",
+      "afterUsed": ""
     },
     {
       "assetName": "cerbottana.png",
       "itemType": "itemToUseInteractable",
       "isConsumable": true,
-      "id": "53f11902-9391-4eb9-a2e7-8175db70a193",
-      "name": "cerbottana",
-      "description": "Una cerbottana con un dardo già inserito.",
-      "afterUsed": "La cerbottana si è distrutta!"
+      "alias": [
+        "fionda"
+      ],
+      "id": "95e22959-004e-4dea-9440-29f391fbae73",
+      "name": "Cerbottana",
+      "description": "Il dardo è pronto per essere sparato!",
+      "afterUsed": "*SBAM* Hai colpito in pieno il bersaglio! *FIIU* Dopo lo sparo la cerbottana si è rotta! *TCR TCR* É caduto qualcosa... Sembra una custodia, sarà meglio aprirla!"
+    },
+
+    {
+      "assetName": "foglietto.png",
+      "itemType": "document",
+      "isConsumable": true,
+      "alias": [
+        "foglio",
+        "carta"
+      ],
+      "id": "de45f8b9-a5d9-41e8-ac3f-b312c674c55f",
+      "name": "Foglietto",
+      "description": "“Qual è il nome più frequente assegnato ad una variabile metasintattica? E’ anche un famoso personaggio di un cartone animato.”",
+      "afterUsed": ""
+    },
+    {
+      "assetName": "pistola.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "gun"
+      ],
+      "id": "bdfd4755-d983-4b92-be11-3b2a84199a16",
+      "name": "Pistola",
+      "description": "Una pistola carica, chi l\u0027ha messa qui ci sta prendendo in giro!",
+      "afterUsed": "*PEW*"
+    },
+    {
+      "assetName": "puzzle.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "pezzo",
+        "puzzle",
+        "pezzo di puzzle",
+        "pezzo puzzle"
+      ],
+      "id": "23f61a48-b4ca-4f8e-9b02-c3c88ac17d34",
+      "name": "Pezzo di un puzzle",
+      "description": "Un pezzo di un puzzle, chissà dove va messo...",
+      "afterUsed": "*TIC* Pezzo di Puzzle inserito!"
+    },
+    {
+      "assetName": "grimaldello.png",
+      "itemType": "itemToUseInteractable",
+      "isConsumable": true,
+      "alias": [
+        "grimaldello",
+        "lock pick"
+      ],
+      "id": "d60c9e24-3088-44c4-b21c-feb999227e57",
+      "name": "Grimaldello",
+      "description": "Utile per scassinare alcune serrature...",
+      "afterUsed": "*CRACK* Dopo l\u0027utilizzo il grimaldello si è rotto!"
     }
   ]
 }

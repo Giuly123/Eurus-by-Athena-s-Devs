@@ -1,30 +1,27 @@
 package game.player;
 
-import game.Map;
-import game.StartConfig;
-import game.Tile;
+import game.entity.tile.Tile;
 import game.gameUtilities.Coordinates;
 import game.gameUtilities.Sentences;
-import game.gameUtilities.Subject;
-import game.managers.InteractableHandler;
-import game.managers.InventoryManager;
-import game.managers.ItemsHandler;
+import game.gameUtilities.observerPattern.Subject;
 import game.entity.guessingGame.GuessingGame;
 import game.entity.interactable.Interactable;
 import game.entity.interactable.InteractableType;
 import game.entity.item.Item;
 import game.entity.item.ItemType;
 import game.gameUtilities.Utilities;
-import game.jsonParser.JsonParser;
-import game.jsonParser.roots.jsonPlayer.RootPlayerJson;
+import game.gameUtilities.jsonParserUtilities.JsonParserUtilities;
+import game.managers.*;
+import game.player.status.*;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-
+/**
+ * Gestisce la logica del gioco.
+ */
 public class Player
 {
     private Subject<MovingStatus> onTryMovePlayerSubject;
@@ -33,18 +30,29 @@ public class Player
     private Subject<InteractStatus> onTryInteractSubject;
     private Subject<TakeItemStatus> onTryTakeItemSubject;
     private Subject<String> onLookItem;
-    private Subject<String> onObserve;
+    private Subject<ObserveArgs> onObserve;
 
+    public boolean endGame;
     public InventoryManager inventoryManager;
+    private MapManager map;
+
     private InteractableHandler interactableHandler;
     private ItemsHandler itemsHandler;
+    private DialoguesHandler dialoguesHandler;
+    private GuessingGamesHandler guessingGamesHandler;
 
     private int currentPositionRiga;
     private int currentPositionColonna;
-    private Map map;
     private boolean isLoaded = false;
 
-    public Player(boolean isContinuing, StartConfig startConfig, Map map) throws Exception
+    /**
+     * Costruttore della classe player che inizializza il game
+     * e deserializza e importa le informazioni dell'ultimo salvataggio.
+     * @param isContinuing se deve riprendere dall'ultimo salvataggio effettuato
+     * @param startConfig informazioni iniziali
+     * @throws Exception eccezioni relative al parse dei json
+     */
+    public Player(boolean isContinuing, StartConfig startConfig) throws Exception
     {
         onTryMovePlayerSubject = new Subject<>();
         onTrySolveGuessingGameSubject = new Subject<>();
@@ -54,69 +62,97 @@ public class Player
         onLookItem = new Subject<>();
         onObserve = new Subject<>();
 
-        interactableHandler = InteractableHandler.getInstance();
-        inventoryManager = InventoryManager.getInstance();
         itemsHandler = ItemsHandler.getInstance();
-        this.map = map;
+        interactableHandler = InteractableHandler.getInstance();
+        dialoguesHandler = DialoguesHandler.getInstance();
+        guessingGamesHandler = GuessingGamesHandler.getInstance();
+
+        map = MapManager.getInstance();
+        inventoryManager = InventoryManager.getInstance();
+
         loadSaveFile(isContinuing, startConfig);
         isLoaded = true;
     }
 
-
+    /**
+     *
+     * @return il subject onTryMovePlayerSubject
+     */
     public Subject<MovingStatus> getOnTryMovePlayerSubject()
     {
         return onTryMovePlayerSubject;
     }
 
+    /**
+     *
+     * @return il subject onTrySolveGuessingGameSubject
+     */
     public Subject<AnswerStatus> getOnTrySolveGuessingGameSubject()
     {
         return onTrySolveGuessingGameSubject;
     }
 
+    /**
+     *
+     * @return il subject onTryUseItemSubject
+     */
     public Subject<UsingItemStatus> getOnTryUseItemSubject()
     {
         return onTryUseItemSubject;
     }
 
+    /**
+     *
+     * @return il subject onTryInteractSubject
+     */
     public Subject<InteractStatus> getOnTryInteractSubject()
     {
         return onTryInteractSubject;
     }
 
+    /**
+     *
+     * @return il subject onTryTakeItemSubject
+     */
     public Subject<TakeItemStatus> getOnTryTakeItemSubject()
     {
         return onTryTakeItemSubject;
     }
 
-    public Subject<String> getOnObserveSubject()
+    /**
+     *
+     * @return il subject onObserve
+     */
+    public Subject<ObserveArgs> getOnObserveSubject()
     {
         return onObserve;
     }
 
+    /**
+     *
+     * @return il subject onLookItem
+     */
     public Subject<String> getOnLookItem()
     {
         return onLookItem;
     }
 
-    public int getCurrentPositionRiga()
-    {
-        return currentPositionRiga;
-    }
-
-    public int getCurrentPositionColonna()
-    {
-        return currentPositionColonna;
-    }
-
-
+    /**
+     * Aggiunge all'inventario l'oggetto passato come parametro, se:
+     * - è diverso da null;
+     * - se è presente nella tile corrente;
+     * - se non si è già raccolto.
+     * Notifica agli observer, registrati al soggetto onTryTakeItemSubject,
+     * lo stato di questa operazione.
+     * @param item item da prendere
+     */
     public void takeItem(Item item)
     {
         TakeItemStatus status = TakeItemStatus.wrongItem;
 
         if (item != null)
         {
-            boolean isHere = map.getTile(currentPositionRiga, currentPositionColonna).getItemsToTake().contains(item.getId());
-
+            boolean isHere = getCurrentTile().getItemsToTake().contains(item.getId());
             boolean isPossessed = inventoryManager.inventoryContains(item.getId());
 
             if (!isPossessed)
@@ -132,17 +168,21 @@ public class Player
                 status = TakeItemStatus.alreadyTaken;
             }
 
-            status.item = item;
+            status.setItem(item);
         }
-
         onTryTakeItemSubject.notifyObservers(status);
     }
 
-
+    /**
+     *
+     * @param tile tile corrente
+     * @param item item che necessita
+     * @return l'interactable nella tile corrente che contiene nella sua lista
+     * itemNeededToUse l'item passato come parametro.
+     */
     private Interactable getInteractableNeedingItem(Tile tile, Item item)
     {
         Interactable result = null;
-
         List<UUID> tileInteractable = tile.getInteractableHere();
 
         for (int i = 0; i < tileInteractable.size() && result == null; i++)
@@ -167,22 +207,23 @@ public class Player
                 System.out.println("Errore: questo id " + tileInteractable.get(i) + " non esiste");
             }
         }
-
         return result;
     }
 
-
-    private UsingItemStatus useKey(Item item)
+    /**
+     *
+     * @param item item da usare
+     * @return lo stato dell'operazione
+     */
+    private UsingItemStatus tryUseItem(Item item)
     {
         UsingItemStatus status = UsingItemStatus.wrongItem;
-
-        Tile tile = map.getTile(currentPositionRiga, currentPositionColonna);
-
+        Tile tile = getCurrentTile();
         Interactable interactable = getInteractableNeedingItem(tile, item);
 
         if (interactable != null)
         {
-            boolean alreadyUsed = interactableHandler.getUsedIteractable().contains(interactable.getId());
+            boolean alreadyUsed = interactableHandler.isUsedInteractalbe(interactable.getId());
 
             if (!alreadyUsed)
             {
@@ -194,35 +235,44 @@ public class Player
                 status = UsingItemStatus.alreadyUsed;
             }
 
-            status.args.interactable = interactable;
+            status.getArgs().interactable = interactable;
         }
         return status;
     }
 
-
-    // questo metodo serve per utilizzare un oggetti che abbiamo nell invetario e sblocarre una porta adiacente ( da moficare con tipi specifici oggetto )
+    /**
+     * Prova ad utilizzare l'oggetto. Se l'operazione va a buon
+     * fine aggiunge l'item al dizionario degl'item utilizzati.
+     * Notifica agli observer, registrati al soggetto onTryUseItemSubject,
+     * lo stato di questa operazione.
+     * @param item item da usare
+     */
     public void useItem(Item item)
     {
         UsingItemStatus status = UsingItemStatus.unknown;
 
         if (item.getItemType() == ItemType.itemToUseInteractable)
         {
-            status = useKey(item);
+            status = tryUseItem(item);
         }
         else if (item.getItemType() == ItemType.document)
         {
             status = UsingItemStatus.unusable;
         }
 
-        status.args.item = item;
+        status.getArgs().item = item;
         onTryUseItemSubject.notifyObservers(status);
     }
 
-
-    public boolean haveNecessaryItemsToUseIt(Interactable interactable)
+    /**
+     * Controlla se possiedi nell'inventario gli item necessari
+     * per utilizzare l'interactable passato come parametro.
+     * @param interactable interactable passato
+     * @return true se possiedi tutti gli item
+     */
+    public boolean haveNecessaryItemsToUseInteractable(Interactable interactable)
     {
         boolean isUsable = true;
-
         List<UUID> neededItems = interactable.getItemsNeededToUse();
 
         for (int i = 0; i < neededItems.size() && isUsable; i++)
@@ -232,95 +282,72 @@ public class Player
                 isUsable = false;
             }
         }
-
         return isUsable;
     }
 
-
-    private boolean isInteractableNeededToEnterUnlocked(Tile tile)
+    /**
+     *
+     * @param tile tile corrente
+     * @return stato di questo controllo
+     */
+    private MovingStatus isInteractableNeededToEnterUnlocked(Tile tile)
     {
-        boolean unlockedNecessaryInteractable = true;
+        MovingStatus status = MovingStatus.moved;
+        UUID iteractableNeededToEnter = tile.getInteractableNeededToEnter();
+        Interactable interactable = interactableHandler.getInteractable(iteractableNeededToEnter);
 
-        if (tile != null)
+        if (interactable != null)
         {
-            List<UUID> iteractableNeededToEnter = tile.getInteractableNeededToEnter();
-
-            for (int i = 0; i < iteractableNeededToEnter.size() && unlockedNecessaryInteractable; i++)
+            if (interactable.getInteractableType() == InteractableType.door)
             {
-                Interactable interactable =
-                        interactableHandler.getInteractable(iteractableNeededToEnter.get(i));
-
-                if (interactable != null && interactable.getInteractableType() == InteractableType.door)
+                if (!interactableHandler.isUsedInteractalbe(interactable.getId()))
                 {
-                    if (!interactableHandler.getUsedIteractable().contains(interactable.getId()))
-                    {
-                        unlockedNecessaryInteractable = false;
-                    }
-                }
-                else
-                {
-                    // per appartenere a questa categoria deve decessariamente essere door ?
+                    status = MovingStatus.needItem;
                 }
             }
-        }
-        else
-        {
-            unlockedNecessaryInteractable = false;
-        }
-
-        return unlockedNecessaryInteractable;
-    }
-
-
-    private boolean haveNecessaryAnswer(GuessingGame guessingGame)
-    {
-        return guessingGame == null || guessingGame.isResolved;
-    }
-
-
-    private boolean tileHasNecessaryAnswer(Tile tile)
-    {
-        boolean hasAnswer = true;
-
-        if (tile != null && tile.hasGuessingGame())
-        {
-            hasAnswer = haveNecessaryAnswer(tile.getGuessingGameToEnter());
-        }
-
-        return hasAnswer;
-    }
-
-
-    private MovingStatus isMovable(Coordinates coordinates)
-    {
-        MovingStatus status = MovingStatus.offTheMap;
-
-        if (map.isPermittedMovement(currentPositionRiga, currentPositionColonna, coordinates))
-        {
-            Tile tile = map.getNextTile(currentPositionRiga, currentPositionColonna, coordinates);
-
-            if (isInteractableNeededToEnterUnlocked(tile))
+            else if (interactable.getInteractableType() == InteractableType.doorGuessingGame)
             {
-                status = tileHasNecessaryAnswer(tile) ? MovingStatus.moved : MovingStatus.needAnswer;
+                if (!isResolvedGuessingGame(interactable.getGuessingGameId()))
+                {
+                    status = MovingStatus.needAnswer;
+                }
             }
-            else
-            {
-                status = MovingStatus.needItem;
-            }
-
-            status.args.nexTile = tile;
         }
 
         return status;
     }
 
 
-    // Restituisce false se e' stato possibile proseguire o meno
+    /**
+     * Controlla se uno spostamento è consentito.
+     * @param coordinates coordinate verso la quale si vuole effettuare lo spostamento
+     * @return stato dell'operazione
+     */
+    private MovingStatus isMovingAllowed(Coordinates coordinates)
+    {
+        MovingStatus status = MovingStatus.offTheMap;
+
+        if (map.isPermittedMovement(currentPositionRiga, currentPositionColonna, coordinates))
+        {
+            Tile tile = map.getNextTile(currentPositionRiga, currentPositionColonna, coordinates);
+            status = isInteractableNeededToEnterUnlocked(tile);
+            status.getArgs().nextTile = tile;
+        }
+
+        return status;
+    }
+
+    /**
+     * Prova ad effettuare lo spostamento nella direzione passata come parametro.
+     * Notifica agli observer, registrati al soggetto onTryMovePlayerSubject,
+     * lo stato di questa operazione.
+     * @param coordinates coordinate verso la quale si vuole effettuare lo spostamento
+     */
     public void tryMove(Coordinates coordinates)
     {
-        MovingStatus status = isMovable(coordinates);
-        status.args.startTile = map.getTile(currentPositionRiga, currentPositionColonna);
-        status.args.coordinates = coordinates;
+        MovingStatus status = isMovingAllowed(coordinates);
+        status.getArgs().startTile = getCurrentTile();
+        status.getArgs().coordinates = coordinates;
 
         if (coordinates == Coordinates.North)
         {
@@ -354,12 +381,30 @@ public class Player
         onTryMovePlayerSubject.notifyObservers(status);
     }
 
+    /**
+     * Controlla se hai già risposto all'indovinello passato come parametro.
+     * @param guessingGame UUID dell'indovinello
+     * @return true se hai giò risposto all'indovinello
+     */
+    private boolean isResolvedGuessingGame(UUID guessingGame)
+    {
+        return guessingGame == null || guessingGamesHandler.isResolvedGuessingGame(guessingGame);
+    }
 
+    /**
+     * Interagisci con un interactable di tipo chest con indovinello.
+     * Se l'operazione va a buon fine aggiunge l'interactable alla lista
+     * degli interactable usati. Aggiunge gli oggetti contenuti
+     * nell'inteactable all'inventario. L'operazione va
+     * a buon fine se la risposta alla domanda è stata data.
+     * @param interactable interactable con indovinello
+     * @return lo stato dell'operazione
+     */
     private InteractStatus interactChestGuessingGame(Interactable interactable)
     {
         InteractStatus status = InteractStatus.needAnswer;
 
-        if (haveNecessaryAnswer(interactable.getGuessingGame()))
+        if (isResolvedGuessingGame(interactable.getGuessingGameId()))
         {
             interactableHandler.addUsedInteractable(interactable);
             inventoryManager.addItems(interactable.getContainedItems());
@@ -369,29 +414,39 @@ public class Player
         return status;
     }
 
-
+    /**
+     * Interagisci con un interactable di tipo senza indovinello.
+     * Se l'operazione va a buon fine aggiunge l'interactable alla lista
+     * degli interactable usati. Aggiunge gli oggetti contenuti
+     * nell'interactable all'inventario. L'operazione va a
+     * buon fine se tutti gli item necessari sono stati usati, se questi ci sono.
+     * @param interactable interactable senza indovinello
+     * @return lo stato dell'operazione
+     */
     private InteractStatus interactNormalChest(Interactable interactable)
     {
         InteractStatus status = InteractStatus.needItem;
 
-        if (haveNecessaryItemsToUseIt(interactable))
+        if (haveNecessaryItemsToUseInteractable(interactable))
         {
             interactableHandler.addUsedInteractable(interactable);
-
             inventoryManager.addItems(interactable.getContainedItems());
-
             status = InteractStatus.used;
         }
 
         return status;
     }
 
-
+    /**
+     * Gestisce l'interazione con un interactable di tipo chest.
+     * @param interactable interactable
+     * @return lo stato dell'operazione
+     */
     private InteractStatus interactChest(Interactable interactable)
     {
         InteractStatus status = InteractStatus.alreadyUsed;
 
-        if (!interactableHandler.getUsedIteractable().contains(interactable.getId()))
+        if (!interactableHandler.isUsedInteractalbe(interactable.getId()))
         {
             if (interactable.getInteractableType() == InteractableType.chest)
             {
@@ -406,46 +461,47 @@ public class Player
         return status;
     }
 
-
+    /**
+     * Interagisce con un interactable.
+     * Se l'operazione va a buon fine aggiunge l'interactable alla lista
+     * degli interactable usati. Aggiunge gli oggetti contenuti
+     * nell'interactable all'inventario, se di tipo chest.
+     * Notifica agli observer, registrati al subject onTryInteractSubject, lo stato di questa operazione.
+     * @param interactable interactable
+     */
     public void interact(Interactable interactable)
     {
         InteractStatus status = InteractStatus.wrongInteractable;
 
         if (interactable != null)
         {
-            if (interactable.getInteractableType() == InteractableType.chest)
+            Tile currentTile = getCurrentTile();
+            boolean isHere =
+                    currentTile.getInteractableHere().contains(interactable.getId());
+
+            if (isHere)
             {
-                status = interactChest(interactable);
-            }
-            else if (interactable.getInteractableType() == InteractableType.chestGuessingGame)
-            {
-                status = interactChest(interactable);
+                if (interactable.getInteractableType() == InteractableType.chest)
+                {
+                    status = interactChest(interactable);
+                }
+                else if (interactable.getInteractableType() == InteractableType.chestGuessingGame)
+                {
+                    status = interactChest(interactable);
+                }
             }
         }
 
-        status.interactable = interactable;
-
+        status.setInteractable(interactable);
         onTryInteractSubject.notifyObservers(status);
     }
 
-
-
-    private List<GuessingGame> getContiguousGuessingGame(List<Tile> contiguousTiles)
-    {
-        List<GuessingGame> result = new ArrayList<>();
-
-        for(Tile tile : contiguousTiles)
-        {
-            if (tile.hasGuessingGame() && tile.getGuessingGameToEnter() != null)
-            {
-                result.add(tile.getGuessingGameToEnter());
-            }
-        }
-
-        return result;
-    }
-
-
+    /**
+     *
+     * @param tile tile nella quale è presente l'interactable
+     * @return restituisce la lista degli indovinelli presenti nella
+     * tile passata come parametro
+     */
     private List<GuessingGame> getInteractableGuessingGame(Tile tile)
     {
         List<GuessingGame> result = new ArrayList<>();
@@ -453,23 +509,34 @@ public class Player
 
         for (Interactable interactable : interactables)
         {
-            if (interactable.getInteractableType() == InteractableType.chestGuessingGame)
+            if (interactable.getInteractableType() == InteractableType.chestGuessingGame || interactable.getInteractableType() == InteractableType.doorGuessingGame)
             {
-                if (interactable.getGuessingGame() != null)
+                if (interactable.getGuessingGameId() != null)
                 {
-                    result.add(interactable.getGuessingGame());
+                    GuessingGame guessingGame = guessingGamesHandler.getGuessingGame(interactable.getGuessingGameId());
+
+                    if (guessingGame != null)
+                    {
+                        result.add(guessingGame);
+                    }
                 }
             }
-
         }
         return result;
     }
 
-
+    /**
+     * Prova a risolvere uno degli indovinelli presente
+     * nella lista passata come parametro usando come risposta
+     * la stringa passata come parametro. Lo stato dell'operazione
+     * viene determinato sulla base di un sistema di priorità.
+     * @param guessingGames indovinello proposto
+     * @param answer risposta
+     * @return stato dell'operazione
+     */
     private AnswerStatus trySolveQuestion(List<GuessingGame> guessingGames, String answer)
     {
         AnswerStatus status = AnswerStatus.noQuestions;
-
         GuessingGame guessingGameFound = null;
 
         for (int i = 0; i < guessingGames.size() && guessingGameFound == null; i++)
@@ -479,8 +546,9 @@ public class Player
             if (guessingGame != null)
             {
                 status = status.getMajor(AnswerStatus.alreadySolved);
+                boolean isResolved = guessingGamesHandler.isResolvedGuessingGame(guessingGame.getId());
 
-                if (!guessingGame.isResolved)
+                if (!isResolved)
                 {
                     status = status.getMajor(AnswerStatus.notSolved);
 
@@ -500,63 +568,76 @@ public class Player
             }
         }
 
-        status.guessingGame = guessingGameFound;
-
+        status.setGuessingGame(guessingGameFound);
         return status;
     }
 
-
+    /**
+     * Prova a risolvere un indovinello presente
+     * nella tile corrente usando come risposta
+     * la stringa passata come parametro.
+     * Notifica agli observer, registrati al soggetto onTrySolveGuessingGameSubject,
+     * lo stato di questa operazione.
+     * @param answer risposta
+     */
     public void solveQuestion(String answer)
     {
         AnswerStatus status;
-        List<GuessingGame> guessingGames = new ArrayList<>();
+        Tile currentPos = getCurrentTile();
+        status = trySolveQuestion(getInteractableGuessingGame(currentPos), answer);
 
-        List<Tile> contiguousTiles =  map.getContiguousTiles(currentPositionRiga, currentPositionColonna);
-        Tile currentPos = map.getTile(currentPositionRiga, currentPositionColonna);
-
-        guessingGames.addAll(getContiguousGuessingGame(contiguousTiles));
-
-        guessingGames.addAll(getInteractableGuessingGame(currentPos));
-
-        status = trySolveQuestion(guessingGames, answer);
-
-        getOnTrySolveGuessingGameSubject().notifyObservers(status);
+        onTrySolveGuessingGameSubject.notifyObservers(status);
     }
 
-
+    /**
+     * Notifica agli observer, registrati al subject onObserve,
+     * la descrizione della tile corrente. Questa può essere:
+     * - Corta;
+     * - Dettagliata;
+     * - Limitata.
+     * Corta e dettagliata dipendono dal valore passato come parametro,
+     * limitata dallo stato corrente della tile (illuminata o meno).
+     * @param isFullDescription true se la descrizione è dettagliata
+     */
     public void observe(boolean isFullDescription)
     {
-        String result = "";
-        Tile tile = map.getTile(currentPositionRiga, currentPositionColonna);
+        String text = "";
+        Tile tile = getCurrentTile();
         String description = isFullDescription ? tile.getFullDescription() : tile.getShortDescription();
 
         if (tile.isNeededToSwitchOnLight())
         {
-            if (interactableHandler.getUsedIteractable().contains(tile.getInteractableToSwitchOnLight()))
+            if (interactableHandler.isUsedInteractalbe(tile.getInteractableToSwitchOnLight()))
             {
-                result = Sentences.LOOK_ITEM_DESCRIPTION + description;
+                text = Sentences.LOOK_ITEM_DESCRIPTION + description;
             }
             else
             {
-                result = Sentences.LOOK_ITEM_DESCRIPTION + tile.getDescriptionOfDarkRoom();
+                text = Sentences.LOOK_ITEM_DESCRIPTION + tile.getDescriptionOfDarkRoom();
             }
         }
         else
         {
-            result = Sentences.LOOK_ITEM_DESCRIPTION + description;
+            text = Sentences.LOOK_ITEM_DESCRIPTION + description;
         }
 
-        onObserve.notifyObservers(result);
+        onObserve.notifyObservers(new ObserveArgs(text, tile.getDialogId()));
     }
 
-
+    /**
+     * Notifica agli observer, registrati al subject onLookItem,
+     * la descrizione dell'item passato come
+     * parametro. Se questo è di tipo document ci sarà
+     * una variazione nella stringa.
+     * @param item item da osservare
+     */
     public void lookItem(Item item)
     {
         String result;
 
         if (item != null)
         {
-            Tile tile = map.getTile(currentPositionRiga, currentPositionColonna);
+            Tile tile = getCurrentTile();
 
             if (tile.getItemsToTake().contains(item.getId()) || inventoryManager.inventoryContains(item.getId()))
             {
@@ -582,47 +663,80 @@ public class Player
         onLookItem.notifyObservers(result);
     }
 
+    /**
+     *
+     * @return la tile corrente
+     */
+    private Tile getCurrentTile()
+    {
+        return map.getTile(currentPositionRiga, currentPositionColonna);
+    }
 
-    private void loadSaveFile(boolean isContinuing, StartConfig startConfig)
+    /**
+     * Deserializza le informazioni dal file json se isContinuing
+     * vale true, altrimenti inizializza da zero il game.
+     * @param isContinuing se deve riprendere dall'ultimo salvataggio effettuato
+     * @param startConfig informazioni iniziali
+     * @throws Exception eccezione durante il parse del file
+     */
+    private void loadSaveFile(boolean isContinuing, StartConfig startConfig) throws Exception
     {
         if (isContinuing)
         {
-            try
+            if (Utilities.fileExist(Utilities.SAVE_JSON_PATH))
             {
-                RootPlayerJson player = JsonParser.GetClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
+                RootPlayerJson player = JsonParserUtilities.getClassFromJson(Utilities.SAVE_JSON_PATH, RootPlayerJson.class);
                 currentPositionRiga = player.lastPositionRiga;
                 currentPositionColonna = player.lastPositionColonna;
                 interactableHandler.setUsedIteractable(player.usedInteractable);
                 inventoryManager.setInventoryList(player.inventory);
                 inventoryManager.setUsedItemsMap(player.usedItems);
-            } catch (IOException e)
+                dialoguesHandler.setDialoguesMade(player.dialoguesMade);
+                guessingGamesHandler.setUSedGuessingGame(player.usedGuessingGame);
+                endGame = player.endGame;
+            }
+            else
             {
-                e.printStackTrace();
+                throw new Exception("File save.json non presente sul disco");
             }
         }
         else
         {
-            currentPositionRiga = startConfig.rootStartConfigJson.startPositionRiga;
-            currentPositionColonna = startConfig.rootStartConfigJson.startPositionColonna;
+            currentPositionRiga = startConfig.startConfigJson.startPositionRiga;
+            currentPositionColonna = startConfig.startConfigJson.startPositionColonna;
             interactableHandler.setUsedIteractable(new ArrayList<>());
             inventoryManager.setInventoryList(new ArrayList<>());
             inventoryManager.setUsedItemsMap(new HashMap<>());
+            dialoguesHandler.setDialoguesMade(new ArrayList<>());
+            dialoguesHandler.setDialoguesMade(new ArrayList<>());
+            guessingGamesHandler.setUSedGuessingGame(new ArrayList<>());
+            endGame = false;
         }
-
     }
 
+    /**
+     * Serializza le informazioni relative al salvataggio
+     * e le scrive nel file save.json.
+     */
     public void saveFile()
     {
         if (isLoaded)
         {
-            RootPlayerJson player = new RootPlayerJson(currentPositionRiga, currentPositionColonna,
-                    interactableHandler.getUsedIteractable(), inventoryManager.getUsedItems(), inventoryManager.getInvetoryList());
-            String content = JsonParser.SerializeClassToJson(player);
-            boolean result = Utilities.writeFile(Utilities.SAVE_JSON_PATH, content);
+            RootPlayerJson player = new RootPlayerJson(
+                    currentPositionRiga,
+                    currentPositionColonna,
+                    interactableHandler.getUsedIteractable(),
+                    inventoryManager.getUsedItems(),
+                    inventoryManager.getInvetoryList(),
+                    dialoguesHandler.getDialoguesMade(),
+                    guessingGamesHandler.getUsedGuessingGame(),
+                    endGame);
+            String content = JsonParserUtilities.serializeClassToJson(player);
+            boolean result = Utilities.writeFile(Utilities.SAVE_JSON_PATH, content, false);
 
             if (!result)
             {
-                // stampa errore
+                System.err.println("Problema durante la scrittura del file di salvataggio!");
             }
         }
     }

@@ -1,11 +1,13 @@
 package game.managers;
 
-
 import game.entity.item.Item;
-import game.gameUtilities.Subject;
+import game.gameUtilities.observerPattern.Subject;
 
 import java.util.*;
 
+/**
+ * Manager dell'inventario
+ */
 public class InventoryManager
 {
     private static InventoryManager instance;
@@ -15,10 +17,8 @@ public class InventoryManager
 
     private ItemsHandler itemsHandler;
 
-    private Subject<List<UUID>> onLoadInventory;
-
+    private Subject<List<UUID>> onLoadedInventory;
     private Subject<Item> onAddedItemToInventory;
-
     private Subject<Item> onRemovedItemToInventory;
 
     private InventoryManager() throws Exception
@@ -26,9 +26,14 @@ public class InventoryManager
         itemsHandler = ItemsHandler.getInstance();
         onAddedItemToInventory = new Subject<>();
         onRemovedItemToInventory = new Subject<>();
-        onLoadInventory = new Subject<>();
+        onLoadedInventory = new Subject<>();
     }
 
+    /**
+     *
+     * @return l'istanza della classe.
+     * @throws Exception eccezione che si potrebbe generare
+     */
     public static InventoryManager getInstance() throws Exception
     {
         if (instance == null)
@@ -39,22 +44,38 @@ public class InventoryManager
         return instance;
     }
 
+    /**
+     *
+     * @return il subject onAddedItemToInventory
+     */
     public Subject<Item> getOnAddedItemToInventory()
     {
         return onAddedItemToInventory;
     }
 
+    /**
+     *
+     * @return il subject onRemovedItemToInventory
+     */
     public Subject<Item> getOnRemovedItemToInventory()
     {
         return onRemovedItemToInventory;
     }
 
-    public Subject<List<UUID>> getOnLoadInventory()
+    /**
+     *
+     * @return il subject onLoadInventory
+     */
+    public Subject<List<UUID>> getOnLoadedInventory()
     {
-        return onLoadInventory;
+        return onLoadedInventory;
     }
 
-
+    /**
+     * Aggiunga una lista di item all'inventario.
+     * @param itemsId lista di UUID degli item
+     * @return true se la lista è stata aggiunta all'invetario
+     */
     public boolean addItems(List<UUID> itemsId)
     {
         boolean isSuccessful = false;
@@ -72,7 +93,10 @@ public class InventoryManager
         return isSuccessful;
     }
 
-
+    /**
+     * Aggiunge un item all'inventario.
+     * @param itemId UUID dell'item
+     */
     public void addItem(UUID itemId)
     {
         Item item = itemsHandler.getItem(itemId);
@@ -81,25 +105,33 @@ public class InventoryManager
         {
             addItem(item);
         }
-
     }
 
+    /**
+     * Aggiunge un item all'inventario.
+     * @param item item da aggiungere
+     */
     public void addItem(Item item)
     {
-//        inventoryDictionary.put(item.getId(), item);
         inventoryList.add(item.getId());
         onAddedItemToInventory.notifyObservers(item);
     }
 
-
+    /**
+     * Rimuove un item dall'inventario.
+     * @param item item da rimuovere
+     */
     public void removeItem(Item item)
     {
-//        inventoryDictionary.remove(item.getName());
         inventoryList.remove(item.getId());
         onRemovedItemToInventory.notifyObservers(item);
     }
 
-
+    /**
+     * Aggiunge un item al dizionario degli item utilizzati.
+     * @param interactableId UUID dell'interactable con cui ha interagito l'item
+     * @param itemId UUID dell'item
+     */
     public void addUsedItem(UUID interactableId, UUID itemId)
     {
         List<UUID> listId = usedItems.get(interactableId);
@@ -112,51 +144,96 @@ public class InventoryManager
 //        onAddedItemToInventory.notifyObservers(item);
     }
 
-
+    /**
+     *
+     * @param id UUID dell'item
+     * @return true se l'inventario contiene quell'item
+     */
     public boolean inventoryContains(UUID id)
     {
         return inventoryList.contains(id);
     }
 
+    /**
+     *
+     * @param idInteractable UUID dell'interactable
+     * @param idItem UUID dell'item
+     * @return true se l'item è stato usato con quell'interactable
+     */
     public boolean usedItemsContains(UUID idInteractable, UUID idItem)
     {
+        boolean result = false;
+
         List<UUID> listaId = usedItems.get(idInteractable);
-        return listaId.contains(idItem);
-    }
 
-
-    public Item getItem(String name)
-    {
-        Item item = null;
-
-        item = itemsHandler.getItem(name);
-
-        if (item != null && !inventoryList.contains(item.getId()))
+        if (listaId != null)
         {
-            item = null;
+            result = listaId.contains(idItem);
         }
 
-        return item;
+        return result;
     }
 
+    /**
+     *
+     * @param name nome dell'item
+     * @return l'item se è presente nell'inventario
+     */
+    public Item getItem(String name)
+    {
+        Item result = null;
 
+        List<Item> itemsList = itemsHandler.getItemsWithSameAlias(name);
+
+        for(int i = 0; i < itemsList.size() && result == null; i++)
+        {
+            if (inventoryList.contains(itemsList.get(i).getId()))
+            {
+                result = itemsList.get(i);
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * Imposta la lista dell'inventario
+     * @param inventoryList lista di UUID
+     */
     public void setInventoryList(List<UUID> inventoryList)
     {
-        this.inventoryList = inventoryList;
-        onLoadInventory.notifyObservers(this.inventoryList);
+        if (inventoryList != null)
+        {
+            this.inventoryList = inventoryList;
+            onLoadedInventory.notifyObservers(this.inventoryList);
+        }
     }
 
+    /**
+     * Imposta il dizionario degl'item usati.
+     * @param usedItems UUID dell'item usato
+     */
     public void setUsedItemsMap(Map<UUID, List<UUID>> usedItems)
     {
-        this.usedItems = usedItems;
+        if (usedItems != null)
+        {
+            this.usedItems = usedItems;
+        }
     }
 
+    /**
+     *
+     * @return la lista dell'inventario
+     */
     public List<UUID> getInvetoryList()
     {
         return inventoryList;
     }
 
-
+    /**
+     *
+     * @return map degli UUID degl'item usati
+     */
     public Map<UUID, List<UUID>> getUsedItems()
     {
         return usedItems;

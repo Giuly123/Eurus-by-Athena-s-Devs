@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Eurus:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Eurus_jar</output-path>
+    <root id="archive" name="Eurus.jar">
+      <element id="module-output" name="Eurus" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.5" />
+    </root>
+  </artifact>
+</component>

@@ -2,7 +2,10 @@ package game.gui;
 
 import javax.swing.*;
 
-public class TypeWriter
+/**
+ * Simula l'effetto "macchina da scrivere".
+ */
+class TypeWriter
 {
     public JTextArea textArea;
     public int delay;
@@ -13,7 +16,11 @@ public class TypeWriter
         this.delay = delay;
     }
 
-    public void Append(String string)
+    /**
+     * Effettua l'append sulla text area della stringa passata.
+     * @param string stringa da concatenare
+     */
+    public void append(String string)
     {
         try
         {
@@ -21,19 +28,20 @@ public class TypeWriter
 
             for (i = 0; i < string.length(); i++)
             {
-                SwingUtilities.invokeLater(new TextAppendTask(string.charAt(i)));
+                char c = string.charAt(i);
+                SwingUtilities.invokeLater(() -> textArea.append(String.valueOf(c)));
 
                 Thread.sleep(delay);
             }
 
             if (string.length() > 0 && string.charAt(i - 1) != '\n')
             {
-                SwingUtilities.invokeLater(new TextAppendTask("\n"));
+                SwingUtilities.invokeLater(() -> textArea.append("\n"));
 
                 Thread.sleep(delay);
             }
 
-            SwingUtilities.invokeLater(new TextAppendTask("\n"));
+            SwingUtilities.invokeLater(() -> textArea.append("\n"));
 
             Thread.sleep(delay);
 
@@ -43,27 +51,6 @@ public class TypeWriter
         }
     }
 
-
-    private class TextAppendTask implements Runnable
-    {
-        String string;
-
-        TextAppendTask(String string)
-        {
-            this.string = string;
-        }
-
-        TextAppendTask(char c)
-        {
-            this.string = String.valueOf(c);
-        }
-
-        @Override
-        public void run()
-        {
-            textArea.append(string);
-        }
-    }
 
 }
 

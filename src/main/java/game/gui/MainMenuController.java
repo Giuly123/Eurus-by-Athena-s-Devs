@@ -1,6 +1,5 @@
 package game.gui;
 
-
 import game.gameUtilities.Utilities;
 
 import java.awt.*;
@@ -9,9 +8,9 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
- * @author unknown
+ * Gestisce l'interazione con l'utente del menu principale.
  */
-public class MainMenuController {
+class MainMenuController {
 
     private MainMenuModel model;
     private ImageIcon iconLogo = new ImageIcon(Utilities.PATH_LOGO);
@@ -30,7 +29,10 @@ public class MainMenuController {
         frame.setVisible(true);
     }
 
-
+    /**
+     * Inizializza il controller.
+     * @param isFirstTime se non è mai stato effettuato un salvataggio
+     */
     private void initController(boolean isFirstTime)
     {
         frame.setIconImage(iconLogo.getImage());
@@ -50,6 +52,9 @@ public class MainMenuController {
     }
 
 
+    /**
+     * Inizializza le componenti.
+     */
     private void initComponents() {
         startButton = new JButton();
         continueButton = new JButton();
@@ -71,19 +76,13 @@ public class MainMenuController {
         {
             mainPanel.setLayout(new FlowLayout());
 
-            //---- Inizia ----
-            startButton.setText("Inizia");
-            startButton.setPreferredSize(new Dimension(150, 50));
+            GUIUtilities.setButton(startButton, Utilities.ICON_NEWGAME_PATH, new Dimension(200, 80));
             mainPanel.add(startButton);
 
-            //---- Continua ----
-            continueButton.setText("Continua");
-            continueButton.setPreferredSize(new Dimension(150, 50));
+            GUIUtilities.setButton(continueButton, Utilities.ICON_RESUME_PATH, new Dimension(200, 80));
             mainPanel.add(continueButton);
 
-            //---- Esci ----
-            exitButton.setText("Esci");
-            exitButton.setPreferredSize(new Dimension(150, 50));
+            GUIUtilities.setButton(exitButton, Utilities.ICON_EXIT_PATH, new Dimension(200, 80));
             mainPanel.add(exitButton);
         }
 
@@ -91,6 +90,10 @@ public class MainMenuController {
         frame.setLocationRelativeTo(frame.getOwner());
     }
 
+    /**
+     * Esegue l'update del menu.
+     * @param isFirstTime se non è mai stato effettuato un salvataggio
+     */
     public void updateMenu(boolean isFirstTime)
     {
         SwingUtilities.invokeLater(new Runnable()
@@ -111,17 +114,30 @@ public class MainMenuController {
 
     }
 
+
+
+    /**
+     * Imposta la proprietà visible del frame.
+     * @param visible valore da assegnare alla proprietà visible
+     */
     public void setVisible(boolean visible)
     {
         frame.setVisible(visible);
     }
 
+    /**
+     * Imposta la locazione del frame.
+     * @param point punto di locazione
+     */
     public void setLocation(Point point)
     {
         frame.setLocation(point);
     }
 
-    private class ImagePanel extends JPanel
+    /**
+     * Panel custom con background.
+     */
+    private static class ImagePanel extends JPanel
     {
         private Image img;
 

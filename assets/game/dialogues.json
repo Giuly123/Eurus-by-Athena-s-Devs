@@ -1,0 +1,19 @@
+{
+  "dialogEventList" : [
+    {
+      "id": "4ed6f4f1-361c-40a8-8062-4841554dd0b0",
+      "name": "Dialogo 1",
+      "dialogText": "Dopo aver aperto la porta blindata, al centro della nuova stanza noti una tv. *TIIZ TIIZ* La tv si accende da sola e una voce comincia a parlare.\n\n“Ciao Locksher, ti ricordi di me? Ti sono mancata?”, chiede la voce dallo schermo.\n\nLa tv mostra una figura femminile. E’ seduta in quella che sembra essere una sala di controllo. Come sapeva il mio nome?\n\n“Non è possibile…”, dice Cromyft, visibilmente preoccupato. “Vedi, caro Locksher, siamo nell’ospedale psichiatrico di Risshenford, dove è rinchiusa nostra sorella, Eurus.”\n\n“Avete una sorella?”, domanda Nostaw con aria sorpresa. Cromyft annuisce con aria cupa senza aggiungere altro.\n\nEro sconvolto dalla notizia. Non sapevo di avere una sorella. Non avevo alcun ricordo di lei.\n\n...\n\nNel frattempo, la voce femminile riprende a parlare: “Locksher, davvero non ti ricordi di me? Affascinante. Saltiamo gli inconvenevoli. Siete nel mio gioco. Ci rivredremo, se riuscirete ad uscire. Altrimenti morirete qui, da soli e nessuno lo verrà a sapere!”.\n\n*TZIIU* La tv si spegne.\n\nEravamo in un macabro gioco ideato da mia sorella. Fino a qualche minuto fa non avevo neanche una sorella… Ma perché era qui? Come aveva preso il controllo dell’ospedale in cui era rinchiusa? Ho troppe domande...\n\nNostaw: “Ci devi delle spiegazioni, Mr. 007”.\n\nCromyft: “Capiamo come uscire da qui e vi dirò tutto!”. Dopodiché cadde il silenzio."
+    },
+    {
+      "id": "4e0819e2-4563-45ff-9b83-da512a70923d",
+      "name": "Dialogo 2",
+      "dialogText": "Nostaw: “Altra stanza, altro enigma. Comincia ad avere poca fantasia la vostra sorellina”.\n\nLa stanza in cui siamo è molto diversa dalle altre. Sembra quasi di essere a lavoro, non in un ospedale psichiatrico. Ci sono così tanti computer.\n\n*TIIZ TIIZ* Su tutti i computer appare il suo volto.\n\n“Siete in ritardo. Vedete quella porta alla vostra sinistra? Risolvete questo indovinello e si aprirà. So che il mio fratellino se ne intende di informatica. A presto, forse”.\n\n*TZIIU*...\n\nCromyft: “Io mi occupo di politica, non saprei da dove iniziare”.\n\nNostaw, dal canto suo, non era un esperto di tecnologia. Era un medico militare.\n\nVedete sulla porta un foglietto.\n\nCromyft: “In quel foglio ci sarà sicuramente scritto qualcosa di utile!“\n\nI computer sembrano inutilizzabili dopo la trasmissione."
+    },
+    {
+      "id": "63c8a9b8-d8cb-453e-95d3-916955298ee2",
+      "name": "Dialogo 3",
+      "dialogText": "La stanza che ti si presenta davanti è vuota, noti solo una boccetta di vetro con uno strano liquido all’interno della stanza. Oltre alla porta appena lasciata alle spalle, ce n’è una alla tua destra, non sembra avere serrature di alcun tipo. All’improvviso senti la sua voce.\n\n*TIIZ TIIZ* Si accende la tv. *SBAM* Si chiude la porta alle tue spalle!\n\nEurus: “Benvenuti al problema finale. Vi ho bloccati in questa stanza! Hai ancora la pistola, giusto? Ne avrai bisogno perchè il prossimo gioco è solo per uno. Solo uno proseguirà da qui in poi. Scegli tu, è tempo di decidere ormai. Chi ritieni più utile?  Devi scegliere.”\n\nCromyft: “Adesso basta!”\n\nEurus: “Non ancora, ma presto. Solo una porta ci separa”.\n\n*TZIIU* Rumore di tv che si spegne.\n\nCromyft: “Locksher, non staremo a discuterne vero…”\n\nNostaw: “Vedi altra scelta…?”\n\nNon sai davvero cosa fare, eppure ti tornarono in mente delle parole scritte in una nota."
+    }
+  ]
+}
