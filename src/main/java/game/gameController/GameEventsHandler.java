@@ -25,6 +25,7 @@ class GameEventsHandler
 {
     private GameModel gameModel;
     private GameView gameView;
+    private GameController gameController;
 
     private InteractableHandler interactableHandler;
     private DialoguesHandler dialoguesHandler;
@@ -43,17 +44,15 @@ class GameEventsHandler
 
     /**
      * Registra gli observer ai vari eventi del gioco.
-     * @param gameModel game model
-     * @param gameView game view
+     * @param gameController
      * @throws Exception eccezioni che potrebbero generarsi
      */
-    public GameEventsHandler(GameModel gameModel, GameView gameView) throws Exception
+    public GameEventsHandler(GameController gameController) throws Exception
     {
         InventoryManager inventoryManager = InventoryManager.getInstance();
         dialoguesHandler = DialoguesHandler.getInstance();
         interactableHandler = InteractableHandler.getInstance();
         guessingGamesHandler = GuessingGamesHandler.getInstance();
-
 
         interactableHandler.getOnUsedInteractable().register(observerUsedInteractable);
         gameModel.getPlayer().getOnTryMovePlayerSubject().register(observerTryMovePlayer);
@@ -67,8 +66,9 @@ class GameEventsHandler
         inventoryManager.getOnAddedItemToInventory().register(observerAddItemToInventory);
         inventoryManager.getOnRemovedItemToInventory().register(observerRemoveItemToInventory);
 
-        this.gameModel = gameModel;
-        this.gameView = gameView;
+        this.gameModel = gameController.gameModel;
+        this.gameView = gameController.gameView;
+        this.gameController = gameController;
     }
 
     /**

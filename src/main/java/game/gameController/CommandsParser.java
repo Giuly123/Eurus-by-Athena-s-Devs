@@ -17,21 +17,24 @@ import game.managers.database.GameDatabaseManager;
  */
 class CommandsParser
 {
-    public GameModel gameModel;
-    public GameView gameView;
+    private GameModel gameModel;
+    private GameView gameView;
+    private GameController gameController;
+
     private GameDatabaseManager gameDatabaseManager;
     private InteractableHandler interactableHandler;
     private ItemsHandler itemsHandler;
 
 
-    public CommandsParser(GameModel gameModel, GameView gameView) throws Exception
+    public CommandsParser(GameController gameController) throws Exception
     {
         gameDatabaseManager = GameDatabaseManager.getInstance();
         interactableHandler = InteractableHandler.getInstance();
         itemsHandler = ItemsHandler.getInstance();
 
-        this.gameModel = gameModel;
-        this.gameView = gameView;
+        this.gameModel = gameController.gameModel;
+        this.gameView = gameController.gameView;
+        this.gameController = gameController;
     }
 
 

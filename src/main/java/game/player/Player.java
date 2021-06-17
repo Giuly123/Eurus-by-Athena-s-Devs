@@ -307,7 +307,7 @@ public class Player
             }
             else if (interactable.getInteractableType() == InteractableType.doorGuessingGame)
             {
-                if (!haveNecessaryAnswer(interactable.getGuessingGameId()))
+                if (!isResolvedGuessingGame(interactable.getGuessingGameId()))
                 {
                     status = MovingStatus.needAnswer;
                 }
@@ -386,7 +386,7 @@ public class Player
      * @param guessingGame UUID dell'indovinello
      * @return true se hai giò risposto all'indovinello
      */
-    private boolean haveNecessaryAnswer(UUID guessingGame)
+    private boolean isResolvedGuessingGame(UUID guessingGame)
     {
         return guessingGame == null || guessingGamesHandler.isResolvedGuessingGame(guessingGame);
     }
@@ -404,7 +404,7 @@ public class Player
     {
         InteractStatus status = InteractStatus.needAnswer;
 
-        if (haveNecessaryAnswer(interactable.getGuessingGameId()))
+        if (isResolvedGuessingGame(interactable.getGuessingGameId()))
         {
             interactableHandler.addUsedInteractable(interactable);
             inventoryManager.addItems(interactable.getContainedItems());

@@ -23,11 +23,12 @@ import java.util.UUID;
  */
 public class GameController
 {
+    protected GameModel gameModel;
+    protected GameView gameView;
+
     private GameEventsHandler gameEventsHandler;
     private CommandsParser commandsParser;
     private InventoryManager inventoryManager;
-    private GameModel gameModel;
-    private GameView gameView;
     private boolean isPlaying;
 
     private Observer<List<UUID>> observerLoadInventory = itemsId -> loadInventory(itemsId);
@@ -51,8 +52,8 @@ public class GameController
 
             gameModel.init(isContinuing);
             startThreadRefreshTime();
-            gameEventsHandler = new GameEventsHandler(gameModel, gameView);
-            commandsParser = new CommandsParser(gameModel, gameView);
+            gameEventsHandler = new GameEventsHandler(this);
+            commandsParser = new CommandsParser(this);
 
             gameView.setTitleFrame(gameModel.getStartConfig().startConfigJson.gameName);
             printFirstMessage(isContinuing, gameModel.getPlayer().endGame);
